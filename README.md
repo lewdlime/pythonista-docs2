@@ -1,4 +1,4 @@
-Pythonista Dash Docset [![Build Status](https://travis-ci.org/leesavide/editorial-docs.svg?branch=master)](https://travis-ci.org/leesavide/editorial-docs)
+Pythonista Dash Docset [![Build Status](https://travis-ci.org/leesavide/pythonista-docs.svg?branch=master)](https://travis-ci.org/leesavide/pythonista-docs)
 =======================
 
 [Pythonista](http://omz-software.com/editorial/) is an integrated development environment for writing [Python™](http://python.org/) scripts on iOS.
