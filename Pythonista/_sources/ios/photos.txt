@@ -1,0 +1,83 @@
+
+:mod:`photos` --- Accessing Saved Photos on iOS
+======================================================
+
+.. module:: photos
+   :synopsis: Provides access to the camera roll on iOS
+.. sectionauthor:: Ole Zorn
+
+
+The :mod:`photos` module allows you to access images from the camera roll and their metadata.
+
+Most functions return images that can be used directly with the :mod:`PIL` (Python Imaging Library) modules.
+
+.. note::
+   The first time you use any of the functions that access your photos, a system-provided permission dialog will be shown. If you deny access, most functions will return ``None``. If you change your mind later, you can allow access to your photos from the `Privacy` section in the Settings app.
+
+Functions in the :mod:`photos` module:
+
+.. function:: capture_image()
+
+   Show a standard camera interface and return the captured image.
+   
+   If the device has no camera or if the camera interface is cancelled, `None` is returned.
+   
+.. function:: get_count()
+
+   Return the number of images in the camera roll.
+   
+   If you have not authorized access to your photos, this function will always return ``0``.
+   
+.. function:: get_image(image_index=-1, original=True, raw_data=False)
+
+   Return one of the images in the camera roll.
+   
+   * `image_index` -- Specifies which image should be returned, with ``0`` indicating the first image. You can pass a negative value to count from the end of the list. The default value of ``-1`` returns the last image.
+   
+   * `original` -- When set to `False`, a scaled version of the image is returned that includes all user edits (cropping and effects), otherwise, the original image data is used without any modifications.
+   
+   * `raw_data` -- When set to `True`, the image is returned as a byte string of the original image file data (typically in JPEG or PNG format). `raw_data` must be combined with `original`, otherwise a `ValueError` is thrown. This is more efficient if you just want to save the image to a file, without displaying it. It can also be useful for creating a :class:`ui.Image` from a photo (using :meth:`ui.Image.from_data`).
+   
+.. function:: get_fullscreen_image(image_index=-1)
+   
+   .. note::
+       This function is deprecated, you can use :func:`get_image` instead (passing `False` for the `original` parameter).
+   
+   Same as :func:`get_image` with the difference that the resulting image has an appropriate (device-dependent) size for full-screen viewing, i.e. it is potentially downscaled.
+
+.. function:: get_metadata(image_index=-1)
+
+   Return EXIF and other metadata of an image in the camera roll as a dictionary.
+   
+   The `image_index` parameter specifies which image should be returned, with ``0`` indicating the first image. You can pass a negative value to count from the end of the list. The default value of ``-1`` returns the last image.
+   
+   If the index is larger than the number returned from ``photos.get_count() - 1``, or if the metadata can't be read, ``None`` is returned.
+
+.. function:: get_thumbnail(image_index=-1)
+
+   Return a small thumbnail image of an image in the camera roll. The thumbnail will have equal width and height, regardless of the aspect ratio of the original image.
+   
+   The `image_index` parameter specifies which image should be returned, with ``0`` indicating the first image. You can pass a negative value to count from the end of the list. The default value of ``-1`` returns the last image.
+   
+   If the index is larger than the number returned from ``photos.get_count() - 1``, or if the thumbnail image can't be created, ``None`` is returned.
+
+.. function:: pick_image(show_albums=False, include_metadata=False, original=True, raw_data=False, multi=False)
+
+   Show a standard image picker UI and return the image that was picked (or `None` if it was cancelled).
+   
+   * `show_albums` -- Boolean flag to determine whether albums other than the camera roll should be shown.
+   
+   * `include_metadata` -- When set to `True`, the return value is a tuple of the actual image (or image data) and its metadata (as a dictionary).
+   
+   * `original` -- When set to `False`, a scaled version of the image is returned that includes all user edits (cropping and effects), otherwise, the original image data is used without any modifications.
+   
+   * `raw_data` -- When set to `True`, the image is returned as a byte string of the original image file data (typically in JPEG or PNG format). `raw_data` must be combined with `original`, otherwise a `ValueError` is thrown. This is more efficient if you just want to save the image to a file, without displaying it.
+   
+   * `multi` -- Whether the image picker allows multiple selection. If this is set to `True`, the return value will be a list of images or tuples (in case `include_metadata` is also `True`).
+   
+
+.. function:: save_image(image)
+
+   Save a :mod:`PIL` image or :class:`ui.Image` to the camera roll.
+   
+   Returns `True` if the image was saved successfully, otherwise `False`.

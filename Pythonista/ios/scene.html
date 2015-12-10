@@ -1,0 +1,1202 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>scene — 2D Graphics and Animation &mdash; Pythonista Documentation</title>
+    <link rel="stylesheet" href="../_static/pythonista.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.7.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Pythonista Documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Pythonista Documentation" href="../index.html" />
+    <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
+    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    
+    <script type="text/javascript">
+        var getTextForSample = function(i) {
+            codeBlock = document.getElementsByClassName('highlight-python')[i];
+            return codeBlock.innerText;
+        }
+        
+        var copySample = function (i) {
+            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+        }
+        
+        var openSample = function (i) {
+            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+        }
+        
+        //Source: http://ejohn.org/blog/partial-functions-in-javascript/
+        Function.prototype.partial = function() {
+        	var fn = this,
+        		args = Array.prototype.slice.call(arguments);
+        	return function() {
+        		var arg = 0;
+        		for (var i = 0; i < args.length && arg < arguments.length; i++)
+        		if (args[i] === undefined) args[i] = arguments[arg++];
+        		return fn.apply(this, args);
+        	};
+        };
+        
+        window.onload=function() {
+            //Add "Copy" and "Open in Editor" buttons for code samples:
+            var inApp = navigator.userAgent.match(/AppleWebKit/i) != null && navigator.userAgent.match(/Safari/i) == null;
+            if (inApp) {
+                codeBlocks = document.getElementsByClassName('highlight-python');
+                for (var i = 0; i < codeBlocks.length; i++) {
+                    codeBlock = codeBlocks[i];
+                    if (codeBlock.innerText.indexOf('>>>') == 0) {
+                        //Don't add header for interactive sessions
+                        continue;
+                    }
+
+                    var codeHeader = document.createElement('div');
+                    codeHeader.className = 'pythonista-code-header';
+
+                    var copyButton = document.createElement('button');
+                    copyButton.className = 'pythonista-button';
+                    copyButton.innerText = 'Copy';
+                    copyButton.addEventListener('click', copySample.partial(i));
+                    codeHeader.appendChild(copyButton);
+
+                    var openButton = document.createElement('button');
+                    openButton.className = 'pythonista-button';
+                    openButton.innerText = 'Open in Editor';
+                    openButton.addEventListener('click', openSample.partial(i));
+                    codeHeader.appendChild(openButton);
+
+                    codeBlock.parentElement.insertBefore(codeHeader, codeBlock);
+                }
+            }
+        }
+    </script>
+    
+ 
+
+  </head>
+  <body ontouchstart="">
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="http://omz-software.com/pythonista"><img src="../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -4px; margin-right: 4px;"/></a></li>
+        <li><a href="../index.html">Pythonista Documentation</a> &raquo;</li>
+ 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="module-scene">
+<span id="scene-2d-graphics-and-animation"></span><h1><a class="reference internal" href="#module-scene" title="scene: Provides 2D graphics and animation on iOS"><tt class="xref py py-mod docutils literal"><span class="pre">scene</span></tt></a> &#8212; 2D Graphics and Animation<a class="headerlink" href="#module-scene" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference internal" href="#module-scene" title="scene: Provides 2D graphics and animation on iOS"><tt class="xref py py-mod docutils literal"><span class="pre">scene</span></tt></a> module provides an easy way to create hardware-accelerated 2D graphics and animations on iOS.</p>
+<p><strong>Guide</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#basic-drawing">Basic Drawing</a></li>
+<li><a class="reference internal" href="#layers-and-animation">Layers and Animation</a></li>
+<li><a class="reference internal" href="#touch-handling">Touch Handling</a></li>
+<li><a class="reference internal" href="#integration-with-the-ui-module">Integration with the ui Module</a></li>
+</ul>
+<p><strong>Reference</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#drawing-functions">Drawing Functions</a></li>
+<li><a class="reference internal" href="#other-functions">Other Functions</a></li>
+<li><a class="reference internal" href="#basic-data-types">Basic Data Types</a></li>
+<li><a class="reference internal" href="#scene-objects">Scene Objects</a></li>
+<li><a class="reference internal" href="#layer-and-animation-objects">Layer and Animation Objects</a></li>
+<li><a class="reference internal" href="#animation-interpolation-functions">Animation Interpolation Functions</a></li>
+</ul>
+<div class="section" id="basic-drawing">
+<h2>Basic Drawing<a class="headerlink" href="#basic-drawing" title="Permalink to this headline">¶</a></h2>
+<p>The module supports both a classic render loop, and a layer system for implicit animations that you don&#8217;t have to control on a frame-by-frame basis.</p>
+<p>Both approaches require that you subclass <a class="reference internal" href="#scene.Scene" title="scene.Scene"><tt class="xref py py-class docutils literal"><span class="pre">Scene</span></tt></a> and override at least the <tt class="xref py py-meth docutils literal"><span class="pre">draw()</span></tt> method. After you call the <a class="reference internal" href="#scene.run" title="scene.run"><tt class="xref py py-func docutils literal"><span class="pre">run()</span></tt></a> function, this gets called once for every frame (by default approximately 60 times per second).</p>
+<p>Here is a basic example that draws a centered red rectangle:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">scene</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="k">class</span> <span class="nc">MyScene</span> <span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">background</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">fill</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">h</span>
+        <span class="n">rect</span><span class="p">(</span><span class="n">w</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="o">-</span> <span class="mi">100</span><span class="p">,</span> <span class="n">h</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="o">-</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">run</span><span class="p">(</span><span class="n">MyScene</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>In addition to the <tt class="xref py py-meth docutils literal"><span class="pre">draw()</span></tt> method, you can override <tt class="xref py py-meth docutils literal"><span class="pre">setup()</span></tt> for any kind of initialization you might want to perform before the animation starts. For handling touches (including multi-touch), you can override <tt class="xref py py-meth docutils literal"><span class="pre">touch_began()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">touch_moved()</span></tt>, and <tt class="xref py py-meth docutils literal"><span class="pre">touch_ended()</span></tt>.</p>
+<p>The module also provides basic access to the accelerometer/gyroscope data of the device with the <a class="reference internal" href="#scene.gravity" title="scene.gravity"><tt class="xref py py-func docutils literal"><span class="pre">gravity()</span></tt></a> function.</p>
+<p>Building on the previous example, let&#8217;s make the rectangle move when you tilt the device:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Motion control demo</span>
+<span class="kn">from</span> <span class="nn">scene</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="k">class</span> <span class="nc">MyScene</span> <span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">w</span> <span class="o">*</span> <span class="mf">0.5</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">h</span> <span class="o">*</span> <span class="mf">0.5</span>
+    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">background</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">fill</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="n">gravity</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">g</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="mi">10</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">g</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="mi">10</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">w</span> <span class="o">-</span> <span class="mi">100</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">h</span> <span class="o">-</span> <span class="mi">100</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">))</span>
+        <span class="n">rect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">run</span><span class="p">(</span><span class="n">MyScene</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>In addition to rectangles, you can draw ellipses (with the <a class="reference internal" href="#scene.ellipse" title="scene.ellipse"><tt class="xref py py-func docutils literal"><span class="pre">ellipse()</span></tt></a> function), bitmap images (with <a class="reference internal" href="#scene.image" title="scene.image"><tt class="xref py py-func docutils literal"><span class="pre">image()</span></tt></a>) and text (with <a class="reference internal" href="#scene.text" title="scene.text"><tt class="xref py py-func docutils literal"><span class="pre">text()</span></tt></a>) in this way.</p>
+</div>
+<div class="section" id="layers-and-animation">
+<h2>Layers and Animation<a class="headerlink" href="#layers-and-animation" title="Permalink to this headline">¶</a></h2>
+<p>For more complex animations, it is often tedious to calculate the positions of all elements for every frame, especially if the animations aren&#8217;t linear. To make these animations easier, the <a class="reference internal" href="#module-scene" title="scene: Provides 2D graphics and animation on iOS"><tt class="xref py py-mod docutils literal"><span class="pre">scene</span></tt></a> module provides the <a class="reference internal" href="#scene.Layer" title="scene.Layer"><tt class="xref py py-class docutils literal"><span class="pre">Layer</span></tt></a> class.</p>
+<p>A layer represents a rectangular area on the screen that can be filled with a color, contain an image and any number of sub-layers. Many attributes of a layer, such as its frame, its background color, scale and rotation, can be animated very easily.</p>
+<p>To draw your layers, you simply set their attributes (e.g. in the <tt class="xref py py-meth docutils literal"><span class="pre">setup()</span></tt> method of the <a class="reference internal" href="#scene.Scene" title="scene.Scene"><tt class="xref py py-class docutils literal"><span class="pre">Scene</span></tt></a>) and then call the root layer&#8217;s <tt class="xref py py-meth docutils literal"><span class="pre">update()</span></tt> and <tt class="xref py py-meth docutils literal"><span class="pre">draw()</span></tt> methods in the <tt class="xref py py-meth docutils literal"><span class="pre">draw()</span></tt> method of your <a class="reference internal" href="#scene.Scene" title="scene.Scene"><tt class="xref py py-class docutils literal"><span class="pre">Scene</span></tt></a>.</p>
+<p>Because you explicitly draw the root layer, you can also combine this approach with the primitive drawing methods. In some cases, this can improve the framerate, because layers are more complex to draw than simple shapes.</p>
+<p>Here&#8217;s a basic example that also shows a basic animation:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">scene</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="k">class</span> <span class="nc">MyScene</span> <span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layer</span> <span class="o">=</span> <span class="n">Layer</span><span class="p">(</span><span class="n">Rect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">w</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="o">-</span> <span class="mi">100</span><span class="p">,</span>
+                                <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">h</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="o">-</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">background</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">animate</span><span class="p">(</span><span class="s">&#39;alpha&#39;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+                           <span class="n">autoreverse</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">maxint</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">background</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dt</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">run</span><span class="p">(</span><span class="n">MyScene</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>You&#8217;ll see a pulsating red rectangle when you run the script. The first argument to the layer&#8217;s <tt class="xref py py-meth docutils literal"><span class="pre">animate()</span></tt> method is the attribute you want to change over time, in this case the alpha value (translucency). The second argument specifies the target value, in this case 0.0 (fully transparent). Additional named arguments control the duration and pacing of the animation, whether it should repeat, etc.</p>
+<p>One of the most interesting parameters (that is not used in this example) is <cite>curve</cite>, which specifies a function that should be used to map from time to animation progress in each frame. This basically determines the animation&#8217;s pacing. By default, this is <a class="reference internal" href="#scene.curve_sinodial" title="scene.curve_sinodial"><tt class="xref py py-func docutils literal"><span class="pre">curve_sinodial()</span></tt></a> which has a slight ease-in-ease-out effect. There are a lot of other functions built-in (all beginning with <cite>curve_</cite>), and you can also write your own of course. You&#8217;ll see an example of a different animation curve in the next section.</p>
+</div>
+<div class="section" id="touch-handling">
+<h2>Touch Handling<a class="headerlink" href="#touch-handling" title="Permalink to this headline">¶</a></h2>
+<p>To handle touches on the screen, you can override the <tt class="xref py py-meth docutils literal"><span class="pre">touch_began()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">touch_moved()</span></tt> and <tt class="xref py py-meth docutils literal"><span class="pre">touch_ended()</span></tt> methods. You don&#8217;t have to override all of them, if you&#8217;re only interested in one of the events.</p>
+<p>Let&#8217;s build on the example in the previous section and make our red rectangle move smoothly to the finger&#8217;s location when the screen is touched. We can do this with the following code (add the method to the <cite>MyScene</cite> class):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">touch_began</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+    <span class="n">new_frame</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="n">touch</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="mi">100</span><span class="p">,</span> <span class="n">touch</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">animate</span><span class="p">(</span><span class="s">&#39;frame&#39;</span><span class="p">,</span> <span class="n">new_frame</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">curve</span><span class="o">=</span><span class="n">curve_bounce_out</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You&#8217;ll see an interesting bouncing animation that is achieved with just 2 lines of code.</p>
+<p>The <cite>touch</cite> parameter is of type <a class="reference internal" href="#scene.Touch" title="scene.Touch"><tt class="xref py py-class docutils literal"><span class="pre">Touch</span></tt></a>. Its most immediately useful attribute is <cite>location</cite>, which is used here to determine the point the rectangle should move to. Similarly, it has a <cite>prev_location</cite> attribute, which is most useful in the <tt class="xref py py-meth docutils literal"><span class="pre">touch_moved()</span></tt> method.</p>
+<p>If you want to keep track of multiple touches, you might want to use the <cite>touch_id</cite> attribute (a unique string) to identify them.</p>
+<p>If you&#8217;re simply interested in how many fingers touch the screen (and where) at a given moment though, you don&#8217;t have to override any of the <cite>touch_...</cite> methods. You can simply access the scene&#8217;s <cite>touches</cite> attribute, which is a dictionary that contains all touches that are currently active. You can use these in the <tt class="xref py py-meth docutils literal"><span class="pre">draw()</span></tt> method, for example.</p>
+<p>Here is a simple scene that shows a colored circle for every finger on the screen:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">scene</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="k">class</span> <span class="nc">MyScene</span> <span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">draw</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">background</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">fill</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">touch</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">touches</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="n">location</span> <span class="o">=</span> <span class="n">touch</span><span class="o">.</span><span class="n">location</span>
+            <span class="n">ellipse</span><span class="p">(</span><span class="n">location</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="mi">50</span><span class="p">,</span> <span class="n">location</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">run</span><span class="p">(</span><span class="n">MyScene</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="integration-with-the-ui-module">
+<h2>Integration with the <a class="reference internal" href="ui.html#module-ui" title="ui: Native GUI for iOS"><tt class="xref py py-mod docutils literal"><span class="pre">ui</span></tt></a> Module<a class="headerlink" href="#integration-with-the-ui-module" title="Permalink to this headline">¶</a></h2>
+<p>If you want to combine the render loop-based drawing functionality of the <a class="reference internal" href="#module-scene" title="scene: Provides 2D graphics and animation on iOS"><tt class="xref py py-mod docutils literal"><span class="pre">scene</span></tt></a> modules with standard user interface elements, like text fields, you can do so with the <a class="reference internal" href="#scene.SceneView" title="scene.SceneView"><tt class="xref py py-class docutils literal"><span class="pre">SceneView</span></tt></a> class, which inherits from <a class="reference internal" href="ui.html#ui.View" title="ui.View"><tt class="xref py py-class docutils literal"><span class="pre">ui.View</span></tt></a>. Using a <a class="reference internal" href="#scene.SceneView" title="scene.SceneView"><tt class="xref py py-class docutils literal"><span class="pre">SceneView</span></tt></a> is an alternative to presenting a scene with the <a class="reference internal" href="#scene.run" title="scene.run"><tt class="xref py py-func docutils literal"><span class="pre">run()</span></tt></a> function.</p>
+<p>Please see the documentation of the <a class="reference internal" href="ui.html#module-ui" title="ui: Native GUI for iOS"><tt class="xref py py-mod docutils literal"><span class="pre">ui</span></tt></a> module for more information about user interface elements.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Even though it is technically possible to have multiple SceneViews on screen, this is <strong>not</strong> supported and will usually result in undesirable behavior (e.g. missing images, incorrect animation timing, etc.).</p>
+<p>In a couple of ways, a scene will behave differently when being presented in a <a class="reference internal" href="#scene.SceneView" title="scene.SceneView"><tt class="xref py py-class docutils literal"><span class="pre">SceneView</span></tt></a>, compared to using the <a class="reference internal" href="#scene.run" title="scene.run"><tt class="xref py py-func docutils literal"><span class="pre">run()</span></tt></a> function:</p>
+<ul class="last simple">
+<li>The <tt class="docutils literal"><span class="pre">should_rotate</span></tt> method will not be called (rotation support is determined by the <a class="reference internal" href="ui.html#ui.View.present" title="ui.View.present"><tt class="xref py py-meth docutils literal"><span class="pre">ui.View.present()</span></tt></a> method, not the scene).</li>
+<li>The <a class="reference internal" href="#scene.Scene.pause" title="scene.Scene.pause"><tt class="xref py py-meth docutils literal"><span class="pre">Scene.pause()</span></tt></a>, <a class="reference internal" href="#scene.Scene.resume" title="scene.Scene.resume"><tt class="xref py py-meth docutils literal"><span class="pre">Scene.resume()</span></tt></a> and <a class="reference internal" href="#scene.Scene.stop" title="scene.Scene.stop"><tt class="xref py py-meth docutils literal"><span class="pre">Scene.stop()</span></tt></a> methods will not be called automatically.</li>
+<li>The <a class="reference internal" href="#scene.gravity" title="scene.gravity"><tt class="xref py py-func docutils literal"><span class="pre">gravity()</span></tt></a> function doesn&#8217;t work in scenes that are presented with a <a class="reference internal" href="#scene.SceneView" title="scene.SceneView"><tt class="xref py py-class docutils literal"><span class="pre">SceneView</span></tt></a> (you can use the <a class="reference internal" href="motion.html#module-motion" title="motion: Provides motion sensor data on iOS"><tt class="xref py py-mod docutils literal"><span class="pre">motion</span></tt></a> module instead).</li>
+</ul>
+</div>
+<dl class="class">
+<dt id="scene.SceneView">
+<em class="property">class </em><tt class="descclassname">scene.</tt><tt class="descname">SceneView</tt><a class="headerlink" href="#scene.SceneView" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="scene.SceneView.scene">
+<tt class="descclassname">SceneView.</tt><tt class="descname">scene</tt><a class="headerlink" href="#scene.SceneView.scene" title="Permalink to this definition">¶</a></dt>
+<dd><p>The scene that is currently presented in the view. Without setting this attribute, the view will just be empty.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.SceneView.paused">
+<tt class="descclassname">SceneView.</tt><tt class="descname">paused</tt><a class="headerlink" href="#scene.SceneView.paused" title="Permalink to this definition">¶</a></dt>
+<dd><p>A boolean value to indicate whether the scene is currently paused</p>
+</dd></dl>
+
+</div>
+<div class="section" id="drawing-functions">
+<h2>Drawing Functions<a class="headerlink" href="#drawing-functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="scene.background">
+<tt class="descclassname">scene.</tt><tt class="descname">background</tt><big>(</big><em>r=0</em>, <em>g=0</em>, <em>b=0</em><big>)</big><a class="headerlink" href="#scene.background" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill the background of the current scene with a solid color.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.blend_mode">
+<tt class="descclassname">scene.</tt><tt class="descname">blend_mode</tt><big>(</big><em>mode</em><big>)</big><a class="headerlink" href="#scene.blend_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the blend mode for following drawing operations. <cite>mode</cite> can be <cite>BLEND_NORMAL</cite>,
+<cite>BLEND_ADD</cite> or <cite>BLEND_MULTIPLY</cite>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.ellipse">
+<tt class="descclassname">scene.</tt><tt class="descname">ellipse</tt><big>(</big><em>x=0</em>, <em>y=0</em>, <em>w=0</em>, <em>h=0</em><big>)</big><a class="headerlink" href="#scene.ellipse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw an ellipse in a rectangle with the current settings for
+fill color, stroke color and stroke width.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.fill">
+<tt class="descclassname">scene.</tt><tt class="descname">fill</tt><big>(</big><em>r=0</em>, <em>g=0</em>, <em>b=0</em>, <em>a=1</em><big>)</big><a class="headerlink" href="#scene.fill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the current stroke color.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.get_image_path">
+<tt class="descclassname">scene.</tt><tt class="descname">get_image_path</tt><big>(</big><em>image_name</em><big>)</big><a class="headerlink" href="#scene.get_image_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the absolute path of a built-in image.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.get_screen_scale">
+<tt class="descclassname">scene.</tt><tt class="descname">get_screen_scale</tt><big>(</big><big>)</big><a class="headerlink" href="#scene.get_screen_scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the screen&#8217;s scale factor.
+This will be 2.0 for retina screens and 1.0 otherwise.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.image">
+<tt class="descclassname">scene.</tt><tt class="descname">image</tt><big>(</big><em>name</em>, <em>x=0</em>, <em>y=0</em>, <em>w=0</em>, <em>h=0</em><span class="optional">[</span>, <em>from_x</em>, <em>from_y</em>, <em>from_w</em>, <em>from_h</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#scene.image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a named image into a rectangle.</p>
+<p>The <cite>name</cite> parameter can be a built-in image name or an image identifier that is returned from <a class="reference internal" href="#scene.render_text" title="scene.render_text"><tt class="xref py py-func docutils literal"><span class="pre">render_text()</span></tt></a> or <a class="reference internal" href="#scene.load_pil_image" title="scene.load_pil_image"><tt class="xref py py-func docutils literal"><span class="pre">load_pil_image()</span></tt></a>.</p>
+<p>If the w(idth) and h(eight) parameters are omitted, the image is drawn at the full size with the origin at (x, y). Using the optional <cite>from_x</cite>, <cite>from_y</cite>, <cite>from_w</cite>, and <cite>from_h</cite> parameters, you can draw a rectangular portion of the image instead of the whole image.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.image_quad">
+<tt class="descclassname">scene.</tt><tt class="descname">image_quad</tt><big>(</big><em>name</em>, <em>x1</em>, <em>y1</em>, <em>x2</em>, <em>y2</em>, <em>x3</em>, <em>y3</em>, <em>x4</em>, <em>y4</em><span class="optional">[</span>, <em>from_x1</em>, <em>from_y1</em>, <em>from_x2</em>, <em>from_y2</em>, <em>from_x3</em>, <em>from_y3</em>, <em>from_x4</em>, <em>from_y4</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#scene.image_quad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a named image into a quad.</p>
+<p>The <cite>name</cite> parameter can be a built-in image name or an image identifier that is returned from <a class="reference internal" href="#scene.render_text" title="scene.render_text"><tt class="xref py py-func docutils literal"><span class="pre">render_text()</span></tt></a> or <a class="reference internal" href="#scene.load_pil_image" title="scene.load_pil_image"><tt class="xref py py-func docutils literal"><span class="pre">load_pil_image()</span></tt></a>.</p>
+<p>The corners of the quad that the image is drawn into is given by the first set of xn/yn values. The <cite>from_xn</cite>/<cite>from_yn</cite> values can optionally be used to draw a quadrangular portion of the image instead of the whole image.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.line">
+<tt class="descclassname">scene.</tt><tt class="descname">line</tt><big>(</big><em>x1</em>, <em>y1</em>, <em>x2</em>, <em>y2</em><big>)</big><a class="headerlink" href="#scene.line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a straight line between two points with the current <a class="reference internal" href="#scene.stroke" title="scene.stroke"><tt class="xref py py-func docutils literal"><span class="pre">stroke()</span></tt></a> color and <a class="reference internal" href="#scene.stroke_weight" title="scene.stroke_weight"><tt class="xref py py-func docutils literal"><span class="pre">stroke_weight()</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.load_image">
+<tt class="descclassname">scene.</tt><tt class="descname">load_image</tt><big>(</big><em>image_name</em><big>)</big><a class="headerlink" href="#scene.load_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads the named image. This can be used to improve performance, e.g. by loading all
+images that are about to be used in the <tt class="xref py py-meth docutils literal"><span class="pre">setup()</span></tt> method of your <a class="reference internal" href="#scene.Scene" title="scene.Scene"><tt class="xref py py-class docutils literal"><span class="pre">Scene</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.load_image_file">
+<tt class="descclassname">scene.</tt><tt class="descname">load_image_file</tt><big>(</big><em>image_path</em><big>)</big><a class="headerlink" href="#scene.load_image_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the image at the given file path and return a name that can be used with the <a class="reference internal" href="#scene.image" title="scene.image"><tt class="xref py py-func docutils literal"><span class="pre">image()</span></tt></a> drawing function.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.load_pil_image">
+<tt class="descclassname">scene.</tt><tt class="descname">load_pil_image</tt><big>(</big><em>image</em><big>)</big><a class="headerlink" href="#scene.load_pil_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads a <a class="reference internal" href="PIL.html#module-PIL" title="PIL"><tt class="xref py py-mod docutils literal"><span class="pre">PIL</span></tt></a> <a class="reference internal" href="Image.html#module-Image" title="Image"><tt class="xref py py-class docutils literal"><span class="pre">Image</span></tt></a> into a scene and returns a name that can be
+used with the <a class="reference internal" href="#scene.image" title="scene.image"><tt class="xref py py-func docutils literal"><span class="pre">image()</span></tt></a> drawing function.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Only images using the &#8216;RGBA&#8217; mode are supported at the moment.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.unload_image">
+<tt class="descclassname">scene.</tt><tt class="descname">unload_image</tt><big>(</big><em>image_name</em><big>)</big><a class="headerlink" href="#scene.unload_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove an image from the scene cache. This is meant to be used with image names returned from <a class="reference internal" href="#scene.load_pil_image" title="scene.load_pil_image"><tt class="xref py py-func docutils literal"><span class="pre">load_pil_image()</span></tt></a> that are no longer needed.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.no_fill">
+<tt class="descclassname">scene.</tt><tt class="descname">no_fill</tt><big>(</big><big>)</big><a class="headerlink" href="#scene.no_fill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disables filling rectangles and ellipses. Combined with <a class="reference internal" href="#scene.stroke_weight" title="scene.stroke_weight"><tt class="xref py py-func docutils literal"><span class="pre">stroke_weight()</span></tt></a>
+and <a class="reference internal" href="#scene.stroke" title="scene.stroke"><tt class="xref py py-func docutils literal"><span class="pre">stroke()</span></tt></a> (to set the color), this allows you to draw shape
+outlines. Alternatively, you can set a transparent fill color with
+<tt class="docutils literal"><span class="pre">fill(0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0)</span></tt>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.no_stroke">
+<tt class="descclassname">scene.</tt><tt class="descname">no_stroke</tt><big>(</big><big>)</big><a class="headerlink" href="#scene.no_stroke" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disables the drawing of borders around rectangles and ellipses.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.no_tint">
+<tt class="descclassname">scene.</tt><tt class="descname">no_tint</tt><big>(</big><big>)</big><a class="headerlink" href="#scene.no_tint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disables tinting images. Equivalent to <cite>tint(1, 1, 1, 1)</cite>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.pop_matrix">
+<tt class="descclassname">scene.</tt><tt class="descname">pop_matrix</tt><big>(</big><big>)</big><a class="headerlink" href="#scene.pop_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restores the transformation matrix before the last call of <a class="reference internal" href="#scene.push_matrix" title="scene.push_matrix"><tt class="xref py py-func docutils literal"><span class="pre">push_matrix()</span></tt></a>.
+This is usually used in combination with <a class="reference internal" href="#scene.rotate" title="scene.rotate"><tt class="xref py py-func docutils literal"><span class="pre">rotate()</span></tt></a>, <a class="reference internal" href="#scene.translate" title="scene.translate"><tt class="xref py py-func docutils literal"><span class="pre">translate()</span></tt></a> and <a class="reference internal" href="#scene.scale" title="scene.scale"><tt class="xref py py-func docutils literal"><span class="pre">scale()</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.push_matrix">
+<tt class="descclassname">scene.</tt><tt class="descname">push_matrix</tt><big>(</big><big>)</big><a class="headerlink" href="#scene.push_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pushes the current transformation matrix on the stack.
+This is usually used in combination with <a class="reference internal" href="#scene.rotate" title="scene.rotate"><tt class="xref py py-func docutils literal"><span class="pre">rotate()</span></tt></a>, <a class="reference internal" href="#scene.translate" title="scene.translate"><tt class="xref py py-func docutils literal"><span class="pre">translate()</span></tt></a> and <a class="reference internal" href="#scene.scale" title="scene.scale"><tt class="xref py py-func docutils literal"><span class="pre">scale()</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.rect">
+<tt class="descclassname">scene.</tt><tt class="descname">rect</tt><big>(</big><em>x=0</em>, <em>y=0</em>, <em>w=0</em>, <em>h=0</em><big>)</big><a class="headerlink" href="#scene.rect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a rectangle with the current settings for
+fill color, stroke color and stroke width.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.render_text">
+<tt class="descclassname">scene.</tt><tt class="descname">render_text</tt><big>(</big><em>txt</em>, <em>font_name='Helvetica'</em>, <em>font_size=16.0</em><big>)</big><a class="headerlink" href="#scene.render_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render a string of text as an image name (that can be used with the <a class="reference internal" href="#scene.image" title="scene.image"><tt class="xref py py-func docutils literal"><span class="pre">image()</span></tt></a> function).
+Returns a tuple of the name and a <a class="reference internal" href="#scene.Size" title="scene.Size"><tt class="xref py py-class docutils literal"><span class="pre">Size</span></tt></a> object.</p>
+<p>This can be used to determine the size of a string before drawing it, or to repeatedly
+draw the same text slightly more efficiently.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.rotate">
+<tt class="descclassname">scene.</tt><tt class="descname">rotate</tt><big>(</big><em>deg</em><big>)</big><a class="headerlink" href="#scene.rotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotate the current transformation matrix. The angle is in degrees.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.scale">
+<tt class="descclassname">scene.</tt><tt class="descname">scale</tt><big>(</big><em>x</em>, <em>y</em><big>)</big><a class="headerlink" href="#scene.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scale the current transformation matrix</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.stroke">
+<tt class="descclassname">scene.</tt><tt class="descname">stroke</tt><big>(</big><em>r</em>, <em>g</em>, <em>b</em><span class="optional">[</span>, <em>a</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#scene.stroke" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the current stroke color.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.stroke_weight">
+<tt class="descclassname">scene.</tt><tt class="descname">stroke_weight</tt><big>(</big><em>line_width</em><big>)</big><a class="headerlink" href="#scene.stroke_weight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the current stroke weight (line width) for the <a class="reference internal" href="#scene.rect" title="scene.rect"><tt class="xref py py-func docutils literal"><span class="pre">rect()</span></tt></a> and <a class="reference internal" href="#scene.ellipse" title="scene.ellipse"><tt class="xref py py-func docutils literal"><span class="pre">ellipse()</span></tt></a> functions.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.text">
+<tt class="descclassname">scene.</tt><tt class="descname">text</tt><big>(</big><em>txt</em>, <em>font_name='Helvetica'</em>, <em>font_size=16.0</em>, <em>x=0.0</em>, <em>y=0.0</em>, <em>alignment=5</em><big>)</big><a class="headerlink" href="#scene.text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a string at a given point with a given font.
+The alignment parameter has 9 possible values that correspond to the positions
+on a numeric keypad (with 1 in the bottom lefthand corner). The default (5) centers
+the text on the point.</p>
+<p>The color of the text can be set by calling the <a class="reference internal" href="#scene.tint" title="scene.tint"><tt class="xref py py-func docutils literal"><span class="pre">tint()</span></tt></a> function.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.tint">
+<tt class="descclassname">scene.</tt><tt class="descname">tint</tt><big>(</big><em>r=1</em>, <em>g=1</em>, <em>b=1</em>, <em>a=1</em><big>)</big><a class="headerlink" href="#scene.tint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the current tint color that is used for drawing images and text.</p>
+<p>A white tint color is the default and causes images to be drawn in their
+natural colors. Setting a white color (<cite>r</cite> = <cite>g</cite> = <cite>b</cite> = 1.0) with an alpha
+value &lt; 1.0 makes the image translucent.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.translate">
+<tt class="descclassname">scene.</tt><tt class="descname">translate</tt><big>(</big><em>x</em>, <em>y</em><big>)</big><a class="headerlink" href="#scene.translate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Translates the current transformation matrix.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="other-functions">
+<h2>Other Functions<a class="headerlink" href="#other-functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="scene.gravity">
+<tt class="descclassname">scene.</tt><tt class="descname">gravity</tt><big>(</big><big>)</big><a class="headerlink" href="#scene.gravity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the current gravity as a <a class="reference internal" href="#scene.Vector3" title="scene.Vector3"><tt class="xref py py-class docutils literal"><span class="pre">Vector3</span></tt></a> object that can be used to
+determine the device&#8217;s orientation and movement.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.run">
+<tt class="descclassname">scene.</tt><tt class="descname">run</tt><big>(</big><em>scene</em>, <em>orientation=DEFAULT_ORIENTATION</em>, <em>frame_interval=1</em>, <em>anti_alias=False</em><big>)</big><a class="headerlink" href="#scene.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs the given <a class="reference internal" href="#scene.Scene" title="scene.Scene"><tt class="xref py py-class docutils literal"><span class="pre">Scene</span></tt></a> object.
+By default, the scene runs in the current device orientation, set the parameter
+to <cite>PORTRAIT</cite> or <cite>LANDSCAPE</cite> to force a specific orientation.</p>
+<p>By default, the scene&#8217;s <tt class="xref py py-meth docutils literal"><span class="pre">draw()</span></tt> method is called 60 times per second.
+Set the <cite>frame_interval</cite> parameter to 2 for 30fps, 3 for 20, etc.</p>
+<p>If your scene is expensive to draw, it might be better to achieve a lower
+framerate consistently than to have the framerate vary a lot.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="basic-data-types">
+<h2>Basic Data Types<a class="headerlink" href="#basic-data-types" title="Permalink to this headline">¶</a></h2>
+<p>Throughout the <a class="reference internal" href="#module-scene" title="scene: Provides 2D graphics and animation on iOS"><tt class="xref py py-mod docutils literal"><span class="pre">scene</span></tt></a> module, some simple classes are used to represent geometry and colors. Most drawing functions can either use these geometry classes (<a class="reference internal" href="#scene.Rect" title="scene.Rect"><tt class="xref py py-class docutils literal"><span class="pre">Rect</span></tt></a>, <a class="reference internal" href="#scene.Point" title="scene.Point"><tt class="xref py py-class docutils literal"><span class="pre">Point</span></tt></a>, <a class="reference internal" href="#scene.Size" title="scene.Size"><tt class="xref py py-class docutils literal"><span class="pre">Size</span></tt></a>) or simple coordinate values.</p>
+<p>All coordinates are floats. On a retina screen, one point is actually two pixels, on a screen with standard resolution, points map 1:1 to pixels. This means that you can use the same coordinates regardless of the screen resolution of your device. The coordinate system&#8217;s origin is in the bottom-left corner.</p>
+<p>Colors are represented as RGB(A) with each value ranging from 0.0 to 1.0. The alpha value defaults to 1.0 (fully opaque).</p>
+<p>The <a class="reference internal" href="#scene.Vector3" title="scene.Vector3"><tt class="xref py py-class docutils literal"><span class="pre">Vector3</span></tt></a> class is only used to represent an accelerometer vector (returned from the <a class="reference internal" href="#scene.gravity" title="scene.gravity"><tt class="xref py py-func docutils literal"><span class="pre">gravity()</span></tt></a> function).</p>
+<dl class="class">
+<dt id="scene.Point">
+<em class="property">class </em><tt class="descclassname">scene.</tt><tt class="descname">Point</tt><big>(</big><em>x=0</em>, <em>y=0</em><big>)</big><a class="headerlink" href="#scene.Point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a <a class="reference internal" href="#scene.Point" title="scene.Point"><tt class="xref py py-class docutils literal"><span class="pre">Point</span></tt></a> object with <cite>x</cite> and <cite>y</cite> as its coordinates.
+Points support the <cite>in</cite> operator to test whether they lie
+within a given <a class="reference internal" href="#scene.Rect" title="scene.Rect"><tt class="xref py py-class docutils literal"><span class="pre">Rect</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Point.as_tuple">
+<tt class="descclassname">Point.</tt><tt class="descname">as_tuple</tt><big>(</big><big>)</big><a class="headerlink" href="#scene.Point.as_tuple" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the point as a tuple of (x, y).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Point.distance">
+<tt class="descclassname">Point.</tt><tt class="descname">distance</tt><big>(</big><em>other_point</em><big>)</big><a class="headerlink" href="#scene.Point.distance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the cartesian distance to a different <a class="reference internal" href="#scene.Point" title="scene.Point"><tt class="xref py py-class docutils literal"><span class="pre">Point</span></tt></a> object.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Point.x">
+<tt class="descclassname">Point.</tt><tt class="descname">x</tt><a class="headerlink" href="#scene.Point.x" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="#scene.Point" title="scene.Point"><tt class="xref py py-class docutils literal"><span class="pre">Point</span></tt></a>&#8216;s <cite>x</cite> coordinate.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Point.y">
+<tt class="descclassname">Point.</tt><tt class="descname">y</tt><a class="headerlink" href="#scene.Point.y" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="#scene.Point" title="scene.Point"><tt class="xref py py-class docutils literal"><span class="pre">Point</span></tt></a>&#8216;s <cite>y</cite> coordinate.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="scene.Rect">
+<em class="property">class </em><tt class="descclassname">scene.</tt><tt class="descname">Rect</tt><big>(</big><em>x=0</em>, <em>y=0</em>, <em>w=0</em>, <em>h=0</em><big>)</big><a class="headerlink" href="#scene.Rect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a <a class="reference internal" href="#scene.Rect" title="scene.Rect"><tt class="xref py py-class docutils literal"><span class="pre">Rect</span></tt></a> object with the origin <cite>x</cite>, <cite>y</cite> and the size <cite>w</cite> x <cite>h</cite>.
+To test whether a rectangle is within another rectangle, the <cite>in</cite> operator can be used.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Rect.x">
+<tt class="descclassname">Rect.</tt><tt class="descname">x</tt><a class="headerlink" href="#scene.Rect.x" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>x</cite> coordinate of the bottom-left corner.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Rect.y">
+<tt class="descclassname">Rect.</tt><tt class="descname">y</tt><a class="headerlink" href="#scene.Rect.y" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>y</cite> coordinate of the bottom-left corner.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Rect.w">
+<tt class="descclassname">Rect.</tt><tt class="descname">w</tt><a class="headerlink" href="#scene.Rect.w" title="Permalink to this definition">¶</a></dt>
+<dd><p>The width of the rectangle.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Rect.h">
+<tt class="descclassname">Rect.</tt><tt class="descname">h</tt><a class="headerlink" href="#scene.Rect.h" title="Permalink to this definition">¶</a></dt>
+<dd><p>The height of the rectangle</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Rect.as_tuple">
+<tt class="descclassname">Rect.</tt><tt class="descname">as_tuple</tt><big>(</big><big>)</big><a class="headerlink" href="#scene.Rect.as_tuple" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the rectangle as a tuple of (x, y, w, h).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Rect.left">
+<tt class="descclassname">Rect.</tt><tt class="descname">left</tt><big>(</big><big>)</big><a class="headerlink" href="#scene.Rect.left" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <cite>x</cite> coordinate of the left edge. This is not necessarily the same as <cite>x</cite>, because a
+rectangle might have a negative width.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Rect.right">
+<tt class="descclassname">Rect.</tt><tt class="descname">right</tt><big>(</big><big>)</big><a class="headerlink" href="#scene.Rect.right" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <cite>x</cite> coordinate of the right edge.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Rect.top">
+<tt class="descclassname">Rect.</tt><tt class="descname">top</tt><big>(</big><big>)</big><a class="headerlink" href="#scene.Rect.top" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <cite>y</cite> coordinate of the top edge.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Rect.bottom">
+<tt class="descclassname">Rect.</tt><tt class="descname">bottom</tt><big>(</big><big>)</big><a class="headerlink" href="#scene.Rect.bottom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <cite>y</cite> coordinate of the bottom edge. This is not necessarily the same as <cite>y</cite>, because a
+rectangle might have a negative height.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Rect.size">
+<tt class="descclassname">Rect.</tt><tt class="descname">size</tt><big>(</big><big>)</big><a class="headerlink" href="#scene.Rect.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a <a class="reference internal" href="#scene.Size" title="scene.Size"><tt class="xref py py-class docutils literal"><span class="pre">Size</span></tt></a> object with the rectangle&#8217;s width and height.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Rect.origin">
+<tt class="descclassname">Rect.</tt><tt class="descname">origin</tt><big>(</big><big>)</big><a class="headerlink" href="#scene.Rect.origin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a <a class="reference internal" href="#scene.Point" title="scene.Point"><tt class="xref py py-class docutils literal"><span class="pre">Point</span></tt></a> object with the rectangle&#8217;s origin (bottom-left corner).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Rect.center">
+<tt class="descclassname">Rect.</tt><tt class="descname">center</tt><big>(</big><em>point_or_x=None</em>, <em>y=0</em><big>)</big><a class="headerlink" href="#scene.Rect.center" title="Permalink to this definition">¶</a></dt>
+<dd><p>If called with no parameter, return the center of the rectangle.</p>
+<p>If called with a <a class="reference internal" href="#scene.Point" title="scene.Point"><tt class="xref py py-class docutils literal"><span class="pre">Point</span></tt></a> or <cite>x</cite> and <cite>y</cite> coordinates, adjust the rectangle, so that
+it&#8217;s centered on the given point with the same size as before.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Rect.intersects">
+<tt class="descclassname">Rect.</tt><tt class="descname">intersects</tt><big>(</big><em>other_rect</em><big>)</big><a class="headerlink" href="#scene.Rect.intersects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether the rectangle intersects another rectangle.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="scene.Size">
+<em class="property">class </em><tt class="descclassname">scene.</tt><tt class="descname">Size</tt><big>(</big><em>w=0</em>, <em>h=0</em><big>)</big><a class="headerlink" href="#scene.Size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a <a class="reference internal" href="#scene.Size" title="scene.Size"><tt class="xref py py-class docutils literal"><span class="pre">Size</span></tt></a> object with width <cite>w</cite> and height <cite>h</cite>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Size.w">
+<tt class="descclassname">Size.</tt><tt class="descname">w</tt><a class="headerlink" href="#scene.Size.w" title="Permalink to this definition">¶</a></dt>
+<dd><p>The size&#8217;s width.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Size.h">
+<tt class="descclassname">Size.</tt><tt class="descname">h</tt><a class="headerlink" href="#scene.Size.h" title="Permalink to this definition">¶</a></dt>
+<dd><p>The size&#8217;s height.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Size.as_tuple">
+<tt class="descclassname">Size.</tt><tt class="descname">as_tuple</tt><big>(</big><big>)</big><a class="headerlink" href="#scene.Size.as_tuple" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the size as a tuple of (w, h).</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="scene.Vector3">
+<em class="property">class </em><tt class="descclassname">scene.</tt><tt class="descname">Vector3</tt><big>(</big><em>x=0</em>, <em>y=0</em>, <em>z=0</em><big>)</big><a class="headerlink" href="#scene.Vector3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a <a class="reference internal" href="#scene.Vector3" title="scene.Vector3"><tt class="xref py py-class docutils literal"><span class="pre">Vector3</span></tt></a> object with <cite>x</cite>, <cite>y</cite> and <cite>z</cite> coordinates.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Vector3.x">
+<tt class="descclassname">Vector3.</tt><tt class="descname">x</tt><a class="headerlink" href="#scene.Vector3.x" title="Permalink to this definition">¶</a></dt>
+<dd><p>The vector&#8217;s <cite>x</cite> value. This will usually be between 0.0 and 1.0.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Vector3.y">
+<tt class="descclassname">Vector3.</tt><tt class="descname">y</tt><a class="headerlink" href="#scene.Vector3.y" title="Permalink to this definition">¶</a></dt>
+<dd><p>The vector&#8217;s <cite>y</cite> value. This will usually be between 0.0 and 1.0.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Vector3.z">
+<tt class="descclassname">Vector3.</tt><tt class="descname">z</tt><a class="headerlink" href="#scene.Vector3.z" title="Permalink to this definition">¶</a></dt>
+<dd><p>The vector&#8217;s <cite>z</cite> value. This will usually be between 0.0 and 1.0.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="scene.Color">
+<em class="property">class </em><tt class="descclassname">scene.</tt><tt class="descname">Color</tt><big>(</big><em>r=1</em>, <em>g=1</em>, <em>b=1</em>, <em>a=1</em><big>)</big><a class="headerlink" href="#scene.Color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a new color with given RGB(A) values in the range 0.0 - 1.0.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Color.r">
+<tt class="descclassname">Color.</tt><tt class="descname">r</tt><a class="headerlink" href="#scene.Color.r" title="Permalink to this definition">¶</a></dt>
+<dd><p>The color&#8217;s red component in the range 0.0 - 1.0.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Color.g">
+<tt class="descclassname">Color.</tt><tt class="descname">g</tt><a class="headerlink" href="#scene.Color.g" title="Permalink to this definition">¶</a></dt>
+<dd><p>The color&#8217;s green component in the range 0.0 - 1.0.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Color.b">
+<tt class="descclassname">Color.</tt><tt class="descname">b</tt><a class="headerlink" href="#scene.Color.b" title="Permalink to this definition">¶</a></dt>
+<dd><p>The color&#8217;s blue component in the range 0.0 - 1.0.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Color.as_tuple">
+<tt class="descclassname">Color.</tt><tt class="descname">as_tuple</tt><big>(</big><big>)</big><a class="headerlink" href="#scene.Color.as_tuple" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the color as a tuple of (r, g, b, a)</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="scene.Touch">
+<em class="property">class </em><tt class="descclassname">scene.</tt><tt class="descname">Touch</tt><big>(</big><em>x</em>, <em>y</em>, <em>prev_x</em>, <em>prev_y</em>, <em>touch_id</em><big>)</big><a class="headerlink" href="#scene.Touch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a new <a class="reference internal" href="#scene.Touch" title="scene.Touch"><tt class="xref py py-class docutils literal"><span class="pre">Touch</span></tt></a> object. Creating <a class="reference internal" href="#scene.Touch" title="scene.Touch"><tt class="xref py py-class docutils literal"><span class="pre">Touch</span></tt></a> objects yourself is not really useful,
+but they are used as parameters of the <tt class="xref py py-func docutils literal"><span class="pre">touch_began()</span></tt>, <tt class="xref py py-func docutils literal"><span class="pre">touch_moved()</span></tt> and
+<tt class="xref py py-func docutils literal"><span class="pre">touch_ended()</span></tt> functions. <a class="reference internal" href="#scene.Scene" title="scene.Scene"><tt class="xref py py-class docutils literal"><span class="pre">Scene</span></tt></a> objects also have a <cite>touches</cite> attribute (a dictionary
+that maps <cite>touch_id</cite> to <a class="reference internal" href="#scene.Touch" title="scene.Touch"><tt class="xref py py-class docutils literal"><span class="pre">Touch</span></tt></a> objects).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Touch.location">
+<tt class="descclassname">Touch.</tt><tt class="descname">location</tt><a class="headerlink" href="#scene.Touch.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>The current location of the touch as a <a class="reference internal" href="#scene.Point" title="scene.Point"><tt class="xref py py-class docutils literal"><span class="pre">Point</span></tt></a> object.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Touch.prev_location">
+<tt class="descclassname">Touch.</tt><tt class="descname">prev_location</tt><a class="headerlink" href="#scene.Touch.prev_location" title="Permalink to this definition">¶</a></dt>
+<dd><p>The previous location of the touch (before it moved) as a <a class="reference internal" href="#scene.Point" title="scene.Point"><tt class="xref py py-class docutils literal"><span class="pre">Point</span></tt></a> object.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Touch.layer">
+<tt class="descclassname">Touch.</tt><tt class="descname">layer</tt><a class="headerlink" href="#scene.Touch.layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="#scene.Layer" title="scene.Layer"><tt class="xref py py-class docutils literal"><span class="pre">Layer</span></tt></a> object where the touch began. Layers only participate in touch
+handling if they descend from a <a class="reference internal" href="#scene.Scene" title="scene.Scene"><tt class="xref py py-class docutils literal"><span class="pre">Scene</span></tt></a>&#8216;s <cite>root_layer</cite>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="scene-objects">
+<h2>Scene Objects<a class="headerlink" href="#scene-objects" title="Permalink to this headline">¶</a></h2>
+<p>A <a class="reference internal" href="#scene.Scene" title="scene.Scene"><tt class="xref py py-class docutils literal"><span class="pre">Scene</span></tt></a> is the top-level object for presenting graphics. It is designed for subclassing
+and you will usually override at least the <tt class="xref py py-meth docutils literal"><span class="pre">draw()</span></tt> method. When a scene is run, this method
+gets called automatically for every frame (by default 60 times per second).</p>
+<p>To present a scene, you to call the module-level <a class="reference internal" href="#scene.run" title="scene.run"><tt class="xref py py-func docutils literal"><span class="pre">run()</span></tt></a> function with an initialized <a class="reference internal" href="#scene.Scene" title="scene.Scene"><tt class="xref py py-class docutils literal"><span class="pre">Scene</span></tt></a>
+(or rather, your subclass).</p>
+<p>Other methods that you may want to override are <tt class="xref py py-meth docutils literal"><span class="pre">setup()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">touch_began()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">touch_moved()</span></tt>, and <tt class="xref py py-meth docutils literal"><span class="pre">touch_ended()</span></tt>. The default implementations of these methods do nothing, so there is no need
+to call super.</p>
+<dl class="class">
+<dt id="scene.Scene">
+<em class="property">class </em><tt class="descclassname">scene.</tt><tt class="descname">Scene</tt><big>(</big><big>)</big><a class="headerlink" href="#scene.Scene" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a new <a class="reference internal" href="#scene.Scene" title="scene.Scene"><tt class="xref py py-class docutils literal"><span class="pre">Scene</span></tt></a> object. This class is designed for subclassing, so you will
+typically not create an instance of the base class.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.bounds">
+<tt class="descclassname">scene.</tt><tt class="descname">bounds</tt><a class="headerlink" href="#scene.bounds" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <a class="reference internal" href="#scene.Rect" title="scene.Rect"><tt class="xref py py-class docutils literal"><span class="pre">Rect</span></tt></a> that has the origin (0, 0) and the size of the drawable area.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Scene.dt">
+<tt class="descclassname">Scene.</tt><tt class="descname">dt</tt><a class="headerlink" href="#scene.Scene.dt" title="Permalink to this definition">¶</a></dt>
+<dd><p>The time (in seconds) that has passed since the last invocation of <a class="reference internal" href="#scene.Scene.draw" title="scene.Scene.draw"><tt class="xref py py-meth docutils literal"><span class="pre">draw()</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Scene.root_layer">
+<tt class="descclassname">Scene.</tt><tt class="descname">root_layer</tt><a class="headerlink" href="#scene.Scene.root_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>The scene&#8217;s root layer. You need to set this if you want layers to be able to
+respond to touches. The root layer&#8217;s size has to be equivalent to the scene&#8217;s size.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Scene.size">
+<tt class="descclassname">Scene.</tt><tt class="descname">size</tt><a class="headerlink" href="#scene.Scene.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>The size of the entire drawable area as a <a class="reference internal" href="#scene.Size" title="scene.Size"><tt class="xref py py-class docutils literal"><span class="pre">Size</span></tt></a> object.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Scene.t">
+<tt class="descclassname">Scene.</tt><tt class="descname">t</tt><a class="headerlink" href="#scene.Scene.t" title="Permalink to this definition">¶</a></dt>
+<dd><p>The time (in seconds) that has passed since the scene was started.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Scene.touches">
+<tt class="descclassname">Scene.</tt><tt class="descname">touches</tt><a class="headerlink" href="#scene.Scene.touches" title="Permalink to this definition">¶</a></dt>
+<dd><p>A dictionary of all touches that are currently active. The keys correspond to the <tt class="xref py py-attr docutils literal"><span class="pre">touch_id</span></tt>
+attribute of the <a class="reference internal" href="#scene.Touch" title="scene.Touch"><tt class="xref py py-class docutils literal"><span class="pre">Touch</span></tt></a> objects.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Scene.setup">
+<tt class="descclassname">Scene.</tt><tt class="descname">setup</tt><big>(</big><big>)</big><a class="headerlink" href="#scene.Scene.setup" title="Permalink to this definition">¶</a></dt>
+<dd><p>This gets called once before the first invocation of <a class="reference internal" href="#scene.Scene.draw" title="scene.Scene.draw"><tt class="xref py py-meth docutils literal"><span class="pre">draw()</span></tt></a>. You can use this to set up
+your scene. The <a class="reference internal" href="#scene.Scene.size" title="scene.Scene.size"><tt class="xref py py-attr docutils literal"><span class="pre">size</span></tt></a> and <a class="reference internal" href="#scene.bounds" title="scene.bounds"><tt class="xref py py-attr docutils literal"><span class="pre">bounds</span></tt></a> attributes are already valid at this point.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Scene.should_rotate">
+<tt class="descclassname">Scene.</tt><tt class="descname">should_rotate</tt><big>(</big><em>orientation</em><big>)</big><a class="headerlink" href="#scene.Scene.should_rotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method gets called automatically when the device is rotated to a different orientation.
+Return <cite>True</cite> if the scene should be rotated, <cite>False</cite> to suppress the rotation.
+The <cite>orientation</cite> parameter will be <cite>LANDSCAPE</cite> or <cite>PORTRAIT</cite>.</p>
+<p>The default implementation returns <cite>False</cite>.</p>
+<p>If the <a class="reference internal" href="#scene.run" title="scene.run"><tt class="xref py py-func docutils literal"><span class="pre">run()</span></tt></a> function was called with an explicit orientation (<cite>LANDSCAPE</cite> or <cite>PORTRAIT</cite>),
+this will only be called for orientations with the same aspect ratio and the scene will never
+be rotated from landscape to portrait or vice-versa.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Scene.add_layer">
+<tt class="descclassname">Scene.</tt><tt class="descname">add_layer</tt><big>(</big><em>layer</em><big>)</big><a class="headerlink" href="#scene.Scene.add_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a <a class="reference internal" href="#scene.Layer" title="scene.Layer"><tt class="xref py py-class docutils literal"><span class="pre">Layer</span></tt></a> to the scene&#8217;s <a class="reference internal" href="#scene.Scene.root_layer" title="scene.Scene.root_layer"><tt class="xref py py-attr docutils literal"><span class="pre">root_layer</span></tt></a>. If no root layer exists, it is created
+automatically.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Scene.delay">
+<tt class="descclassname">Scene.</tt><tt class="descname">delay</tt><big>(</big><em>dt</em>, <em>func</em><big>)</big><a class="headerlink" href="#scene.Scene.delay" title="Permalink to this definition">¶</a></dt>
+<dd><p>Automatically invokes the given function after <cite>dt</cite> seconds have passed as part of the render loop.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Scene.draw">
+<tt class="descclassname">Scene.</tt><tt class="descname">draw</tt><big>(</big><big>)</big><a class="headerlink" href="#scene.Scene.draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets called automatically for every frame (by default 60 times per second).
+The default implementation does nothing, you can override this method to define what to draw.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Scene.touch_began">
+<tt class="descclassname">Scene.</tt><tt class="descname">touch_began</tt><big>(</big><em>touch</em><big>)</big><a class="headerlink" href="#scene.Scene.touch_began" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets called automatically when a finger begins touching the screen.
+The <cite>touch</cite> parameter is a <a class="reference internal" href="#scene.Touch" title="scene.Touch"><tt class="xref py py-class docutils literal"><span class="pre">Touch</span></tt></a> object. You can use its <a class="reference internal" href="location.html#module-location" title="location: Provides geo-location services on iOS"><tt class="xref py py-attr docutils literal"><span class="pre">location</span></tt></a> attribute
+to determine where the touch occurred.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Scene.touch_moved">
+<tt class="descclassname">Scene.</tt><tt class="descname">touch_moved</tt><big>(</big><em>touch</em><big>)</big><a class="headerlink" href="#scene.Scene.touch_moved" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets called automatically when a finger moves on the screen.
+The <cite>touch</cite> parameter is a <a class="reference internal" href="#scene.Touch" title="scene.Touch"><tt class="xref py py-class docutils literal"><span class="pre">Touch</span></tt></a> object. You can use its <tt class="xref py py-attr docutils literal"><span class="pre">prev_location</span></tt> attribute
+to determine where the touch was before it moved.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Scene.touch_ended">
+<tt class="descclassname">Scene.</tt><tt class="descname">touch_ended</tt><big>(</big><em>touch</em><big>)</big><a class="headerlink" href="#scene.Scene.touch_ended" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets called automatically when a finger is lifted from the screen.
+The <cite>touch</cite> parameter is a <a class="reference internal" href="#scene.Touch" title="scene.Touch"><tt class="xref py py-class docutils literal"><span class="pre">Touch</span></tt></a> object. You can use its <a class="reference internal" href="location.html#module-location" title="location: Provides geo-location services on iOS"><tt class="xref py py-attr docutils literal"><span class="pre">location</span></tt></a> attribute
+to determine where the touch ended.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Scene.pause">
+<tt class="descclassname">Scene.</tt><tt class="descname">pause</tt><big>(</big><big>)</big><a class="headerlink" href="#scene.Scene.pause" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets called automatically when the home button is pressed while a scene is running.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Scene.resume">
+<tt class="descclassname">Scene.</tt><tt class="descname">resume</tt><big>(</big><big>)</big><a class="headerlink" href="#scene.Scene.resume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets called automatically when a scene is resumed (after being sent to the background with the home button).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Scene.stop">
+<tt class="descclassname">Scene.</tt><tt class="descname">stop</tt><big>(</big><big>)</big><a class="headerlink" href="#scene.Scene.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets called automatically when a scene is stopped (by tapping the &#8220;x&#8221; button).</p>
+</dd></dl>
+
+</div>
+<div class="section" id="layer-and-animation-objects">
+<h2>Layer and Animation Objects<a class="headerlink" href="#layer-and-animation-objects" title="Permalink to this headline">¶</a></h2>
+<p>Layers represent a rectangular area on the screen that can be filled with a color and/or an image.
+Layers can also have sublayers that are drawn relative to their parent layer.</p>
+<p>The primary purpose for layers is to make animating objects on the screen very easy, without
+having to explicitly calculate intermediate values.</p>
+<p>The second section in this document provides a basic tutorial on how to draw and animate layers within
+a scene.</p>
+<dl class="class">
+<dt id="scene.Layer">
+<em class="property">class </em><tt class="descclassname">scene.</tt><tt class="descname">Layer</tt><big>(</big><span class="optional">[</span><em>frame</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#scene.Layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a new layer with the given frame, relative to its superlayer or the screen (if it has no
+superlayer). New layers have a transparent background color by default.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Layer.alpha">
+<tt class="descclassname">Layer.</tt><tt class="descname">alpha</tt><a class="headerlink" href="#scene.Layer.alpha" title="Permalink to this definition">¶</a></dt>
+<dd><p>The layer&#8217;s translucency (0.0 is fully transparent, 1.0 is fully opaque).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Layer.animations">
+<tt class="descclassname">Layer.</tt><tt class="descname">animations</tt><a class="headerlink" href="#scene.Layer.animations" title="Permalink to this definition">¶</a></dt>
+<dd><p>A dictionary of all animations that are currently running. The keys are the animated
+attributes.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Layer.background">
+<tt class="descclassname">Layer.</tt><tt class="descname">background</tt><a class="headerlink" href="#scene.Layer.background" title="Permalink to this definition">¶</a></dt>
+<dd><p>The background <a class="reference internal" href="#scene.Color" title="scene.Color"><tt class="xref py py-class docutils literal"><span class="pre">Color</span></tt></a> of the layer. Defaults to transparent.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Layer.frame">
+<tt class="descclassname">Layer.</tt><tt class="descname">frame</tt><a class="headerlink" href="#scene.Layer.frame" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <a class="reference internal" href="#scene.Rect" title="scene.Rect"><tt class="xref py py-class docutils literal"><span class="pre">Rect</span></tt></a> that represents the layer&#8217;s location and size, relative to its parent layer, or,
+if the layer has no parent layer, to the scene where it&#8217;s drawn.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Layer.ignores_touches">
+<tt class="descclassname">Layer.</tt><tt class="descname">ignores_touches</tt><a class="headerlink" href="#scene.Layer.ignores_touches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set this to <cite>True</cite> to make the layer ignore touch events. This is only relevant if
+the layer descends from the <a class="reference internal" href="#scene.Scene" title="scene.Scene"><tt class="xref py py-class docutils literal"><span class="pre">Scene</span></tt></a>&#8216;s <tt class="xref py py-attr docutils literal"><span class="pre">root_layer</span></tt>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Layer.image">
+<tt class="descclassname">Layer.</tt><tt class="descname">image</tt><a class="headerlink" href="#scene.Layer.image" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of an image that gets drawn in the layer&#8217;s frame.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Layer.rotation">
+<tt class="descclassname">Layer.</tt><tt class="descname">rotation</tt><a class="headerlink" href="#scene.Layer.rotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotation of the layer around its center (in degrees). This can be animated.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Layer.scale_x">
+<tt class="descclassname">Layer.</tt><tt class="descname">scale_x</tt><a class="headerlink" href="#scene.Layer.scale_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Horizontal scaling of the layer&#8217;s <a class="reference internal" href="#scene.Layer.frame" title="scene.Layer.frame"><tt class="xref py py-attr docutils literal"><span class="pre">frame</span></tt></a> (defaults to 1.0). This can be animated.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Layer.scale_y">
+<tt class="descclassname">Layer.</tt><tt class="descname">scale_y</tt><a class="headerlink" href="#scene.Layer.scale_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vertical scaling of the layer&#8217;s <a class="reference internal" href="#scene.Layer.frame" title="scene.Layer.frame"><tt class="xref py py-attr docutils literal"><span class="pre">frame</span></tt></a> (defaults to 1.0). This can be animated.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Layer.stroke">
+<tt class="descclassname">Layer.</tt><tt class="descname">stroke</tt><a class="headerlink" href="#scene.Layer.stroke" title="Permalink to this definition">¶</a></dt>
+<dd><p>The stroke <a class="reference internal" href="#scene.Color" title="scene.Color"><tt class="xref py py-class docutils literal"><span class="pre">Color</span></tt></a> with which the layer&#8217;s border is drawn.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Layer.stroke_weight">
+<tt class="descclassname">Layer.</tt><tt class="descname">stroke_weight</tt><a class="headerlink" href="#scene.Layer.stroke_weight" title="Permalink to this definition">¶</a></dt>
+<dd><p>The line width of the layer&#8217;s border. Defaults to 0.0 (no border).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Layer.sublayers">
+<tt class="descclassname">Layer.</tt><tt class="descname">sublayers</tt><a class="headerlink" href="#scene.Layer.sublayers" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of layers that this layer contains. Their coordinates are relative to this layer.
+You should not modify this list directly, but instead use the <a class="reference internal" href="#scene.Layer.add_layer" title="scene.Layer.add_layer"><tt class="xref py py-meth docutils literal"><span class="pre">add_layer()</span></tt></a>
+and <a class="reference internal" href="#scene.Layer.remove_layer" title="scene.Layer.remove_layer"><tt class="xref py py-meth docutils literal"><span class="pre">remove_layer()</span></tt></a> methods.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Layer.superlayer">
+<tt class="descclassname">Layer.</tt><tt class="descname">superlayer</tt><a class="headerlink" href="#scene.Layer.superlayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>The parent layer. This gets set automatically when a layer is added to another layer
+with the <a class="reference internal" href="#scene.Layer.add_layer" title="scene.Layer.add_layer"><tt class="xref py py-meth docutils literal"><span class="pre">add_layer()</span></tt></a> method. You should not set this manually.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Layer.tint">
+<tt class="descclassname">Layer.</tt><tt class="descname">tint</tt><a class="headerlink" href="#scene.Layer.tint" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the layer has an <a class="reference internal" href="#scene.image" title="scene.image"><tt class="xref py py-attr docutils literal"><span class="pre">image</span></tt></a>, this determines its <a class="reference internal" href="#scene.tint" title="scene.tint"><tt class="xref py py-attr docutils literal"><span class="pre">tint</span></tt></a> <a class="reference internal" href="#scene.Color" title="scene.Color"><tt class="xref py py-class docutils literal"><span class="pre">Color</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Layer.add_animation">
+<tt class="descclassname">Layer.</tt><tt class="descname">add_animation</tt><big>(</big><em>animation</em>, <em>key</em><big>)</big><a class="headerlink" href="#scene.Layer.add_animation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an <a class="reference internal" href="#scene.Animation" title="scene.Animation"><tt class="xref py py-class docutils literal"><span class="pre">Animation</span></tt></a> to the layer. Added animations are updated automatically by calling
+the <a class="reference internal" href="#scene.Layer.update" title="scene.Layer.update"><tt class="xref py py-meth docutils literal"><span class="pre">update()</span></tt></a> method. Rather than constructing an <a class="reference internal" href="#scene.Animation" title="scene.Animation"><tt class="xref py py-class docutils literal"><span class="pre">Animation</span></tt></a> object, it is usually
+easier to call the layer&#8217;s <a class="reference internal" href="#scene.Layer.animate" title="scene.Layer.animate"><tt class="xref py py-meth docutils literal"><span class="pre">animate()</span></tt></a> method to implicitly build and add an animation.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Layer.add_layer">
+<tt class="descclassname">Layer.</tt><tt class="descname">add_layer</tt><big>(</big><em>layer</em><big>)</big><a class="headerlink" href="#scene.Layer.add_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a <a class="reference internal" href="#scene.Layer" title="scene.Layer"><tt class="xref py py-class docutils literal"><span class="pre">Layer</span></tt></a> to this layer&#8217;s <a class="reference internal" href="#scene.Layer.sublayers" title="scene.Layer.sublayers"><tt class="xref py py-attr docutils literal"><span class="pre">sublayers</span></tt></a> and automatically sets its
+<a class="reference internal" href="#scene.Layer.superlayer" title="scene.Layer.superlayer"><tt class="xref py py-attr docutils literal"><span class="pre">superlayer</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Layer.animate">
+<tt class="descclassname">Layer.</tt><tt class="descname">animate</tt><big>(</big><em>attribute</em>, <em>to_value</em>, <em>duration=0.5</em>, <em>delay=0.0</em>, <em>curve=curve_sinodial</em>, <em>repeat=1</em>, <em>autoreverse=False</em>, <em>completion=None</em><big>)</big><a class="headerlink" href="#scene.Layer.animate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an <a class="reference internal" href="#scene.Animation" title="scene.Animation"><tt class="xref py py-class docutils literal"><span class="pre">Animation</span></tt></a> with the given parameters and add it to the layer&#8217;s <a class="reference internal" href="#scene.Layer.animations" title="scene.Layer.animations"><tt class="xref py py-attr docutils literal"><span class="pre">animations</span></tt></a>.</p>
+<p>Depending on the <cite>attribute</cite> (a string), <cite>to_value</cite> can be a number, a <a class="reference internal" href="#scene.Rect" title="scene.Rect"><tt class="xref py py-class docutils literal"><span class="pre">Rect</span></tt></a> or
+a <a class="reference internal" href="#scene.Color" title="scene.Color"><tt class="xref py py-class docutils literal"><span class="pre">Color</span></tt></a>.</p>
+<p>Animatable attributes are <a class="reference internal" href="#scene.Layer.frame" title="scene.Layer.frame"><tt class="xref py py-attr docutils literal"><span class="pre">frame</span></tt></a>, <a class="reference internal" href="#scene.Layer.scale_x" title="scene.Layer.scale_x"><tt class="xref py py-attr docutils literal"><span class="pre">scale_x</span></tt></a>, <a class="reference internal" href="#scene.Layer.scale_y" title="scene.Layer.scale_y"><tt class="xref py py-attr docutils literal"><span class="pre">scale_y</span></tt></a>, <a class="reference internal" href="#scene.Layer.rotation" title="scene.Layer.rotation"><tt class="xref py py-attr docutils literal"><span class="pre">rotation</span></tt></a>,
+<a class="reference internal" href="#scene.background" title="scene.background"><tt class="xref py py-attr docutils literal"><span class="pre">background</span></tt></a>, <a class="reference internal" href="#scene.stroke" title="scene.stroke"><tt class="xref py py-attr docutils literal"><span class="pre">stroke</span></tt></a>, <a class="reference internal" href="#scene.stroke_weight" title="scene.stroke_weight"><tt class="xref py py-attr docutils literal"><span class="pre">stroke_weight</span></tt></a>, <a class="reference internal" href="#scene.tint" title="scene.tint"><tt class="xref py py-attr docutils literal"><span class="pre">tint</span></tt></a> and <a class="reference internal" href="#scene.Layer.alpha" title="scene.Layer.alpha"><tt class="xref py py-attr docutils literal"><span class="pre">alpha</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Layer.draw">
+<tt class="descclassname">Layer.</tt><tt class="descname">draw</tt><big>(</big><big>)</big><a class="headerlink" href="#scene.Layer.draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a layer and all its sublayers. You typically call this after calling <a class="reference internal" href="#scene.Layer.update" title="scene.Layer.update"><tt class="xref py py-meth docutils literal"><span class="pre">update()</span></tt></a>.
+Note that if you use other drawing functions afterwards, you have to explicitly set the colors
+and other parameters, such as <cite>stroke_weight</cite> because this method may leave these in any state.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Layer.remove_animation">
+<tt class="descclassname">Layer.</tt><tt class="descname">remove_animation</tt><big>(</big><em>animation</em><big>)</big><a class="headerlink" href="#scene.Layer.remove_animation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove an animation from the layer.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Layer.remove_all_animations">
+<tt class="descclassname">Layer.</tt><tt class="descname">remove_all_animations</tt><big>(</big><big>)</big><a class="headerlink" href="#scene.Layer.remove_all_animations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove all animations from the layer.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Layer.remove_layer">
+<tt class="descclassname">Layer.</tt><tt class="descname">remove_layer</tt><big>(</big><span class="optional">[</span><em>layer</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#scene.Layer.remove_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a layer from its <a class="reference internal" href="#scene.Layer.superlayer" title="scene.Layer.superlayer"><tt class="xref py py-attr docutils literal"><span class="pre">superlayer</span></tt></a>. If called with no parameters, removes this layer
+from its parent layer. This can be especially useful as a completion function for animations.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Layer.update">
+<tt class="descclassname">Layer.</tt><tt class="descname">update</tt><big>(</big><em>dt</em><big>)</big><a class="headerlink" href="#scene.Layer.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update all animations of the layer (and its sublayers) with <cite>dt</cite> being the time
+that has passed since the last invocation.</p>
+<p>You typically call this with the <a class="reference internal" href="#scene.Scene" title="scene.Scene"><tt class="xref py py-class docutils literal"><span class="pre">Scene</span></tt></a>&#8216;s <cite>dt</cite> attribute before drawing the layer.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="scene.Animation">
+<em class="property">class </em><tt class="descclassname">scene.</tt><tt class="descname">Animation</tt><a class="headerlink" href="#scene.Animation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a new <a class="reference internal" href="#scene.Animation" title="scene.Animation"><tt class="xref py py-class docutils literal"><span class="pre">Animation</span></tt></a> object. As an alternative to creating an <a class="reference internal" href="#scene.Animation" title="scene.Animation"><tt class="xref py py-class docutils literal"><span class="pre">Animation</span></tt></a>
+object explicitly, you can use a <a class="reference internal" href="#scene.Layer" title="scene.Layer"><tt class="xref py py-class docutils literal"><span class="pre">Layer</span></tt></a>&#8216;s <tt class="xref py py-meth docutils literal"><span class="pre">animate()</span></tt> method.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Animation.attribute">
+<tt class="descclassname">Animation.</tt><tt class="descname">attribute</tt><a class="headerlink" href="#scene.Animation.attribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>The attribute of the layer that is animated (a string).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Animation.autoreverse">
+<tt class="descclassname">Animation.</tt><tt class="descname">autoreverse</tt><a class="headerlink" href="#scene.Animation.autoreverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Controls whether the animation should go back to the original value after completing.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Animation.curve">
+<tt class="descclassname">Animation.</tt><tt class="descname">curve</tt><a class="headerlink" href="#scene.Animation.curve" title="Permalink to this definition">¶</a></dt>
+<dd><p>An interpolation function to map from elapsed time to animation progress.</p>
+<p>This function takes one parameter in the range 0.0 - 1.0 and should return another value, also
+in the range 0.0 - 1.0. In some cases, it can also return a value &gt;1.0 or &lt;0.0 (if an animation
+should &#8220;shoot over&#8221; its target).</p>
+<p>Defaults to <a class="reference internal" href="#scene.curve_sinodial" title="scene.curve_sinodial"><tt class="xref py py-func docutils literal"><span class="pre">curve_sinodial()</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Animation.delay">
+<tt class="descclassname">Animation.</tt><tt class="descname">delay</tt><a class="headerlink" href="#scene.Animation.delay" title="Permalink to this definition">¶</a></dt>
+<dd><p>A delay (in seconds) before the animation should start (after it has been added to a <a class="reference internal" href="#scene.Layer" title="scene.Layer"><tt class="xref py py-class docutils literal"><span class="pre">Layer</span></tt></a>).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Animation.duration">
+<tt class="descclassname">Animation.</tt><tt class="descname">duration</tt><a class="headerlink" href="#scene.Animation.duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>The animation&#8217;s duration (in seconds)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Animation.from_value">
+<tt class="descclassname">Animation.</tt><tt class="descname">from_value</tt><a class="headerlink" href="#scene.Animation.from_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>The value with which the animation began.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Animation.repeat">
+<tt class="descclassname">Animation.</tt><tt class="descname">repeat</tt><a class="headerlink" href="#scene.Animation.repeat" title="Permalink to this definition">¶</a></dt>
+<dd><p>The animation&#8217;s repeat count. Defaults to 1.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Animation.value">
+<tt class="descclassname">Animation.</tt><tt class="descname">value</tt><a class="headerlink" href="#scene.Animation.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>The current value of the animated attribute.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Animation.completion">
+<tt class="descclassname">Animation.</tt><tt class="descname">completion</tt><a class="headerlink" href="#scene.Animation.completion" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function (without parameters) that gets called when the animation completes.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Animation.finished">
+<tt class="descclassname">Animation.</tt><tt class="descname">finished</tt><a class="headerlink" href="#scene.Animation.finished" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets set to <cite>True</cite> when the animation finishes.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scene.Animation.layer">
+<tt class="descclassname">Animation.</tt><tt class="descname">layer</tt><a class="headerlink" href="#scene.Animation.layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="#scene.Layer" title="scene.Layer"><tt class="xref py py-class docutils literal"><span class="pre">Layer</span></tt></a> that this animation was added to.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Animation.update">
+<tt class="descclassname">Animation.</tt><tt class="descname">update</tt><big>(</big><em>dt</em><big>)</big><a class="headerlink" href="#scene.Animation.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the animation&#8217;s progress with a given time delta. This gets called automatically
+for animations that are attached to a <a class="reference internal" href="#scene.Layer" title="scene.Layer"><tt class="xref py py-class docutils literal"><span class="pre">Layer</span></tt></a>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="animation-interpolation-functions">
+<h2>Animation Interpolation Functions<a class="headerlink" href="#animation-interpolation-functions" title="Permalink to this headline">¶</a></h2>
+<p>The following functions can be used for the <tt class="xref py py-attr docutils literal"><span class="pre">curve</span></tt> attribute of <a class="reference internal" href="#scene.Animation" title="scene.Animation"><tt class="xref py py-class docutils literal"><span class="pre">Animation</span></tt></a> objects
+or the <cite>curve</cite> parameter of a <a class="reference internal" href="#scene.Layer" title="scene.Layer"><tt class="xref py py-class docutils literal"><span class="pre">Layer</span></tt></a>&#8216;s <tt class="xref py py-meth docutils literal"><span class="pre">animate()</span></tt> method.</p>
+<dl class="function">
+<dt id="scene.curve_sinodial">
+<tt class="descclassname">scene.</tt><tt class="descname">curve_sinodial</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#scene.curve_sinodial" title="Permalink to this definition">¶</a></dt>
+<dd><p>The default interpolation, similar to <tt class="xref py py-func docutils literal"><span class="pre">ease_in_ease_out()</span></tt>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.curve_linear">
+<tt class="descclassname">scene.</tt><tt class="descname">curve_linear</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#scene.curve_linear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simple linear interpolation (returns the input value).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.curve_ease_in">
+<tt class="descclassname">scene.</tt><tt class="descname">curve_ease_in</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#scene.curve_ease_in" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ease-in interpolation</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.curve_ease_out">
+<tt class="descclassname">scene.</tt><tt class="descname">curve_ease_out</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#scene.curve_ease_out" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ease-out interpolation</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.curve_ease_in_out">
+<tt class="descclassname">scene.</tt><tt class="descname">curve_ease_in_out</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#scene.curve_ease_in_out" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ease-in-ease-out interpolation.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.curve_elastic_out">
+<tt class="descclassname">scene.</tt><tt class="descname">curve_elastic_out</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#scene.curve_elastic_out" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;Rubberband&#8221; effect at the end of the animation.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.curve_elastic_in">
+<tt class="descclassname">scene.</tt><tt class="descname">curve_elastic_in</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#scene.curve_elastic_in" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;Rubberband&#8221; effect at the start of the animation.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.curve_elastic_in_out">
+<tt class="descclassname">scene.</tt><tt class="descname">curve_elastic_in_out</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#scene.curve_elastic_in_out" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;Rubberband&#8221; effect at both ends of the animation.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.curve_bounce_out">
+<tt class="descclassname">scene.</tt><tt class="descname">curve_bounce_out</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#scene.curve_bounce_out" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;Bouncing&#8221; effect at the end of the animation.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.curve_bounce_in">
+<tt class="descclassname">scene.</tt><tt class="descname">curve_bounce_in</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#scene.curve_bounce_in" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;Bouncing&#8221; effect at the start of the animation.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scene.curve_bounce_in_out">
+<tt class="descclassname">scene.</tt><tt class="descname">curve_bounce_in_out</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#scene.curve_bounce_in_out" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;Bouncing&#8221; effect at both ends of the animation.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<tt class="descname">curve_ease_back_in(x):</tt></dt>
+<dd><p>Overshooting animation, eased at the start.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<tt class="descname">curve_ease_back_out(x):</tt></dt>
+<dd><p>Overshooting animation, eased at the end.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<tt class="descname">curve_ease_back_in_out(x):</tt></dt>
+<dd><p>Overshooting animation, eased at the start and end.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.  
+    <a href="http://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on Jun 12, 2014.
+    <a href="../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+
+  </body>
+</html>

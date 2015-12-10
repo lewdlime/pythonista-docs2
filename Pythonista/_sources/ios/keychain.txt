@@ -1,0 +1,47 @@
+
+:mod:`keychain` --- Secure Password Storage
+======================================================
+
+The :mod:`keychain` module provides simple access to secure password storage.
+
+Please note that the keychain is not shared between apps, so you (fortunately)
+cannot use this to access passwords that are stored in Safari's keychain, for
+example.
+
+To make the keychain more secure, you can set a master password using the :func:`set_master_password` function.
+
+.. module:: keychain
+   :synopsis: Persistent storage for passwords and other sensitive information
+.. sectionauthor:: Ole Zorn
+
+
+.. function:: get_password(service, account)
+
+   Get the password for the given service/account that was previously stored in the keychain.
+   
+   If a master password has been set via :func:`set_master_password`, a password dialog is shown before returning anything. If "Don't allow" is selected in the dialog, the return value of this function will be `None`.
+   
+   After entering the master password once, the keychain remains unlocked for that particular script until the app is no longer active (e.g. when pressing the home button or locking the screen).
+
+.. function:: set_password(service, account, password)
+
+   Save a password for the given service/account in the keychain.
+
+.. function:: delete_password(service, account)
+   
+   Delete the password for the given service/account from the keychain.
+
+.. function:: set_master_password()
+
+   Set a global master password that will then be required for calling :func:`get_password`. This function doesn't take any parameters because the master password is set interactively with text input dialogs (so that it doesn't show up in the console history).
+   
+   To remove the master password, you can set it to an empty string.
+   
+   If you forgot your master password, you can call :func:`reset_keychain` to delete all password data, including the master password.
+   
+   The return value is `True` if the master password was set/changed successfully, `False` otherwise (e.g. when the password confirmation didn't match or the input dialog was cancelled).
+
+.. function:: reset_keychain()
+
+   Delete all data from the keychain, including the master password. Before deleting the keychain data, a confirmation dialog is shown.
+   

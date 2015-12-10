@@ -1,0 +1,216 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>photos — Accessing Saved Photos on iOS &mdash; Pythonista Documentation</title>
+    <link rel="stylesheet" href="../_static/pythonista.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.7.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Pythonista Documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Pythonista Documentation" href="../index.html" />
+    <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
+    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    
+    <script type="text/javascript">
+        var getTextForSample = function(i) {
+            codeBlock = document.getElementsByClassName('highlight-python')[i];
+            return codeBlock.innerText;
+        }
+        
+        var copySample = function (i) {
+            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+        }
+        
+        var openSample = function (i) {
+            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+        }
+        
+        //Source: http://ejohn.org/blog/partial-functions-in-javascript/
+        Function.prototype.partial = function() {
+        	var fn = this,
+        		args = Array.prototype.slice.call(arguments);
+        	return function() {
+        		var arg = 0;
+        		for (var i = 0; i < args.length && arg < arguments.length; i++)
+        		if (args[i] === undefined) args[i] = arguments[arg++];
+        		return fn.apply(this, args);
+        	};
+        };
+        
+        window.onload=function() {
+            //Add "Copy" and "Open in Editor" buttons for code samples:
+            var inApp = navigator.userAgent.match(/AppleWebKit/i) != null && navigator.userAgent.match(/Safari/i) == null;
+            if (inApp) {
+                codeBlocks = document.getElementsByClassName('highlight-python');
+                for (var i = 0; i < codeBlocks.length; i++) {
+                    codeBlock = codeBlocks[i];
+                    if (codeBlock.innerText.indexOf('>>>') == 0) {
+                        //Don't add header for interactive sessions
+                        continue;
+                    }
+
+                    var codeHeader = document.createElement('div');
+                    codeHeader.className = 'pythonista-code-header';
+
+                    var copyButton = document.createElement('button');
+                    copyButton.className = 'pythonista-button';
+                    copyButton.innerText = 'Copy';
+                    copyButton.addEventListener('click', copySample.partial(i));
+                    codeHeader.appendChild(copyButton);
+
+                    var openButton = document.createElement('button');
+                    openButton.className = 'pythonista-button';
+                    openButton.innerText = 'Open in Editor';
+                    openButton.addEventListener('click', openSample.partial(i));
+                    codeHeader.appendChild(openButton);
+
+                    codeBlock.parentElement.insertBefore(codeHeader, codeBlock);
+                }
+            }
+        }
+    </script>
+    
+ 
+
+  </head>
+  <body ontouchstart="">
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="http://omz-software.com/pythonista"><img src="../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -4px; margin-right: 4px;"/></a></li>
+        <li><a href="../index.html">Pythonista Documentation</a> &raquo;</li>
+ 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="module-photos">
+<span id="photos-accessing-saved-photos-on-ios"></span><h1><a class="reference internal" href="#module-photos" title="photos: Provides access to the camera roll on iOS"><tt class="xref py py-mod docutils literal"><span class="pre">photos</span></tt></a> &#8212; Accessing Saved Photos on iOS<a class="headerlink" href="#module-photos" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference internal" href="#module-photos" title="photos: Provides access to the camera roll on iOS"><tt class="xref py py-mod docutils literal"><span class="pre">photos</span></tt></a> module allows you to access images from the camera roll and their metadata.</p>
+<p>Most functions return images that can be used directly with the <a class="reference internal" href="PIL.html#module-PIL" title="PIL"><tt class="xref py py-mod docutils literal"><span class="pre">PIL</span></tt></a> (Python Imaging Library) modules.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The first time you use any of the functions that access your photos, a system-provided permission dialog will be shown. If you deny access, most functions will return <tt class="xref docutils literal"><span class="pre">None</span></tt>. If you change your mind later, you can allow access to your photos from the <cite>Privacy</cite> section in the Settings app.</p>
+</div>
+<p>Functions in the <a class="reference internal" href="#module-photos" title="photos: Provides access to the camera roll on iOS"><tt class="xref py py-mod docutils literal"><span class="pre">photos</span></tt></a> module:</p>
+<dl class="function">
+<dt id="photos.capture_image">
+<tt class="descclassname">photos.</tt><tt class="descname">capture_image</tt><big>(</big><big>)</big><a class="headerlink" href="#photos.capture_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show a standard camera interface and return the captured image.</p>
+<p>If the device has no camera or if the camera interface is cancelled, <cite>None</cite> is returned.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="photos.get_count">
+<tt class="descclassname">photos.</tt><tt class="descname">get_count</tt><big>(</big><big>)</big><a class="headerlink" href="#photos.get_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number of images in the camera roll.</p>
+<p>If you have not authorized access to your photos, this function will always return <tt class="docutils literal"><span class="pre">0</span></tt>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="photos.get_image">
+<tt class="descclassname">photos.</tt><tt class="descname">get_image</tt><big>(</big><em>image_index=-1</em>, <em>original=True</em>, <em>raw_data=False</em><big>)</big><a class="headerlink" href="#photos.get_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return one of the images in the camera roll.</p>
+<ul class="simple">
+<li><cite>image_index</cite> &#8211; Specifies which image should be returned, with <tt class="docutils literal"><span class="pre">0</span></tt> indicating the first image. You can pass a negative value to count from the end of the list. The default value of <tt class="docutils literal"><span class="pre">-1</span></tt> returns the last image.</li>
+<li><cite>original</cite> &#8211; When set to <cite>False</cite>, a scaled version of the image is returned that includes all user edits (cropping and effects), otherwise, the original image data is used without any modifications.</li>
+<li><cite>raw_data</cite> &#8211; When set to <cite>True</cite>, the image is returned as a byte string of the original image file data (typically in JPEG or PNG format). <cite>raw_data</cite> must be combined with <cite>original</cite>, otherwise a <cite>ValueError</cite> is thrown. This is more efficient if you just want to save the image to a file, without displaying it. It can also be useful for creating a <a class="reference internal" href="ui.html#ui.Image" title="ui.Image"><tt class="xref py py-class docutils literal"><span class="pre">ui.Image</span></tt></a> from a photo (using <a class="reference internal" href="ui.html#ui.Image.from_data" title="ui.Image.from_data"><tt class="xref py py-meth docutils literal"><span class="pre">ui.Image.from_data()</span></tt></a>).</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="photos.get_fullscreen_image">
+<tt class="descclassname">photos.</tt><tt class="descname">get_fullscreen_image</tt><big>(</big><em>image_index=-1</em><big>)</big><a class="headerlink" href="#photos.get_fullscreen_image" title="Permalink to this definition">¶</a></dt>
+<dd><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This function is deprecated, you can use <a class="reference internal" href="#photos.get_image" title="photos.get_image"><tt class="xref py py-func docutils literal"><span class="pre">get_image()</span></tt></a> instead (passing <cite>False</cite> for the <cite>original</cite> parameter).</p>
+</div>
+<p>Same as <a class="reference internal" href="#photos.get_image" title="photos.get_image"><tt class="xref py py-func docutils literal"><span class="pre">get_image()</span></tt></a> with the difference that the resulting image has an appropriate (device-dependent) size for full-screen viewing, i.e. it is potentially downscaled.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="photos.get_metadata">
+<tt class="descclassname">photos.</tt><tt class="descname">get_metadata</tt><big>(</big><em>image_index=-1</em><big>)</big><a class="headerlink" href="#photos.get_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return EXIF and other metadata of an image in the camera roll as a dictionary.</p>
+<p>The <cite>image_index</cite> parameter specifies which image should be returned, with <tt class="docutils literal"><span class="pre">0</span></tt> indicating the first image. You can pass a negative value to count from the end of the list. The default value of <tt class="docutils literal"><span class="pre">-1</span></tt> returns the last image.</p>
+<p>If the index is larger than the number returned from <tt class="docutils literal"><span class="pre">photos.get_count()</span> <span class="pre">-</span> <span class="pre">1</span></tt>, or if the metadata can&#8217;t be read, <tt class="xref docutils literal"><span class="pre">None</span></tt> is returned.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="photos.get_thumbnail">
+<tt class="descclassname">photos.</tt><tt class="descname">get_thumbnail</tt><big>(</big><em>image_index=-1</em><big>)</big><a class="headerlink" href="#photos.get_thumbnail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a small thumbnail image of an image in the camera roll. The thumbnail will have equal width and height, regardless of the aspect ratio of the original image.</p>
+<p>The <cite>image_index</cite> parameter specifies which image should be returned, with <tt class="docutils literal"><span class="pre">0</span></tt> indicating the first image. You can pass a negative value to count from the end of the list. The default value of <tt class="docutils literal"><span class="pre">-1</span></tt> returns the last image.</p>
+<p>If the index is larger than the number returned from <tt class="docutils literal"><span class="pre">photos.get_count()</span> <span class="pre">-</span> <span class="pre">1</span></tt>, or if the thumbnail image can&#8217;t be created, <tt class="xref docutils literal"><span class="pre">None</span></tt> is returned.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="photos.pick_image">
+<tt class="descclassname">photos.</tt><tt class="descname">pick_image</tt><big>(</big><em>show_albums=False</em>, <em>include_metadata=False</em>, <em>original=True</em>, <em>raw_data=False</em>, <em>multi=False</em><big>)</big><a class="headerlink" href="#photos.pick_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show a standard image picker UI and return the image that was picked (or <cite>None</cite> if it was cancelled).</p>
+<ul class="simple">
+<li><cite>show_albums</cite> &#8211; Boolean flag to determine whether albums other than the camera roll should be shown.</li>
+<li><cite>include_metadata</cite> &#8211; When set to <cite>True</cite>, the return value is a tuple of the actual image (or image data) and its metadata (as a dictionary).</li>
+<li><cite>original</cite> &#8211; When set to <cite>False</cite>, a scaled version of the image is returned that includes all user edits (cropping and effects), otherwise, the original image data is used without any modifications.</li>
+<li><cite>raw_data</cite> &#8211; When set to <cite>True</cite>, the image is returned as a byte string of the original image file data (typically in JPEG or PNG format). <cite>raw_data</cite> must be combined with <cite>original</cite>, otherwise a <cite>ValueError</cite> is thrown. This is more efficient if you just want to save the image to a file, without displaying it.</li>
+<li><cite>multi</cite> &#8211; Whether the image picker allows multiple selection. If this is set to <cite>True</cite>, the return value will be a list of images or tuples (in case <cite>include_metadata</cite> is also <cite>True</cite>).</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="photos.save_image">
+<tt class="descclassname">photos.</tt><tt class="descname">save_image</tt><big>(</big><em>image</em><big>)</big><a class="headerlink" href="#photos.save_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save a <a class="reference internal" href="PIL.html#module-PIL" title="PIL"><tt class="xref py py-mod docutils literal"><span class="pre">PIL</span></tt></a> image or <a class="reference internal" href="ui.html#ui.Image" title="ui.Image"><tt class="xref py py-class docutils literal"><span class="pre">ui.Image</span></tt></a> to the camera roll.</p>
+<p>Returns <cite>True</cite> if the image was saved successfully, otherwise <cite>False</cite>.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.  
+    <a href="http://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on Jun 12, 2014.
+    <a href="../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+
+  </body>
+</html>

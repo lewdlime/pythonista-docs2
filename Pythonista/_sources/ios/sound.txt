@@ -1,0 +1,43 @@
+
+:mod:`sound` --- Play simple sounds
+======================================================
+
+.. module:: sound
+   :synopsis: Simple sound creation
+.. sectionauthor:: Ole Zorn
+
+
+The :mod:`sound` module contains functions for playing simple sound effects on iOS.
+
+Example::
+
+    # Play a short melody
+    import sound
+    import time
+
+    notes = 'C3', 'D3', 'E3', 'C3'
+    for note in notes:
+        sound.play_effect('Piano_' + note)
+        time.sleep(0.5)
+
+Functions in the :mod:`sound` module:
+
+.. function:: load_effect(name)
+
+   Preload the sound effect with the given name to reduce latency when using :func:`play_effect`.
+
+.. function:: play_effect(name[, volume, pitch])
+   
+   Play the sound effect with the given name.
+   
+   Playback is asynchronous, i.e. the function returns before the sound has finished playing.
+   The return value is an opaque identifier that can be used with the :func:`stop_effect` function.
+   The `volume` and `pitch` arguments are optional, by default, the effect is played with the global volume, as set by :func:`set_volume`.
+
+.. function:: stop_effect(effect_id)
+
+   Stops playback of a sound effect. The `effect_id` is the return value of :func:`play_effect`.
+
+.. function:: set_volume(vol)
+
+   Sets the default volume for all sound effects (between 0.0 and 1.0, the default is 0.5).

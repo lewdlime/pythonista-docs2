@@ -1,0 +1,871 @@
+
+:mod:`scene` --- 2D Graphics and Animation
+==========================================
+
+.. module:: scene
+   :synopsis: Provides 2D graphics and animation on iOS
+.. sectionauthor:: Ole Zorn
+
+The :mod:`scene` module provides an easy way to create hardware-accelerated 2D graphics and animations on iOS.
+
+**Guide**
+
+* `Basic Drawing`_
+* `Layers and Animation`_
+* `Touch Handling`_
+* `Integration with the ui Module`_
+
+**Reference**
+
+* `Drawing Functions`_
+* `Other Functions`_
+* `Basic Data Types`_
+* `Scene Objects`_
+* `Layer and Animation Objects`_
+* `Animation Interpolation Functions`_
+
+Basic Drawing
+-------------
+The module supports both a classic render loop, and a layer system for implicit animations that you don't have to control on a frame-by-frame basis.
+
+Both approaches require that you subclass :class:`Scene` and override at least the :meth:`draw` method. After you call the :func:`run` function, this gets called once for every frame (by default approximately 60 times per second).
+
+Here is a basic example that draws a centered red rectangle::
+
+    from scene import *
+    class MyScene (Scene):
+        def draw(self):
+            background(0, 0, 0)
+            fill(1, 0, 0)
+            w, h = self.size.w, self.size.h
+            rect(w * 0.5 - 100, h * 0.5 - 100, 200, 200)
+    run(MyScene())
+
+In addition to the :meth:`draw` method, you can override :meth:`setup` for any kind of initialization you might want to perform before the animation starts. For handling touches (including multi-touch), you can override :meth:`touch_began`, :meth:`touch_moved`, and :meth:`touch_ended`.
+
+The module also provides basic access to the accelerometer/gyroscope data of the device with the :func:`gravity` function.
+
+Building on the previous example, let's make the rectangle move when you tilt the device::
+
+    # Motion control demo
+    from scene import *
+    class MyScene (Scene):
+        def setup(self):
+            self.x = self.size.w * 0.5
+            self.y = self.size.h * 0.5
+        def draw(self):
+            background(0, 0, 0)
+            fill(1, 0, 0)
+            g = gravity()
+            self.x += g.x * 10
+            self.y += g.y * 10
+            self.x = min(self.size.w - 100, max(0, self.x))
+            self.y = min(self.size.h - 100, max(0, self.y))
+            rect(self.x, self.y, 100, 100)
+    run(MyScene())
+
+In addition to rectangles, you can draw ellipses (with the :func:`ellipse` function), bitmap images (with :func:`image`) and text (with :func:`text`) in this way.
+
+Layers and Animation
+--------------------
+For more complex animations, it is often tedious to calculate the positions of all elements for every frame, especially if the animations aren't linear. To make these animations easier, the :mod:`scene` module provides the :class:`Layer` class.
+
+A layer represents a rectangular area on the screen that can be filled with a color, contain an image and any number of sub-layers. Many attributes of a layer, such as its frame, its background color, scale and rotation, can be animated very easily.
+
+To draw your layers, you simply set their attributes (e.g. in the :meth:`setup` method of the :class:`Scene`) and then call the root layer's :meth:`update` and :meth:`draw` methods in the :meth:`draw` method of your :class:`Scene`.
+
+Because you explicitly draw the root layer, you can also combine this approach with the primitive drawing methods. In some cases, this can improve the framerate, because layers are more complex to draw than simple shapes.
+
+Here's a basic example that also shows a basic animation::
+
+    from scene import *
+    import sys
+    class MyScene (Scene):
+        def setup(self):
+            self.layer = Layer(Rect(self.size.w * 0.5 - 100, 
+                                    self.size.h * 0.5 - 100, 200, 200))
+            self.layer.background = Color(1, 0, 0)
+            self.layer.animate('alpha', 0.0, duration=1.0, 
+                               autoreverse=True, repeat=sys.maxint)
+        def draw(self):
+            background(0, 0, 0)
+            self.layer.update(self.dt)
+            self.layer.draw()
+    run(MyScene())
+
+You'll see a pulsating red rectangle when you run the script. The first argument to the layer's :meth:`animate` method is the attribute you want to change over time, in this case the alpha value (translucency). The second argument specifies the target value, in this case 0.0 (fully transparent). Additional named arguments control the duration and pacing of the animation, whether it should repeat, etc.
+
+One of the most interesting parameters (that is not used in this example) is `curve`, which specifies a function that should be used to map from time to animation progress in each frame. This basically determines the animation's pacing. By default, this is :func:`curve_sinodial` which has a slight ease-in-ease-out effect. There are a lot of other functions built-in (all beginning with `curve_`), and you can also write your own of course. You'll see an example of a different animation curve in the next section.
+
+Touch Handling
+--------------
+To handle touches on the screen, you can override the :meth:`touch_began`, :meth:`touch_moved` and :meth:`touch_ended` methods. You don't have to override all of them, if you're only interested in one of the events.
+
+Let's build on the example in the previous section and make our red rectangle move smoothly to the finger's location when the screen is touched. We can do this with the following code (add the method to the `MyScene` class)::
+
+    def touch_began(self, touch):
+        new_frame = Rect(touch.location.x - 100, touch.location.y - 100, 200, 200)
+        self.layer.animate('frame', new_frame, duration=2.0, curve=curve_bounce_out)
+
+You'll see an interesting bouncing animation that is achieved with just 2 lines of code.
+
+The `touch` parameter is of type :class:`Touch`. Its most immediately useful attribute is `location`, which is used here to determine the point the rectangle should move to. Similarly, it has a `prev_location` attribute, which is most useful in the :meth:`touch_moved` method.
+
+If you want to keep track of multiple touches, you might want to use the `touch_id` attribute (a unique string) to identify them.
+
+If you're simply interested in how many fingers touch the screen (and where) at a given moment though, you don't have to override any of the `touch_...` methods. You can simply access the scene's `touches` attribute, which is a dictionary that contains all touches that are currently active. You can use these in the :meth:`draw` method, for example.
+
+Here is a simple scene that shows a colored circle for every finger on the screen::
+
+    from scene import *
+    class MyScene (Scene):
+        def draw (self):
+            background(0, 0, 0)
+            fill(1, 0, 0)
+            for touch in self.touches.values():
+                location = touch.location
+                ellipse(location.x - 50, location.y - 50, 100, 100)
+    run(MyScene())
+
+Integration with the :mod:`ui` Module
+-------------------------------------
+
+If you want to combine the render loop-based drawing functionality of the :mod:`scene` modules with standard user interface elements, like text fields, you can do so with the :class:`SceneView` class, which inherits from :class:`ui.View`. Using a :class:`SceneView` is an alternative to presenting a scene with the :func:`run` function.
+
+Please see the documentation of the :mod:`ui` module for more information about user interface elements.
+
+.. note:: 
+    Even though it is technically possible to have multiple SceneViews on screen, this is **not** supported and will usually result in undesirable behavior (e.g. missing images, incorrect animation timing, etc.).
+    
+    In a couple of ways, a scene will behave differently when being presented in a :class:`SceneView`, compared to using the :func:`run` function:
+    
+    * The ``should_rotate`` method will not be called (rotation support is determined by the :meth:`ui.View.present` method, not the scene).
+    
+    * The :meth:`Scene.pause`, :meth:`Scene.resume` and :meth:`Scene.stop` methods will not be called automatically.
+    
+    * The :func:`gravity` function doesn't work in scenes that are presented with a :class:`SceneView` (you can use the :mod:`motion` module instead).
+
+
+.. class:: SceneView()
+
+.. attribute:: SceneView.scene
+
+    The scene that is currently presented in the view. Without setting this attribute, the view will just be empty.
+
+.. attribute:: SceneView.paused
+
+    A boolean value to indicate whether the scene is currently paused
+
+Drawing Functions
+-----------------
+
+.. function:: background(r=0, g=0, b=0)
+
+   Fill the background of the current scene with a solid color.
+
+.. function:: blend_mode(mode)
+   
+   Set the blend mode for following drawing operations. `mode` can be `BLEND_NORMAL`,
+   `BLEND_ADD` or `BLEND_MULTIPLY`.
+
+.. function:: ellipse(x=0, y=0, w=0, h=0)
+
+   Draw an ellipse in a rectangle with the current settings for
+   fill color, stroke color and stroke width.
+
+.. function:: fill(r=0, g=0, b=0, a=1)
+
+   Set the current stroke color.
+
+.. function:: get_image_path(image_name)
+
+    Return the absolute path of a built-in image.
+
+.. function:: get_screen_scale()
+
+    Return the screen's scale factor.
+    This will be 2.0 for retina screens and 1.0 otherwise.
+
+.. function:: image(name, x=0, y=0, w=0, h=0 [, from_x, from_y, from_w, from_h])
+    
+   Draw a named image into a rectangle.
+   
+   The `name` parameter can be a built-in image name or an image identifier that is returned from :func:`render_text` or :func:`load_pil_image`.
+   
+   If the w(idth) and h(eight) parameters are omitted, the image is drawn at the full size with the origin at (x, y). Using the optional `from_x`, `from_y`, `from_w`, and `from_h` parameters, you can draw a rectangular portion of the image instead of the whole image.
+   
+.. function:: image_quad(name, x1, y1, x2, y2, x3, y3, x4, y4 [, from_x1, from_y1, from_x2, from_y2, from_x3, from_y3, from_x4, from_y4])
+
+   Draw a named image into a quad.
+   
+   The `name` parameter can be a built-in image name or an image identifier that is returned from :func:`render_text` or :func:`load_pil_image`.
+   
+   The corners of the quad that the image is drawn into is given by the first set of xn/yn values. The `from_xn`/`from_yn` values can optionally be used to draw a quadrangular portion of the image instead of the whole image.
+
+.. function:: line(x1, y1, x2, y2)
+
+    Draw a straight line between two points with the current :func:`stroke` color and :func:`stroke_weight`.
+
+.. function:: load_image(image_name)
+
+   Loads the named image. This can be used to improve performance, e.g. by loading all
+   images that are about to be used in the :meth:`setup` method of your :class:`Scene`.
+
+.. function:: load_image_file(image_path)
+
+    Load the image at the given file path and return a name that can be used with the :func:`image` drawing function.
+
+.. function:: load_pil_image(image)
+
+   Loads a :mod:`PIL` :class:`Image` into a scene and returns a name that can be
+   used with the :func:`image` drawing function.
+   
+   .. note::
+      Only images using the 'RGBA' mode are supported at the moment.
+
+.. function:: unload_image(image_name)
+
+   Remove an image from the scene cache. This is meant to be used with image names returned from :func:`load_pil_image` that are no longer needed.
+
+.. function:: no_fill()
+
+   Disables filling rectangles and ellipses. Combined with :func:`stroke_weight`
+   and :func:`stroke` (to set the color), this allows you to draw shape
+   outlines. Alternatively, you can set a transparent fill color with
+   ``fill(0, 0, 0, 0)``.
+
+.. function:: no_stroke()
+
+   Disables the drawing of borders around rectangles and ellipses.
+
+.. function:: no_tint()
+
+   Disables tinting images. Equivalent to `tint(1, 1, 1, 1)`.
+
+.. function:: pop_matrix()
+
+   Restores the transformation matrix before the last call of :func:`push_matrix`.
+   This is usually used in combination with :func:`rotate`, :func:`translate` and :func:`scale`.
+
+.. function:: push_matrix()
+
+   Pushes the current transformation matrix on the stack.
+   This is usually used in combination with :func:`rotate`, :func:`translate` and :func:`scale`.
+
+.. function:: rect(x=0, y=0, w=0, h=0)
+
+   Draw a rectangle with the current settings for
+   fill color, stroke color and stroke width.
+
+.. function:: render_text(txt, font_name='Helvetica', font_size=16.0)
+
+   Render a string of text as an image name (that can be used with the :func:`image` function).
+   Returns a tuple of the name and a :class:`Size` object.
+
+   This can be used to determine the size of a string before drawing it, or to repeatedly
+   draw the same text slightly more efficiently.
+
+.. function:: rotate(deg)
+
+   Rotate the current transformation matrix. The angle is in degrees.
+
+.. function:: scale(x, y)
+
+   Scale the current transformation matrix
+
+.. function:: stroke(r, g, b[,a])
+
+   Set the current stroke color.
+
+.. function:: stroke_weight(line_width)
+
+   Sets the current stroke weight (line width) for the :func:`rect` and :func:`ellipse` functions.
+
+.. function:: text(txt, font_name='Helvetica', font_size=16.0, x=0.0, y=0.0, alignment=5)
+
+   Draw a string at a given point with a given font.
+   The alignment parameter has 9 possible values that correspond to the positions
+   on a numeric keypad (with 1 in the bottom lefthand corner). The default (5) centers
+   the text on the point.
+   
+   The color of the text can be set by calling the :func:`tint` function.
+
+.. function:: tint(r=1, g=1, b=1, a=1)
+
+   Set the current tint color that is used for drawing images and text. 
+   
+   A white tint color is the default and causes images to be drawn in their
+   natural colors. Setting a white color (`r` = `g` = `b` = 1.0) with an alpha
+   value < 1.0 makes the image translucent.
+
+.. function:: translate(x, y)
+
+   Translates the current transformation matrix.
+
+
+Other Functions
+---------------
+
+.. function:: gravity()
+
+   Return the current gravity as a :class:`Vector3` object that can be used to
+   determine the device's orientation and movement.
+
+.. function:: run(scene, orientation=DEFAULT_ORIENTATION, frame_interval=1, anti_alias=False)
+
+   Runs the given :class:`Scene` object.
+   By default, the scene runs in the current device orientation, set the parameter
+   to `PORTRAIT` or `LANDSCAPE` to force a specific orientation.
+   
+   By default, the scene's :meth:`draw` method is called 60 times per second.
+   Set the `frame_interval` parameter to 2 for 30fps, 3 for 20, etc.
+   
+   If your scene is expensive to draw, it might be better to achieve a lower
+   framerate consistently than to have the framerate vary a lot.
+
+
+Basic Data Types
+----------------
+
+Throughout the :mod:`scene` module, some simple classes are used to represent geometry and colors. Most drawing functions can either use these geometry classes (:class:`Rect`, :class:`Point`, :class:`Size`) or simple coordinate values.
+
+All coordinates are floats. On a retina screen, one point is actually two pixels, on a screen with standard resolution, points map 1:1 to pixels. This means that you can use the same coordinates regardless of the screen resolution of your device. The coordinate system's origin is in the bottom-left corner.
+
+Colors are represented as RGB(A) with each value ranging from 0.0 to 1.0. The alpha value defaults to 1.0 (fully opaque).
+
+The :class:`Vector3` class is only used to represent an accelerometer vector (returned from the :func:`gravity` function).
+
+
+.. class:: Point(x=0, y=0)
+
+   Return a :class:`Point` object with `x` and `y` as its coordinates.
+   Points support the `in` operator to test whether they lie
+   within a given :class:`Rect`.
+
+.. method:: Point.as_tuple()
+   
+   Return the point as a tuple of (x, y).
+
+.. method:: Point.distance(other_point)
+
+   Return the cartesian distance to a different :class:`Point` object.
+
+.. attribute:: Point.x
+
+   The :class:`Point`'s `x` coordinate.
+
+.. attribute:: Point.y
+
+   The :class:`Point`'s `y` coordinate.
+
+
+.. class:: Rect(x=0, y=0, w=0, h=0)
+
+   Return a :class:`Rect` object with the origin `x`, `y` and the size `w` x `h`.
+   To test whether a rectangle is within another rectangle, the `in` operator can be used.
+
+
+.. attribute:: Rect.x
+
+   The `x` coordinate of the bottom-left corner.
+
+
+.. attribute:: Rect.y
+
+   The `y` coordinate of the bottom-left corner.
+
+
+.. attribute:: Rect.w
+
+   The width of the rectangle.
+
+
+.. attribute:: Rect.h
+
+   The height of the rectangle
+
+.. method:: Rect.as_tuple()
+   
+   Return the rectangle as a tuple of (x, y, w, h).
+
+.. method:: Rect.left()
+
+   Return the `x` coordinate of the left edge. This is not necessarily the same as `x`, because a
+   rectangle might have a negative width.
+
+
+.. method:: Rect.right()
+
+   Return the `x` coordinate of the right edge.
+
+
+.. method:: Rect.top()
+
+   Return the `y` coordinate of the top edge.
+
+
+.. method:: Rect.bottom()
+
+   Return the `y` coordinate of the bottom edge. This is not necessarily the same as `y`, because a
+   rectangle might have a negative height.
+
+
+.. method:: Rect.size()
+
+   Return a :class:`Size` object with the rectangle's width and height.
+
+
+.. method:: Rect.origin()
+
+   Return a :class:`Point` object with the rectangle's origin (bottom-left corner).
+
+
+.. method:: Rect.center(point_or_x=None, y=0)
+
+   If called with no parameter, return the center of the rectangle.
+
+   If called with a :class:`Point` or `x` and `y` coordinates, adjust the rectangle, so that
+   it's centered on the given point with the same size as before.
+
+
+.. method:: Rect.intersects(other_rect)
+
+   Return whether the rectangle intersects another rectangle.
+
+
+.. class:: Size(w=0, h=0)
+   
+   Return a :class:`Size` object with width `w` and height `h`.
+
+.. attribute:: Size.w
+
+   The size's width.
+
+.. attribute:: Size.h
+
+   The size's height.
+
+.. method:: Size.as_tuple()
+
+   Return the size as a tuple of (w, h).
+
+.. class:: Vector3(x=0, y=0, z=0)
+
+   Return a :class:`Vector3` object with `x`, `y` and `z` coordinates.
+
+.. attribute:: Vector3.x
+
+   The vector's `x` value. This will usually be between 0.0 and 1.0.
+
+.. attribute:: Vector3.y
+
+   The vector's `y` value. This will usually be between 0.0 and 1.0.
+
+.. attribute:: Vector3.z
+
+   The vector's `z` value. This will usually be between 0.0 and 1.0.
+
+
+.. class:: Color (r=1, g=1, b=1, a=1)
+
+   Return a new color with given RGB(A) values in the range 0.0 - 1.0.
+
+.. attribute:: Color.r
+
+   The color's red component in the range 0.0 - 1.0.
+
+.. attribute:: Color.g
+
+   The color's green component in the range 0.0 - 1.0.
+
+.. attribute:: Color.b
+
+   The color's blue component in the range 0.0 - 1.0.
+
+.. method:: Color.as_tuple()
+
+   Return the color as a tuple of (r, g, b, a)
+
+.. class:: Touch(x, y, prev_x, prev_y, touch_id)
+   
+   Return a new :class:`Touch` object. Creating :class:`Touch` objects yourself is not really useful,
+   but they are used as parameters of the :func:`touch_began`, :func:`touch_moved` and 
+   :func:`touch_ended` functions. :class:`Scene` objects also have a `touches` attribute (a dictionary
+   that maps `touch_id` to :class:`Touch` objects).
+
+.. attribute:: Touch.location
+
+   The current location of the touch as a :class:`Point` object.
+
+.. attribute:: Touch.prev_location
+
+   The previous location of the touch (before it moved) as a :class:`Point` object.
+
+.. attribute:: Touch.layer
+
+   The :class:`Layer` object where the touch began. Layers only participate in touch
+   handling if they descend from a :class:`Scene`'s `root_layer`.
+
+
+Scene Objects
+-------------
+
+A :class:`Scene` is the top-level object for presenting graphics. It is designed for subclassing
+and you will usually override at least the :meth:`draw` method. When a scene is run, this method
+gets called automatically for every frame (by default 60 times per second).
+
+To present a scene, you to call the module-level :func:`run` function with an initialized :class:`Scene`
+(or rather, your subclass).
+
+Other methods that you may want to override are :meth:`setup`, :meth:`touch_began`, :meth:`touch_moved`, and :meth:`touch_ended`. The default implementations of these methods do nothing, so there is no need
+to call super.
+
+.. class:: Scene( )
+   
+   Return a new :class:`Scene` object. This class is designed for subclassing, so you will
+   typically not create an instance of the base class.
+
+.. attribute:: bounds
+
+   A :class:`Rect` that has the origin (0, 0) and the size of the drawable area.
+
+.. attribute:: Scene.dt
+
+   The time (in seconds) that has passed since the last invocation of :meth:`draw`.
+
+.. attribute:: Scene.root_layer
+
+   The scene's root layer. You need to set this if you want layers to be able to
+   respond to touches. The root layer's size has to be equivalent to the scene's size.
+
+.. attribute:: Scene.size
+
+   The size of the entire drawable area as a :class:`Size` object.
+
+.. attribute:: Scene.t
+
+   The time (in seconds) that has passed since the scene was started.
+
+.. attribute:: Scene.touches
+
+   A dictionary of all touches that are currently active. The keys correspond to the :attr:`touch_id`
+   attribute of the :class:`Touch` objects.
+
+.. method:: Scene.setup()
+
+   This gets called once before the first invocation of :meth:`draw`. You can use this to set up
+   your scene. The :attr:`size` and :attr:`bounds` attributes are already valid at this point.
+
+.. method:: Scene.should_rotate(orientation)
+   
+   This method gets called automatically when the device is rotated to a different orientation.
+   Return `True` if the scene should be rotated, `False` to suppress the rotation.
+   The `orientation` parameter will be `LANDSCAPE` or `PORTRAIT`.
+   
+   The default implementation returns `False`.
+   
+   If the :func:`run` function was called with an explicit orientation (`LANDSCAPE` or `PORTRAIT`),
+   this will only be called for orientations with the same aspect ratio and the scene will never
+   be rotated from landscape to portrait or vice-versa.
+
+.. method:: Scene.add_layer(layer)
+
+   Adds a :class:`Layer` to the scene's :attr:`root_layer`. If no root layer exists, it is created
+   automatically.
+
+.. method:: Scene.delay(dt, func)
+
+   Automatically invokes the given function after `dt` seconds have passed as part of the render loop.
+
+.. method:: Scene.draw()
+
+   Gets called automatically for every frame (by default 60 times per second).
+   The default implementation does nothing, you can override this method to define what to draw.
+
+.. method:: Scene.touch_began(touch)
+   
+   Gets called automatically when a finger begins touching the screen.
+   The `touch` parameter is a :class:`Touch` object. You can use its :attr:`location` attribute
+   to determine where the touch occurred.
+
+.. method:: Scene.touch_moved(touch)
+
+   Gets called automatically when a finger moves on the screen.
+   The `touch` parameter is a :class:`Touch` object. You can use its :attr:`prev_location` attribute
+   to determine where the touch was before it moved.
+
+.. method:: Scene.touch_ended(touch)
+
+   Gets called automatically when a finger is lifted from the screen.
+   The `touch` parameter is a :class:`Touch` object. You can use its :attr:`location` attribute
+   to determine where the touch ended.
+
+.. method:: Scene.pause()
+   
+   Gets called automatically when the home button is pressed while a scene is running.
+
+.. method:: Scene.resume()
+   
+   Gets called automatically when a scene is resumed (after being sent to the background with the home button).
+
+.. method:: Scene.stop()
+
+   Gets called automatically when a scene is stopped (by tapping the "x" button).
+
+Layer and Animation Objects
+---------------------------
+
+Layers represent a rectangular area on the screen that can be filled with a color and/or an image.
+Layers can also have sublayers that are drawn relative to their parent layer.
+
+The primary purpose for layers is to make animating objects on the screen very easy, without
+having to explicitly calculate intermediate values.
+
+The second section in this document provides a basic tutorial on how to draw and animate layers within
+a scene.
+
+.. class:: Layer([frame])
+   
+   Return a new layer with the given frame, relative to its superlayer or the screen (if it has no
+   superlayer). New layers have a transparent background color by default.
+
+.. attribute:: Layer.alpha
+
+   The layer's translucency (0.0 is fully transparent, 1.0 is fully opaque).
+
+.. attribute:: Layer.animations
+
+   A dictionary of all animations that are currently running. The keys are the animated
+   attributes.
+
+.. attribute:: Layer.background
+
+   The background :class:`Color` of the layer. Defaults to transparent.
+
+.. attribute:: Layer.frame
+
+   A :class:`Rect` that represents the layer's location and size, relative to its parent layer, or,
+   if the layer has no parent layer, to the scene where it's drawn.
+
+.. attribute:: Layer.ignores_touches
+
+   Set this to `True` to make the layer ignore touch events. This is only relevant if
+   the layer descends from the :class:`Scene`'s :attr:`root_layer`.
+
+.. attribute:: Layer.image
+
+   The name of an image that gets drawn in the layer's frame.
+
+.. attribute:: Layer.rotation
+
+   Rotation of the layer around its center (in degrees). This can be animated.
+
+.. attribute:: Layer.scale_x
+
+   Horizontal scaling of the layer's :attr:`frame` (defaults to 1.0). This can be animated.
+
+.. attribute:: Layer.scale_y
+
+   Vertical scaling of the layer's :attr:`frame` (defaults to 1.0). This can be animated.
+
+.. attribute:: Layer.stroke
+
+   The stroke :class:`Color` with which the layer's border is drawn.
+
+.. attribute:: Layer.stroke_weight
+
+   The line width of the layer's border. Defaults to 0.0 (no border).
+
+.. attribute:: Layer.sublayers
+
+   A list of layers that this layer contains. Their coordinates are relative to this layer.
+   You should not modify this list directly, but instead use the :meth:`add_layer` 
+   and :meth:`remove_layer` methods.
+
+.. attribute:: Layer.superlayer
+
+   The parent layer. This gets set automatically when a layer is added to another layer
+   with the :meth:`add_layer` method. You should not set this manually.
+
+.. attribute:: Layer.tint
+
+   If the layer has an :attr:`image`, this determines its :attr:`tint` :class:`Color`.
+
+
+.. method:: Layer.add_animation(animation, key)
+
+   Add an :class:`Animation` to the layer. Added animations are updated automatically by calling
+   the :meth:`update` method. Rather than constructing an :class:`Animation` object, it is usually
+   easier to call the layer's :meth:`animate` method to implicitly build and add an animation.
+
+
+.. method:: Layer.add_layer(layer)
+
+   Add a :class:`Layer` to this layer's :attr:`sublayers` and automatically sets its 
+   :attr:`superlayer`.
+
+
+.. method:: Layer.animate(attribute, to_value, duration=0.5, delay=0.0, curve=curve_sinodial, repeat=1, autoreverse=False, completion=None)
+
+   Create an :class:`Animation` with the given parameters and add it to the layer's :attr:`animations`.
+
+   Depending on the `attribute` (a string), `to_value` can be a number, a :class:`Rect` or
+   a :class:`Color`.
+
+   Animatable attributes are :attr:`frame`, :attr:`scale_x`, :attr:`scale_y`, :attr:`rotation`,
+   :attr:`background`, :attr:`stroke`, :attr:`stroke_weight`, :attr:`tint` and :attr:`alpha`.
+
+
+.. method:: Layer.draw()
+
+   Draw a layer and all its sublayers. You typically call this after calling :meth:`update`.
+   Note that if you use other drawing functions afterwards, you have to explicitly set the colors
+   and other parameters, such as `stroke_weight` because this method may leave these in any state.
+
+
+.. method:: Layer.remove_animation(animation)
+
+   Remove an animation from the layer.
+
+
+.. method:: Layer.remove_all_animations()
+
+   Remove all animations from the layer.
+
+
+.. method:: Layer.remove_layer([layer])
+
+   Remove a layer from its :attr:`superlayer`. If called with no parameters, removes this layer
+   from its parent layer. This can be especially useful as a completion function for animations.
+
+
+.. method:: Layer.update(dt)
+
+   Update all animations of the layer (and its sublayers) with `dt` being the time
+   that has passed since the last invocation.
+   
+   You typically call this with the :class:`Scene`'s `dt` attribute before drawing the layer.
+
+
+.. class:: Animation()
+
+   Returns a new :class:`Animation` object. As an alternative to creating an :class:`Animation`
+   object explicitly, you can use a :class:`Layer`'s :meth:`animate` method.
+
+.. attribute:: Animation.attribute
+
+   The attribute of the layer that is animated (a string).
+
+.. attribute:: Animation.autoreverse
+
+   Controls whether the animation should go back to the original value after completing.
+
+.. attribute:: Animation.curve
+
+   An interpolation function to map from elapsed time to animation progress.
+
+   This function takes one parameter in the range 0.0 - 1.0 and should return another value, also
+   in the range 0.0 - 1.0. In some cases, it can also return a value >1.0 or <0.0 (if an animation
+   should "shoot over" its target).
+
+   Defaults to :func:`curve_sinodial`.
+
+.. attribute:: Animation.delay
+
+   A delay (in seconds) before the animation should start (after it has been added to a :class:`Layer`).
+
+.. attribute:: Animation.duration
+
+   The animation's duration (in seconds)
+
+.. attribute:: Animation.from_value
+
+   The value with which the animation began.
+
+.. attribute:: Animation.repeat
+
+   The animation's repeat count. Defaults to 1.
+
+.. attribute:: Animation.value
+
+   The current value of the animated attribute.
+
+.. attribute:: Animation.completion
+
+   A function (without parameters) that gets called when the animation completes.
+
+.. attribute:: Animation.finished
+
+   Gets set to `True` when the animation finishes.
+
+.. attribute:: Animation.layer
+
+   The :class:`Layer` that this animation was added to.
+
+.. method:: Animation.update(dt)
+
+   Update the animation's progress with a given time delta. This gets called automatically
+   for animations that are attached to a :class:`Layer`.
+
+
+Animation Interpolation Functions
+---------------------------------
+
+The following functions can be used for the :attr:`curve` attribute of :class:`Animation` objects
+or the `curve` parameter of a :class:`Layer`'s :meth:`animate` method.
+
+.. function:: curve_sinodial(x)
+
+   The default interpolation, similar to :func:`ease_in_ease_out`.
+
+.. function:: curve_linear(x)
+
+   Simple linear interpolation (returns the input value).
+
+.. function:: curve_ease_in(x)
+
+   Ease-in interpolation
+
+.. function:: curve_ease_out(x)
+
+   Ease-out interpolation
+
+.. function:: curve_ease_in_out(x)
+
+   Ease-in-ease-out interpolation.
+
+.. function:: curve_elastic_out(x)
+
+   "Rubberband" effect at the end of the animation.
+
+.. function:: curve_elastic_in(x)
+
+   "Rubberband" effect at the start of the animation.
+
+.. function:: curve_elastic_in_out(x)
+
+   "Rubberband" effect at both ends of the animation.
+
+.. function:: curve_bounce_out(x)
+
+   "Bouncing" effect at the end of the animation.
+
+.. function:: curve_bounce_in(x)
+
+   "Bouncing" effect at the start of the animation.
+
+.. function:: curve_bounce_in_out(x)
+
+   "Bouncing" effect at both ends of the animation.
+
+.. function:: curve_ease_back_in(x):
+   
+   Overshooting animation, eased at the start.
+
+.. function:: curve_ease_back_out(x):
+
+   Overshooting animation, eased at the end.
+
+.. function:: curve_ease_back_in_out(x):
+
+   Overshooting animation, eased at the start and end.
