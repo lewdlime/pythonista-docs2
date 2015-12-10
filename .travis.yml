@@ -4,5 +4,5 @@ python:
 install: "pip install -r requirements.txt"
 script:
   - "mkdir _build"
-  - "doc2dash -fv --name Pythonista -d _build -i icon.png --index-page index.html pythonista-docs"
+  - "doc2dash -fv --name Pythonista -d _build -i icon.png --index-page index.html Pythonista"
   - "cd _build && tar --exclude='.DS_Store' -cvzf Pythonista.tgz Pythonista.docset"
