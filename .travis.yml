@@ -1,9 +1,10 @@
 language: python
 python:
-  - "2.7"
+  - "3.5"
 install: "pip install -r requirements.txt"
 script:
   - "mkdir _build"
   - "doc2dash -fv --name Pythonista -d _build -i icon.png --index-page index.html Pythonista"
   - "cp icon@2x.png _build/Pythonista.docset"
   - "cd _build && tar --exclude='.DS_Store' -cvzf Pythonista.tgz Pythonista.docset"
+  
