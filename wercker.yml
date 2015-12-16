@@ -1,10 +1,10 @@
-box: python:3.5-slim
+box: python:3.5
 build:
   steps:
     - virtualenv:
         name: setup virtual environment
         install_wheel: true
-    - pip-install -r requirements.txt
+    - pip-install
     - script:
         name: build docset
         code: |
