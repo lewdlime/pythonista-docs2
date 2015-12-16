@@ -4,10 +4,11 @@ build:
     - virtualenv:
         name: setup virtual environment
         install_wheel: true
-    - pip-install
+    - pip-install -r requirements.txt
     - script:
         name: build docset
         code: |
+          pip install virtualenv
           mkdir _build
           doc2dash -fv --name Pythonista -d _build -i icon.png --index-page index.html Pythonista
           cp icon@2x.png _build/Pythonista.docset
