@@ -4,7 +4,7 @@ build:
     - virtualenv:
         name: setup virtual environment
         install_wheel: true
-    - pip-install virtualenv
+    - pip-install
     - script:
         name: build docset
         code: |
