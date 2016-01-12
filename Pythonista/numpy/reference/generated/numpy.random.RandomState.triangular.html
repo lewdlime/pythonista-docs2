@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.random.RandomState.uniform" href="numpy.random.RandomState.uniform.html" />
     <link rel="prev" title="numpy.random.RandomState.tomaxint" href="numpy.random.RandomState.tomaxint.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -161,11 +161,11 @@ returned.</p>
 <p class="rubric">Notes</p>
 <p>The probability density function for the Triangular distribution is</p>
 <div class="math">
-<p><img src="../../_images/math/cfd6360c5e99d00d308e535422fde58f0292fb2d.png" alt="P(x;l, m, r) = \begin{cases}
+<p><span class="math">P(x;l, m, r) = \begin{cases}
 \frac{2(x-l)}{(r-l)(m-l)}&amp; \text{for $l \leq x \leq m$},\\
 \frac{2(m-x)}{(r-l)(r-m)}&amp; \text{for $m \leq x \leq r$},\\
 0&amp; \text{otherwise}.
-\end{cases}"/></p>
+\end{cases}</span></p>
 </div><p>The triangular distribution is often used in ill-defined problems where the
 underlying distribution is not known, but some knowledge of the limits and
 mode exists. Often it is used in simulations.</p>
@@ -204,7 +204,7 @@ mode exists. Often it is used in simulations.</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

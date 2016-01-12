@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.clip" href="numpy.clip.html" />
     <link rel="prev" title="numpy.conj" href="numpy.conj.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -182,9 +182,9 @@ the signal boundary have no effect.</p>
 <p class="rubric">Notes</p>
 <p>The discrete convolution operation is defined as</p>
 <div class="math">
-<p><img src="../../_images/math/c0d8500f3ebbbdb61715f4fb4644d47be9854021.png" alt="(f * g)[n] = \sum_{m = -\infty}^{\infty} f[m] g[n - m]"/></p>
-</div><p>It can be shown that a convolution <img class="math" src="../../_images/math/19e028e172248b5d4535373cc29c60c9a36bcf19.png" alt="x(t) * y(t)" style="vertical-align: -4px"/> in time/space
-is equivalent to the multiplication <img class="math" src="../../_images/math/d2180b01936e5e97f5afa2049603094b85d03bb4.png" alt="X(f) Y(f)" style="vertical-align: -4px"/> in the Fourier
+<p><span class="math">(f * g)[n] = \sum_{m = -\infty}^{\infty} f[m] g[n - m]</span></p>
+</div><p>It can be shown that a convolution <span class="math">x(t) * y(t)</span> in time/space
+is equivalent to the multiplication <span class="math">X(f) Y(f)</span> in the Fourier
 domain, after appropriate padding (padding is necessary to prevent
 circular convolution).  Since multiplication is more efficient (faster)
 than convolution, the function <tt class="xref py py-obj docutils literal"><span class="pre">scipy.signal.fftconvolve</span></tt> exploits the
@@ -231,7 +231,7 @@ is only one position where they completely overlap:</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

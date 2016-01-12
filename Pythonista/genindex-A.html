@@ -28,7 +28,7 @@
     <link rel="copyright" title="Copyright" href="copyright.html" />
     <link rel="top" title="Pythonista Documentation" href="index.html" />
     <link rel="shortcut icon" type="image/png" href="_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -37,11 +37,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -173,6 +173,7 @@
       <dt><a href="library/threading.html#threading.Semaphore.acquire">(threading.Semaphore method)</a></dt>
   </dl></dd>
     <dt><a href="library/imp.html#imp.acquire_lock">acquire_lock() (in module imp)</a></dt>
+    <dt><a href="ios/scene.html#scene.Action">Action (class in scene)</a></dt>
     <dt><a href="library/optparse.html#optparse.Option.action">action (optparse.Option attribute)</a></dt>
     <dd><dl>
       <dt><a href="ios/ui.html#ui.Button.action">(ui.Button attribute)</a></dt>
@@ -201,12 +202,12 @@
       <dt><a href="library/tarfile.html#tarfile.TarFile.add">(tarfile.TarFile method)</a></dt>
   </dl></dd>
     <dt><a href="library/email.charset.html#email.charset.add_alias">add_alias() (in module email.charset)</a></dt>
-    <dt><a href="ios/scene.html#scene.Layer.add_animation">add_animation() (scene.Layer method)</a></dt>
     <dt><a href="ios/ui.html#ui.Path.add_arc">add_arc() (ui.Path method)</a></dt>
     <dt><a href="library/argparse.html#argparse.ArgumentParser.add_argument">add_argument() (argparse.ArgumentParser method)</a></dt>
     <dt><a href="library/argparse.html#argparse.ArgumentParser.add_argument_group">add_argument_group() (argparse.ArgumentParser method)</a></dt>
     <dt><a href="library/wsgiref.html#wsgiref.handlers.BaseHandler.add_cgi_vars">add_cgi_vars() (wsgiref.handlers.BaseHandler method)</a></dt>
     <dt><a href="library/email.charset.html#email.charset.add_charset">add_charset() (in module email.charset)</a></dt>
+    <dt><a href="ios/scene.html#scene.Node.add_child">add_child() (scene.Node method)</a></dt>
     <dt><a href="ios/ui.html#ui.Path.add_clip">add_clip() (ui.Path method)</a></dt>
     <dt><a href="library/email.charset.html#email.charset.add_codec">add_codec() (in module email.charset)</a></dt>
     <dt><a href="library/cookielib.html#cookielib.CookieJar.add_cookie_header">add_cookie_header() (cookielib.CookieJar method)</a></dt>
@@ -239,10 +240,6 @@
     <dt><a href="library/formatter.html#formatter.formatter.add_hor_rule">add_hor_rule() (formatter.formatter method)</a></dt>
     <dt><a href="library/mailbox.html#mailbox.BabylMessage.add_label">add_label() (mailbox.BabylMessage method)</a></dt>
     <dt><a href="library/formatter.html#formatter.formatter.add_label_data">add_label_data() (formatter.formatter method)</a></dt>
-    <dt><a href="ios/scene.html#scene.Layer.add_layer">add_layer() (scene.Layer method)</a></dt>
-    <dd><dl>
-      <dt><a href="ios/scene.html#scene.Scene.add_layer">(scene.Scene method)</a></dt>
-  </dl></dd>
     <dt><a href="ios/canvas.html#canvas.add_line">add_line() (in module canvas)</a></dt>
     <dt><a href="library/formatter.html#formatter.formatter.add_line_break">add_line_break() (formatter.formatter method)</a></dt>
     <dt><a href="library/formatter.html#formatter.formatter.add_literal_data">add_literal_data() (formatter.formatter method)</a></dt>
@@ -285,6 +282,7 @@
     <dt><a href="library/basehttpserver.html#BaseHTTPServer.BaseHTTPRequestHandler.address_string">address_string() (BaseHTTPServer.BaseHTTPRequestHandler method)</a></dt>
     <dt><a href="library/rfc822.html#rfc822.AddressList">AddressList (class in rfc822)</a></dt>
     <dt><a href="library/rfc822.html#rfc822.AddressList.addresslist">addresslist (rfc822.AddressList attribute)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.addressof">addressof() (in module ctypes)</a></dt>
     <dt><a href="library/unittest.html#unittest.TestResult.addSkip">addSkip() (unittest.TestResult method)</a></dt>
     <dt><a href="library/unittest.html#unittest.TestResult.addSuccess">addSuccess() (unittest.TestResult method)</a></dt>
     <dt><a href="library/unittest.html#unittest.TestSuite.addTest">addTest() (unittest.TestSuite method)</a></dt>
@@ -307,8 +305,13 @@
     <dt><a href="library/aifc.html#index-0">AIFF</a>, <a href="library/chunk.html#index-0">[1]</a></dt>
     <dt><a href="library/aifc.html#aifc.aifc.aiff">aiff() (aifc.aifc method)</a></dt>
     <dt><a href="library/aifc.html#index-0">AIFF-C</a>, <a href="library/chunk.html#index-0">[1]</a></dt>
+    <dt><a href="ios/reminders.html#reminders.Alarm">Alarm (class in reminders)</a></dt>
     <dt><a href="library/signal.html#signal.alarm">alarm() (in module signal)</a></dt>
+    <dt><a href="ios/reminders.html#reminders.Reminder.alarms">alarms (reminders.Reminder attribute)</a></dt>
     <dt><a href="ios/console.html#console.alert">alert() (in module console)</a></dt>
+    <dd><dl>
+      <dt><a href="ios/dialogs.html#dialogs.alert">(in module dialogs)</a></dt>
+  </dl></dd>
     <dt>algorithm</dt>
     <dd><dl>
       <dt><a href="library/crypto.html#index-1">AES</a></dt>
@@ -323,6 +326,7 @@
       <dt><a href="ios/ui.html#ui.TextField.alignment">(ui.TextField attribute)</a></dt>
       <dt><a href="ios/ui.html#ui.TextView.alignment">(ui.TextView attribute)</a></dt>
   </dl></dd>
+    <dt><a href="library/ctypes.html#ctypes.alignment">alignment() (in module ctypes)</a></dt>
     <dt><a href="library/functions.html#all">all() (built-in function)</a></dt>
     <dt><a href="library/ftplib.html#ftplib.all_errors">all_errors (in module ftplib)</a></dt>
     <dt><a href="library/xml.sax.handler.html#xml.sax.handler.all_features">all_features (in module xml.sax.handler)</a></dt>
@@ -335,7 +339,7 @@
     <dt><a href="ios/ui.html#ui.TableView.allows_multiple_selection_during_editing">allows_multiple_selection_during_editing (ui.TableView attribute)</a></dt>
     <dt><a href="ios/ui.html#ui.TableView.allows_selection">allows_selection (ui.TableView attribute)</a></dt>
     <dt><a href="ios/ui.html#ui.TableView.allows_selection_during_editing">allows_selection_during_editing (ui.TableView attribute)</a></dt>
-    <dt><a href="ios/scene.html#scene.Layer.alpha">alpha (scene.Layer attribute)</a></dt>
+    <dt><a href="ios/scene.html#scene.Node.alpha">alpha (scene.Node attribute)</a></dt>
     <dd><dl>
       <dt><a href="ios/ui.html#ui.View.alpha">(ui.View attribute)</a></dt>
   </dl></dd>
@@ -345,12 +349,13 @@
     <dt><a href="ios/ui.html#ui.ScrollView.always_bounce_horizontal">always_bounce_horizontal (ui.ScrollView attribute)</a></dt>
     <dt><a href="ios/ui.html#ui.ScrollView.always_bounce_vertical">always_bounce_vertical (ui.ScrollView attribute)</a></dt>
     <dt><a href="library/optparse.html#optparse.Option.ALWAYS_TYPED_ACTIONS">ALWAYS_TYPED_ACTIONS (optparse.Option attribute)</a></dt>
-    <dt><a href="library/token.html#token.AMPER">AMPER (in module token)</a></dt>
-    <dt><a href="library/token.html#token.AMPEREQUAL">AMPEREQUAL (in module token)</a></dt>
 </dl></td>
   <td style="width: 33%" valign="top"><dl>
+    <dt><a href="library/token.html#token.AMPER">AMPER (in module token)</a></dt>
+    <dt><a href="library/token.html#token.AMPEREQUAL">AMPEREQUAL (in module token)</a></dt>
     <dt><a href="library/htmllib.html#htmllib.HTMLParser.anchor_bgn">anchor_bgn() (htmllib.HTMLParser method)</a></dt>
     <dt><a href="library/htmllib.html#htmllib.HTMLParser.anchor_end">anchor_end() (htmllib.HTMLParser method)</a></dt>
+    <dt><a href="ios/scene.html#scene.SpriteNode.anchor_point">anchor_point (scene.SpriteNode attribute)</a></dt>
     <dt>and</dt>
     <dd><dl>
       <dt><a href="reference/expressions.html#index-61">bitwise</a></dt>
@@ -358,16 +363,12 @@
   </dl></dd>
     <dt><a href="library/operator.html#operator.and_">and_() (in module operator)</a></dt>
     <dt><a href="ios/ui.html#ui.animate">animate() (in module ui)</a></dt>
-    <dd><dl>
-      <dt><a href="ios/scene.html#scene.Layer.animate">(scene.Layer method)</a></dt>
-  </dl></dd>
-    <dt><a href="ios/scene.html#scene.Animation">Animation (class in scene)</a></dt>
-    <dt><a href="ios/scene.html#scene.Layer.animations">animations (scene.Layer attribute)</a></dt>
     <dt><a href="library/dircache.html#dircache.annotate">annotate() (in module dircache)</a></dt>
     <dt>anonymous</dt>
     <dd><dl>
       <dt><a href="reference/expressions.html#index-75">function</a></dt>
   </dl></dd>
+    <dt><a href="ios/scene.html#scene.SceneView.anti_alias">anti_alias (scene.SceneView attribute)</a></dt>
     <dt><a href="library/functions.html#any">any() (built-in function)</a></dt>
     <dt><a href="library/anydbm.html#module-anydbm">anydbm (module)</a></dt>
     <dt><a href="ios/bottle/plugindev.html#bottle.Plugin.api">api (bottle.Plugin attribute)</a></dt>
@@ -394,6 +395,7 @@
     <dt><a href="ios/ui.html#ui.Path.append_path">append_path() (ui.Path method)</a></dt>
     <dt><a href="library/xml.dom.html#xml.dom.Node.appendChild">appendChild() (xml.dom.Node method)</a></dt>
     <dt><a href="library/collections.html#collections.deque.appendleft">appendleft() (collections.deque method)</a></dt>
+    <dt><a href="ios/appex.html#module-appex">appex (module)</a></dt>
     <dt><a href="library/wsgiref.html#wsgiref.util.application_uri">application_uri() (in module wsgiref.util)</a></dt>
     <dt><a href="library/2to3.html#2to3fixer-apply">apply (2to3 fixer)</a></dt>
     <dt><a href="ios/bottle/plugindev.html#bottle.Plugin.apply">apply() (bottle.Plugin method)</a></dt>
@@ -410,6 +412,7 @@
     <dd><dl>
       <dt><a href="library/functools.html#functools.partial.args">(functools.partial attribute)</a></dt>
   </dl></dd>
+    <dt><a href="library/ctypes.html#ctypes._FuncPtr.argtypes">argtypes (ctypes._FuncPtr attribute)</a></dt>
     <dt><a href="glossary.html#term-argument">argument</a></dt>
     <dd><dl>
       <dt><a href="reference/expressions.html#index-38">call semantics</a></dt>
@@ -418,6 +421,7 @@
       <dt><a href="reference/compound_stmts.html#index-20">function definition</a></dt>
   </dl></dd>
     <dt><a href="library/argparse.html#argparse.ArgumentDefaultsHelpFormatter">ArgumentDefaultsHelpFormatter (class in argparse)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.ArgumentError">ArgumentError</a></dt>
     <dt><a href="library/argparse.html#argparse.ArgumentParser">ArgumentParser (class in argparse)</a></dt>
     <dt><a href="library/sys.html#sys.argv">argv (in module sys)</a></dt>
     <dt><a href="library/stdtypes.html#index-15">arithmetic</a></dt>
@@ -442,12 +446,6 @@
     <dt><a href="library/formatter.html#formatter.AS_IS">AS_IS (in module formatter)</a></dt>
     <dt><a href="library/email.message.html#email.message.Message.as_string">as_string() (email.message.Message method)</a></dt>
     <dt><a href="library/decimal.html#decimal.Decimal.as_tuple">as_tuple() (decimal.Decimal method)</a></dt>
-    <dd><dl>
-      <dt><a href="ios/scene.html#scene.Color.as_tuple">(scene.Color method)</a></dt>
-      <dt><a href="ios/scene.html#scene.Point.as_tuple">(scene.Point method)</a></dt>
-      <dt><a href="ios/scene.html#scene.Rect.as_tuple">(scene.Rect method)</a></dt>
-      <dt><a href="ios/scene.html#scene.Size.as_tuple">(scene.Size method)</a></dt>
-  </dl></dd>
     <dt><a href="reference/datamodel.html#index-21">ASCII@ASCII</a>, <a href="reference/datamodel.html#index-22">[1]</a>, <a href="reference/lexical_analysis.html#index-13">[2]</a>, <a href="reference/lexical_analysis.html#index-16">[3]</a>, <a href="reference/lexical_analysis.html#index-21">[4]</a>, <a href="reference/introduction.html#index-1">[5]</a></dt>
     <dt><a href="library/string.html#string.ascii_letters">ascii_letters (in module string)</a></dt>
     <dt><a href="library/string.html#string.ascii_lowercase">ascii_lowercase (in module string)</a></dt>
@@ -564,7 +562,6 @@
       <dt><a href="reference/expressions.html#index-29">reference</a></dt>
       <dt><a href="reference/datamodel.html#index-5">special</a></dt>
   </dl></dd>
-    <dt><a href="ios/scene.html#scene.Animation.attribute">attribute (scene.Animation attribute)</a></dt>
     <dt><a href="library/exceptions.html#exceptions.AttributeError">AttributeError</a></dt>
     <dd><dl>
       <dt><a href="reference/expressions.html#index-30">exception</a></dt>
@@ -612,7 +609,6 @@
     <dd><dl>
       <dt><a href="ios/ui.html#ui.TextView.autocorrection_type">(ui.TextView attribute)</a></dt>
   </dl></dd>
-    <dt><a href="ios/scene.html#scene.Animation.autoreverse">autoreverse (scene.Animation attribute)</a></dt>
 </dl></td>
 </tr></table>
 
@@ -622,12 +618,12 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    &copy; <a href="copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Dec 19, 2015.
     <a href="bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

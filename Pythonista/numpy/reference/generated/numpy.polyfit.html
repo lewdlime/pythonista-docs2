@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.polyder" href="numpy.polyder.html" />
     <link rel="prev" title="numpy.roots" href="numpy.roots.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -216,7 +216,7 @@ deficient. The warning is only raised if <tt class="xref py py-obj docutils lite
 <p class="rubric">Notes</p>
 <p>The solution minimizes the squared error</p>
 <div class="math">
-<p><img src="../../_images/math/3e125ffecb04217922f4cb0a04367165ebf64864.png" alt="E = \sum_{j=0}^k |p(x_j) - y_j|^2"/></p>
+<p><span class="math">E = \sum_{j=0}^k |p(x_j) - y_j|^2</span></p>
 </div><p>in the equations:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="n">n</span> <span class="o">*</span> <span class="n">p</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="o">...</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="n">n</span> <span class="o">*</span> <span class="n">p</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="o">...</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -310,7 +310,7 @@ alternative.</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

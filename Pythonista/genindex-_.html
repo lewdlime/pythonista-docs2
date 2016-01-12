@@ -28,7 +28,7 @@
     <link rel="copyright" title="Copyright" href="copyright.html" />
     <link rel="top" title="Pythonista Documentation" href="index.html" />
     <link rel="shortcut icon" type="image/png" href="_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -37,11 +37,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -353,8 +353,6 @@
     <dd><dl>
       <dt><a href="reference/datamodel.html#object.__lshift__">(object method)</a></dt>
   </dl></dd>
-</dl></td>
-  <td style="width: 33%" valign="top"><dl>
     <dt><a href="library/operator.html#operator.__lt__">__lt__() (in module operator)</a></dt>
     <dd><dl>
       <dt><a href="reference/datamodel.html#object.__lt__">(object method)</a></dt>
@@ -367,6 +365,8 @@
     <dt><a href="library/stdtypes.html#object.__members__">__members__ (object attribute)</a></dt>
     <dt><a href="reference/datamodel.html#__metaclass__">__metaclass__ (built-in variable)</a></dt>
     <dt><a href="library/stdtypes.html#object.__methods__">__methods__ (object attribute)</a></dt>
+</dl></td>
+  <td style="width: 33%" valign="top"><dl>
     <dt><a href="library/collections.html#collections.defaultdict.__missing__">__missing__() (collections.defaultdict method)</a></dt>
     <dt><a href="library/operator.html#operator.__mod__">__mod__() (in module operator)</a></dt>
     <dd><dl>
@@ -495,7 +495,11 @@
     <dd><dl>
       <dt><a href="reference/datamodel.html#object.__xor__">(object method)</a></dt>
   </dl></dd>
+    <dt><a href="library/ctypes.html#ctypes.Structure._anonymous_">_anonymous_ (ctypes.Structure attribute)</a></dt>
     <dt><a href="library/collections.html#collections.somenamedtuple._asdict">_asdict() (collections.somenamedtuple method)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes._CData._b_base_">_b_base_ (ctypes._CData attribute)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes._CData._b_needsfree_">_b_needsfree_ (ctypes._CData attribute)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes._CData">_CData (class in ctypes)</a></dt>
     <dt><a href="library/sys.html#sys._clear_type_cache">_clear_type_cache() (in module sys)</a></dt>
     <dt><a href="library/sys.html#sys._current_frames">_current_frames() (in module sys)</a></dt>
     <dt><a href="library/os.html#os._exit">_exit() (in module os)</a></dt>
@@ -503,17 +507,24 @@
     <dd><dl>
       <dt><a href="library/collections.html#collections.somenamedtuple._fields">(collections.somenamedtuple attribute)</a></dt>
   </dl></dd>
+    <dt><a href="library/ctypes.html#ctypes.Structure._fields_">_fields_ (ctypes.Structure attribute)</a></dt>
     <dt><a href="library/wsgiref.html#wsgiref.handlers.BaseHandler._flush">_flush() (wsgiref.handlers.BaseHandler method)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes._FuncPtr">_FuncPtr (class in ctypes)</a></dt>
     <dt><a href="library/sys.html#sys._getframe">_getframe() (in module sys)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.PyDLL._handle">_handle (ctypes.PyDLL attribute)</a></dt>
     <dt>_locale</dt>
     <dd><dl>
       <dt><a href="library/locale.html#index-0">module</a></dt>
   </dl></dd>
     <dt><a href="library/collections.html#collections.somenamedtuple._make">_make() (collections.somenamedtuple class method)</a></dt>
     <dt><a href="library/unittest.html#unittest.TextTestRunner._makeResult">_makeResult() (unittest.TextTestRunner method)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.PyDLL._name">_name (ctypes.PyDLL attribute)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes._CData._objects">_objects (ctypes._CData attribute)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.Structure._pack_">_pack_ (ctypes.Structure attribute)</a></dt>
     <dt><a href="library/gettext.html#gettext.NullTranslations._parse">_parse() (gettext.NullTranslations method)</a></dt>
     <dt><a href="library/collections.html#collections.somenamedtuple._replace">_replace() (collections.somenamedtuple method)</a></dt>
     <dt><a href="library/xml.etree.elementtree.html#xml.etree.ElementTree.ElementTree._setroot">_setroot() (xml.etree.ElementTree.ElementTree method)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes._SimpleCData">_SimpleCData (class in ctypes)</a></dt>
     <dt><a href="library/email.iterators.html#email.iterators._structure">_structure() (in module email.iterators)</a></dt>
     <dt><a href="library/urllib.html#urllib._urlopener">_urlopener (in module urllib)</a></dt>
     <dt><a href="library/wsgiref.html#wsgiref.handlers.BaseHandler._write">_write() (wsgiref.handlers.BaseHandler method)</a></dt>
@@ -526,12 +537,12 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    &copy; <a href="copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Dec 19, 2015.
     <a href="bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.hanning" href="numpy.hanning.html" />
     <link rel="prev" title="numpy.blackman" href="numpy.blackman.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -150,8 +150,8 @@ one appears only if the number of samples is odd).</p>
 <p class="rubric">Notes</p>
 <p>The Hamming window is defined as</p>
 <div class="math">
-<p><img src="../../_images/math/dfdda51c608b4c7d6ddae294f7ff2e5468ffd693.png" alt="w(n) = 0.54 - 0.46cos\left(\frac{2\pi{n}}{M-1}\right)
-\qquad 0 \leq n \leq M-1"/></p>
+<p><span class="math">w(n) = 0.54 - 0.46cos\left(\frac{2\pi{n}}{M-1}\right)
+\qquad 0 \leq n \leq M-1</span></p>
 </div><p>The Hamming was named for R. W. Hamming, an associate of J. W. Tukey and
 is described in Blackman and Tukey. It was recommended for smoothing the
 truncated autocovariance function in the time domain.
@@ -245,7 +245,7 @@ University of Alberta Press, 1975, pp. 109-110.</td></tr>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

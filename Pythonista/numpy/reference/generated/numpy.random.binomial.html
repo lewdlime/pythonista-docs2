@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.random.chisquare" href="numpy.random.chisquare.html" />
     <link rel="prev" title="numpy.random.beta" href="numpy.random.beta.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -163,9 +163,9 @@ input as a float, but it is truncated to an integer in use)</p>
 <p class="rubric">Notes</p>
 <p>The probability density for the Binomial distribution is</p>
 <div class="math">
-<p><img src="../../_images/math/d0e9bf22b11bd63cac4e02feb23f7c40e2c26943.png" alt="P(N) = \binom{n}{N}p^N(1-p)^{n-N},"/></p>
-</div><p>where <img class="math" src="../../_images/math/b1f5ca5a538abe6036ed478902bb5a03ef05f0c2.png" alt="n" style="vertical-align: 0px"/> is the number of trials, <img class="math" src="../../_images/math/c5b47cd114d1cd218d587260b667ed59b7ace4a0.png" alt="p" style="vertical-align: -3px"/> is the probability
-of success, and <img class="math" src="../../_images/math/10f77f12438cb385098c4d2344aaa427d0a462a8.png" alt="N" style="vertical-align: 0px"/> is the number of successes.</p>
+<p><span class="math">P(N) = \binom{n}{N}p^N(1-p)^{n-N},</span></p>
+</div><p>where <span class="math">n</span> is the number of trials, <span class="math">p</span> is the probability
+of success, and <span class="math">N</span> is the number of successes.</p>
 <p>When estimating the standard error of a proportion in a population by
 using a random sample, the normal distribution works well unless the
 product p*n &lt;=5, where p = population proportion estimate, and n =
@@ -241,7 +241,7 @@ generate zero positive results.</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

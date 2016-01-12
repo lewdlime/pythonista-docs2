@@ -29,60 +29,8 @@
     <link rel="next" title="Typesetting With XeLaTeX/LuaLaTeX" href="pgf.html" />
     <link rel="prev" title="Text properties and layout" href="text_props.html" />
     <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
-    <style>
-    @media only screen and (max-device-width : 320px) {
-        .pythonista-ipad-only {
-            display: none;
-        }
-    }
-    @media only screen and (min-device-width : 321px) {
-        .pythonista-iphone-only {
-            display: none;
-        }
-    }
-    p, li {
-        -webkit-hyphens: auto;
-    }
-    .pythonista-code-header {
-        background-color: #f2f2f2;
-        border-style: solid;
-        border-width: 1px 1px 0 1px;
-        border-color: #cdcdcd;
-        margin-bottom: -16px;
-        padding: 5px;
-        border-radius: 6px 6px 0 0;
-    }
-    .pythonista-button {
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fdfdfd), color-stop(49%,#e2e2e2), color-stop(50%,#cecece), color-stop(100%,#dfdfdf));
-        border: 1px solid #959595;
-        box-shadow: rgba(255, 255, 255, 0.75) 0 1px 0;
-        text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0;
-        margin-right: 10px;
-        
-        font-family: Helvetica;
-        font-weight: bold;
-        font-size: 14px;  
-        padding: 5px;
-        border-radius: 4px;
-        display: inline-block;
-        color: #333;
-        
-        cursor: default;
-        
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        -webkit-user-select: none;
-    }
-    .pythonista-button:active {
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cacaca), color-stop(49%,#c9c9c9), color-stop(50%,#bebebe), color-stop(100%,#c1c1c1));
-        
-    }
-    
-    pre {
-        background-color: #fafafa;
-        border: 1px solid #cdcdcd;
-    }
-    </style>
+    <link rel="stylesheet" href="../_static/pythonista.css" type="text/css" />
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -91,11 +39,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -659,29 +607,29 @@ over the i:</p>
 <td><img src="../_images/mathmpl/math-1f9db75fdb.png" style="position: relative; bottom: -7px"/> <tt class="docutils literal"><span class="pre">[</span></tt></td>
 <td><img src="../_images/mathmpl/math-0c8ba18b43.png" style="position: relative; bottom: -6px"/> <tt class="docutils literal"><span class="pre">\Downarrow</span></tt></td>
 <td><img src="../_images/mathmpl/math-d00ab41d80.png" style="position: relative; bottom: -6px"/> <tt class="docutils literal"><span class="pre">\Uparrow</span></tt></td>
-<td><img src="../_images/mathmpl/math-2480720752.png" style="position: relative; bottom: -7px"/> <tt class="docutils literal"><span class="pre">\Vert</span></tt></td>
-<td><img src="../_images/mathmpl/math-b6a35dc0d4.png" style="position: relative; bottom: -7px"/> <tt class="docutils literal"><span class="pre">\backslash</span></tt></td>
+<td><img src="../_images/mathmpl/math-2480720752.png" style="position: relative; bottom: -8px"/> <tt class="docutils literal"><span class="pre">\Vert</span></tt></td>
+<td><img src="../_images/mathmpl/math-b6a35dc0d4.png" style="position: relative; bottom: -8px"/> <tt class="docutils literal"><span class="pre">\backslash</span></tt></td>
 </tr>
 <tr class="row-even"><td><img src="../_images/mathmpl/math-56b7078922.png" style="position: relative; bottom: -6px"/> <tt class="docutils literal"><span class="pre">\downarrow</span></tt></td>
 <td><img src="../_images/mathmpl/math-46c392f788.png" style="position: relative; bottom: -7px"/> <tt class="docutils literal"><span class="pre">\langle</span></tt></td>
-<td><img src="../_images/mathmpl/math-6c35839641.png" style="position: relative; bottom: -7px"/> <tt class="docutils literal"><span class="pre">\lceil</span></tt></td>
+<td><img src="../_images/mathmpl/math-6c35839641.png" style="position: relative; bottom: -8px"/> <tt class="docutils literal"><span class="pre">\lceil</span></tt></td>
 <td><img src="../_images/mathmpl/math-145ca7a5e7.png" style="position: relative; bottom: -7px"/> <tt class="docutils literal"><span class="pre">\lfloor</span></tt></td>
 <td><img src="../_images/mathmpl/math-554199c05b.png" style="position: relative; bottom: -7px"/> <tt class="docutils literal"><span class="pre">\llcorner</span></tt></td>
 <td><img src="../_images/mathmpl/math-057e1a984d.png" style="position: relative; bottom: -7px"/> <tt class="docutils literal"><span class="pre">\lrcorner</span></tt></td>
 </tr>
 <tr class="row-odd"><td><img src="../_images/mathmpl/math-ef94320557.png" style="position: relative; bottom: -7px"/> <tt class="docutils literal"><span class="pre">\rangle</span></tt></td>
-<td><img src="../_images/mathmpl/math-cbd4824a55.png" style="position: relative; bottom: -7px"/> <tt class="docutils literal"><span class="pre">\rceil</span></tt></td>
+<td><img src="../_images/mathmpl/math-cbd4824a55.png" style="position: relative; bottom: -8px"/> <tt class="docutils literal"><span class="pre">\rceil</span></tt></td>
 <td><img src="../_images/mathmpl/math-c8d83de344.png" style="position: relative; bottom: -7px"/> <tt class="docutils literal"><span class="pre">\rfloor</span></tt></td>
 <td><img src="../_images/mathmpl/math-de64de5819.png" style="position: relative; bottom: --2px"/> <tt class="docutils literal"><span class="pre">\ulcorner</span></tt></td>
 <td><img src="../_images/mathmpl/math-f1bfb0bbf7.png" style="position: relative; bottom: -6px"/> <tt class="docutils literal"><span class="pre">\uparrow</span></tt></td>
 <td><img src="../_images/mathmpl/math-4f8107394b.png" style="position: relative; bottom: --2px"/> <tt class="docutils literal"><span class="pre">\urcorner</span></tt></td>
 </tr>
-<tr class="row-even"><td><img src="../_images/mathmpl/math-e12e277d39.png" style="position: relative; bottom: -7px"/> <tt class="docutils literal"><span class="pre">\vert</span></tt></td>
+<tr class="row-even"><td><img src="../_images/mathmpl/math-e12e277d39.png" style="position: relative; bottom: -8px"/> <tt class="docutils literal"><span class="pre">\vert</span></tt></td>
 <td><img src="../_images/mathmpl/math-f81f19a962.png" style="position: relative; bottom: -7px"/> <tt class="docutils literal"><span class="pre">\{</span></tt></td>
-<td><img src="../_images/mathmpl/math-ee61bb7cf9.png" style="position: relative; bottom: -7px"/> <tt class="docutils literal"><span class="pre">\|</span></tt></td>
+<td><img src="../_images/mathmpl/math-ee61bb7cf9.png" style="position: relative; bottom: -8px"/> <tt class="docutils literal"><span class="pre">\|</span></tt></td>
 <td><img src="../_images/mathmpl/math-19097cff83.png" style="position: relative; bottom: -7px"/> <tt class="docutils literal"><span class="pre">\}</span></tt></td>
 <td><img src="../_images/mathmpl/math-d35c7fd4db.png" style="position: relative; bottom: -7px"/> <tt class="docutils literal"><span class="pre">]</span></tt></td>
-<td><img src="../_images/mathmpl/math-dfa04fb947.png" style="position: relative; bottom: -7px"/> <tt class="docutils literal"><span class="pre">|</span></tt></td>
+<td><img src="../_images/mathmpl/math-dfa04fb947.png" style="position: relative; bottom: -8px"/> <tt class="docutils literal"><span class="pre">|</span></tt></td>
 </tr>
 </tbody>
 </table>
@@ -805,8 +753,8 @@ over the i:</p>
 <td><img src="../_images/mathmpl/math-937e2c148d.png" style="position: relative; bottom: -3px"/> <tt class="docutils literal"><span class="pre">\because</span></tt></td>
 </tr>
 <tr class="row-odd"><td><img src="../_images/mathmpl/math-51ae43b24b.png" style="position: relative; bottom: -7px"/> <tt class="docutils literal"><span class="pre">\between</span></tt></td>
-<td><img src="../_images/mathmpl/math-3b72c12de0.png" style="position: relative; bottom: -7px"/> <tt class="docutils literal"><span class="pre">\bigcirc</span></tt></td>
-<td><img src="../_images/mathmpl/math-e98739824f.png" style="position: relative; bottom: -7px"/> <tt class="docutils literal"><span class="pre">\bigtriangledown</span></tt></td>
+<td><img src="../_images/mathmpl/math-3b72c12de0.png" style="position: relative; bottom: -6px"/> <tt class="docutils literal"><span class="pre">\bigcirc</span></tt></td>
+<td><img src="../_images/mathmpl/math-e98739824f.png" style="position: relative; bottom: -6px"/> <tt class="docutils literal"><span class="pre">\bigtriangledown</span></tt></td>
 </tr>
 <tr class="row-even"><td><img src="../_images/mathmpl/math-52ddd6655e.png" style="position: relative; bottom: -3px"/> <tt class="docutils literal"><span class="pre">\bigtriangleup</span></tt></td>
 <td><img src="../_images/mathmpl/math-679967c920.png" style="position: relative; bottom: -8px"/> <tt class="docutils literal"><span class="pre">\blacktriangleleft</span></tt></td>
@@ -837,10 +785,10 @@ over the i:</p>
 <td><img src="../_images/mathmpl/math-615de138a6.png" style="position: relative; bottom: -3px"/> <tt class="docutils literal"><span class="pre">\curlyvee</span></tt></td>
 </tr>
 <tr class="row-odd"><td><img src="../_images/mathmpl/math-5af1fa6042.png" style="position: relative; bottom: -3px"/> <tt class="docutils literal"><span class="pre">\curlywedge</span></tt></td>
-<td><img src="../_images/mathmpl/math-9b12241d0c.png" style="position: relative; bottom: -7px"/> <tt class="docutils literal"><span class="pre">\dag</span></tt></td>
+<td><img src="../_images/mathmpl/math-9b12241d0c.png" style="position: relative; bottom: -6px"/> <tt class="docutils literal"><span class="pre">\dag</span></tt></td>
 <td><img src="../_images/mathmpl/math-9e1beabce9.png" style="position: relative; bottom: -3px"/> <tt class="docutils literal"><span class="pre">\dashv</span></tt></td>
 </tr>
-<tr class="row-even"><td><img src="../_images/mathmpl/math-f0fa40854a.png" style="position: relative; bottom: -7px"/> <tt class="docutils literal"><span class="pre">\ddag</span></tt></td>
+<tr class="row-even"><td><img src="../_images/mathmpl/math-f0fa40854a.png" style="position: relative; bottom: -6px"/> <tt class="docutils literal"><span class="pre">\ddag</span></tt></td>
 <td><img src="../_images/mathmpl/math-765d4eae57.png" style="position: relative; bottom: -3px"/> <tt class="docutils literal"><span class="pre">\diamond</span></tt></td>
 <td><img src="../_images/mathmpl/math-a1903b29fd.png" style="position: relative; bottom: -3px"/> <tt class="docutils literal"><span class="pre">\div</span></tt></td>
 </tr>
@@ -913,7 +861,7 @@ over the i:</p>
 <td><img src="../_images/mathmpl/math-ad67ff4a6f.png" style="position: relative; bottom: -8px"/> <tt class="docutils literal"><span class="pre">\lnsim</span></tt></td>
 <td><img src="../_images/mathmpl/math-f557917efd.png" style="position: relative; bottom: -4px"/> <tt class="docutils literal"><span class="pre">\ltimes</span></tt></td>
 </tr>
-<tr class="row-even"><td><img src="../_images/mathmpl/math-96c9a8ca95.png" style="position: relative; bottom: -7px"/> <tt class="docutils literal"><span class="pre">\mid</span></tt></td>
+<tr class="row-even"><td><img src="../_images/mathmpl/math-96c9a8ca95.png" style="position: relative; bottom: -8px"/> <tt class="docutils literal"><span class="pre">\mid</span></tt></td>
 <td><img src="../_images/mathmpl/math-b5ae8c62a3.png" style="position: relative; bottom: -3px"/> <tt class="docutils literal"><span class="pre">\models</span></tt></td>
 <td><img src="../_images/mathmpl/math-608c4a02ea.png" style="position: relative; bottom: -5px"/> <tt class="docutils literal"><span class="pre">\mp</span></tt></td>
 </tr>
@@ -1186,9 +1134,9 @@ over the i:</p>
 <td><img src="../_images/mathmpl/math-43575c473c.png" style="position: relative; bottom: -4px"/> <tt class="docutils literal"><span class="pre">\rightrightarrows</span></tt></td>
 </tr>
 <tr class="row-even"><td><img src="../_images/mathmpl/math-2aff52a07e.png" style="position: relative; bottom: -0px"/> <tt class="docutils literal"><span class="pre">\rightsquigarrow</span></tt></td>
-<td><img src="../_images/mathmpl/math-93a935b705.png" style="position: relative; bottom: -7px"/> <tt class="docutils literal"><span class="pre">\searrow</span></tt></td>
+<td><img src="../_images/mathmpl/math-93a935b705.png" style="position: relative; bottom: -6px"/> <tt class="docutils literal"><span class="pre">\searrow</span></tt></td>
 </tr>
-<tr class="row-odd"><td><img src="../_images/mathmpl/math-8d37bd9196.png" style="position: relative; bottom: -7px"/> <tt class="docutils literal"><span class="pre">\swarrow</span></tt></td>
+<tr class="row-odd"><td><img src="../_images/mathmpl/math-8d37bd9196.png" style="position: relative; bottom: -6px"/> <tt class="docutils literal"><span class="pre">\swarrow</span></tt></td>
 <td><img src="../_images/mathmpl/math-306ea70acd.png" style="position: relative; bottom: -3px"/> <tt class="docutils literal"><span class="pre">\to</span></tt></td>
 </tr>
 <tr class="row-even"><td><img src="../_images/mathmpl/math-ae2fa40b25.png" style="position: relative; bottom: -2px"/> <tt class="docutils literal"><span class="pre">\twoheadleftarrow</span></tt></td>
@@ -1235,7 +1183,7 @@ over the i:</p>
 <td><img src="../_images/mathmpl/math-482297a060.png" style="position: relative; bottom: -6px"/> <tt class="docutils literal"><span class="pre">\P</span></tt></td>
 </tr>
 <tr class="row-odd"><td><img src="../_images/mathmpl/math-6ea3150bfd.png" style="position: relative; bottom: -3px"/> <tt class="docutils literal"><span class="pre">\Re</span></tt></td>
-<td><img src="../_images/mathmpl/math-a99c89f6e1.png" style="position: relative; bottom: -7px"/> <tt class="docutils literal"><span class="pre">\S</span></tt></td>
+<td><img src="../_images/mathmpl/math-a99c89f6e1.png" style="position: relative; bottom: -6px"/> <tt class="docutils literal"><span class="pre">\S</span></tt></td>
 <td><img src="../_images/mathmpl/math-2fcd70072d.png" style="position: relative; bottom: -3px"/> <tt class="docutils literal"><span class="pre">\angle</span></tt></td>
 </tr>
 <tr class="row-even"><td><img src="../_images/mathmpl/math-9db5c962c8.png" style="position: relative; bottom: --4px"/> <tt class="docutils literal"><span class="pre">\backprime</span></tt></td>
@@ -1348,7 +1296,7 @@ also be used:</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

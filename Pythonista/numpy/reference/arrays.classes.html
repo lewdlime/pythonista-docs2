@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.matrix.T" href="generated/numpy.matrix.T.html" />
     <link rel="prev" title="Iterating Over Arrays" href="arrays.nditer.html" />
     <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -481,7 +481,7 @@ object, then the Python code:</p>
 <p>calls <tt class="docutils literal"><span class="pre">val</span> <span class="pre">=</span> <span class="pre">myiter.next()</span></tt> repeatedly until <tt class="xref py py-exc docutils literal"><span class="pre">StopIteration</span></tt> is
 raised by the iterator. There are several ways to iterate over an
 array that may be useful: default iteration, flat iteration, and
-<img class="math" src="../_images/math/10f77f12438cb385098c4d2344aaa427d0a462a8.png" alt="N" style="vertical-align: 0px"/>-dimensional enumeration.</p>
+<span class="math">N</span>-dimensional enumeration.</p>
 <div class="section" id="default-iteration">
 <h3>Default iteration<a class="headerlink" href="#default-iteration" title="Permalink to this headline">¶</a></h3>
 <p>The default iterator of an ndarray object is the default Python
@@ -491,9 +491,9 @@ used as an iterator. The default behavior is equivalent to:</p>
     <span class="n">val</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>This default iterator selects a sub-array of dimension <img class="math" src="../_images/math/d062a127ede35244ac17c5e277e07ccbeaa4174e.png" alt="N-1" style="vertical-align: -1px"/>
+<p>This default iterator selects a sub-array of dimension <span class="math">N-1</span>
 from the array. This can be a useful construct for defining recursive
-algorithms. To loop over the entire array requires <img class="math" src="../_images/math/10f77f12438cb385098c4d2344aaa427d0a462a8.png" alt="N" style="vertical-align: 0px"/> for-loops.</p>
+algorithms. To loop over the entire array requires <span class="math">N</span> for-loops.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span><span class="o">+</span><span class="mi">10</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="k">print</span> <span class="s">&#39;item:&#39;</span><span class="p">,</span> <span class="n">val</span>
@@ -572,7 +572,7 @@ iterating. The ndenumerate iterator can achieve this.</p>
 </tbody>
 </table>
 <p>The general concept of broadcasting is also available from Python
-using the <a class="reference internal" href="generated/numpy.broadcast.html#numpy.broadcast" title="numpy.broadcast"><tt class="xref py py-class docutils literal"><span class="pre">broadcast</span></tt></a> iterator. This object takes <img class="math" src="../_images/math/10f77f12438cb385098c4d2344aaa427d0a462a8.png" alt="N" style="vertical-align: 0px"/>
+using the <a class="reference internal" href="generated/numpy.broadcast.html#numpy.broadcast" title="numpy.broadcast"><tt class="xref py py-class docutils literal"><span class="pre">broadcast</span></tt></a> iterator. This object takes <span class="math">N</span>
 objects as inputs and returns an iterator that returns tuples
 providing each of the input sequence elements in the broadcasted
 result.</p>
@@ -599,7 +599,7 @@ result.</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

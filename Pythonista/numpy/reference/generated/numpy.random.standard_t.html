@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.random.triangular" href="numpy.random.triangular.html" />
     <link rel="prev" title="numpy.random.standard_normal" href="numpy.random.standard_normal.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -151,8 +151,8 @@ returned.</p>
 <p class="rubric">Notes</p>
 <p>The probability density function for the t distribution is</p>
 <div class="math">
-<p><img src="../../_images/math/4fc2fc29911b6a4f05960ce0c1107face9f9790b.png" alt="P(x, df) = \frac{\Gamma(\frac{df+1}{2})}{\sqrt{\pi df}
-\Gamma(\frac{df}{2})}\Bigl( 1+\frac{x^2}{df} \Bigr)^{-(df+1)/2}"/></p>
+<p><span class="math">P(x, df) = \frac{\Gamma(\frac{df+1}{2})}{\sqrt{\pi df}
+\Gamma(\frac{df}{2})}\Bigl( 1+\frac{x^2}{df} \Bigr)^{-(df+1)/2}</span></p>
 </div><p>The t test is based on an assumption that the data come from a Normal
 distribution. The t test provides a way to test whether the sample mean
 (that is the mean calculated from the data) is a good estimate of the true
@@ -226,7 +226,7 @@ probability of about 99% of being true.</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

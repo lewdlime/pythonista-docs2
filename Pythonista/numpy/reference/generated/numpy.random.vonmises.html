@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.random.wald" href="numpy.random.wald.html" />
     <link rel="prev" title="numpy.random.uniform" href="numpy.random.uniform.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -165,9 +165,9 @@ distribution.</p>
 <p class="rubric">Notes</p>
 <p>The probability density for the von Mises distribution is</p>
 <div class="math">
-<p><img src="../../_images/math/96c3428c856c9a2853987de5fe5618a45f7f3c00.png" alt="p(x) = \frac{e^{\kappa cos(x-\mu)}}{2\pi I_0(\kappa)},"/></p>
-</div><p>where <img class="math" src="../../_images/math/fb6d665bbe0c01fc1af5c5f5fa7df40dc71331d7.png" alt="\mu" style="vertical-align: -3px"/> is the mode and <img class="math" src="../../_images/math/09614184392d1d0c17c933c71030b937df2c8355.png" alt="\kappa" style="vertical-align: 0px"/> the dispersion,
-and <img class="math" src="../../_images/math/5eccfce49af55eacd5ac77815cba6d2e40c43936.png" alt="I_0(\kappa)" style="vertical-align: -4px"/> is the modified Bessel function of order 0.</p>
+<p><span class="math">p(x) = \frac{e^{\kappa cos(x-\mu)}}{2\pi I_0(\kappa)},</span></p>
+</div><p>where <span class="math">\mu</span> is the mode and <span class="math">\kappa</span> the dispersion,
+and <span class="math">I_0(\kappa)</span> is the modified Bessel function of order 0.</p>
 <p>The von Mises is named for Richard Edler von Mises, who was born in
 Austria-Hungary, in what is now the Ukraine.  He fled to the United
 States in 1939 and became a professor at Harvard.  He worked in
@@ -214,7 +214,7 @@ the probability density function:</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

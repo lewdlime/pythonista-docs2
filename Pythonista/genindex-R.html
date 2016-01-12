@@ -28,7 +28,7 @@
     <link rel="copyright" title="Copyright" href="copyright.html" />
     <link rel="top" title="Pythonista Documentation" href="index.html" />
     <link rel="shortcut icon" type="image/png" href="_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -37,11 +37,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -118,7 +118,6 @@
 
 <table style="width: 100%" class="indextable"><tr>
   <td style="width: 33%" valign="top"><dl>
-    <dt><a href="ios/scene.html#scene.Color.r">r (scene.Color attribute)</a></dt>
     <dt><a href="library/rexec.html#rexec.RExec.r_eval">r_eval() (rexec.RExec method)</a></dt>
     <dt><a href="library/rexec.html#rexec.RExec.r_exec">r_exec() (rexec.RExec method)</a></dt>
     <dt><a href="library/rexec.html#rexec.RExec.r_execfile">r_execfile() (rexec.RExec method)</a></dt>
@@ -158,6 +157,7 @@
   </dl></dd>
     <dt><a href="library/functions.html#range">range() (built-in function)</a></dt>
     <dt><a href="ios/ImageFilter.html#ImageFilter.RankFilter">RankFilter() (in module ImageFilter)</a></dt>
+    <dt><a href="ios/sound.html#sound.MIDIPlayer.rate">rate (sound.MIDIPlayer attribute)</a></dt>
     <dt><a href="library/difflib.html#difflib.SequenceMatcher.ratio">ratio() (difflib.SequenceMatcher method)</a></dt>
     <dt><a href="library/numbers.html#numbers.Rational">Rational (class in numbers)</a></dt>
     <dt><a href="library/io.html#io.BufferedIOBase.raw">raw (io.BufferedIOBase attribute)</a></dt>
@@ -216,6 +216,7 @@
       <dt><a href="library/io.html#io.BytesIO.read1">(io.BytesIO method)</a></dt>
   </dl></dd>
     <dt><a href="library/telnetlib.html#telnetlib.Telnet.read_all">read_all() (telnetlib.Telnet method)</a></dt>
+    <dt><a href="ios/cb.html#cb.Peripheral.read_characteristic_value">read_characteristic_value() (cb.Peripheral method)</a></dt>
     <dt><a href="library/telnetlib.html#telnetlib.Telnet.read_eager">read_eager() (telnetlib.Telnet method)</a></dt>
     <dt><a href="library/telnetlib.html#telnetlib.Telnet.read_lazy">read_lazy() (telnetlib.Telnet method)</a></dt>
     <dt><a href="library/mimetypes.html#mimetypes.read_mime_types">read_mime_types() (in module mimetypes)</a></dt>
@@ -290,7 +291,7 @@
     <dt><a href="ios/scene.html#scene.Rect">Rect (class in scene)</a></dt>
     <dt><a href="library/cmath.html#cmath.rect">rect() (in module cmath)</a></dt>
     <dd><dl>
-      <dt><a href="ios/scene.html#scene.rect">(in module scene)</a></dt>
+      <dt><a href="ios/scene_drawing.html#scene_drawing.rect">(in module scene_drawing)</a></dt>
       <dt><a href="ios/ui.html#ui.Path.rect">(ui.Path class method)</a></dt>
   </dl></dd>
     <dt><a href="ios/ImageDraw.html#ImageDraw.ImageDraw.rectangle">rectangle() (ImageDraw.ImageDraw method)</a></dt>
@@ -389,6 +390,8 @@
     <dd><dl>
       <dt><a href="library/decimal.html#decimal.Decimal.remainder_near">(decimal.Decimal method)</a></dt>
   </dl></dd>
+    <dt><a href="ios/reminders.html#reminders.Reminder">Reminder (class in reminders)</a></dt>
+    <dt><a href="ios/reminders.html#module-reminders">reminders (module)</a></dt>
     <dt><a href="ios/bottle/api.html#bottle.BaseRequest.remote_addr">remote_addr (bottle.BaseRequest attribute)</a></dt>
     <dt><a href="ios/bottle/api.html#bottle.BaseRequest.remote_route">remote_route (bottle.BaseRequest attribute)</a></dt>
     <dt><a href="library/array.html#array.array.remove">remove() (array.array method)</a></dt>
@@ -401,8 +404,8 @@
       <dt><a href="library/stdtypes.html#set.remove">(set method)</a></dt>
       <dt><a href="library/xml.etree.elementtree.html#xml.etree.ElementTree.Element.remove">(xml.etree.ElementTree.Element method)</a></dt>
   </dl></dd>
-    <dt><a href="ios/scene.html#scene.Layer.remove_all_animations">remove_all_animations() (scene.Layer method)</a></dt>
-    <dt><a href="ios/scene.html#scene.Layer.remove_animation">remove_animation() (scene.Layer method)</a></dt>
+    <dt><a href="ios/scene.html#scene.Node.remove_action">remove_action() (scene.Node method)</a></dt>
+    <dt><a href="ios/scene.html#scene.Node.remove_all_actions">remove_all_actions() (scene.Node method)</a></dt>
     <dt><a href="library/mailbox.html#mailbox.MaildirMessage.remove_flag">remove_flag() (mailbox.MaildirMessage method)</a></dt>
     <dd><dl>
       <dt><a href="library/mailbox.html#mailbox.MMDFMessage.remove_flag">(mailbox.MMDFMessage method)</a></dt>
@@ -412,9 +415,9 @@
     <dd><dl>
       <dt><a href="library/mailbox.html#mailbox.MH.remove_folder">(mailbox.MH method)</a></dt>
   </dl></dd>
+    <dt><a href="ios/scene.html#scene.Node.remove_from_parent">remove_from_parent() (scene.Node method)</a></dt>
     <dt><a href="ios/contacts.html#contacts.remove_group">remove_group() (in module contacts)</a></dt>
     <dt><a href="library/mailbox.html#mailbox.BabylMessage.remove_label">remove_label() (mailbox.BabylMessage method)</a></dt>
-    <dt><a href="ios/scene.html#scene.Layer.remove_layer">remove_layer() (scene.Layer method)</a></dt>
     <dt><a href="library/configparser.html#ConfigParser.RawConfigParser.remove_option">remove_option() (ConfigParser.RawConfigParser method)</a></dt>
     <dd><dl>
       <dt><a href="library/optparse.html#optparse.OptionParser.remove_option">(optparse.OptionParser method)</a></dt>
@@ -449,15 +452,16 @@
     <dd><dl>
       <dt><a href="ios/bottle/stpl.html#bottle.SimpleTemplate.render">(bottle.SimpleTemplate method)</a></dt>
   </dl></dd>
-    <dt><a href="ios/scene.html#scene.render_text">render_text() (in module scene)</a></dt>
+    <dt><a href="ios/scene_drawing.html#scene_drawing.render_text">render_text() (in module scene_drawing)</a></dt>
+    <dt><a href="ios/scene.html#scene.Node.render_to_texture">render_to_texture() (scene.Node method)</a></dt>
     <dt><a href="ios/ui.html#ui.RENDERING_MODE_AUTOMATIC">RENDERING_MODE_AUTOMATIC (in module ui)</a></dt>
     <dt><a href="ios/ui.html#ui.RENDERING_MODE_ORIGINAL">RENDERING_MODE_ORIGINAL (in module ui)</a></dt>
     <dt><a href="ios/ui.html#ui.RENDERING_MODE_TEMPLATE">RENDERING_MODE_TEMPLATE (in module ui)</a></dt>
-    <dt><a href="ios/scene.html#scene.Animation.repeat">repeat (scene.Animation attribute)</a></dt>
     <dt><a href="library/itertools.html#itertools.repeat">repeat() (in module itertools)</a></dt>
     <dd><dl>
       <dt><a href="library/operator.html#operator.repeat">(in module operator)</a></dt>
       <dt><a href="library/timeit.html#timeit.repeat">(in module timeit)</a></dt>
+      <dt><a href="ios/scene.html#scene.Action.repeat">(scene.Action class method)</a></dt>
       <dt><a href="library/timeit.html#timeit.Timer.repeat">(timeit.Timer method)</a></dt>
   </dl></dd>
     <dt>repetition</dt>
@@ -525,6 +529,7 @@
       <dt><a href="ios/dropbox.html#dropbox.rest.RESTClient.request">(dropbox.rest.RESTClient class method)</a></dt>
       <dt><a href="library/httplib.html#httplib.HTTPConnection.request">(httplib.HTTPConnection method)</a></dt>
       <dt><a href="ios/requests.html#requests.request">(in module requests)</a></dt>
+      <dt><a href="ios/twitter.html#twitter.request">(in module twitter)</a></dt>
       <dt><a href="ios/requests.html#requests.Session.request">(requests.Session method)</a></dt>
   </dl></dd>
     <dt><a href="library/socketserver.html#SocketServer.BaseServer.request_queue_size">request_queue_size (SocketServer.BaseServer attribute)</a></dt>
@@ -548,6 +553,7 @@
       <dt><a href="library/codecs.html#codecs.IncrementalEncoder.reset">(codecs.IncrementalEncoder method)</a></dt>
       <dt><a href="library/codecs.html#codecs.StreamReader.reset">(codecs.StreamReader method)</a></dt>
       <dt><a href="library/codecs.html#codecs.StreamWriter.reset">(codecs.StreamWriter method)</a></dt>
+      <dt><a href="ios/cb.html#cb.reset">(in module cb)</a></dt>
       <dt><a href="library/dircache.html#dircache.reset">(in module dircache)</a></dt>
       <dt><a href="library/pipes.html#pipes.Template.reset">(pipes.Template method)</a></dt>
       <dt><a href="library/sgmllib.html#sgmllib.SGMLParser.reset">(sgmllib.SGMLParser method)</a></dt>
@@ -562,6 +568,9 @@
     <dt><a href="library/warnings.html#warnings.resetwarnings">resetwarnings() (in module warnings)</a></dt>
     <dt><a href="ios/ui.html#ui.Image.resizable_image">resizable_image() (ui.Image method)</a></dt>
     <dt><a href="ios/Image.html#Image.Image.resize">resize() (Image.Image method)</a>, <a href="ios/Image.html#Image.Image.resize">[1]</a></dt>
+    <dd><dl>
+      <dt><a href="library/ctypes.html#ctypes.resize">(in module ctypes)</a></dt>
+  </dl></dd>
     <dt><a href="library/datetime.html#datetime.date.resolution">resolution (datetime.date attribute)</a></dt>
     <dd><dl>
       <dt><a href="library/datetime.html#datetime.datetime.resolution">(datetime.datetime attribute)</a></dt>
@@ -595,6 +604,7 @@
       <dt><a href="reference/executionmodel.html#index-10">execution</a></dt>
   </dl></dd>
     <dt><a href="ios/dropbox.html#dropbox.rest.RESTSocketError">RESTSocketError (class in dropbox.rest)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes._FuncPtr.restype">restype (ctypes._FuncPtr attribute)</a></dt>
     <dt><a href="library/trace.html#trace.Trace.results">results() (trace.Trace method)</a></dt>
     <dt><a href="ios/scene.html#scene.Scene.resume">resume() (scene.Scene method)</a></dt>
     <dt><a href="library/poplib.html#poplib.POP3.retr">retr() (poplib.POP3 method)</a></dt>
@@ -674,7 +684,7 @@
       <dt><a href="library/httplib.html#index-4">RFC 2774</a></dt>
       <dt><a href="library/httplib.html#index-3">RFC 2817</a></dt>
       <dt><a href="library/email.html#index-1">RFC 2821</a></dt>
-      <dt><a href="library/rfc822.html#index-0">RFC 2822</a>, <a href="library/rfc822.html#index-1">[1]</a>, <a href="library/rfc822.html#index-2">[2]</a>, <a href="library/rfc822.html#index-4">[3]</a>, <a href="library/rfc822.html#index-5">[4]</a>, <a href="library/rfc822.html#index-6">[5]</a>, <a href="library/rfc822.html#index-7">[6]</a>, <a href="library/rfc822.html#index-8">[7]</a>, <a href="library/rfc822.html#index-10">[8]</a>, <a href="library/rfc822.html#index-12">[9]</a>, <a href="library/email.header.html#index-0">[10]</a>, <a href="library/email.header.html#index-2">[11]</a>, <a href="library/email.header.html#index-3">[12]</a>, <a href="library/email.header.html#index-9">[13]</a>, <a href="library/email.header.html#index-10">[14]</a>, <a href="library/email.header.html#index-12">[15]</a>, <a href="library/time.html#index-9">[16]</a>, <a href="library/time.html#index-18">[17]</a>, <a href="library/email.generator.html#index-0">[18]</a>, <a href="library/email.generator.html#index-1">[19]</a>, <a href="library/email.util.html#index-0">[20]</a>, <a href="library/email.util.html#index-1">[21]</a>, <a href="library/email.util.html#index-2">[22]</a>, <a href="library/email.util.html#index-3">[23]</a>, <a href="library/email.util.html#index-9">[24]</a>, <a href="library/email.html#index-0">[25]</a>, <a href="library/email.html#index-2">[26]</a>, <a href="library/email.message.html#index-0">[27]</a>, <a href="library/email.message.html#index-1">[28]</a>, <a href="library/smtpd.html#index-0">[29]</a>, <a href="library/email.parser.html#index-0">[30]</a>, <a href="library/mailbox.html#index-0">[31]</a>, <a href="library/email.errors.html#index-0">[32]</a>, <a href="library/email.errors.html#index-1">[33]</a>, <a href="library/email.errors.html#index-2">[34]</a>, <a href="library/email.errors.html#index-3">[35]</a>, <a href="whatsnew/2.2.html#index-20">[36]</a></dt>
+      <dt><a href="library/rfc822.html#index-0">RFC 2822</a>, <a href="library/rfc822.html#index-1">[1]</a>, <a href="library/rfc822.html#index-2">[2]</a>, <a href="library/rfc822.html#index-4">[3]</a>, <a href="library/rfc822.html#index-5">[4]</a>, <a href="library/rfc822.html#index-6">[5]</a>, <a href="library/rfc822.html#index-7">[6]</a>, <a href="library/rfc822.html#index-8">[7]</a>, <a href="library/rfc822.html#index-10">[8]</a>, <a href="library/rfc822.html#index-12">[9]</a>, <a href="library/email.header.html#index-0">[10]</a>, <a href="library/email.header.html#index-2">[11]</a>, <a href="library/email.header.html#index-3">[12]</a>, <a href="library/email.header.html#index-9">[13]</a>, <a href="library/email.header.html#index-10">[14]</a>, <a href="library/email.header.html#index-12">[15]</a>, <a href="library/time.html#index-9">[16]</a>, <a href="library/time.html#index-18">[17]</a>, <a href="library/email.generator.html#index-0">[18]</a>, <a href="library/email.generator.html#index-1">[19]</a>, <a href="library/email.util.html#index-0">[20]</a>, <a href="library/email.util.html#index-1">[21]</a>, <a href="library/email.util.html#index-2">[22]</a>, <a href="library/email.util.html#index-3">[23]</a>, <a href="library/email.util.html#index-9">[24]</a>, <a href="library/email.html#index-0">[25]</a>, <a href="library/email.html#index-2">[26]</a>, <a href="library/email.message.html#index-0">[27]</a>, <a href="library/email.message.html#index-1">[28]</a>, <a href="library/smtpd.html#index-0">[29]</a>, <a href="library/email.parser.html#index-0">[30]</a>, <a href="library/email.errors.html#index-0">[31]</a>, <a href="library/email.errors.html#index-1">[32]</a>, <a href="library/email.errors.html#index-2">[33]</a>, <a href="library/email.errors.html#index-3">[34]</a>, <a href="whatsnew/2.2.html#index-20">[35]</a>, <a href="library/mailbox.html#index-0">[36]</a></dt>
       <dt><a href="library/cookielib.html#index-4">RFC 2964</a></dt>
       <dt><a href="library/urllib2.html#index-0">RFC 2965</a>, <a href="library/urllib2.html#index-2">[1]</a>, <a href="library/cookielib.html#index-0">[2]</a>, <a href="library/cookielib.html#index-3">[3]</a></dt>
       <dt><a href="whatsnew/2.6.html#index-23">RFC 3207</a></dt>
@@ -714,7 +724,6 @@
     <dt><a href="library/colorsys.html#colorsys.rgb_to_hsv">rgb_to_hsv() (in module colorsys)</a></dt>
     <dt><a href="library/colorsys.html#colorsys.rgb_to_yiq">rgb_to_yiq() (in module colorsys)</a></dt>
     <dt><a href="library/filecmp.html#filecmp.dircmp.right">right (filecmp.dircmp attribute)</a></dt>
-    <dt><a href="ios/scene.html#scene.Rect.right">right() (scene.Rect method)</a></dt>
     <dt><a href="ios/ui.html#ui.View.right_button_items">right_button_items (ui.View attribute)</a></dt>
     <dt><a href="library/filecmp.html#filecmp.dircmp.right_list">right_list (filecmp.dircmp attribute)</a></dt>
     <dt><a href="library/filecmp.html#filecmp.dircmp.right_only">right_only (filecmp.dircmp attribute)</a></dt>
@@ -740,7 +749,6 @@
     <dt><a href="library/robotparser.html#module-robotparser">robotparser (module)</a></dt>
     <dt><a href="library/robotparser.html#index-0">robots.txt</a></dt>
     <dt><a href="library/sqlite3.html#sqlite3.Connection.rollback">rollback() (sqlite3.Connection method)</a></dt>
-    <dt><a href="ios/scene.html#scene.Scene.root_layer">root_layer (scene.Scene attribute)</a></dt>
     <dt><a href="library/dis.html#opcode-ROT_FOUR">ROT_FOUR (opcode)</a></dt>
     <dt><a href="library/dis.html#opcode-ROT_THREE">ROT_THREE (opcode)</a></dt>
     <dt><a href="library/dis.html#opcode-ROT_TWO">ROT_TWO (opcode)</a></dt>
@@ -750,10 +758,12 @@
       <dt><a href="library/decimal.html#decimal.Context.rotate">(decimal.Context method)</a></dt>
       <dt><a href="library/decimal.html#decimal.Decimal.rotate">(decimal.Decimal method)</a></dt>
       <dt><a href="ios/canvas.html#canvas.rotate">(in module canvas)</a></dt>
-      <dt><a href="ios/scene.html#scene.rotate">(in module scene)</a></dt>
+      <dt><a href="ios/scene_drawing.html#scene_drawing.rotate">(in module scene_drawing)</a></dt>
   </dl></dd>
+    <dt><a href="ios/scene.html#scene.Action.rotate_by">rotate_by() (scene.Action class method)</a></dt>
+    <dt><a href="ios/scene.html#scene.Action.rotate_to">rotate_to() (scene.Action class method)</a></dt>
     <dt><a href="library/logging.handlers.html#logging.handlers.RotatingFileHandler">RotatingFileHandler (class in logging.handlers)</a></dt>
-    <dt><a href="ios/scene.html#scene.Layer.rotation">rotation (scene.Layer attribute)</a></dt>
+    <dt><a href="ios/scene.html#scene.Node.rotation">rotation (scene.Node attribute)</a></dt>
     <dt><a href="ios/ui.html#ui.Transform.rotation">rotation() (ui.Transform class method)</a></dt>
     <dt><a href="library/functions.html#round">round() (built-in function)</a></dt>
     <dt><a href="library/decimal.html#decimal.Rounded">Rounded (class in decimal)</a></dt>
@@ -801,6 +811,7 @@
       <dt><a href="library/unittest.html#unittest.TestSuite.run">(unittest.TestSuite method)</a></dt>
       <dt><a href="library/wsgiref.html#wsgiref.handlers.BaseHandler.run">(wsgiref.handlers.BaseHandler method)</a></dt>
   </dl></dd>
+    <dt><a href="ios/scene.html#scene.Node.run_action">run_action() (scene.Node method)</a></dt>
     <dt><a href="library/doctest.html#doctest.run_docstring_examples">run_docstring_examples() (in module doctest)</a></dt>
     <dt><a href="library/runpy.html#runpy.run_module">run_module() (in module runpy)</a></dt>
     <dt><a href="library/runpy.html#runpy.run_path">run_path() (in module runpy)</a></dt>
@@ -839,12 +850,12 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    &copy; <a href="copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Dec 19, 2015.
     <a href="bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

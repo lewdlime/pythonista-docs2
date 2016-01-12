@@ -27,7 +27,7 @@
     <link rel="next" title="C API Deprecations" href="c-api.deprecations.html" />
     <link rel="prev" title="Generalized Universal Function API" href="c-api.generalized-ufuncs.html" />
     <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -214,61 +214,61 @@ precision are also available by adding the F and L suffixes respectively.</p>
 <dl class="var">
 <dt id="c.NPY_E">
 <tt class="descname">NPY_E</tt><a class="headerlink" href="#c.NPY_E" title="Permalink to this definition">¶</a></dt>
-<dd><p>Base of natural logarithm (<img class="math" src="../_images/math/ca907ab79fe0188f51d0a5db04642f8042f779d5.png" alt="e" style="vertical-align: 0px"/>)</p>
+<dd><p>Base of natural logarithm (<span class="math">e</span>)</p>
 </dd></dl>
 
 <dl class="var">
 <dt id="c.NPY_LOG2E">
 <tt class="descname">NPY_LOG2E</tt><a class="headerlink" href="#c.NPY_LOG2E" title="Permalink to this definition">¶</a></dt>
-<dd><p>Logarithm to base 2 of the Euler constant (<img class="math" src="../_images/math/f23b7585b585e4c1237a6424ef72595c19d3445a.png" alt="\frac{\ln(e)}{\ln(2)}" style="vertical-align: -8px"/>)</p>
+<dd><p>Logarithm to base 2 of the Euler constant (<span class="math">\frac{\ln(e)}{\ln(2)}</span>)</p>
 </dd></dl>
 
 <dl class="var">
 <dt id="c.NPY_LOG10E">
 <tt class="descname">NPY_LOG10E</tt><a class="headerlink" href="#c.NPY_LOG10E" title="Permalink to this definition">¶</a></dt>
-<dd><p>Logarithm to base 10 of the Euler constant (<img class="math" src="../_images/math/257bb150bb440e2c2068e77118d1886097d1619a.png" alt="\frac{\ln(e)}{\ln(10)}" style="vertical-align: -8px"/>)</p>
+<dd><p>Logarithm to base 10 of the Euler constant (<span class="math">\frac{\ln(e)}{\ln(10)}</span>)</p>
 </dd></dl>
 
 <dl class="var">
 <dt id="c.NPY_LOGE2">
 <tt class="descname">NPY_LOGE2</tt><a class="headerlink" href="#c.NPY_LOGE2" title="Permalink to this definition">¶</a></dt>
-<dd><p>Natural logarithm of 2 (<img class="math" src="../_images/math/ee2815119b4f9fbcb9e964b6252313c8bd075b23.png" alt="\ln(2)" style="vertical-align: -4px"/>)</p>
+<dd><p>Natural logarithm of 2 (<span class="math">\ln(2)</span>)</p>
 </dd></dl>
 
 <dl class="var">
 <dt id="c.NPY_LOGE10">
 <tt class="descname">NPY_LOGE10</tt><a class="headerlink" href="#c.NPY_LOGE10" title="Permalink to this definition">¶</a></dt>
-<dd><p>Natural logarithm of 10 (<img class="math" src="../_images/math/03eb2554999615a1e4e44880b814ca24bfb3fda8.png" alt="\ln(10)" style="vertical-align: -4px"/>)</p>
+<dd><p>Natural logarithm of 10 (<span class="math">\ln(10)</span>)</p>
 </dd></dl>
 
 <dl class="var">
 <dt id="c.NPY_PI">
 <tt class="descname">NPY_PI</tt><a class="headerlink" href="#c.NPY_PI" title="Permalink to this definition">¶</a></dt>
-<dd><p>Pi (<img class="math" src="../_images/math/7321e712e2b80bb4b00be0d9faaa525e3f53cde4.png" alt="\pi" style="vertical-align: 0px"/>)</p>
+<dd><p>Pi (<span class="math">\pi</span>)</p>
 </dd></dl>
 
 <dl class="var">
 <dt id="c.NPY_PI_2">
 <tt class="descname">NPY_PI_2</tt><a class="headerlink" href="#c.NPY_PI_2" title="Permalink to this definition">¶</a></dt>
-<dd><p>Pi divided by 2 (<img class="math" src="../_images/math/4204552f1f6533576c2b1ec914f4abf1cdaeddcd.png" alt="\frac{\pi}{2}" style="vertical-align: -5px"/>)</p>
+<dd><p>Pi divided by 2 (<span class="math">\frac{\pi}{2}</span>)</p>
 </dd></dl>
 
 <dl class="var">
 <dt id="c.NPY_PI_4">
 <tt class="descname">NPY_PI_4</tt><a class="headerlink" href="#c.NPY_PI_4" title="Permalink to this definition">¶</a></dt>
-<dd><p>Pi divided by 4 (<img class="math" src="../_images/math/1f4f2fabb9b30baa436bd54998b80a49f601aa17.png" alt="\frac{\pi}{4}" style="vertical-align: -5px"/>)</p>
+<dd><p>Pi divided by 4 (<span class="math">\frac{\pi}{4}</span>)</p>
 </dd></dl>
 
 <dl class="var">
 <dt id="c.NPY_1_PI">
 <tt class="descname">NPY_1_PI</tt><a class="headerlink" href="#c.NPY_1_PI" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reciprocal of pi (<img class="math" src="../_images/math/4c062e7a23e76e4d2667da92fd0146485cabf899.png" alt="\frac{1}{\pi}" style="vertical-align: -5px"/>)</p>
+<dd><p>Reciprocal of pi (<span class="math">\frac{1}{\pi}</span>)</p>
 </dd></dl>
 
 <dl class="var">
 <dt id="c.NPY_2_PI">
 <tt class="descname">NPY_2_PI</tt><a class="headerlink" href="#c.NPY_2_PI" title="Permalink to this definition">¶</a></dt>
-<dd><p>Two times the reciprocal of pi (<img class="math" src="../_images/math/862e4f6aea189d29854606d9c6596981cdebae3c.png" alt="\frac{2}{\pi}" style="vertical-align: -5px"/>)</p>
+<dd><p>Two times the reciprocal of pi (<span class="math">\frac{2}{\pi}</span>)</p>
 </dd></dl>
 
 <dl class="var">
@@ -276,7 +276,7 @@ precision are also available by adding the F and L suffixes respectively.</p>
 <tt class="descname">NPY_EULER</tt><a class="headerlink" href="#c.NPY_EULER" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
 <dt>The Euler constant</dt>
-<dd><img class="math" src="../_images/math/697694bd1a87bde4fb9d9afc912f5f9a0272891a.png" alt="\lim_{n\rightarrow\infty}({\sum_{k=1}^n{\frac{1}{k}}-\ln n})" style="vertical-align: -6px"/></dd>
+<dd><span class="math">\lim_{n\rightarrow\infty}({\sum_{k=1}^n{\frac{1}{k}}-\ln n})</span></dd>
 </dl>
 </dd></dl>
 
@@ -607,7 +607,7 @@ into a 64-bit double-precision float, stored as a uint64.</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

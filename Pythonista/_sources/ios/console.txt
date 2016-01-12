@@ -1,20 +1,19 @@
 
-:mod:`console` --- Functions for working with the text output and keyboard input
-================================================================================
+:mod:`console` --- Utilities for Console Output and Various System Services
+===========================================================================
 
 .. module:: console
-   :synopsis: Console output on iOS
+   :synopsis: Utilities for Console Output and Various System Services
 .. sectionauthor:: Ole Zorn
 
 
 The :mod:`console` module provides functions to control the text output area and keyboard input in Pythonista.
 
-There are also several functions for presenting simple modal dialogs.
+There are also several functions for presenting simple modal dialogs, and to access system services like the "Open in..." menu and QuickLook.
 
 .. function:: clear()
 
    Clears the console output
-
 
 .. function:: set_font([name, size])
 

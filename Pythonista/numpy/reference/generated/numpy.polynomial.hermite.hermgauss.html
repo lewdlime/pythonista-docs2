@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.polynomial.hermite.hermweight" href="numpy.polynomial.hermite.hermweight.html" />
     <link rel="prev" title="numpy.polynomial.hermite.hermpow" href="numpy.polynomial.hermite.hermpow.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -126,8 +126,8 @@
 <dd><p>Gauss-Hermite quadrature.</p>
 <p>Computes the sample points and weights for Gauss-Hermite quadrature.
 These sample points and weights will correctly integrate polynomials of
-degree <img class="math" src="../../_images/math/cd15eed20fa79ee66b7e4abe2a40d9b13ab0bfc4.png" alt="2*deg - 1" style="vertical-align: -3px"/> or less over the interval <img class="math" src="../../_images/math/b13515179d1379173b752dd278c816749aa58e5a.png" alt="[-\inf, \inf]" style="vertical-align: -4px"/>
-with the weight function <img class="math" src="../../_images/math/0fbcdedf9b38fc5c1047ebadf8eb96fab9063933.png" alt="f(x) = \exp(-x^2)" style="vertical-align: -4px"/>.</p>
+degree <span class="math">2*deg - 1</span> or less over the interval <span class="math">[-\inf, \inf]</span>
+with the weight function <span class="math">f(x) = \exp(-x^2)</span>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -154,9 +154,9 @@ with the weight function <img class="math" src="../../_images/math/0fbcdedf9b38f
 <p>The results have only been tested up to degree 100, higher degrees may
 be problematic. The weights are determined by using the fact that</p>
 <div class="math">
-<p><img src="../../_images/math/3f2a71db45790dbdb24a511e627ac8ad8168fd26.png" alt="w_k = c / (H'_n(x_k) * H_{n-1}(x_k))"/></p>
-</div><p>where <img class="math" src="../../_images/math/e76342811b06d3703a2794f9744a8df6906f358f.png" alt="c" style="vertical-align: 0px"/> is a constant independent of <img class="math" src="../../_images/math/c8ff6dc362a9a07153582909d5a26898fae59569.png" alt="k" style="vertical-align: 0px"/> and <img class="math" src="../../_images/math/5a79068e7cb8b4f52d93a4502fc37e8fa106d62f.png" alt="x_k" style="vertical-align: -2px"/>
-is the k&#8217;th root of <img class="math" src="../../_images/math/80d946d264da07ced63cec416cea50a716739db4.png" alt="H_n" style="vertical-align: -2px"/>, and then scaling the results to get
+<p><span class="math">w_k = c / (H'_n(x_k) * H_{n-1}(x_k))</span></p>
+</div><p>where <span class="math">c</span> is a constant independent of <span class="math">k</span> and <span class="math">x_k</span>
+is the k&#8217;th root of <span class="math">H_n</span>, and then scaling the results to get
 the right value when integrating 1.</p>
 </dd></dl>
 
@@ -173,7 +173,7 @@ the right value when integrating 1.</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

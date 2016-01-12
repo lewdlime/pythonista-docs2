@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.polymul" href="numpy.polymul.html" />
     <link rel="prev" title="numpy.polyadd" href="numpy.polyadd.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -163,7 +163,7 @@ not equal <em class="xref py py-obj">v.ndim</em>. In other words, all four possi
 <tt class="docutils literal"><span class="pre">u.ndim</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">v.ndim</span> <span class="pre">=</span> <span class="pre">0</span></tt>, and <tt class="docutils literal"><span class="pre">u.ndim</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">v.ndim</span> <span class="pre">=</span> <span class="pre">1</span></tt> - work.</p>
 <p class="rubric">Examples</p>
 <div class="math">
-<p><img src="../../_images/math/b32ba51d4738b85a7ac0d0fe922eabe016b9967b.png" alt="\frac{3x^2 + 5x + 2}{2x + 1} = 1.5x + 1.75, remainder 0.25"/></p>
+<p><span class="math">\frac{3x^2 + 5x + 2}{2x + 1} = 1.5x + 1.75, remainder 0.25</span></p>
 </div><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">polydiv</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -185,7 +185,7 @@ not equal <em class="xref py py-obj">v.ndim</em>. In other words, all four possi
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

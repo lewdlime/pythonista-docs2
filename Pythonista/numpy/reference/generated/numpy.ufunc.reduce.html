@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.ufunc.accumulate" href="numpy.ufunc.accumulate.html" />
     <link rel="prev" title="numpy.ufunc.identity" href="numpy.ufunc.identity.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -121,10 +121,10 @@
 <dt id="numpy.ufunc.reduce">
 <tt class="descclassname">ufunc.</tt><tt class="descname">reduce</tt><big>(</big><em>a</em>, <em>axis=0</em>, <em>dtype=None</em>, <em>out=None</em>, <em>keepdims=False</em><big>)</big><a class="headerlink" href="#numpy.ufunc.reduce" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reduces <em class="xref py py-obj">a</em>&#8216;s dimension by one, by applying ufunc along one axis.</p>
-<p>Let <img class="math" src="../../_images/math/b691758bcc38e8ad34bfc32210ced3b900abd86f.png" alt="a.shape = (N_0, ..., N_i, ..., N_{M-1})" style="vertical-align: -4px"/>.  Then
-<img class="math" src="../../_images/math/f4508138b0ae1b3bfac1bb3ff20d0b23561d69a4.png" alt="ufunc.reduce(a, axis=i)[k_0, ..,k_{i-1}, k_{i+1}, .., k_{M-1}]" style="vertical-align: -4px"/> =
-the result of iterating <em class="xref py py-obj">j</em> over <img class="math" src="../../_images/math/c929f5ce07d91784b76935cac0256d2e20bc3d2e.png" alt="range(N_i)" style="vertical-align: -4px"/>, cumulatively applying
-ufunc to each <img class="math" src="../../_images/math/095eb5016f45d8291f2d1ccc6e6f93f236e4103e.png" alt="a[k_0, ..,k_{i-1}, j, k_{i+1}, .., k_{M-1}]" style="vertical-align: -4px"/>.
+<p>Let <span class="math">a.shape = (N_0, ..., N_i, ..., N_{M-1})</span>.  Then
+<span class="math">ufunc.reduce(a, axis=i)[k_0, ..,k_{i-1}, k_{i+1}, .., k_{M-1}]</span> =
+the result of iterating <em class="xref py py-obj">j</em> over <span class="math">range(N_i)</span>, cumulatively applying
+ufunc to each <span class="math">a[k_0, ..,k_{i-1}, j, k_{i+1}, .., k_{M-1}]</span>.
 For a one-dimensional array, reduce produces results equivalent to:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">r</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">identity</span> <span class="c"># op = ufunc</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)):</span>
@@ -226,7 +226,7 @@ the result will broadcast correctly against the original <em class="xref py py-o
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

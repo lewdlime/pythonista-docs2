@@ -42,7 +42,8 @@ works for third-party apps.
 
 .. function:: can_open(url)
 
-   Return whether the given URL can be opened in the browser or any other installed app. This is primarily useful for checking if a particular third-party app is installed on the device.
+   .. warning::
+       This function is deprecated and should not be used. For backwards-compatibility reasons, it will return `True` for any well-formed URL, regardless of whether an app is installed that can handle it. This change was necessary because of privacy-related changes in iOS 9.
 
 .. function:: add_to_reading_list(url, [title, preview_text])
 

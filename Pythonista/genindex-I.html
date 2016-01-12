@@ -28,7 +28,7 @@
     <link rel="copyright" title="Copyright" href="copyright.html" />
     <link rel="top" title="Pythonista Documentation" href="index.html" />
     <link rel="shortcut icon" type="image/png" href="_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -37,11 +37,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -145,6 +145,9 @@
   </dl></dd>
     <dt><a href="library/cmd.html#cmd.Cmd.identchars">identchars (cmd.Cmd attribute)</a></dt>
     <dt><a href="reference/expressions.html#index-5">identifier</a>, <a href="reference/lexical_analysis.html#index-9">[1]</a></dt>
+    <dd><dl>
+      <dt><a href="ios/reminders.html#reminders.Calendar.identifier">(reminders.Calendar attribute)</a></dt>
+  </dl></dd>
     <dt>identity</dt>
     <dd><dl>
       <dt><a href="reference/expressions.html#index-68">test</a></dt>
@@ -166,7 +169,6 @@
     <dt><a href="library/doctest.html#doctest.IGNORE_EXCEPTION_DETAIL">IGNORE_EXCEPTION_DETAIL (in module doctest)</a></dt>
     <dt><a href="library/shutil.html#shutil.ignore_patterns">ignore_patterns() (in module shutil)</a></dt>
     <dt><a href="library/re.html#re.IGNORECASE">IGNORECASE (in module re)</a></dt>
-    <dt><a href="ios/scene.html#scene.Layer.ignores_touches">ignores_touches (scene.Layer attribute)</a></dt>
     <dt><a href="library/nntplib.html#nntplib.NNTP.ihave">ihave() (nntplib.NNTP method)</a></dt>
     <dt><a href="library/operator.html#operator.ilshift">ilshift() (in module operator)</a></dt>
     <dt><a href="reference/datamodel.html#index-40">im_class (method attribute)</a>, <a href="reference/datamodel.html#index-42">[1]</a></dt>
@@ -177,14 +179,13 @@
     <dd><dl>
       <dt><a href="ios/Image.html#module-Image">(module)</a></dt>
   </dl></dd>
-    <dt><a href="ios/scene.html#scene.Layer.image">image (scene.Layer attribute)</a></dt>
+    <dt><a href="ios/ui.html#ui.Button.image">image (ui.Button attribute)</a></dt>
     <dd><dl>
-      <dt><a href="ios/ui.html#ui.Button.image">(ui.Button attribute)</a></dt>
       <dt><a href="ios/ui.html#ui.ButtonItem.image">(ui.ButtonItem attribute)</a></dt>
       <dt><a href="ios/ui.html#ui.ImageView.image">(ui.ImageView attribute)</a></dt>
   </dl></dd>
-    <dt><a href="ios/scene.html#scene.image">image() (in module scene)</a></dt>
-    <dt><a href="ios/scene.html#scene.image_quad">image_quad() (in module scene)</a></dt>
+    <dt><a href="ios/scene_drawing.html#scene_drawing.image">image() (in module scene_drawing)</a></dt>
+    <dt><a href="ios/scene_drawing.html#scene_drawing.image_quad">image_quad() (in module scene_drawing)</a></dt>
     <dt><a href="ios/ui.html#ui.TableViewCell.image_view">image_view (ui.TableViewCell attribute)</a></dt>
     <dt><a href="ios/ImageChops.html#module-ImageChops">ImageChops (module)</a></dt>
     <dt><a href="ios/ImageColor.html#module-ImageColor">ImageColor (module)</a></dt>
@@ -279,6 +280,7 @@
       <dt><a href="reference/expressions.html#index-67">operator</a>, <a href="library/stdtypes.html#index-12">[1]</a>, <a href="library/stdtypes.html#index-22">[2]</a></dt>
   </dl></dd>
     <dt><a href="ios/ui.html#ui.in_background">in_background() (in module ui)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes._CData.in_dll">in_dll() (ctypes._CData method)</a></dt>
     <dt><a href="library/stringprep.html#stringprep.in_table_a1">in_table_a1() (in module stringprep)</a></dt>
     <dt><a href="library/stringprep.html#stringprep.in_table_b1">in_table_b1() (in module stringprep)</a></dt>
     <dt><a href="library/stringprep.html#stringprep.in_table_c11">in_table_c11() (in module stringprep)</a></dt>
@@ -373,6 +375,9 @@
       <dt><a href="library/fileinput.html#fileinput.input">(in module fileinput)</a></dt>
   </dl></dd>
     <dt><a href="ios/console.html#console.input_alert">input_alert() (in module console)</a></dt>
+    <dd><dl>
+      <dt><a href="ios/dialogs.html#dialogs.input_alert">(in module dialogs)</a></dt>
+  </dl></dd>
     <dt><a href="library/email.charset.html#email.charset.Charset.input_charset">input_charset (email.charset.Charset attribute)</a></dt>
     <dt><a href="library/email.charset.html#email.charset.Charset.input_codec">input_codec (email.charset.Charset attribute)</a></dt>
     <dt><a href="ios/bottle/api.html#bottle.FormsDict.input_encoding">input_encoding (bottle.FormsDict attribute)</a></dt>
@@ -387,6 +392,7 @@
     <dt><a href="ios/beautifulsoup_ref.html#bs4.PageElement.insert_before">insert_before() (bs4.PageElement method)</a></dt>
     <dt><a href="ios/ui.html#ui.TableView.insert_rows">insert_rows() (ui.TableView method)</a></dt>
     <dt><a href="library/xml.dom.html#xml.dom.Node.insertBefore">insertBefore() (xml.dom.Node method)</a></dt>
+    <dt><a href="ios/scene.html#scene.Rect.inset">inset() (scene.Rect method)</a></dt>
     <dt><a href="library/bisect.html#bisect.insort">insort() (in module bisect)</a></dt>
     <dt><a href="library/bisect.html#bisect.insort_left">insort_left() (in module bisect)</a></dt>
     <dt><a href="library/bisect.html#bisect.insort_right">insort_right() (in module bisect)</a></dt>
@@ -459,7 +465,10 @@
     <dt><a href="library/sys.html#index-11">interpreter prompts</a></dt>
     <dt><a href="library/sqlite3.html#sqlite3.Connection.interrupt">interrupt() (sqlite3.Connection method)</a></dt>
     <dt><a href="library/thread.html#thread.interrupt_main">interrupt_main() (in module thread)</a></dt>
-    <dt><a href="library/stdtypes.html#set.intersection">intersection() (set method)</a></dt>
+    <dt><a href="ios/scene.html#scene.Rect.intersection">intersection() (scene.Rect method)</a></dt>
+    <dd><dl>
+      <dt><a href="library/stdtypes.html#set.intersection">(set method)</a></dt>
+  </dl></dd>
     <dt><a href="library/stdtypes.html#set.intersection_update">intersection_update() (set method)</a></dt>
     <dt><a href="ios/scene.html#scene.Rect.intersects">intersects() (scene.Rect method)</a></dt>
     <dt><a href="library/cmd.html#cmd.Cmd.intro">intro (cmd.Cmd attribute)</a></dt>
@@ -560,6 +569,7 @@
   </dl></dd>
     <dt><a href="library/symtable.html#symtable.Symbol.is_referenced">is_referenced() (symtable.Symbol method)</a></dt>
     <dt><a href="library/test.html#test.test_support.is_resource_enabled">is_resource_enabled() (in module test.test_support)</a></dt>
+    <dt><a href="ios/appex.html#appex.is_running_extension">is_running_extension() (in module appex)</a></dt>
     <dt><a href="library/threading.html#threading.Event.is_set">is_set() (threading.Event method)</a></dt>
     <dt><a href="library/decimal.html#decimal.Context.is_signed">is_signed() (decimal.Context method)</a></dt>
     <dd><dl>
@@ -795,12 +805,12 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    &copy; <a href="copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Dec 19, 2015.
     <a href="bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

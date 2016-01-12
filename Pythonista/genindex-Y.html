@@ -28,7 +28,7 @@
     <link rel="copyright" title="Copyright" href="copyright.html" />
     <link rel="top" title="Pythonista Documentation" href="index.html" />
     <link rel="shortcut icon" type="image/png" href="_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -37,11 +37,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -118,13 +118,12 @@
 
 <table style="width: 100%" class="indextable"><tr>
   <td style="width: 33%" valign="top"><dl>
-    <dt><a href="ios/scene.html#scene.Point.y">y (scene.Point attribute)</a></dt>
+    <dt><a href="ios/scene.html#scene.Rect.y">y (scene.Rect attribute)</a></dt>
     <dd><dl>
-      <dt><a href="ios/scene.html#scene.Rect.y">(scene.Rect attribute)</a></dt>
-      <dt><a href="ios/scene.html#scene.Vector3.y">(scene.Vector3 attribute)</a></dt>
       <dt><a href="ios/ui.html#ui.View.y">(ui.View attribute)</a></dt>
   </dl></dd>
     <dt><a href="library/time.html#index-2">Y2K</a></dt>
+    <dt><a href="ios/scene.html#scene.Node.y_scale">y_scale (scene.Node attribute)</a></dt>
     <dt><a href="library/datetime.html#datetime.date.year">year (datetime.date attribute)</a></dt>
     <dd><dl>
       <dt><a href="library/datetime.html#datetime.datetime.year">(datetime.datetime attribute)</a></dt>
@@ -132,9 +131,9 @@
     <dt><a href="library/time.html#index-2">Year 2000</a></dt>
     <dt><a href="library/time.html#index-1">Year 2038</a></dt>
     <dt><a href="library/calendar.html#calendar.Calendar.yeardatescalendar">yeardatescalendar() (calendar.Calendar method)</a></dt>
-    <dt><a href="library/calendar.html#calendar.Calendar.yeardays2calendar">yeardays2calendar() (calendar.Calendar method)</a></dt>
 </dl></td>
   <td style="width: 33%" valign="top"><dl>
+    <dt><a href="library/calendar.html#calendar.Calendar.yeardays2calendar">yeardays2calendar() (calendar.Calendar method)</a></dt>
     <dt><a href="library/calendar.html#calendar.Calendar.yeardayscalendar">yeardayscalendar() (calendar.Calendar method)</a></dt>
     <dt><a href="library/locale.html#locale.YESEXPR">YESEXPR (in module locale)</a></dt>
     <dt>yield</dt>
@@ -155,12 +154,12 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    &copy; <a href="copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Dec 19, 2015.
     <a href="bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

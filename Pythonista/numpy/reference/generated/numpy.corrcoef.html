@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.correlate" href="numpy.correlate.html" />
     <link rel="prev" title="numpy.nanvar" href="numpy.nanvar.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -126,7 +126,7 @@
 relationship between the correlation coefficient matrix, <em class="xref py py-obj">P</em>, and the
 covariance matrix, <em class="xref py py-obj">C</em>, is</p>
 <div class="math">
-<p><img src="../../_images/math/361641d4095a1af4971c0f2bd3fddebb62664dd1.png" alt="P_{ij} = \frac{ C_{ij} } { \sqrt{ C_{ii} * C_{jj} } }"/></p>
+<p><span class="math">P_{ij} = \frac{ C_{ij} } { \sqrt{ C_{ii} * C_{jj} } }</span></p>
 </div><p>The values of <em class="xref py py-obj">P</em> are between -1 and 1, inclusive.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -198,7 +198,7 @@ the number of observations; this overrides the value implied by
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

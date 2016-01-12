@@ -28,7 +28,7 @@
     <link rel="copyright" title="Copyright" href="copyright.html" />
     <link rel="top" title="Pythonista Documentation" href="index.html" />
     <link rel="shortcut icon" type="image/png" href="_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -37,11 +37,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -123,12 +123,44 @@
       <dt><a href="reference/datamodel.html#index-4">language</a>, <a href="reference/datamodel.html#index-15">[1]</a>, <a href="reference/datamodel.html#index-44">[2]</a>, <a href="reference/expressions.html#index-65">[3]</a>, <a href="library/stdtypes.html#index-13">[4]</a></dt>
       <dt><a href="library/struct.html#index-0">structures</a></dt>
   </dl></dd>
+    <dt><a href="library/ctypes.html#ctypes.c_bool">c_bool (class in ctypes)</a></dt>
     <dt><a href="library/imp.html#imp.C_BUILTIN">C_BUILTIN (in module imp)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.c_byte">c_byte (class in ctypes)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.c_char">c_char (class in ctypes)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.c_char_p">c_char_p (class in ctypes)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.c_double">c_double (class in ctypes)</a></dt>
     <dt><a href="library/imp.html#imp.C_EXTENSION">C_EXTENSION (in module imp)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.c_float">c_float (class in ctypes)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.c_int">c_int (class in ctypes)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.c_int16">c_int16 (class in ctypes)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.c_int32">c_int32 (class in ctypes)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.c_int64">c_int64 (class in ctypes)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.c_int8">c_int8 (class in ctypes)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.c_long">c_long (class in ctypes)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.c_longdouble">c_longdouble (class in ctypes)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.c_longlong">c_longlong (class in ctypes)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.c_short">c_short (class in ctypes)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.c_size_t">c_size_t (class in ctypes)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.c_ssize_t">c_ssize_t (class in ctypes)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.c_ubyte">c_ubyte (class in ctypes)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.c_uint">c_uint (class in ctypes)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.c_uint16">c_uint16 (class in ctypes)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.c_uint32">c_uint32 (class in ctypes)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.c_uint64">c_uint64 (class in ctypes)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.c_uint8">c_uint8 (class in ctypes)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.c_ulong">c_ulong (class in ctypes)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.c_ulonglong">c_ulonglong (class in ctypes)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.c_ushort">c_ushort (class in ctypes)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.c_void_p">c_void_p (class in ctypes)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.c_wchar">c_wchar (class in ctypes)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.c_wchar_p">c_wchar_p (class in ctypes)</a></dt>
     <dt><a href="ios/bottle/api.html#bottle.ResourceManager.cache">cache (bottle.ResourceManager attribute)</a></dt>
     <dt><a href="library/urllib2.html#urllib2.CacheFTPHandler">CacheFTPHandler (class in urllib2)</a></dt>
     <dt><a href="library/struct.html#struct.calcsize">calcsize() (in module struct)</a></dt>
     <dt><a href="library/calendar.html#calendar.Calendar">Calendar (class in calendar)</a></dt>
+    <dd><dl>
+      <dt><a href="ios/reminders.html#reminders.Calendar">(class in reminders)</a></dt>
+  </dl></dd>
     <dt><a href="library/calendar.html#module-calendar">calendar (module)</a></dt>
     <dt><a href="library/calendar.html#calendar.calendar">calendar() (in module calendar)</a></dt>
     <dt><a href="reference/expressions.html#index-38">call</a></dt>
@@ -145,6 +177,9 @@
   </dl></dd>
     <dt><a href="ios/bottle/api.html#bottle.Route.call">call (bottle.Route attribute)</a></dt>
     <dt><a href="library/subprocess.html#subprocess.call">call() (in module subprocess)</a></dt>
+    <dd><dl>
+      <dt><a href="ios/scene.html#scene.Action.call">(scene.Action class method)</a></dt>
+  </dl></dd>
     <dt><a href="library/dis.html#opcode-CALL_FUNCTION">CALL_FUNCTION (opcode)</a></dt>
     <dt><a href="library/dis.html#opcode-CALL_FUNCTION_KW">CALL_FUNCTION_KW (opcode)</a></dt>
     <dt><a href="library/dis.html#opcode-CALL_FUNCTION_VAR">CALL_FUNCTION_VAR (opcode)</a></dt>
@@ -175,6 +210,7 @@
   </dl></dd>
     <dt><a href="ios/notification.html#notification.cancel_all">cancel_all() (in module notification)</a></dt>
     <dt><a href="ios/ui.html#ui.cancel_delays">cancel_delays() (in module ui)</a></dt>
+    <dt><a href="ios/cb.html#cb.cancel_peripheral_connection">cancel_peripheral_connection() (in module cb)</a></dt>
     <dt><a href="library/httplib.html#httplib.CannotSendHeader">CannotSendHeader</a></dt>
     <dt><a href="library/httplib.html#httplib.CannotSendRequest">CannotSendRequest</a></dt>
     <dt><a href="library/bdb.html#bdb.Bdb.canonic">canonic() (bdb.Bdb method)</a></dt>
@@ -191,10 +227,13 @@
     <dt><a href="library/test.html#test.test_support.captured_stdout">captured_stdout() (in module test.test_support)</a></dt>
     <dt><a href="library/logging.html#logging.captureWarnings">captureWarnings() (in module logging)</a></dt>
     <dt><a href="library/string.html#string.capwords">capwords() (in module string)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.cast">cast() (in module ctypes)</a></dt>
     <dt><a href="library/warnings.html#warnings.catch_warnings">catch_warnings (class in warnings)</a></dt>
     <dt><a href="ios/bottle/api.html#bottle.Bottle.catchall">catchall (bottle.Bottle attribute)</a></dt>
     <dt><a href="library/unicodedata.html#unicodedata.category">category() (in module unicodedata)</a></dt>
+    <dt><a href="ios/cb.html#module-cb">cb (module)</a></dt>
     <dt><a href="whatsnew/2.3.html#index-24">CC</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.CDLL">CDLL (class in ctypes)</a></dt>
     <dt><a href="library/math.html#math.ceil">ceil() (in module math)</a>, <a href="library/stdtypes.html#index-18">[1]</a></dt>
     <dt><a href="ios/ui.html#ui.View.center">center (ui.View attribute)</a></dt>
     <dt><a href="library/string.html#string.center">center() (in module string)</a></dt>
@@ -209,6 +248,8 @@
     <dt><a href="library/ssl.html#ssl.cert_time_to_seconds">cert_time_to_seconds() (in module ssl)</a></dt>
     <dt><a href="library/ssl.html#index-4">certificates</a></dt>
     <dt><a href="whatsnew/2.3.html#index-25">CFLAGS</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.CFUNCTYPE">CFUNCTYPE() (in module ctypes)</a></dt>
+    <dt><a href="ios/objc_util.html#objc_util.CGAffineTransform">CGAffineTransform (class in objc_util)</a></dt>
     <dt>CGI</dt>
     <dd><dl>
       <dt><a href="library/cgi.html#index-4">debugging</a></dt>
@@ -229,6 +270,20 @@
     <dt><a href="ios/bottle/api.html#bottle.WSGIHeaderDict.cgikeys">cgikeys (bottle.WSGIHeaderDict attribute)</a></dt>
     <dt><a href="library/cgitb.html#module-cgitb">cgitb (module)</a></dt>
     <dt><a href="library/simplexmlrpcserver.html#SimpleXMLRPCServer.CGIXMLRPCRequestHandler">CGIXMLRPCRequestHandler (class in SimpleXMLRPCServer)</a></dt>
+    <dt><a href="ios/objc_util.html#objc_util.CGPoint">CGPoint (class in objc_util)</a></dt>
+    <dt><a href="ios/objc_util.html#objc_util.CGRect">CGRect (class in objc_util)</a></dt>
+    <dt><a href="ios/objc_util.html#objc_util.CGSize">CGSize (class in objc_util)</a></dt>
+    <dt><a href="ios/objc_util.html#objc_util.CGVector">CGVector (class in objc_util)</a></dt>
+    <dt><a href="ios/cb.html#cb.CH_PROP_AUTHENTICATED_SIGNED_WRITES">CH_PROP_AUTHENTICATED_SIGNED_WRITES (in module cb)</a></dt>
+    <dt><a href="ios/cb.html#cb.CH_PROP_BROADCAST">CH_PROP_BROADCAST (in module cb)</a></dt>
+    <dt><a href="ios/cb.html#cb.CH_PROP_EXTENDED_PROPERTIES">CH_PROP_EXTENDED_PROPERTIES (in module cb)</a></dt>
+    <dt><a href="ios/cb.html#cb.CH_PROP_INDICATE">CH_PROP_INDICATE (in module cb)</a></dt>
+    <dt><a href="ios/cb.html#cb.CH_PROP_INDICATE_ENCRYPTION_REQUIRED">CH_PROP_INDICATE_ENCRYPTION_REQUIRED (in module cb)</a></dt>
+    <dt><a href="ios/cb.html#cb.CH_PROP_NOTIFY">CH_PROP_NOTIFY (in module cb)</a></dt>
+    <dt><a href="ios/cb.html#cb.CH_PROP_NOTIFY_ENCRYPTION_REQUIRED">CH_PROP_NOTIFY_ENCRYPTION_REQUIRED (in module cb)</a></dt>
+    <dt><a href="ios/cb.html#cb.CH_PROP_READ">CH_PROP_READ (in module cb)</a></dt>
+    <dt><a href="ios/cb.html#cb.CH_PROP_WRITE">CH_PROP_WRITE (in module cb)</a></dt>
+    <dt><a href="ios/cb.html#cb.CH_PROP_WRITE_WITHOUT_RESPONSE">CH_PROP_WRITE_WITHOUT_RESPONSE (in module cb)</a></dt>
     <dt><a href="library/itertools.html#itertools.chain">chain() (in module itertools)</a></dt>
     <dt>chaining</dt>
     <dd><dl>
@@ -240,6 +295,8 @@
     <dt><a href="library/unicodedata.html#index-0">character</a>, <a href="reference/datamodel.html#index-21">[1]</a>, <a href="reference/datamodel.html#index-23">[2]</a>, <a href="reference/expressions.html#index-33">[3]</a></dt>
     <dt><a href="reference/datamodel.html#index-22">character set</a></dt>
     <dt><a href="library/pyexpat.html#xml.parsers.expat.xmlparser.CharacterDataHandler">CharacterDataHandler() (xml.parsers.expat.xmlparser method)</a></dt>
+    <dt><a href="ios/cb.html#cb.Characteristic">Characteristic (class in cb)</a></dt>
+    <dt><a href="ios/cb.html#cb.Service.characteristics">characteristics (cb.Service attribute)</a></dt>
     <dt><a href="library/xml.sax.handler.html#xml.sax.handler.ContentHandler.characters">characters() (xml.sax.handler.ContentHandler method)</a></dt>
     <dt><a href="library/io.html#io.BlockingIOError.characters_written">characters_written (io.BlockingIOError attribute)</a></dt>
     <dt><a href="ios/bottle/api.html#bottle.BaseResponse.charset">charset (bottle.BaseResponse attribute)</a></dt>
@@ -270,6 +327,7 @@
     <dt><a href="library/os.html#os.chflags">chflags() (in module os)</a></dt>
     <dt><a href="library/popen2.html#popen2.Popen3.childerr">childerr (popen2.Popen3 attribute)</a></dt>
     <dt><a href="library/xml.dom.html#xml.dom.Node.childNodes">childNodes (xml.dom.Node attribute)</a></dt>
+    <dt><a href="ios/scene.html#scene.Node.children">children (scene.Node attribute)</a></dt>
     <dt><a href="library/os.html#os.chmod">chmod() (in module os)</a></dt>
     <dt><a href="library/random.html#random.choice">choice() (in module random)</a></dt>
     <dt><a href="library/optparse.html#optparse.Option.choices">choices (optparse.Option attribute)</a></dt>
@@ -416,6 +474,12 @@
   </dl></dd>
     <dt><a href="library/os.html#os.closerange">closerange() (in module os)</a></dt>
     <dt><a href="library/contextlib.html#contextlib.closing">closing() (in module contextlib)</a></dt>
+    <dt><a href="ios/cb.html#cb.CM_STATE_POWERED_OFF">CM_STATE_POWERED_OFF (in module cb)</a></dt>
+    <dt><a href="ios/cb.html#cb.CM_STATE_POWERED_ON">CM_STATE_POWERED_ON (in module cb)</a></dt>
+    <dt><a href="ios/cb.html#cb.CM_STATE_RESETTING">CM_STATE_RESETTING (in module cb)</a></dt>
+    <dt><a href="ios/cb.html#cb.CM_STATE_UNAUTHORIZED">CM_STATE_UNAUTHORIZED (in module cb)</a></dt>
+    <dt><a href="ios/cb.html#cb.CM_STATE_UNKNOWN">CM_STATE_UNKNOWN (in module cb)</a></dt>
+    <dt><a href="ios/cb.html#cb.CM_STATE_UNSUPPORTED">CM_STATE_UNSUPPORTED (in module cb)</a></dt>
     <dt><a href="library/cmath.html#module-cmath">cmath (module)</a></dt>
     <dt>cmd</dt>
     <dd><dl>
@@ -489,9 +553,7 @@
     <dt><a href="library/collections.html#module-collections">collections (module)</a></dt>
     <dt><a href="library/token.html#token.COLON">COLON (in module token)</a></dt>
     <dt><a href="ios/ImageEnhance.html#ImageEnhance.Color">Color (class in ImageEnhance)</a></dt>
-    <dd><dl>
-      <dt><a href="ios/scene.html#scene.Color">(class in scene)</a></dt>
-  </dl></dd>
+    <dt><a href="ios/scene.html#scene.SpriteNode.color">color (scene.SpriteNode attribute)</a></dt>
     <dt><a href="ios/ImageOps.html#ImageOps.colorize">colorize() (in module ImageOps)</a></dt>
     <dt><a href="library/colorsys.html#module-colorsys">colorsys (module)</a></dt>
     <dt><a href="library/itertools.html#itertools.combinations">combinations() (in module itertools)</a></dt>
@@ -523,6 +585,8 @@
     <dt><a href="library/sqlite3.html#sqlite3.Connection.commit">commit() (sqlite3.Connection method)</a></dt>
     <dt><a href="library/filecmp.html#filecmp.dircmp.common">common (filecmp.dircmp attribute)</a></dt>
     <dt><a href="library/cgi.html#index-0">Common Gateway Interface</a></dt>
+</dl></td>
+  <td style="width: 33%" valign="top"><dl>
     <dt><a href="library/filecmp.html#filecmp.dircmp.common_dirs">common_dirs (filecmp.dircmp attribute)</a></dt>
     <dt><a href="library/filecmp.html#filecmp.dircmp.common_files">common_files (filecmp.dircmp attribute)</a></dt>
     <dt><a href="library/filecmp.html#filecmp.dircmp.common_funny">common_funny (filecmp.dircmp attribute)</a></dt>
@@ -600,12 +664,10 @@
     <dt><a href="library/compiler.html#module-compiler.ast">compiler.ast (module)</a></dt>
     <dt><a href="library/compiler.html#module-compiler.visitor">compiler.visitor (module)</a></dt>
     <dt><a href="library/parser.html#parser.compilest">compilest() (in module parser)</a></dt>
-</dl></td>
-  <td style="width: 33%" valign="top"><dl>
     <dt><a href="library/rlcompleter.html#rlcompleter.Completer.complete">complete() (rlcompleter.Completer method)</a></dt>
     <dt><a href="library/sqlite3.html#sqlite3.complete_statement">complete_statement() (in module sqlite3)</a></dt>
+    <dt><a href="ios/reminders.html#reminders.Reminder.completed">completed (reminders.Reminder attribute)</a></dt>
     <dt><a href="library/cmd.html#cmd.Cmd.completedefault">completedefault() (cmd.Cmd method)</a></dt>
-    <dt><a href="ios/scene.html#scene.Animation.completion">completion (scene.Animation attribute)</a></dt>
     <dt>complex</dt>
     <dd><dl>
       <dt><a href="reference/datamodel.html#index-94">built-in function</a>, <a href="library/stdtypes.html#index-15">[1]</a></dt>
@@ -695,6 +757,7 @@
       <dt><a href="library/socket.html#socket.socket.connect">(socket.socket method)</a></dt>
   </dl></dd>
     <dt><a href="library/socket.html#socket.socket.connect_ex">connect_ex() (socket.socket method)</a></dt>
+    <dt><a href="ios/cb.html#cb.connect_peripheral">connect_peripheral() (in module cb)</a></dt>
     <dt><a href="library/sqlite3.html#sqlite3.Connection">Connection (class in sqlite3)</a></dt>
     <dt><a href="ios/requests.html#requests.ConnectionError">ConnectionError</a></dt>
     <dt><a href="ios/console.html#module-console">console (module)</a></dt>
@@ -740,6 +803,8 @@
   </dl></dd>
     <dt><a href="library/collections.html#collections.Container">Container (class in collections)</a></dt>
     <dt><a href="library/operator.html#operator.contains">contains() (in module operator)</a></dt>
+    <dt><a href="ios/scene.html#scene.Rect.contains_point">contains_point() (scene.Rect method)</a></dt>
+    <dt><a href="ios/scene.html#scene.Rect.contains_rect">contains_rect() (scene.Rect method)</a></dt>
     <dt><a href="ios/requests.html#requests.Response.content">content (requests.Response attribute)</a>, <a href="ios/requests.html#requests.Response.content">[1]</a></dt>
     <dt>content type</dt>
     <dd><dl>
@@ -934,8 +999,11 @@
     <dt><a href="library/sqlite3.html#sqlite3.Connection.create_function">create_function() (sqlite3.Connection method)</a></dt>
     <dt><a href="library/subprocess.html#subprocess.CREATE_NEW_CONSOLE">CREATE_NEW_CONSOLE (in module subprocess)</a></dt>
     <dt><a href="library/subprocess.html#subprocess.CREATE_NEW_PROCESS_GROUP">CREATE_NEW_PROCESS_GROUP (in module subprocess)</a></dt>
+    <dt><a href="ios/objc_util.html#objc_util.create_objc_class">create_objc_class() (in module objc_util)</a></dt>
     <dt><a href="library/asyncore.html#asyncore.dispatcher.create_socket">create_socket() (asyncore.dispatcher method)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.create_string_buffer">create_string_buffer() (in module ctypes)</a></dt>
     <dt><a href="library/zipfile.html#zipfile.ZipInfo.create_system">create_system (zipfile.ZipInfo attribute)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.create_unicode_buffer">create_unicode_buffer() (in module ctypes)</a></dt>
     <dt><a href="library/zipfile.html#zipfile.ZipInfo.create_version">create_version (zipfile.ZipInfo attribute)</a></dt>
     <dt><a href="library/xml.dom.html#xml.dom.Document.createAttribute">createAttribute() (xml.dom.Document method)</a></dt>
     <dt><a href="library/xml.dom.html#xml.dom.Document.createAttributeNS">createAttributeNS() (xml.dom.Document method)</a></dt>
@@ -962,6 +1030,7 @@
     <dd><dl>
       <dt><a href="ios/ImageOps.html#ImageOps.crop">(in module ImageOps)</a></dt>
   </dl></dd>
+    <dt><a href="ios/scene.html#scene.EffectNode.crop_rect">crop_rect (scene.EffectNode attribute)</a></dt>
     <dt>crypt</dt>
     <dd><dl>
       <dt><a href="library/pwd.html#index-0">module</a></dt>
@@ -983,9 +1052,14 @@
   </dl></dd>
     <dt><a href="library/signal.html#signal.CTRL_BREAK_EVENT">CTRL_BREAK_EVENT (in module signal)</a></dt>
     <dt><a href="library/signal.html#signal.CTRL_C_EVENT">CTRL_C_EVENT (in module signal)</a></dt>
+    <dt><a href="library/ctypes.html#module-ctypes">ctypes (module)</a></dt>
     <dt><a href="library/os.html#os.curdir">curdir (in module os)</a></dt>
     <dt><a href="library/locale.html#locale.currency">currency() (in module locale)</a></dt>
     <dt><a href="library/threading.html#threading.current_thread">current_thread() (in module threading)</a></dt>
+    <dt><a href="ios/sound.html#sound.MIDIPlayer.current_time">current_time (sound.MIDIPlayer attribute)</a></dt>
+    <dd><dl>
+      <dt><a href="ios/sound.html#sound.Player.current_time">(sound.Player attribute)</a></dt>
+  </dl></dd>
     <dt><a href="library/pyexpat.html#xml.parsers.expat.xmlparser.CurrentByteIndex">CurrentByteIndex (xml.parsers.expat.xmlparser attribute)</a></dt>
     <dt><a href="library/pyexpat.html#xml.parsers.expat.xmlparser.CurrentColumnNumber">CurrentColumnNumber (xml.parsers.expat.xmlparser attribute)</a></dt>
     <dt><a href="library/inspect.html#inspect.currentframe">currentframe() (in module inspect)</a></dt>
@@ -993,18 +1067,6 @@
     <dt><a href="library/threading.html#threading.currentThread">currentThread() (in module threading)</a></dt>
     <dt><a href="library/sqlite3.html#sqlite3.Cursor">Cursor (class in sqlite3)</a></dt>
     <dt><a href="library/sqlite3.html#sqlite3.Connection.cursor">cursor() (sqlite3.Connection method)</a></dt>
-    <dt><a href="ios/scene.html#scene.Animation.curve">curve (scene.Animation attribute)</a></dt>
-    <dt><a href="ios/scene.html#scene.curve_bounce_in">curve_bounce_in() (in module scene)</a></dt>
-    <dt><a href="ios/scene.html#scene.curve_bounce_in_out">curve_bounce_in_out() (in module scene)</a></dt>
-    <dt><a href="ios/scene.html#scene.curve_bounce_out">curve_bounce_out() (in module scene)</a></dt>
-    <dt><a href="ios/scene.html#scene.curve_ease_in">curve_ease_in() (in module scene)</a></dt>
-    <dt><a href="ios/scene.html#scene.curve_ease_in_out">curve_ease_in_out() (in module scene)</a></dt>
-    <dt><a href="ios/scene.html#scene.curve_ease_out">curve_ease_out() (in module scene)</a></dt>
-    <dt><a href="ios/scene.html#scene.curve_elastic_in">curve_elastic_in() (in module scene)</a></dt>
-    <dt><a href="ios/scene.html#scene.curve_elastic_in_out">curve_elastic_in_out() (in module scene)</a></dt>
-    <dt><a href="ios/scene.html#scene.curve_elastic_out">curve_elastic_out() (in module scene)</a></dt>
-    <dt><a href="ios/scene.html#scene.curve_linear">curve_linear() (in module scene)</a></dt>
-    <dt><a href="ios/scene.html#scene.curve_sinodial">curve_sinodial() (in module scene)</a></dt>
     <dt><a href="library/ftplib.html#ftplib.FTP.cwd">cwd() (ftplib.FTP method)</a></dt>
     <dt><a href="library/itertools.html#itertools.cycle">cycle() (in module itertools)</a></dt>
     <dt><a href="library/zlib.html#index-0">Cyclic Redundancy Check</a></dt>
@@ -1017,12 +1079,12 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    &copy; <a href="copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Dec 19, 2015.
     <a href="bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

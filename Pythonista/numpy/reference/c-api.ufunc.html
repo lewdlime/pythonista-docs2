@@ -27,7 +27,7 @@
     <link rel="next" title="Generalized Universal Function API" href="c-api.generalized-ufuncs.html" />
     <link rel="prev" title="Array Iterator API" href="c-api.iterator.html" />
     <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -210,7 +210,7 @@ ufunc object is alive.</p>
 <li><strong>func</strong> &#8211; Must to an array of length <em>ntypes</em> containing
 <tt class="xref c c-type docutils literal"><span class="pre">PyUFuncGenericFunction</span></tt> items. These items are pointers to
 functions that actually implement the underlying
-(element-by-element) function <img class="math" src="../_images/math/10f77f12438cb385098c4d2344aaa427d0a462a8.png" alt="N" style="vertical-align: 0px"/> times.</li>
+(element-by-element) function <span class="math">N</span> times.</li>
 <li><strong>data</strong> &#8211; Should be <tt class="docutils literal"><span class="pre">NULL</span></tt> or a pointer to an array of size <em>ntypes</em>
 . This array may contain arbitrary extra-data to be passed to
 the corresponding 1-d loop function in the func array.</li>
@@ -346,7 +346,7 @@ value of the error mask is placed into <em>errmask</em>.</p>
 <h2>Generic functions<a class="headerlink" href="#generic-functions" title="Permalink to this headline">¶</a></h2>
 <p>At the core of every ufunc is a collection of type-specific functions
 that defines the basic functionality for each of the supported types.
-These functions must evaluate the underlying function <img class="math" src="../_images/math/ea56421a60292c53ce4a89b27741853349268d71.png" alt="N\geq1" style="vertical-align: -2px"/>
+These functions must evaluate the underlying function <span class="math">N\geq1</span>
 times. Extra-data may be passed in that may be used during the
 calculation. This feature allows some general functions to be used as
 these basic looping functions. The general function has all the code
@@ -650,7 +650,7 @@ by other files depending on the state of
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

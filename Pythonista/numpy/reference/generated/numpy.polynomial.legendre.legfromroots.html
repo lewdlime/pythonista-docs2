@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.polynomial.legendre.legfit" href="numpy.polynomial.legendre.legfit.html" />
     <link rel="prev" title="numpy.polynomial.legendre.legroots" href="numpy.polynomial.legendre.legroots.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -126,7 +126,7 @@
 <dd><p>Generate a Legendre series with given roots.</p>
 <p>The function returns the coefficients of the polynomial</p>
 <div class="math">
-<p><img src="../../_images/math/1b4bb50f17092669c07993573d0d8704970123d2.png" alt="p(x) = (x - r_0) * (x - r_1) * ... * (x - r_n),"/></p>
+<p><span class="math">p(x) = (x - r_0) * (x - r_1) * ... * (x - r_n),</span></p>
 </div><p>in Legendre form, where the <em class="xref py py-obj">r_n</em> are the roots specified in <em class="xref py py-obj">roots</em>.
 If a zero has multiplicity n, then it must appear in <em class="xref py py-obj">roots</em> n times.
 For instance, if 2 is a root of multiplicity three and 3 is a root of
@@ -134,7 +134,7 @@ multiplicity 2, then <em class="xref py py-obj">roots</em> looks something like 
 roots can appear in any order.</p>
 <p>If the returned coefficients are <em class="xref py py-obj">c</em>, then</p>
 <div class="math">
-<p><img src="../../_images/math/2a0d97627f0913283ff5f7cca3d436783ea12fc4.png" alt="p(x) = c_0 + c_1 * L_1(x) + ... +  c_n * L_n(x)"/></p>
+<p><span class="math">p(x) = c_0 + c_1 * L_1(x) + ... +  c_n * L_n(x)</span></p>
 </div><p>The coefficient of the last term is not generally 1 for monic
 polynomials in Legendre form.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -186,7 +186,7 @@ below).</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

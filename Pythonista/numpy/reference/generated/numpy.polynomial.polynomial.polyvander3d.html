@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.polynomial.polynomial.polyder" href="numpy.polynomial.polynomial.polyder.html" />
     <link rel="prev" title="numpy.polynomial.polynomial.polyvander2d" href="numpy.polynomial.polynomial.polyvander2d.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -128,7 +128,7 @@
 points <em class="xref py py-obj">(x, y, z)</em>. If <em class="xref py py-obj">l, m, n</em> are the given degrees in <em class="xref py py-obj">x, y, z</em>,
 then The pseudo-Vandermonde matrix is defined by</p>
 <div class="math">
-<p><img src="../../_images/math/9580ff45e1de59ac41ec290ba717ba1e7d110f3c.png" alt="V[..., (m+1)(n+1)i + (n+1)j + k] = x^i * y^j * z^k,"/></p>
+<p><span class="math">V[..., (m+1)(n+1)i + (n+1)j + k] = x^i * y^j * z^k,</span></p>
 </div><p>where <em class="xref py py-obj">0 &lt;= i &lt;= l</em>, <em class="xref py py-obj">0 &lt;= j &lt;= m</em>, and <em class="xref py py-obj">0 &lt;= j &lt;= n</em>.  The leading
 indices of <em class="xref py py-obj">V</em> index the points <em class="xref py py-obj">(x, y, z)</em> and the last index encodes
 the powers of <em class="xref py py-obj">x</em>, <em class="xref py py-obj">y</em>, and <em class="xref py py-obj">z</em>.</p>
@@ -136,7 +136,7 @@ the powers of <em class="xref py py-obj">x</em>, <em class="xref py py-obj">y</e
 of <em class="xref py py-obj">V</em> correspond to the elements of a 3-D coefficient array <em class="xref py py-obj">c</em> of
 shape (xdeg + 1, ydeg + 1, zdeg + 1) in the order</p>
 <div class="math">
-<p><img src="../../_images/math/bf918a18b414f130634877423f80442335e74d5e.png" alt="c_{000}, c_{001}, c_{002},... , c_{010}, c_{011}, c_{012},..."/></p>
+<p><span class="math">c_{000}, c_{001}, c_{002},... , c_{010}, c_{011}, c_{012},...</span></p>
 </div><p>and  <tt class="docutils literal"><span class="pre">np.dot(V,</span> <span class="pre">c.flat)</span></tt> and <tt class="docutils literal"><span class="pre">polyval3d(x,</span> <span class="pre">y,</span> <span class="pre">z,</span> <span class="pre">c)</span></tt> will be the
 same up to roundoff. This equivalence is useful both for least squares
 fitting and for the evaluation of a large number of 3-D polynomials
@@ -161,7 +161,7 @@ arrays.</p>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>vander3d</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>The shape of the returned matrix is <tt class="docutils literal"><span class="pre">x.shape</span> <span class="pre">+</span> <span class="pre">(order,)</span></tt>, where
-<img class="math" src="../../_images/math/d7ba451e95493b79a58a12206ce9ce68c2d3d7a5.png" alt="order = (deg[0]+1)*(deg([1]+1)*(deg[2]+1)" style="vertical-align: -4px"/>.  The dtype will
+<span class="math">order = (deg[0]+1)*(deg([1]+1)*(deg[2]+1)</span>.  The dtype will
 be the same as the converted <em class="xref py py-obj">x</em>, <em class="xref py py-obj">y</em>, and <em class="xref py py-obj">z</em>.</p>
 </div></blockquote>
 </td>
@@ -188,7 +188,7 @@ be the same as the converted <em class="xref py py-obj">x</em>, <em class="xref 
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

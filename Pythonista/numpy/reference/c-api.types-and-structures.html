@@ -27,7 +27,7 @@
     <link rel="next" title="System configuration" href="c-api.config.html" />
     <link rel="prev" title="Numpy C-API" href="c-api.html" />
     <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -232,7 +232,7 @@ dimensions for any array.</p>
 <dt id="c.PyArrayObject.dimensions">
 npy_intp <tt class="descname">PyArrayObject.dimensions</tt><a class="headerlink" href="#c.PyArrayObject.dimensions" title="Permalink to this definition">¶</a></dt>
 <dd><p>An array of integers providing the shape in each dimension as
-long as nd <img class="math" src="../_images/math/6560e69a1c35eb96c2addf52b0a1355a36dbf412.png" alt="\geq" style="vertical-align: -2px"/> 1. The integer is always large enough
+long as nd <span class="math">\geq</span> 1. The integer is always large enough
 to hold a pointer on the platform, so the dimension size is
 only limited by memory.</p>
 </dd></dl>
@@ -967,7 +967,7 @@ the __doc__ attribute of ufuncs.</p>
 <dl class="member">
 <dt id="c.PyUFuncObject.PyUFuncObject.types">
 char *<tt class="descname">PyUFuncObject.types</tt><a class="headerlink" href="#c.PyUFuncObject.PyUFuncObject.types" title="Permalink to this definition">¶</a></dt>
-<dd><p>An array of <em>nargs</em> <img class="math" src="../_images/math/5929421e3ae3797513f769f715fc8fb7dbe0c104.png" alt="\times" style="vertical-align: 0px"/> <em>ntypes</em> 8-bit type_numbers
+<dd><p>An array of <em>nargs</em> <span class="math">\times</span> <em>ntypes</em> 8-bit type_numbers
 which contains the type signature for the function for each of
 the supported (builtin) data types. For each of the <em>ntypes</em>
 functions, the corresponding set of type numbers in this array
@@ -1072,7 +1072,7 @@ information about an array. This can be adjusted as needed for
 <dl class="member">
 <dt id="c.PyArrayIterObject.PyArrayIterObject.nd_m1">
 int <tt class="descname">PyArrayIterObject.nd_m1</tt><a class="headerlink" href="#c.PyArrayIterObject.PyArrayIterObject.nd_m1" title="Permalink to this definition">¶</a></dt>
-<dd><p><img class="math" src="../_images/math/d062a127ede35244ac17c5e277e07ccbeaa4174e.png" alt="N-1" style="vertical-align: -1px"/> where <img class="math" src="../_images/math/10f77f12438cb385098c4d2344aaa427d0a462a8.png" alt="N" style="vertical-align: 0px"/> is the number of dimensions in the
+<dd><p><span class="math">N-1</span> where <span class="math">N</span> is the number of dimensions in the
 underlying array.</p>
 </dd></dl>
 
@@ -1091,7 +1091,7 @@ npy_intp <tt class="descname">PyArrayIterObject.size</tt><a class="headerlink" h
 <dl class="member">
 <dt id="c.PyArrayIterObject.PyArrayIterObject.coordinates">
 npy_intp *<tt class="descname">PyArrayIterObject.coordinates</tt><a class="headerlink" href="#c.PyArrayIterObject.PyArrayIterObject.coordinates" title="Permalink to this definition">¶</a></dt>
-<dd><p>An <img class="math" src="../_images/math/10f77f12438cb385098c4d2344aaa427d0a462a8.png" alt="N" style="vertical-align: 0px"/> -dimensional index into the array.</p>
+<dd><p>An <span class="math">N</span> -dimensional index into the array.</p>
 </dd></dl>
 
 <dl class="member">
@@ -1160,7 +1160,7 @@ index). All of these macros require the argument <em>it</em> to be a
 <dt id="c.PyArrayMultiIter_Type">
 <tt class="descname">PyArrayMultiIter_Type</tt><a class="headerlink" href="#c.PyArrayMultiIter_Type" title="Permalink to this definition">¶</a></dt>
 <dd><p>This type provides an iterator that encapsulates the concept of
-broadcasting. It allows <img class="math" src="../_images/math/10f77f12438cb385098c4d2344aaa427d0a462a8.png" alt="N" style="vertical-align: 0px"/> arrays to be broadcast together
+broadcasting. It allows <span class="math">N</span> arrays to be broadcast together
 so that the loop progresses in C-style contiguous fashion over the
 broadcasted array. The corresponding C-structure is the
 <a class="reference internal" href="#c.PyArrayMultiIterObject" title="PyArrayMultiIterObject"><tt class="xref c c-type docutils literal"><span class="pre">PyArrayMultiIterObject</span></tt></a> whose memory layout must begin any
@@ -1552,7 +1552,7 @@ advantage of reference- counted memory management.</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

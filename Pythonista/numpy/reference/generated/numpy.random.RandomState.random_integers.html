@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.random.RandomState.random_sample" href="numpy.random.RandomState.random_sample.html" />
     <link rel="prev" title="numpy.random.RandomState.randn" href="numpy.random.RandomState.randn.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -182,7 +182,7 @@ use:</p>
 </div>
 <p>Choose five random numbers from the set of five evenly-spaced
 numbers between 0 and 2.5, inclusive (<em>i.e.</em>, from the set
-<img class="math" src="../../_images/math/260812782a8a4f35a929d637a38520175045eaa2.png" alt="{0, 5/8, 10/8, 15/8, 20/8}" style="vertical-align: -4px"/>):</p>
+<span class="math">{0, 5/8, 10/8, 15/8, 20/8}</span>):</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="mf">2.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random_integers</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,))</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mf">4.</span>
 <span class="go">array([ 0.625,  1.25 ,  0.625,  0.625,  2.5  ])</span>
 </pre></div>
@@ -218,7 +218,7 @@ numbers between 0 and 2.5, inclusive (<em>i.e.</em>, from the set
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

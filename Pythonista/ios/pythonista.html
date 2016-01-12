@@ -28,7 +28,7 @@
     <link rel="copyright" title="Copyright" href="../copyright.html" />
     <link rel="top" title="Pythonista Documentation" href="../index.html" />
     <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -37,11 +37,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -115,41 +115,39 @@
             
   <div class="section" id="using-pythonista">
 <span id="id1"></span><h1>Using Pythonista<a class="headerlink" href="#using-pythonista" title="Permalink to this headline">¶</a></h1>
-<p>This page gives an overview of the Pythonista UI and also contains some useful
+<p>This page provides an overview of Pythonista&#8217;s user interface, and also contains some useful
 tips and tricks to help you get the most out of it.</p>
 <div class="section" id="the-script-library">
 <h2>The Script Library<a class="headerlink" href="#the-script-library" title="Permalink to this headline">¶</a></h2>
-<img align="right" alt="../_images/library.png" class="align-right" src="../_images/library.png" style="width: 364px;" />
-<p>The Pythonista UI is divided into three panels: The script library, the code editor,
-and the interactive prompt. You can switch between these panels with left and right swipe gestures.</p>
+<p>Pythonista is divided into three panels: The script library, the code editor,
+and the interactive prompt, which also contains the documentation viewer.
+You can switch between these panels with left and right swipe gestures.</p>
 <p>The script library shows all the scripts you&#8217;ve written and those that are included
-as examples. You can either view them as a list, or as code snippet previews.
-Tap the button in the lower-right corner to switch between the two viewing modes.</p>
-<p>To create a new script, tap the <img alt="new_icon" src="../_images/new.png" /> button. You can either start with a blank slate,
-or a choose a template that makes it easier to work with the interactive graphics
-capabilities of the <a class="reference internal" href="scene.html#module-scene" title="scene: Provides 2D graphics and animation on iOS"><tt class="xref py py-mod docutils literal"><span class="pre">scene</span></tt></a> module.</p>
-<p>To delete scripts or create new folders, tap the <cite>Edit</cite> button. You can then select
-one or more scripts and use the buttons at the bottom to delete the selected files
-or to move them to a different folder.</p>
-<p>The script library also shows non-Python files, e.g. data files that your scripts work with. For common file types (e.g. images, PDFs), a QuickLook preview is shown when you select them in the list.</p>
+as examples. You can either view them as a list of file names, or as code snippet previews.
+The view mode can be changed in the settings.</p>
+<p>To create a new script, tap the <tt class="docutils literal"><span class="pre">+</span></tt> button at the bottom of the file browser.
+This will open the template picker to select the type of file, and its name.</p>
+<p>To delete scripts, or move them to a different folder, tap the <cite>Edit</cite> button first.</p>
+<p>The script library also shows non-Python files, e.g. data files that your scripts create or work with.
+For many file types, a preview can be shown, and you can also open them in a different app on your device.</p>
 </div>
 <div class="section" id="the-interactive-prompt">
 <h2>The Interactive Prompt<a class="headerlink" href="#the-interactive-prompt" title="Permalink to this headline">¶</a></h2>
 <p>The interactive prompt is the easiest way to get started with Python. Every time
 you enter a line of code, it is executed immediately, so you get quick feedback
-and can experiment with the syntax. Even if you know nothing about Python,
+and can experiment with the syntax. Even if you know (almost) nothing about Python,
 you&#8217;ll be able to use the prompt as a powerful calculator.</p>
-<img alt="../_images/prompt.png" src="../_images/prompt.png" style="width: 728px;" />
+<img alt="../_images/pythonista_prompt7.png" src="../_images/pythonista_prompt7.png" style="width: 100%;" />
 <p>You can get to the prompt at any time by doing a left swipe gesture. This area
 is also used for text output of any scripts that you run and for keyboard input
-(e.g. when you use the <a class="reference internal" href="../library/functions.html#raw_input" title="raw_input"><tt class="xref py py-func docutils literal"><span class="pre">raw_input()</span></tt></a> function, see the included
-<cite>Random Numbers</cite> script for an example).</p>
-<p>When you enter code, completions are suggested automatically. If you find this
-distracting, you can turn it off in the settings. To repeat a command you&#8217;ve
-used before, you can use the history popup.</p>
-<p>The output area is also used to show images that you create with the <a class="reference internal" href="PIL.html#module-PIL" title="PIL"><tt class="xref py py-mod docutils literal"><span class="pre">PIL</span></tt></a>
-(Python Imaging Library). You can see this in the included &#8220;Image Effects&#8221;
-example.</p>
+(e.g. when you use the <a class="reference internal" href="../library/functions.html#raw_input" title="raw_input"><tt class="xref py py-func docutils literal"><span class="pre">raw_input()</span></tt></a> function).</p>
+<p>When you enter code, completions are suggested automatically.</p>
+<p>The console&#8217;s output area can also show images, e.g. when using the <a class="reference internal" href="PIL.html#module-PIL" title="PIL"><tt class="xref py py-mod docutils literal"><span class="pre">PIL</span></tt></a>
+(Python Imaging Library) module, or <tt class="xref py py-mod docutils literal"><span class="pre">matplotlib</span></tt>.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">The Pythonista-specific <a class="reference internal" href="console.html#module-console" title="console: Utilities for Console Output and Various System Services"><tt class="xref py py-mod docutils literal"><span class="pre">console</span></tt></a> module allows you to modify the console&#8217;s output font, colors, and to clear the text output programmatically.</p>
+</div>
 </div>
 <div class="section" id="the-editor">
 <h2>The Editor<a class="headerlink" href="#the-editor" title="Permalink to this headline">¶</a></h2>
@@ -161,27 +159,30 @@ be obvious at first.</p>
 are useful for programming. These additional keys also work as a gesture area:
 You can slide across them with your finger to move the cursor, which makes it
 easier to position it precisely.</p>
-<img alt="../_images/keyboard.png" src="../_images/keyboard.png" style="width: 728px;" />
+<img alt="../_images/keyboard8.png" src="../_images/keyboard8.png" style="width: 100%;" />
 <p>For navigating in complex scripts, you can tap the name of the script at the top
 of the screen, to get a popup of all functions, classes, and methods. This is
 also where you can rename a file.</p>
-<p>If you use the <a class="reference internal" href="scene.html#module-scene" title="scene: Provides 2D graphics and animation on iOS"><tt class="xref py py-mod docutils literal"><span class="pre">scene</span></tt></a> or <a class="reference internal" href="sound.html#module-sound" title="sound: Simple sound creation"><tt class="xref py py-mod docutils literal"><span class="pre">sound</span></tt></a> modules, you can use the + button
-at the top to insert images, sounds, colors and fonts. The colors and fonts can
-also be useful for the <a class="reference internal" href="console.html#module-console" title="console: Console output on iOS"><tt class="xref py py-mod docutils literal"><span class="pre">console</span></tt></a> and <a class="reference internal" href="canvas.html#module-canvas" title="canvas: Provides drawing functions on iOS"><tt class="xref py py-mod docutils literal"><span class="pre">canvas</span></tt></a> modules.</p>
-<img align="right" alt="../_images/actions.png" class="align-right" src="../_images/actions.png" style="width: 250px;" />
+<p>When you use the <a class="reference internal" href="scene.html#module-scene" title="scene: 2D graphics and animation on iOS"><tt class="xref py py-mod docutils literal"><span class="pre">scene</span></tt></a>, <a class="reference internal" href="ui.html#module-ui" title="ui: Native GUI for iOS"><tt class="xref py py-mod docutils literal"><span class="pre">ui</span></tt></a> or <a class="reference internal" href="sound.html#module-sound" title="sound: Sound effects and music playback"><tt class="xref py py-mod docutils literal"><span class="pre">sound</span></tt></a> modules, you can insert names
+of built-in images, sound effects, and colors using the <tt class="docutils literal"><span class="pre">[+]</span></tt> button at the top.</p>
+<img align="right" alt="../_images/editor_actions5.png" class="align-right" src="../_images/editor_actions5.png" style="width: 250px;" />
 <p>One very powerful feature of the editor is that it is programmable itself.
 You can use the <a class="reference internal" href="editor.html#module-editor" title="editor: Scripting Pythonista's text editor"><tt class="xref py py-mod docutils literal"><span class="pre">editor</span></tt></a> module for replacing text, positioning the
-cursor, etc. You can then add your own scripts to the action menu (from the
-settings), so that you can run them directly from the editor when working on a
-different script. Have a look at the documentation about the <a class="reference internal" href="editor.html#module-editor" title="editor: Scripting Pythonista's text editor"><tt class="xref py py-mod docutils literal"><span class="pre">editor</span></tt></a>
+cursor, etc. You can then add your own scripts to the action (&#8220;wrench&#8221;) menu,
+so that you can run them directly from the editor when working on your code.</p>
+<p>Tap the <em>Edit</em> button in the actions panel to add your own scripts.</p>
+<p>Have a look at the documentation about the <a class="reference internal" href="editor.html#module-editor" title="editor: Scripting Pythonista's text editor"><tt class="xref py py-mod docutils literal"><span class="pre">editor</span></tt></a>
 module for some interesting examples.</p>
-<p><strong>Tip</strong>: Tap with two fingers to select an entire line.</p>
+<dl class="docutils">
+<dt>..tip::</dt>
+<dd>Tap with two fingers to select an entire line.</dd>
+</dl>
 </div>
 <div class="section" id="using-external-keyboards">
 <span id="id2"></span><h2>Using External Keyboards<a class="headerlink" href="#using-external-keyboards" title="Permalink to this headline">¶</a></h2>
 <p>You can connect a Bluetooth keyboards to your iOS device from the system
-preferences. Pythonista supports all the common keyboard shortcuts and a few
-additional ones.</p>
+preferences. Pythonista supports all the common keyboard shortcuts for text editing,
+and a few additional ones.</p>
 <p>Common keyboard shortcuts (these work in all text areas on iOS):</p>
 <ul class="simple">
 <li>Command + X &#8211;&nbsp;Cut</li>
@@ -194,11 +195,19 @@ additional ones.</p>
 <p>Pythonista keyboard shortcuts:</p>
 <ul class="simple">
 <li>Command + R &#8211; Run</li>
-<li>Command + Space Bar &#8211; Switch between editor and interactive prompt</li>
 <li>Command + F &#8211; Toggle search</li>
+<li>Command + G &#8211; Show next search result</li>
+<li>Command + Shift + G &#8211; Show previous search result</li>
 <li>Command + K &#8211; Clear console output</li>
 </ul>
-<p>Please note that these shortcuts only work when a text area has keyboard focus.</p>
+<p>Please note that most of these shortcuts only work when a text area has keyboard focus.</p>
+</div>
+<div class="section" id="the-pythonista-app-extension">
+<h2>The Pythonista App Extension<a class="headerlink" href="#the-pythonista-app-extension" title="Permalink to this headline">¶</a></h2>
+<p>Pythonista includes an app extension that allows you to run Python scripts from within other apps. The extension is invoked from the iOS share sheet that is available in many apps.</p>
+<img align="right" alt="../_images/app_extension4.png" class="align-right" src="../_images/app_extension4.png" style="width: 250px;" />
+<p>Before using the extension for the first time, you need to enable it. To do this, tap the &#8220;More&#8221; button at the bottom of the share sheet, then turn on the switch for &#8220;Run Pythonista Script&#8221;.</p>
+<p>The extension contains an editable collection of shortcut icons (similar to the &#8220;wrench&#8221; menu in the editor) to run your favorite scripts quickly, but there&#8217;s also a basic code editor, and an interactive console to enable tweaking your code directly in the extension. Apps that support the share sheet typically pass some kind of data to it, e.g. the current page&#8217;s URL in <cite>Safari</cite>, text in <cite>Notes</cite>, location data in <cite>Maps</cite>, or images in <cite>Photos</cite>. You can use the <a class="reference internal" href="appex.html#module-appex" title="appex: Using the Pythonista Sharing Extension"><tt class="xref py py-mod docutils literal"><span class="pre">appex</span></tt></a> module to access this data.</p>
 </div>
 <div class="section" id="the-pythonista-url-scheme">
 <h2>The Pythonista URL Scheme<a class="headerlink" href="#the-pythonista-url-scheme" title="Permalink to this headline">¶</a></h2>
@@ -206,28 +215,36 @@ additional ones.</p>
 </div>
 <div class="section" id="settings">
 <h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
-<img align="right" alt="../_images/settings.png" class="align-right" src="../_images/settings.png" style="width: 54px;" />
-<p>You can access the settings from anywhere by tapping the gear icon.</p>
-<div class="section" id="editor">
-<h3>Editor<a class="headerlink" href="#editor" title="Permalink to this headline">¶</a></h3>
+<img align="right" alt="../_images/settings8.png" class="align-right" src="../_images/settings8.png" style="width: 54px;" />
+<p>You can access the settings by tapping the gear icon in the file browser.</p>
+<div class="section" id="general-settings">
+<h3>General Settings<a class="headerlink" href="#general-settings" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><strong>Color Theme</strong>: Allows you to change the syntax highlighting colors</li>
-<li><strong>Editor Font</strong>: Select from five different monospace fonts</li>
-<li><strong>Editor Font Size</strong>: The size of the font to use in the editor (from 12 to 24)</li>
-<li><strong>Line Spacing</strong>: The line spacing in the editor (between 1.0 and 1.5)</li>
-<li><strong>Indentation</strong>: You can configure the width of tab characters in the editor, and whether to use spaces (&#8220;soft tabs&#8221;) for indentation. Note that the built-in examples are written with &#8220;hard&#8221; tabs, so if you want to edit them, it&#8217;s recommended that you either leave &#8220;soft tabs&#8221; off, or that you use the built-in &#8220;Convert Indentation...&#8221; action before editing. The <cite>Show Mixed Indentation</cite> setting makes the other sort of indentation characters visible in the editor, i.e. if you use soft tabs, tab characters are made visible.</li>
-<li><strong>Code Completion</strong>: Enable or disable code completion suggestions in the editor (there is a separate setting for code completion in the interactive prompt)</li>
-<li><strong>Auto-Pair Characters</strong>: Controls whether the closing part of paired characters, like parentheses or brackets, is inserted automatically</li>
-<li><strong>Highlight Matching ( )</strong>: Controls whether matching pairs of parentheses are highlighted when positioning the cursor (also applies to brackets and curly braces)</li>
-<li><strong>Actions Menu</strong>: Allows you to remove built-in actions (e.g. &#8220;Copy&#8221;, &#8220;Convert Indentation&#8221;) from the actions menu. Custom script actions can be added directly from the menu.</li>
+<li><strong>Theme</strong>: You can choose from multiple light and dark themes for syntax highlighting and UI colors.</li>
+<li><strong>Code Font</strong>: The typeface and font size that is used in the code editor.</li>
+<li><strong>Extended Keyboard with Numbers</strong>: When enabled, an additional row of extra keys is shown above the keyboard (iPad only).</li>
 </ul>
 </div>
-<div class="section" id="interactive-prompt">
-<h3>Interactive Prompt<a class="headerlink" href="#interactive-prompt" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="script-library-settings">
+<h3>Script Library Settings<a class="headerlink" href="#script-library-settings" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><strong>Output Font</strong>: The font to use for text output</li>
-<li><strong>Output Font Size</strong>: The font size in the text output area</li>
-<li><strong>Code Completion</strong>: Enable or disable code completion in the interactive prompt (there is a separate setting for code completion in the script editor)</li>
+<li><strong>Thumbnail Previews:</strong> When enabled, the script library shows larger preview images for files instead of a list of file names.</li>
+<li><strong>Sort by:</strong> Files in the script library can be sorted by name or date.</li>
+<li><strong>Show Standard Library:</strong> When enabled, the standard library and included third-party modules can be viewed in the editor. Note that these files are always read-only.</li>
+</ul>
+</div>
+<div class="section" id="editor-settings">
+<h3>Editor Settings<a class="headerlink" href="#editor-settings" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>Indentation</strong>: You can configure the width of tab characters in the editor, and whether to use spaces (&#8220;soft tabs&#8221;) for indentation. Note that the built-in examples are written with &#8220;hard&#8221; tabs, so if you want to edit them, it&#8217;s recommended that you either leave &#8220;soft tabs&#8221; off, or that you use the built-in &#8220;Convert Indentation...&#8221; action before editing. The <cite>Show Mixed Indentation</cite> setting makes the other sort of indentation characters visible in the editor, i.e. if you use soft tabs, tab characters are made visible.</li>
+<li><strong>Automatic Character Pairs</strong>: Controls whether the closing part of paired characters, like parentheses or brackets, is inserted automatically</li>
+</ul>
+</div>
+<div class="section" id="console-settings">
+<h3>Console Settings<a class="headerlink" href="#console-settings" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>Clear Output Before Running:</strong> When enabled, the previous console output is cleared automatically before running a script.</li>
+<li><strong>Use &#8220;True&#8221; Division:</strong> When enabled, the interactive console always uses &#8220;true&#8221; division, i.e. <tt class="docutils literal"><span class="pre">1/2</span></tt> is evaluated as <tt class="docutils literal"><span class="pre">0.5</span></tt> instead of <tt class="docutils literal"><span class="pre">0</span></tt> (which would be the default behavior in Python 2.7). Note that this setting does <em>not</em> apply to scripts that you run from the editor. For that, you can just use <tt class="docutils literal"><span class="pre">from</span> <span class="pre">__future__</span> <span class="pre">import</span> <span class="pre">division</span></tt>.</li>
 </ul>
 </div>
 </div>
@@ -239,12 +256,12 @@ additional ones.</p>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Dec 02, 2015.
     <a href="../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

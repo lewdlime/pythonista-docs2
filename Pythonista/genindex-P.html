@@ -28,7 +28,7 @@
     <link rel="copyright" title="Copyright" href="copyright.html" />
     <link rel="top" title="Pythonista Documentation" href="index.html" />
     <link rel="shortcut icon" type="image/png" href="_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -37,11 +37,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -166,7 +166,10 @@
   </dl></dd>
     <dt><a href="library/os.html#os.pardir">pardir (in module os)</a></dt>
     <dt><a href="library/2to3.html#2to3fixer-paren">paren (2to3 fixer)</a></dt>
-    <dt><a href="library/urllib2.html#urllib2.BaseHandler.parent">parent (urllib2.BaseHandler attribute)</a></dt>
+    <dt><a href="ios/scene.html#scene.Node.parent">parent (scene.Node attribute)</a></dt>
+    <dd><dl>
+      <dt><a href="library/urllib2.html#urllib2.BaseHandler.parent">(urllib2.BaseHandler attribute)</a></dt>
+  </dl></dd>
     <dt><a href="reference/expressions.html#index-10">parenthesized form</a></dt>
     <dt><a href="library/xml.dom.html#xml.dom.Node.parentNode">parentNode (xml.dom.Node attribute)</a></dt>
     <dt><a href="library/random.html#random.paretovariate">paretovariate() (in module random)</a></dt>
@@ -191,6 +194,7 @@
     <dt><a href="library/argparse.html#argparse.ArgumentParser.parse_args">parse_args() (argparse.ArgumentParser method)</a></dt>
     <dt><a href="ios/bottle/api.html#bottle.parse_auth">parse_auth() (in module bottle)</a></dt>
     <dt><a href="library/sqlite3.html#sqlite3.PARSE_COLNAMES">PARSE_COLNAMES (in module sqlite3)</a></dt>
+    <dt><a href="ios/ui.html#ui.parse_color">parse_color() (in module ui)</a></dt>
     <dt><a href="library/sysconfig.html#sysconfig.parse_config_h">parse_config_h() (in module sysconfig)</a></dt>
     <dt><a href="ios/bottle/api.html#bottle.parse_date">parse_date() (in module bottle)</a></dt>
     <dt><a href="library/sqlite3.html#sqlite3.PARSE_DECLTYPES">PARSE_DECLTYPES (in module sqlite3)</a></dt>
@@ -255,6 +259,9 @@
   </dl></dd>
     <dt><a href="library/poplib.html#poplib.POP3.pass_">pass_() (poplib.POP3 method)</a></dt>
     <dt><a href="ios/console.html#console.password_alert">password_alert() (in module console)</a></dt>
+    <dd><dl>
+      <dt><a href="ios/dialogs.html#dialogs.password_alert">(in module dialogs)</a></dt>
+  </dl></dd>
     <dt><a href="ios/paramiko.html#paramiko.PasswordRequiredException">PasswordRequiredException (class in paramiko)</a></dt>
     <dt><a href="ios/Image.html#Image.Image.paste">paste() (Image.Image method)</a>, <a href="ios/Image.html#Image.Image.paste">[1]</a>, <a href="ios/Image.html#Image.Image.paste">[2]</a>, <a href="ios/Image.html#Image.Image.paste">[3]</a></dt>
     <dt><a href="ios/requests.html#requests.patch">patch() (in module requests)</a></dt>
@@ -276,6 +283,7 @@
     <dt><a href="library/cookielib.html#cookielib.Cookie.path">path (cookielib.Cookie attribute)</a></dt>
     <dd><dl>
       <dt><a href="library/sys.html#sys.path">(in module sys)</a></dt>
+      <dt><a href="ios/scene.html#scene.ShapeNode.path">(scene.ShapeNode attribute)</a></dt>
   </dl></dd>
     <dt><a href="ios/ImagePath.html#ImagePath.Path">Path() (in module ImagePath)</a></dt>
     <dt><a href="library/sys.html#sys.path_hooks">path_hooks (in module sys)</a></dt>
@@ -293,8 +301,12 @@
     <dt><a href="library/signal.html#signal.pause">pause() (in module signal)</a></dt>
     <dd><dl>
       <dt><a href="ios/scene.html#scene.Scene.pause">(scene.Scene method)</a></dt>
+      <dt><a href="ios/sound.html#sound.Player.pause">(sound.Player method)</a></dt>
   </dl></dd>
-    <dt><a href="ios/scene.html#scene.SceneView.paused">paused (scene.SceneView attribute)</a></dt>
+    <dt><a href="ios/scene.html#scene.Node.paused">paused (scene.Node attribute)</a></dt>
+    <dd><dl>
+      <dt><a href="ios/scene.html#scene.SceneView.paused">(scene.SceneView attribute)</a></dt>
+  </dl></dd>
     <dt><a href="library/tarfile.html#tarfile.PAX_FORMAT">PAX_FORMAT (in module tarfile)</a></dt>
     <dt><a href="library/tarfile.html#tarfile.TarFile.pax_headers">pax_headers (tarfile.TarFile attribute)</a></dt>
     <dd><dl>
@@ -308,6 +320,7 @@
     <dt><a href="library/token.html#token.PERCENT">PERCENT (in module token)</a></dt>
     <dt><a href="library/token.html#token.PERCENTEQUAL">PERCENTEQUAL (in module token)</a></dt>
     <dt><a href="library/timeit.html#index-0">Performance</a></dt>
+    <dt><a href="ios/cb.html#cb.Peripheral">Peripheral (class in cb)</a></dt>
     <dt><a href="library/itertools.html#itertools.permutations">permutations() (in module itertools)</a></dt>
     <dt><a href="library/pickle.html#index-0">persistence</a></dt>
     <dt>persistent</dt>
@@ -333,7 +346,7 @@
     <dt><a href="ios/photos.html#photos.pick_image">pick_image() (in module photos)</a></dt>
     <dt>pickle</dt>
     <dd><dl>
-      <dt><a href="library/copy_reg.html#index-0">module</a>, <a href="library/marshal.html#index-0">[1]</a>, <a href="library/shelve.html#index-0">[2]</a>, <a href="tutorial/inputoutput.html#index-1">[3]</a>, <a href="library/pickle.html#index-5">[4]</a>, <a href="library/copy.html#index-0">[5]</a></dt>
+      <dt><a href="library/marshal.html#index-0">module</a>, <a href="library/shelve.html#index-0">[1]</a>, <a href="library/copy_reg.html#index-0">[2]</a>, <a href="tutorial/inputoutput.html#index-1">[3]</a>, <a href="library/pickle.html#index-5">[4]</a>, <a href="library/copy.html#index-0">[5]</a></dt>
   </dl></dd>
     <dt><a href="library/pickle.html#module-pickle">pickle (module)</a></dt>
     <dt><a href="library/copy_reg.html#copy_reg.pickle">pickle() (in module copy_reg)</a></dt>
@@ -369,7 +382,12 @@
       <dt><a href="library/platform.html#module-platform">(module)</a></dt>
   </dl></dd>
     <dt><a href="library/platform.html#platform.platform">platform() (in module platform)</a></dt>
+    <dt><a href="ios/sound.html#sound.MIDIPlayer.play">play() (sound.MIDIPlayer method)</a></dt>
+    <dd><dl>
+      <dt><a href="ios/sound.html#sound.Player.play">(sound.Player method)</a></dt>
+  </dl></dd>
     <dt><a href="ios/sound.html#sound.play_effect">play_effect() (in module sound)</a></dt>
+    <dt><a href="ios/sound.html#sound.Player">Player (class in sound)</a></dt>
     <dt>plist</dt>
     <dd><dl>
       <dt><a href="library/plistlib.html#index-0">file</a></dt>
@@ -388,6 +406,10 @@
     <dd><dl>
       <dt><a href="ios/ImageDraw.html#ImageDraw.ImageDraw.point">(ImageDraw.ImageDraw method)</a></dt>
   </dl></dd>
+    <dt><a href="ios/scene.html#scene.Node.point_from_scene">point_from_scene() (scene.Node method)</a></dt>
+    <dt><a href="ios/scene.html#scene.Node.point_to_scene">point_to_scene() (scene.Node method)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.pointer">pointer() (in module ctypes)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.POINTER">POINTER() (in module ctypes)</a></dt>
     <dt><a href="library/cmath.html#cmath.polar">polar() (in module cmath)</a></dt>
     <dt><a href="library/select.html#select.poll">poll() (in module select)</a></dt>
     <dd><dl>
@@ -420,7 +442,7 @@
     <dt><a href="library/dis.html#opcode-POP_JUMP_IF_FALSE">POP_JUMP_IF_FALSE (opcode)</a></dt>
     <dt><a href="library/dis.html#opcode-POP_JUMP_IF_TRUE">POP_JUMP_IF_TRUE (opcode)</a></dt>
     <dt><a href="library/formatter.html#formatter.formatter.pop_margin">pop_margin() (formatter.formatter method)</a></dt>
-    <dt><a href="ios/scene.html#scene.pop_matrix">pop_matrix() (in module scene)</a></dt>
+    <dt><a href="ios/scene_drawing.html#scene_drawing.pop_matrix">pop_matrix() (in module scene_drawing)</a></dt>
     <dt><a href="library/shlex.html#shlex.shlex.pop_source">pop_source() (shlex.shlex method)</a></dt>
     <dt><a href="library/formatter.html#formatter.formatter.pop_style">pop_style() (formatter.formatter method)</a></dt>
     <dt><a href="library/dis.html#opcode-POP_TOP">POP_TOP (opcode)</a></dt>
@@ -455,8 +477,10 @@
     <dt><a href="library/cookielib.html#cookielib.Cookie.port">port (cookielib.Cookie attribute)</a></dt>
     <dt><a href="library/cookielib.html#cookielib.Cookie.port_specified">port_specified (cookielib.Cookie attribute)</a></dt>
     <dt><a href="library/mailbox.html#mailbox.PortableUnixMailbox">PortableUnixMailbox (class in mailbox)</a></dt>
+    <dt><a href="ios/scene.html#scene.PORTRAIT">PORTRAIT (in module scene)</a></dt>
     <dt><a href="library/re.html#re.MatchObject.pos">pos (re.MatchObject attribute)</a></dt>
     <dt><a href="library/operator.html#operator.pos">pos() (in module operator)</a></dt>
+    <dt><a href="ios/scene.html#scene.Node.position">position (scene.Node attribute)</a></dt>
     <dt><a href="glossary.html#term-positional-argument">positional argument</a></dt>
     <dt>POSIX</dt>
     <dd><dl>
@@ -479,6 +503,7 @@
       <dt><a href="ios/requests.html#requests.Session.post">(requests.Session method)</a></dt>
   </dl></dd>
     <dt><a href="library/pdb.html#pdb.post_mortem">post_mortem() (in module pdb)</a></dt>
+    <dt><a href="ios/twitter.html#twitter.post_tweet">post_tweet() (in module twitter)</a></dt>
     <dt><a href="library/cmd.html#cmd.Cmd.postcmd">postcmd() (cmd.Cmd method)</a></dt>
     <dt><a href="ios/ImageOps.html#ImageOps.posterize">posterize() (in module ImageOps)</a></dt>
     <dt><a href="library/cmd.html#cmd.Cmd.postloop">postloop() (cmd.Cmd method)</a></dt>
@@ -522,6 +547,9 @@
     <dt><a href="library/xml.sax.utils.html#xml.sax.saxutils.prepare_input_source">prepare_input_source() (in module xml.sax.saxutils)</a></dt>
     <dt><a href="library/pipes.html#pipes.Template.prepend">prepend() (pipes.Template method)</a></dt>
     <dt><a href="ios/ui.html#ui.View.present">present() (ui.View method)</a></dt>
+    <dt><a href="ios/scene.html#scene.Scene.present_modal_scene">present_modal_scene() (scene.Scene method)</a></dt>
+    <dt><a href="ios/scene.html#scene.Scene.presented_scene">presented_scene (scene.Scene attribute)</a></dt>
+    <dt><a href="ios/scene.html#scene.Scene.presenting_scene">presenting_scene (scene.Scene attribute)</a></dt>
     <dt><a href="library/pprint.html#pprint.PrettyPrinter">PrettyPrinter (class in pprint)</a></dt>
     <dt><a href="ios/scene.html#scene.Touch.prev_location">prev_location (scene.Touch attribute)</a></dt>
     <dd><dl>
@@ -529,19 +557,22 @@
   </dl></dd>
     <dt><a href="library/xml.dom.html#xml.dom.Node.previousSibling">previousSibling (xml.dom.Node attribute)</a></dt>
     <dt><a href="reference/expressions.html#index-28">primary</a></dt>
+    <dd><dl>
+      <dt><a href="ios/cb.html#cb.Service.primary">(cb.Service attribute)</a></dt>
+  </dl></dd>
     <dt>print</dt>
     <dd><dl>
       <dt><a href="reference/datamodel.html#index-78">statement</a>, <a href="reference/simple_stmts.html#index-22">[1]</a>, <a href="library/stdtypes.html#index-1">[2]</a></dt>
   </dl></dd>
     <dt><a href="library/2to3.html#2to3fixer-print">print (2to3 fixer)</a></dt>
     <dt><a href="library/functions.html#print">print() (built-in function)</a></dt>
+</dl></td>
+  <td style="width: 33%" valign="top"><dl>
     <dt><a href="library/profile.html#pstats.Stats.print_callees">print_callees() (pstats.Stats method)</a></dt>
     <dt><a href="library/profile.html#pstats.Stats.print_callers">print_callers() (pstats.Stats method)</a></dt>
     <dt><a href="library/cgi.html#cgi.print_directory">print_directory() (in module cgi)</a></dt>
     <dt><a href="library/cgi.html#cgi.print_environ">print_environ() (in module cgi)</a></dt>
     <dt><a href="library/cgi.html#cgi.print_environ_usage">print_environ_usage() (in module cgi)</a></dt>
-</dl></td>
-  <td style="width: 33%" valign="top"><dl>
     <dt><a href="library/traceback.html#traceback.print_exc">print_exc() (in module traceback)</a></dt>
     <dd><dl>
       <dt><a href="library/timeit.html#timeit.Timer.print_exc">(timeit.Timer method)</a></dt>
@@ -606,6 +637,7 @@
     <dt><a href="library/urllib.html#urllib.FancyURLopener.prompt_user_passwd">prompt_user_passwd() (urllib.FancyURLopener method)</a></dt>
     <dt><a href="library/sys.html#index-11">prompts, interpreter</a></dt>
     <dt><a href="library/logging.html#logging.Logger.propagate">propagate (logging.Logger attribute)</a></dt>
+    <dt><a href="ios/cb.html#cb.Characteristic.properties">properties (cb.Characteristic attribute)</a></dt>
     <dt><a href="library/plistlib.html#index-0">property list</a></dt>
     <dt><a href="library/functions.html#property">property() (built-in function)</a></dt>
     <dt><a href="library/xml.sax.handler.html#xml.sax.handler.property_declaration_handler">property_declaration_handler (in module xml.sax.handler)</a></dt>
@@ -637,6 +669,7 @@
     <dt><a href="library/basehttpserver.html#BaseHTTPServer.BaseHTTPRequestHandler.protocol_version">protocol_version (BaseHTTPServer.BaseHTTPRequestHandler attribute)</a></dt>
     <dt><a href="library/imaplib.html#imaplib.IMAP4.PROTOCOL_VERSION">PROTOCOL_VERSION (imaplib.IMAP4 attribute)</a></dt>
     <dt><a href="ios/requests.html#requests.Session.proxies">proxies (requests.Session attribute)</a></dt>
+    <dt><a href="ios/reminders.html#reminders.Alarm.proximity">proximity (reminders.Alarm attribute)</a></dt>
     <dt><a href="library/weakref.html#weakref.proxy">proxy() (in module weakref)</a></dt>
     <dt><a href="library/imaplib.html#imaplib.IMAP4.proxyauth">proxyauth() (imaplib.IMAP4 method)</a></dt>
     <dt><a href="library/urllib2.html#urllib2.ProxyBasicAuthHandler">ProxyBasicAuthHandler (class in urllib2)</a></dt>
@@ -668,7 +701,7 @@
     <dt><a href="library/formatter.html#formatter.formatter.push_alignment">push_alignment() (formatter.formatter method)</a></dt>
     <dt><a href="library/formatter.html#formatter.formatter.push_font">push_font() (formatter.formatter method)</a></dt>
     <dt><a href="library/formatter.html#formatter.formatter.push_margin">push_margin() (formatter.formatter method)</a></dt>
-    <dt><a href="ios/scene.html#scene.push_matrix">push_matrix() (in module scene)</a></dt>
+    <dt><a href="ios/scene_drawing.html#scene_drawing.push_matrix">push_matrix() (in module scene_drawing)</a></dt>
     <dt><a href="library/shlex.html#shlex.shlex.push_source">push_source() (shlex.shlex method)</a></dt>
     <dt><a href="library/formatter.html#formatter.formatter.push_style">push_style() (formatter.formatter method)</a></dt>
     <dt><a href="library/shlex.html#shlex.shlex.push_token">push_token() (shlex.shlex method)</a></dt>
@@ -702,15 +735,18 @@
     <dt><a href="library/py_compile.html#module-py_compile">py_compile (module)</a></dt>
     <dt><a href="library/imp.html#imp.PY_COMPILED">PY_COMPILED (in module imp)</a></dt>
     <dt><a href="library/imp.html#imp.PY_FROZEN">PY_FROZEN (in module imp)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.py_object">py_object (class in ctypes)</a></dt>
     <dt><a href="library/imp.html#imp.PY_SOURCE">PY_SOURCE (in module imp)</a></dt>
     <dt><a href="library/imputil.html#imputil.py_suffix_importer">py_suffix_importer() (in module imputil)</a></dt>
     <dt><a href="library/pyclbr.html#module-pyclbr">pyclbr (module)</a></dt>
     <dt><a href="library/py_compile.html#py_compile.PyCompileError">PyCompileError</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.PyDLL">PyDLL (class in ctypes)</a></dt>
     <dt><a href="library/pydoc.html#module-pydoc">pydoc (module)</a></dt>
     <dt>pyexpat</dt>
     <dd><dl>
       <dt><a href="library/pyexpat.html#index-1">module</a></dt>
   </dl></dd>
+    <dt><a href="library/ctypes.html#ctypes.PYFUNCTYPE">PYFUNCTYPE() (in module ctypes)</a></dt>
     <dt><a href="glossary.html#term-python-3000">Python 3000</a></dt>
     <dt><a href="library/weakref.html#index-0">Python Enhancement Proposals!PEP 0205</a></dt>
     <dt><a href="reference/simple_stmts.html#index-29">Python Enhancement Proposals!PEP 0255</a></dt>
@@ -832,12 +868,12 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    &copy; <a href="copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Dec 19, 2015.
     <a href="bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

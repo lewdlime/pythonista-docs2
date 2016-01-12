@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.polyadd" href="numpy.polyadd.html" />
     <link rel="prev" title="numpy.polyder" href="numpy.polyder.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -124,12 +124,12 @@
 <tt class="descclassname">numpy.</tt><tt class="descname">polyint</tt><big>(</big><em>p</em>, <em>m=1</em>, <em>k=None</em><big>)</big><a class="reference external" href="http://github.com/numpy/numpy/blob/v1.8.0/numpy/lib/polynomial.py#L235"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.polyint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return an antiderivative (indefinite integral) of a polynomial.</p>
 <p>The returned order <em class="xref py py-obj">m</em> antiderivative <em class="xref py py-obj">P</em> of polynomial <em class="xref py py-obj">p</em> satisfies
-<img class="math" src="../../_images/math/4c695080debf26a6fc00ab35c5be79a1f03ce944.png" alt="\frac{d^m}{dx^m}P(x) = p(x)" style="vertical-align: -5px"/> and is defined up to <em class="xref py py-obj">m - 1</em>
+<span class="math">\frac{d^m}{dx^m}P(x) = p(x)</span> and is defined up to <em class="xref py py-obj">m - 1</em>
 integration constants <em class="xref py py-obj">k</em>. The constants determine the low-order
 polynomial part</p>
 <div class="math">
-<p><img src="../../_images/math/0b966a6d86e95c0bcb618bb730945530ed5b8e22.png" alt="\frac{k_{m-1}}{0!} x^0 + \ldots + \frac{k_0}{(m-1)!}x^{m-1}"/></p>
-</div><p>of <em class="xref py py-obj">P</em> so that <img class="math" src="../../_images/math/a622397ef333b372450be79d7df9d019252e5e7b.png" alt="P^{(j)}(0) = k_{m-j-1}" style="vertical-align: -4px"/>.</p>
+<p><span class="math">\frac{k_{m-1}}{0!} x^0 + \ldots + \frac{k_0}{(m-1)!}x^{m-1}</span></p>
+</div><p>of <em class="xref py py-obj">P</em> so that <span class="math">P^{(j)}(0) = k_{m-j-1}</span>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -211,7 +211,7 @@ integrations. Constant of the highest-order polynomial term comes first:</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

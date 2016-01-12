@@ -28,7 +28,7 @@
     <link rel="copyright" title="Copyright" href="copyright.html" />
     <link rel="top" title="Pythonista Documentation" href="index.html" />
     <link rel="shortcut icon" type="image/png" href="_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -37,11 +37,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -245,6 +245,7 @@
     <dt><a href="ios/beautifulsoup_ref.html#bs4.Tag.text">text (bs4.Tag attribute)</a></dt>
     <dd><dl>
       <dt><a href="ios/requests.html#requests.Response.text">(requests.Response attribute)</a>, <a href="ios/requests.html#requests.Response.text">[1]</a></dt>
+      <dt><a href="ios/scene.html#scene.LabelNode.text">(scene.LabelNode attribute)</a></dt>
       <dt><a href="ios/ui.html#ui.Label.text">(ui.Label attribute)</a></dt>
       <dt><a href="ios/ui.html#ui.TextField.text">(ui.TextField attribute)</a></dt>
       <dt><a href="ios/ui.html#ui.TextView.text">(ui.TextView attribute)</a></dt>
@@ -252,7 +253,7 @@
   </dl></dd>
     <dt><a href="ios/ImageDraw.html#ImageDraw.ImageDraw.text">text() (ImageDraw.ImageDraw method)</a></dt>
     <dd><dl>
-      <dt><a href="ios/scene.html#scene.text">(in module scene)</a></dt>
+      <dt><a href="ios/scene_drawing.html#scene_drawing.text">(in module scene_drawing)</a></dt>
   </dl></dd>
     <dt><a href="ios/ui.html#ui.Label.text_color">text_color (ui.Label attribute)</a></dt>
     <dd><dl>
@@ -260,6 +261,7 @@
       <dt><a href="ios/ui.html#ui.TextField.text_color">(ui.TextField attribute)</a></dt>
       <dt><a href="ios/ui.html#ui.TextView.text_color">(ui.TextView attribute)</a></dt>
   </dl></dd>
+    <dt><a href="ios/dialogs.html#dialogs.text_dialog">text_dialog() (in module dialogs)</a></dt>
     <dt><a href="library/sqlite3.html#sqlite3.Connection.text_factory">text_factory (sqlite3.Connection attribute)</a></dt>
     <dt><a href="ios/ui.html#ui.TableViewCell.text_label">text_label (ui.TableViewCell attribute)</a></dt>
     <dt><a href="library/calendar.html#calendar.TextCalendar">TextCalendar (class in calendar)</a></dt>
@@ -270,6 +272,8 @@
     <dt><a href="ios/ImageDraw.html#ImageDraw.ImageDraw.textsize">textsize() (ImageDraw.ImageDraw method)</a></dt>
     <dt><a href="library/unittest.html#unittest.TextTestResult">TextTestResult (class in unittest)</a></dt>
     <dt><a href="library/unittest.html#unittest.TextTestRunner">TextTestRunner (class in unittest)</a></dt>
+    <dt><a href="ios/scene.html#scene.Texture">Texture (class in scene)</a></dt>
+    <dt><a href="ios/scene.html#scene.SpriteNode.texture">texture (scene.SpriteNode attribute)</a></dt>
     <dt><a href="ios/ui.html#ui.TextView">TextView (class in ui)</a></dt>
     <dt><a href="library/textwrap.html#module-textwrap">textwrap (module)</a></dt>
     <dt><a href="library/textwrap.html#textwrap.TextWrapper">TextWrapper (class in textwrap)</a></dt>
@@ -300,6 +304,7 @@
       <dt><a href="library/time.html#time.time">(in module time)</a></dt>
   </dl></dd>
     <dt><a href="library/imaplib.html#imaplib.Time2Internaldate">Time2Internaldate() (in module imaplib)</a></dt>
+    <dt><a href="ios/dialogs.html#dialogs.time_dialog">time_dialog() (in module dialogs)</a></dt>
     <dt><a href="library/datetime.html#datetime.timedelta">timedelta (class in datetime)</a></dt>
     <dt><a href="library/logging.handlers.html#logging.handlers.TimedRotatingFileHandler">TimedRotatingFileHandler (class in logging.handlers)</a></dt>
     <dt><a href="library/calendar.html#calendar.timegm">timegm() (in module calendar)</a></dt>
@@ -334,16 +339,34 @@
   </dl></dd>
     <dt><a href="library/datetime.html#datetime.datetime.timetz">timetz() (datetime.datetime method)</a></dt>
     <dt><a href="library/time.html#time.timezone">timezone (in module time)</a></dt>
-    <dt><a href="ios/scene.html#scene.Layer.tint">tint (scene.Layer attribute)</a></dt>
-    <dt><a href="ios/scene.html#scene.tint">tint() (in module scene)</a></dt>
+    <dt><a href="ios/scene.html#scene.TIMING_BOUNCE_IN">TIMING_BOUNCE_IN (in module scene)</a></dt>
+    <dt><a href="ios/scene.html#scene.TIMING_BOUNCE_IN_OUT">TIMING_BOUNCE_IN_OUT (in module scene)</a></dt>
+    <dt><a href="ios/scene.html#scene.TIMING_BOUNCE_OUT">TIMING_BOUNCE_OUT (in module scene)</a></dt>
+    <dt><a href="ios/scene.html#scene.TIMING_EASE_BACK_IN">TIMING_EASE_BACK_IN (in module scene)</a></dt>
+    <dt><a href="ios/scene.html#scene.TIMING_EASE_BACK_IN_OUT">TIMING_EASE_BACK_IN_OUT (in module scene)</a></dt>
+    <dt><a href="ios/scene.html#scene.TIMING_EASE_BACK_OUT">TIMING_EASE_BACK_OUT (in module scene)</a></dt>
+    <dt><a href="ios/scene.html#scene.TIMING_EASE_IN">TIMING_EASE_IN (in module scene)</a></dt>
+    <dt><a href="ios/scene.html#scene.TIMING_EASE_IN_2">TIMING_EASE_IN_2 (in module scene)</a></dt>
+    <dt><a href="ios/scene.html#scene.TIMING_EASE_IN_OUT">TIMING_EASE_IN_OUT (in module scene)</a></dt>
+    <dt><a href="ios/scene.html#scene.TIMING_EASE_OUT">TIMING_EASE_OUT (in module scene)</a></dt>
+</dl></td>
+  <td style="width: 33%" valign="top"><dl>
+    <dt><a href="ios/scene.html#scene.TIMING_EASE_OUT_2">TIMING_EASE_OUT_2 (in module scene)</a></dt>
+    <dt><a href="ios/scene.html#scene.TIMING_ELASTIC_IN">TIMING_ELASTIC_IN (in module scene)</a></dt>
+    <dt><a href="ios/scene.html#scene.TIMING_ELASTIC_IN_OUT">TIMING_ELASTIC_IN_OUT (in module scene)</a></dt>
+    <dt><a href="ios/scene.html#scene.TIMING_ELASTIC_OUT">TIMING_ELASTIC_OUT (in module scene)</a></dt>
+    <dt><a href="ios/scene.html#scene.TIMING_LINEAR">TIMING_LINEAR (in module scene)</a></dt>
+    <dt><a href="ios/scene.html#scene.Action.timing_mode">timing_mode (scene.Action attribute)</a></dt>
+    <dt><a href="ios/scene.html#scene.TIMING_SINODIAL">TIMING_SINODIAL (in module scene)</a></dt>
+    <dt><a href="ios/scene_drawing.html#scene_drawing.tint">tint() (in module scene_drawing)</a></dt>
     <dt><a href="ios/ui.html#ui.ButtonItem.tint_color">tint_color (ui.ButtonItem attribute)</a></dt>
     <dd><dl>
       <dt><a href="ios/ui.html#ui.View.tint_color">(ui.View attribute)</a></dt>
   </dl></dd>
-</dl></td>
-  <td style="width: 33%" valign="top"><dl>
-    <dt><a href="ios/ui.html#ui.Button.title">title (ui.Button attribute)</a></dt>
+    <dt><a href="ios/reminders.html#reminders.Calendar.title">title (reminders.Calendar attribute)</a></dt>
     <dd><dl>
+      <dt><a href="ios/reminders.html#reminders.Reminder.title">(reminders.Reminder attribute)</a></dt>
+      <dt><a href="ios/ui.html#ui.Button.title">(ui.Button attribute)</a></dt>
       <dt><a href="ios/ui.html#ui.ButtonItem.title">(ui.ButtonItem attribute)</a></dt>
   </dl></dd>
     <dt><a href="library/stdtypes.html#str.title">title() (str method)</a></dt>
@@ -398,9 +421,6 @@
       <dt><a href="library/datetime.html#datetime.datetime.toordinal">(datetime.datetime method)</a></dt>
   </dl></dd>
     <dt><a href="library/poplib.html#poplib.POP3.top">top() (poplib.POP3 method)</a></dt>
-    <dd><dl>
-      <dt><a href="ios/scene.html#scene.Rect.top">(scene.Rect method)</a></dt>
-  </dl></dd>
     <dt><a href="library/xml.dom.minidom.html#xml.dom.minidom.Node.toprettyxml">toprettyxml() (xml.dom.minidom.Node method)</a></dt>
     <dt><a href="library/array.html#array.array.tostring">tostring() (array.array method)</a></dt>
     <dd><dl>
@@ -480,8 +500,9 @@
     <dt><a href="ios/canvas.html#canvas.translate">translate() (in module canvas)</a></dt>
     <dd><dl>
       <dt><a href="library/fnmatch.html#fnmatch.translate">(in module fnmatch)</a></dt>
-      <dt><a href="ios/scene.html#scene.translate">(in module scene)</a></dt>
+      <dt><a href="ios/scene_drawing.html#scene_drawing.translate">(in module scene_drawing)</a></dt>
       <dt><a href="library/string.html#string.translate">(in module string)</a></dt>
+      <dt><a href="ios/scene.html#scene.Rect.translate">(scene.Rect method)</a></dt>
       <dt><a href="library/stdtypes.html#str.translate">(str method)</a></dt>
   </dl></dd>
     <dt><a href="library/gettext.html#gettext.translation">translation() (in module gettext)</a></dt>
@@ -492,6 +513,7 @@
     <dt><a href="library/ssl.html#index-1">Transport Layer Security</a></dt>
     <dt><a href="ios/Image.html#Image.Image.transpose">transpose() (Image.Image method)</a></dt>
     <dt><a href="library/xml.etree.elementtree.html#xml.etree.ElementTree.TreeBuilder">TreeBuilder (class in xml.etree.ElementTree)</a></dt>
+    <dt><a href="ios/scene_drawing.html#scene_drawing.triangle_strip">triangle_strip() (in module scene_drawing)</a></dt>
     <dt><a href="library/random.html#random.triangular">triangular() (in module random)</a></dt>
     <dt><a href="glossary.html#term-triple-quoted-string">triple-quoted string</a>, <a href="reference/lexical_analysis.html#index-14">[1]</a></dt>
     <dt><a href="reference/datamodel.html#index-13">True</a>, <a href="library/stdtypes.html#index-6">[1]</a>, <a href="library/stdtypes.html#index-42">[2]</a></dt>
@@ -527,6 +549,7 @@
     <dt><a href="library/2to3.html#2to3fixer-tuple_params">tuple_params (2to3 fixer)</a></dt>
     <dt><a href="library/types.html#types.TupleType">TupleType (in module types)</a></dt>
     <dt><a href="library/compiler.html#index-0">Tutt, Bill</a></dt>
+    <dt><a href="ios/twitter.html#module-twitter">twitter (module)</a></dt>
     <dt><a href="reference/datamodel.html#index-4">type</a>, <a href="glossary.html#term-type">[1]</a></dt>
     <dd><dl>
       <dt><a href="library/functions.html#index-0">Boolean</a></dt>
@@ -597,12 +620,12 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    &copy; <a href="copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Dec 19, 2015.
     <a href="bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.random.RandomState.pareto" href="numpy.random.RandomState.pareto.html" />
     <link rel="prev" title="numpy.random.RandomState.noncentral_f" href="numpy.random.RandomState.noncentral_f.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -162,14 +162,14 @@ unique distribution <a class="reference internal" href="#r156" id="id2">[R156]</
 <p class="rubric">Notes</p>
 <p>The probability density for the Gaussian distribution is</p>
 <div class="math">
-<p><img src="../../_images/math/2f8a02ce155191ed5a4ea8d776aa15fcaef26e1f.png" alt="p(x) = \frac{1}{\sqrt{ 2 \pi \sigma^2 }}
-e^{ - \frac{ (x - \mu)^2 } {2 \sigma^2} },"/></p>
-</div><p>where <img class="math" src="../../_images/math/fb6d665bbe0c01fc1af5c5f5fa7df40dc71331d7.png" alt="\mu" style="vertical-align: -3px"/> is the mean and <img class="math" src="../../_images/math/bb6e1902efeb0b3704c6191ddce1f02707ab7d4b.png" alt="\sigma" style="vertical-align: 0px"/> the standard deviation.
-The square of the standard deviation, <img class="math" src="../../_images/math/dd3f23ceebfef553bff1607f84667d5cc6af7587.png" alt="\sigma^2" style="vertical-align: 0px"/>, is called the
+<p><span class="math">p(x) = \frac{1}{\sqrt{ 2 \pi \sigma^2 }}
+e^{ - \frac{ (x - \mu)^2 } {2 \sigma^2} },</span></p>
+</div><p>where <span class="math">\mu</span> is the mean and <span class="math">\sigma</span> the standard deviation.
+The square of the standard deviation, <span class="math">\sigma^2</span>, is called the
 variance.</p>
 <p>The function has its peak at the mean, and its &#8220;spread&#8221; increases with
 the standard deviation (the function reaches 0.607 times its maximum at
-<img class="math" src="../../_images/math/ad6d5400fce43a299a35b53a9661e54a284f1bad.png" alt="x + \sigma" style="vertical-align: -1px"/> and <img class="math" src="../../_images/math/fa3af8846dae3eb1c8913dace238ff110abb64b2.png" alt="x - \sigma" style="vertical-align: 0px"/> <a class="reference internal" href="#r156" id="id3">[R156]</a>).  This implies that
+<span class="math">x + \sigma</span> and <span class="math">x - \sigma</span> <a class="reference internal" href="#r156" id="id3">[R156]</a>).  This implies that
 <a class="reference internal" href="numpy.random.normal.html#numpy.random.normal" title="numpy.random.normal"><tt class="xref py py-obj docutils literal"><span class="pre">numpy.random.normal</span></tt></a> is more likely to return samples lying close to the
 mean, rather than those far away.</p>
 <p class="rubric">References</p>
@@ -232,7 +232,7 @@ the probability density function:</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

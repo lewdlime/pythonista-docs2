@@ -29,60 +29,8 @@
     <link rel="next" title="matplotlib.backends.backend_gtkagg" href="backend_gtkagg_api.html" />
     <link rel="prev" title="backends" href="index_backend_api.html" />
     <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
-    <style>
-    @media only screen and (max-device-width : 320px) {
-        .pythonista-ipad-only {
-            display: none;
-        }
-    }
-    @media only screen and (min-device-width : 321px) {
-        .pythonista-iphone-only {
-            display: none;
-        }
-    }
-    p, li {
-        -webkit-hyphens: auto;
-    }
-    .pythonista-code-header {
-        background-color: #f2f2f2;
-        border-style: solid;
-        border-width: 1px 1px 0 1px;
-        border-color: #cdcdcd;
-        margin-bottom: -16px;
-        padding: 5px;
-        border-radius: 6px 6px 0 0;
-    }
-    .pythonista-button {
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fdfdfd), color-stop(49%,#e2e2e2), color-stop(50%,#cecece), color-stop(100%,#dfdfdf));
-        border: 1px solid #959595;
-        box-shadow: rgba(255, 255, 255, 0.75) 0 1px 0;
-        text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0;
-        margin-right: 10px;
-        
-        font-family: Helvetica;
-        font-weight: bold;
-        font-size: 14px;  
-        padding: 5px;
-        border-radius: 4px;
-        display: inline-block;
-        color: #333;
-        
-        cursor: default;
-        
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        -webkit-user-select: none;
-    }
-    .pythonista-button:active {
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cacaca), color-stop(49%,#c9c9c9), color-stop(50%,#bebebe), color-stop(100%,#c1c1c1));
-        
-    }
-    
-    pre {
-        background-color: #fafafa;
-        border: 1px solid #cdcdcd;
-    }
-    </style>
+    <link rel="stylesheet" href="../_static/pythonista.css" type="text/css" />
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -91,11 +39,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -361,7 +309,7 @@ entered</dd>
 
 <dl class="attribute">
 <dt id="matplotlib.backend_bases.FigureCanvasBase.filetypes">
-<tt class="descname">filetypes</tt><em class="property"> = {'pgf': 'LaTeX PGF Figure', 'ps': 'Postscript', 'svg': 'Scalable Vector Graphics', 'rgba': 'Raw RGBA bitmap', 'raw': 'Raw RGBA bitmap', 'svgz': 'Scalable Vector Graphics', 'pdf': 'Portable Document Format', 'eps': 'Encapsulated Postscript', 'png': 'Portable Network Graphics'}</em><a class="headerlink" href="#matplotlib.backend_bases.FigureCanvasBase.filetypes" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">filetypes</tt><em class="property"> = {'pgf': 'LaTeX PGF Figure', 'svgz': 'Scalable Vector Graphics', 'tiff': 'Tagged Image File Format', 'jpg': 'Joint Photographic Experts Group', 'raw': 'Raw RGBA bitmap', 'jpeg': 'Joint Photographic Experts Group', 'png': 'Portable Network Graphics', 'ps': 'Postscript', 'svg': 'Scalable Vector Graphics', 'eps': 'Encapsulated Postscript', 'rgba': 'Raw RGBA bitmap', 'pdf': 'Portable Document Format', 'tif': 'Tagged Image File Format'}</em><a class="headerlink" href="#matplotlib.backend_bases.FigureCanvasBase.filetypes" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -633,6 +581,42 @@ tight bbox is calculated.</dd>
 </dd></dl>
 
 <dl class="method">
+<dt id="matplotlib.backend_bases.FigureCanvasBase.print_jpeg">
+<tt class="descname">print_jpeg</tt><big>(</big><em>filename_or_obj</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#matplotlib.backend_bases.FigureCanvasBase.print_jpeg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Supported kwargs:</p>
+<dl class="docutils">
+<dt><em>quality</em>: The image quality, on a scale from 1 (worst) to</dt>
+<dd>95 (best). The default is 95, if not given in the
+matplotlibrc file in the savefig.jpeg_quality parameter.
+Values above 95 should be avoided; 100 completely
+disables the JPEG quantization stage.</dd>
+<dt><em>optimize</em>: If present, indicates that the encoder should</dt>
+<dd>make an extra pass over the image in order to select
+optimal encoder settings.</dd>
+<dt><em>progressive</em>: If present, indicates that this image</dt>
+<dd>should be stored as a progressive JPEG file.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="matplotlib.backend_bases.FigureCanvasBase.print_jpg">
+<tt class="descname">print_jpg</tt><big>(</big><em>filename_or_obj</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#matplotlib.backend_bases.FigureCanvasBase.print_jpg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Supported kwargs:</p>
+<dl class="docutils">
+<dt><em>quality</em>: The image quality, on a scale from 1 (worst) to</dt>
+<dd>95 (best). The default is 95, if not given in the
+matplotlibrc file in the savefig.jpeg_quality parameter.
+Values above 95 should be avoided; 100 completely
+disables the JPEG quantization stage.</dd>
+<dt><em>optimize</em>: If present, indicates that the encoder should</dt>
+<dd>make an extra pass over the image in order to select
+optimal encoder settings.</dd>
+<dt><em>progressive</em>: If present, indicates that this image</dt>
+<dd>should be stored as a progressive JPEG file.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
 <dt id="matplotlib.backend_bases.FigureCanvasBase.print_pdf">
 <tt class="descname">print_pdf</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#matplotlib.backend_bases.FigureCanvasBase.print_pdf" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -670,6 +654,16 @@ tight bbox is calculated.</dd>
 <dl class="method">
 <dt id="matplotlib.backend_bases.FigureCanvasBase.print_svgz">
 <tt class="descname">print_svgz</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#matplotlib.backend_bases.FigureCanvasBase.print_svgz" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="matplotlib.backend_bases.FigureCanvasBase.print_tif">
+<tt class="descname">print_tif</tt><big>(</big><em>filename_or_obj</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#matplotlib.backend_bases.FigureCanvasBase.print_tif" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="matplotlib.backend_bases.FigureCanvasBase.print_tiff">
+<tt class="descname">print_tiff</tt><big>(</big><em>filename_or_obj</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#matplotlib.backend_bases.FigureCanvasBase.print_tiff" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -1981,7 +1975,7 @@ described at <a class="reference internal" href="../users/navigation_toolbar.htm
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

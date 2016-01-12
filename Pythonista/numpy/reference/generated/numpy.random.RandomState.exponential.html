@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.random.RandomState.f" href="numpy.random.RandomState.f.html" />
     <link rel="prev" title="numpy.random.RandomState.dirichlet" href="numpy.random.RandomState.dirichlet.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -125,9 +125,9 @@
 <dd><p>Exponential distribution.</p>
 <p>Its probability density function is</p>
 <div class="math">
-<p><img src="../../_images/math/a969f4cf6591cb400dba3614203089a627a49d5c.png" alt="f(x; \frac{1}{\beta}) = \frac{1}{\beta} \exp(-\frac{x}{\beta}),"/></p>
-</div><p>for <tt class="docutils literal"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">0</span></tt> and 0 elsewhere. <img class="math" src="../../_images/math/af66ae03768d95d441cd1f37a0692f006344742c.png" alt="\beta" style="vertical-align: -3px"/> is the scale parameter,
-which is the inverse of the rate parameter <img class="math" src="../../_images/math/7bbf325e108c6f29b5e02379c54fd021437e3ac8.png" alt="\lambda = 1/\beta" style="vertical-align: -4px"/>.
+<p><span class="math">f(x; \frac{1}{\beta}) = \frac{1}{\beta} \exp(-\frac{x}{\beta}),</span></p>
+</div><p>for <tt class="docutils literal"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">0</span></tt> and 0 elsewhere. <span class="math">\beta</span> is the scale parameter,
+which is the inverse of the rate parameter <span class="math">\lambda = 1/\beta</span>.
 The rate parameter is an alternative, widely used parameterization
 of the exponential distribution <a class="reference internal" href="#r132" id="id1">[R132]</a>.</p>
 <p>The exponential distribution is a continuous analogue of the
@@ -140,7 +140,7 @@ between page requests to Wikipedia <a class="reference internal" href="#r131" id
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>scale</strong> : float</p>
 <blockquote>
-<div><p>The scale parameter, <img class="math" src="../../_images/math/c53a95e8e3df4adf767fb26bd1f054691bf92769.png" alt="\beta = 1/\lambda" style="vertical-align: -4px"/>.</p>
+<div><p>The scale parameter, <span class="math">\beta = 1/\lambda</span>.</p>
 </div></blockquote>
 <p><strong>size</strong> : tuple of ints</p>
 <blockquote class="last">
@@ -188,7 +188,7 @@ Random Signal Principles&#8221;, 4th ed, 2001, p. 57.</td></tr>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

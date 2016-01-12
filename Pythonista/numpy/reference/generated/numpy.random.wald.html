@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.random.weibull" href="numpy.random.weibull.html" />
     <link rel="prev" title="numpy.random.vonmises" href="numpy.random.vonmises.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -160,8 +160,8 @@ returned.</p>
 <p class="rubric">Notes</p>
 <p>The probability density function for the Wald distribution is</p>
 <div class="math">
-<p><img src="../../_images/math/2cc591e36ba3e72bb62258a03a1c2c1acf479865.png" alt="P(x;mean,scale) = \sqrt{\frac{scale}{2\pi x^3}}e^
-\frac{-scale(x-mean)^2}{2\cdotp mean^2x}"/></p>
+<p><span class="math">P(x;mean,scale) = \sqrt{\frac{scale}{2\pi x^3}}e^
+\frac{-scale(x-mean)^2}{2\cdotp mean^2x}</span></p>
 </div><p>As noted above the Inverse Gaussian distribution first arise from attempts
 to model Brownian Motion. It is also a competitor to the Weibull for use in
 reliability modeling and modeling stock returns and interest rate
@@ -215,7 +215,7 @@ Distribution: Theory : Methodology, and Applications&#8221;, CRC Press,
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

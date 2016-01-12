@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.random.dirichlet" href="numpy.random.dirichlet.html" />
     <link rel="prev" title="numpy.random.binomial" href="numpy.random.binomial.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -161,17 +161,17 @@ is given.</p>
 <p>The variable obtained by summing the squares of <em class="xref py py-obj">df</em> independent,
 standard normally distributed random variables:</p>
 <div class="math">
-<p><img src="../../_images/math/630d2570173a6a9060edf98c1ea082e60b502e53.png" alt="Q = \sum_{i=0}^{\mathtt{df}} X^2_i"/></p>
+<p><span class="math">Q = \sum_{i=0}^{\mathtt{df}} X^2_i</span></p>
 </div><p>is chi-square distributed, denoted</p>
 <div class="math">
-<p><img src="../../_images/math/f6257282bf3e939895115b57774534e0d7b95db8.png" alt="Q \sim \chi^2_k."/></p>
+<p><span class="math">Q \sim \chi^2_k.</span></p>
 </div><p>The probability density function of the chi-squared distribution is</p>
 <div class="math">
-<p><img src="../../_images/math/e58a2536cf795f5b9207a5eb03b9e21b4d42dc39.png" alt="p(x) = \frac{(1/2)^{k/2}}{\Gamma(k/2)}
-x^{k/2 - 1} e^{-x/2},"/></p>
-</div><p>where <img class="math" src="../../_images/math/d71c74078e709f44826135f99abda79dc6926cbe.png" alt="\Gamma" style="vertical-align: -1px"/> is the gamma function,</p>
+<p><span class="math">p(x) = \frac{(1/2)^{k/2}}{\Gamma(k/2)}
+x^{k/2 - 1} e^{-x/2},</span></p>
+</div><p>where <span class="math">\Gamma</span> is the gamma function,</p>
 <div class="math">
-<p><img src="../../_images/math/5ec22f996a86d46f8a3be3d6f3167a1a3a258ab1.png" alt="\Gamma(x) = \int_0^{-\infty} t^{x - 1} e^{-t} dt."/></p>
+<p><span class="math">\Gamma(x) = \int_0^{-\infty} t^{x - 1} e^{-t} dt.</span></p>
 </div><p class="rubric">References</p>
 <p><a class="reference external" href="http://www.itl.nist.gov/div898/handbook/eda/section3/eda3666.htm">NIST/SEMATECH e-Handbook of Statistical Methods</a></p>
 <p class="rubric">Examples</p>
@@ -194,7 +194,7 @@ x^{k/2 - 1} e^{-x/2},"/></p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

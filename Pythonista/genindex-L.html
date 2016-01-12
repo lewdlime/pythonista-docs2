@@ -28,7 +28,7 @@
     <link rel="copyright" title="Copyright" href="copyright.html" />
     <link rel="top" title="Pythonista Documentation" href="index.html" />
     <link rel="shortcut icon" type="image/png" href="_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -37,11 +37,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -120,12 +120,14 @@
   <td style="width: 33%" valign="top"><dl>
     <dt><a href="library/re.html#re.L">L (in module re)</a></dt>
     <dt><a href="ios/ui.html#ui.Label">Label (class in ui)</a></dt>
+    <dt><a href="ios/scene.html#scene.LabelNode">LabelNode (class in scene)</a></dt>
     <dt><a href="glossary.html#term-lambda">lambda</a></dt>
     <dd><dl>
       <dt><a href="reference/expressions.html#index-75">expression</a></dt>
       <dt><a href="reference/compound_stmts.html#index-22">form</a>, <a href="reference/expressions.html#index-75">[1]</a></dt>
   </dl></dd>
     <dt><a href="library/types.html#types.LambdaType">LambdaType (in module types)</a></dt>
+    <dt><a href="ios/scene.html#scene.LANDSCAPE">LANDSCAPE (in module scene)</a></dt>
     <dt><a href="library/locale.html#index-1">LANG</a>, <a href="library/locale.html#index-2">[1]</a>, <a href="library/locale.html#index-3">[2]</a>, <a href="library/gettext.html#index-3">[3]</a>, <a href="library/gettext.html#index-7">[4]</a></dt>
     <dt>language</dt>
     <dd><dl>
@@ -149,11 +151,6 @@
     <dt><a href="library/re.html#re.MatchObject.lastindex">lastindex (re.MatchObject attribute)</a></dt>
     <dt><a href="library/mimewriter.html#MimeWriter.MimeWriter.lastpart">lastpart() (MimeWriter.MimeWriter method)</a></dt>
     <dt><a href="library/sqlite3.html#sqlite3.Cursor.lastrowid">lastrowid (sqlite3.Cursor attribute)</a></dt>
-    <dt><a href="ios/scene.html#scene.Layer">Layer (class in scene)</a></dt>
-    <dt><a href="ios/scene.html#scene.Animation.layer">layer (scene.Animation attribute)</a></dt>
-    <dd><dl>
-      <dt><a href="ios/scene.html#scene.Touch.layer">(scene.Touch attribute)</a></dt>
-  </dl></dd>
     <dt><a href="ios/ui.html#ui.LB_CHAR_WRAP">LB_CHAR_WRAP (in module ui)</a></dt>
     <dt><a href="ios/ui.html#ui.LB_CLIP">LB_CLIP (in module ui)</a></dt>
     <dt><a href="ios/ui.html#ui.LB_TRUNCATE_HEAD">LB_TRUNCATE_HEAD (in module ui)</a></dt>
@@ -187,7 +184,6 @@
     <dt><a href="reference/lexical_analysis.html#index-7">leading whitespace</a></dt>
     <dt><a href="library/calendar.html#calendar.leapdays">leapdays() (in module calendar)</a></dt>
     <dt><a href="library/filecmp.html#filecmp.dircmp.left">left (filecmp.dircmp attribute)</a></dt>
-    <dt><a href="ios/scene.html#scene.Rect.left">left() (scene.Rect method)</a></dt>
     <dt><a href="ios/ui.html#ui.View.left_button_items">left_button_items (ui.View attribute)</a></dt>
     <dt><a href="library/filecmp.html#filecmp.dircmp.left_list">left_list (filecmp.dircmp attribute)</a></dt>
     <dt><a href="library/filecmp.html#filecmp.dircmp.left_only">left_only (filecmp.dircmp attribute)</a></dt>
@@ -217,6 +213,7 @@
   </dl></dd>
     <dt><a href="library/2to3.html#module-lib2to3">lib2to3 (module)</a></dt>
     <dt><a href="library/platform.html#platform.libc_ver">libc_ver() (in module platform)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.LibraryLoader">LibraryLoader (class in ctypes)</a></dt>
     <dt><a href="library/constants.html#license">license (built-in variable)</a></dt>
     <dt><a href="library/queue.html#Queue.LifoQueue">LifoQueue (class in Queue)</a></dt>
     <dt><a href="library/thread.html#index-0">light-weight processes</a></dt>
@@ -227,7 +224,7 @@
     <dt><a href="reference/lexical_analysis.html#index-1">line structure</a></dt>
     <dt><a href="ios/ImageDraw.html#ImageDraw.ImageDraw.line">line() (ImageDraw.ImageDraw method)</a></dt>
     <dd><dl>
-      <dt><a href="ios/scene.html#scene.line">(in module scene)</a></dt>
+      <dt><a href="ios/scene_drawing.html#scene_drawing.line">(in module scene_drawing)</a></dt>
   </dl></dd>
     <dt><a href="library/functions.html#index-4">line-buffered I/O</a></dt>
     <dt><a href="ios/ui.html#ui.Label.line_break_mode">line_break_mode (ui.Label attribute)</a></dt>
@@ -283,6 +280,7 @@
   </dl></dd>
     <dt><a href="library/dis.html#opcode-LIST_APPEND">LIST_APPEND (opcode)</a></dt>
     <dt><a href="library/csv.html#csv.list_dialects">list_dialects() (in module csv)</a></dt>
+    <dt><a href="ios/dialogs.html#dialogs.list_dialog">list_dialog() (in module dialogs)</a></dt>
     <dt><a href="library/mailbox.html#mailbox.Maildir.list_folders">list_folders() (mailbox.Maildir method)</a></dt>
     <dd><dl>
       <dt><a href="library/mailbox.html#mailbox.MH.list_folders">(mailbox.MH method)</a></dt>
@@ -318,6 +316,7 @@
       <dt><a href="library/stdtypes.html#index-14">numeric</a></dt>
       <dt><a href="library/stdtypes.html#index-14">octal</a></dt>
   </dl></dd>
+    <dt><a href="library/ctypes.html#ctypes.LittleEndianStructure">LittleEndianStructure (class in ctypes)</a></dt>
     <dt><a href="library/string.html#string.ljust">ljust() (in module string)</a></dt>
     <dd><dl>
       <dt><a href="library/stdtypes.html#str.ljust">(str method)</a></dt>
@@ -351,15 +350,14 @@
     <dt><a href="ios/ImageFont.html#ImageFont.load_default">load_default() (in module ImageFont)</a></dt>
     <dt><a href="library/dis.html#opcode-LOAD_DEREF">LOAD_DEREF (opcode)</a></dt>
     <dt><a href="library/imp.html#imp.load_dynamic">load_dynamic() (in module imp)</a></dt>
-    <dt><a href="ios/sound.html#sound.load_effect">load_effect() (in module sound)</a></dt>
     <dt><a href="library/sqlite3.html#sqlite3.Connection.load_extension">load_extension() (sqlite3.Connection method)</a></dt>
     <dt><a href="library/dis.html#opcode-LOAD_FAST">LOAD_FAST (opcode)</a></dt>
     <dt><a href="ios/ui.html#ui.ImageView.load_from_url">load_from_url() (ui.ImageView method)</a></dt>
     <dt><a href="library/dis.html#opcode-LOAD_GLOBAL">LOAD_GLOBAL (opcode)</a></dt>
     <dt><a href="library/pickle.html#index-4">load_global() (pickle protocol)</a></dt>
     <dt><a href="ios/ui.html#ui.WebView.load_html">load_html() (ui.WebView method)</a></dt>
-    <dt><a href="ios/scene.html#scene.load_image">load_image() (in module scene)</a></dt>
-    <dt><a href="ios/scene.html#scene.load_image_file">load_image_file() (in module scene)</a></dt>
+    <dt><a href="ios/scene_drawing.html#scene_drawing.load_image">load_image() (in module scene_drawing)</a></dt>
+    <dt><a href="ios/scene_drawing.html#scene_drawing.load_image_file">load_image_file() (in module scene_drawing)</a></dt>
     <dt><a href="library/dis.html#opcode-LOAD_LOCALS">LOAD_LOCALS (opcode)</a></dt>
     <dt>load_module</dt>
     <dd><dl>
@@ -371,7 +369,7 @@
   </dl></dd>
     <dt><a href="library/dis.html#opcode-LOAD_NAME">LOAD_NAME (opcode)</a></dt>
     <dt><a href="ios/ImageFont.html#ImageFont.load_path">load_path() (in module ImageFont)</a></dt>
-    <dt><a href="ios/scene.html#scene.load_pil_image">load_pil_image() (in module scene)</a></dt>
+    <dt><a href="ios/scene_drawing.html#scene_drawing.load_pil_image">load_pil_image() (in module scene_drawing)</a></dt>
     <dt><a href="library/imp.html#imp.load_source">load_source() (in module imp)</a></dt>
     <dt><a href="ios/ui.html#ui.WebView.load_url">load_url() (ui.WebView method)</a></dt>
     <dt><a href="ios/ui.html#ui.load_view">load_view() (in module ui)</a></dt>
@@ -380,6 +378,7 @@
       <dt><a href="reference/simple_stmts.html#index-44">load_module</a></dt>
   </dl></dd>
     <dt><a href="library/cookielib.html#cookielib.LoadError">LoadError</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.LibraryLoader.LoadLibrary">LoadLibrary() (ctypes.LibraryLoader method)</a></dt>
     <dt><a href="library/json.html#json.loads">loads() (in module json)</a></dt>
     <dd><dl>
       <dt><a href="library/marshal.html#marshal.loads">(in module marshal)</a></dt>
@@ -412,6 +411,7 @@
     <dt><a href="library/time.html#time.localtime">localtime() (in module time)</a></dt>
     <dt><a href="ios/location.html#module-location">location (module)</a></dt>
     <dd><dl>
+      <dt><a href="ios/reminders.html#reminders.Alarm.location">(reminders.Alarm attribute)</a></dt>
       <dt><a href="ios/scene.html#scene.Touch.location">(scene.Touch attribute)</a></dt>
       <dt><a href="ios/ui.html#ui.Touch.location">(ui.Touch attribute)</a></dt>
   </dl></dd>
@@ -485,6 +485,9 @@
       <dt><a href="library/smtplib.html#smtplib.SMTP.login">(smtplib.SMTP method)</a></dt>
   </dl></dd>
     <dt><a href="ios/console.html#console.login_alert">login_alert() (in module console)</a></dt>
+    <dd><dl>
+      <dt><a href="ios/dialogs.html#dialogs.login_alert">(in module dialogs)</a></dt>
+  </dl></dd>
     <dt><a href="library/imaplib.html#imaplib.IMAP4.login_cram_md5">login_cram_md5() (imaplib.IMAP4 method)</a></dt>
     <dt><a href="library/os.html#index-2">LOGNAME</a></dt>
     <dt><a href="library/random.html#random.lognormvariate">lognormvariate() (in module random)</a></dt>
@@ -550,12 +553,12 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    &copy; <a href="copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Dec 19, 2015.
     <a href="bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

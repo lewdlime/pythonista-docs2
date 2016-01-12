@@ -1739,6 +1739,10 @@ Utility Functions
 .. function:: get_screen_size()
 
     Return the size of the main screen as a ``(width, height)`` tuple (in points).
+    
+.. function:: parse_color(color)
+
+    Convert a color from various formats to a (r, g, b, a) tuple. Most commonly, `color` will be a hex string (e.g. '#ff0000') or a CSS color name (e.g. 'red').
 
 Drawing Functions
 ^^^^^^^^^^^^^^^^^

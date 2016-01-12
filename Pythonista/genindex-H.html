@@ -28,7 +28,7 @@
     <link rel="copyright" title="Copyright" href="copyright.html" />
     <link rel="top" title="Pythonista Documentation" href="index.html" />
     <link rel="shortcut icon" type="image/png" href="_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -37,11 +37,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -119,9 +119,6 @@
 <table style="width: 100%" class="indextable"><tr>
   <td style="width: 33%" valign="top"><dl>
     <dt><a href="ios/scene.html#scene.Rect.h">h (scene.Rect attribute)</a></dt>
-    <dd><dl>
-      <dt><a href="ios/scene.html#scene.Size.h">(scene.Size attribute)</a></dt>
-  </dl></dd>
     <dt><a href="reference/executionmodel.html#index-13">handle an exception</a></dt>
     <dt><a href="library/basehttpserver.html#BaseHTTPServer.BaseHTTPRequestHandler.handle">handle() (BaseHTTPServer.BaseHTTPRequestHandler method)</a></dt>
     <dd><dl>
@@ -276,7 +273,10 @@
     <dt><a href="library/heapq.html#heapq.heappushpop">heappushpop() (in module heapq)</a></dt>
     <dt><a href="library/heapq.html#module-heapq">heapq (module)</a></dt>
     <dt><a href="library/heapq.html#heapq.heapreplace">heapreplace() (in module heapq)</a></dt>
-    <dt><a href="ios/ui.html#ui.View.height">height (ui.View attribute)</a></dt>
+    <dt><a href="ios/scene.html#scene.Rect.height">height (scene.Rect attribute)</a></dt>
+    <dd><dl>
+      <dt><a href="ios/ui.html#ui.View.height">(ui.View attribute)</a></dt>
+  </dl></dd>
     <dt><a href="library/smtplib.html#smtplib.SMTP.helo">helo() (smtplib.SMTP method)</a></dt>
     <dt>help</dt>
     <dd><dl>
@@ -345,6 +345,7 @@
     <dd><dl>
       <dt><a href="library/datetime.html#datetime.time.hour">(datetime.time attribute)</a></dt>
   </dl></dd>
+    <dt><a href="library/ctypes.html#ctypes.HRESULT">HRESULT (class in ctypes)</a></dt>
     <dt><a href="library/subprocess.html#subprocess.STARTUPINFO.hStdError">hStdError (subprocess.STARTUPINFO attribute)</a></dt>
     <dt><a href="library/subprocess.html#subprocess.STARTUPINFO.hStdInput">hStdInput (subprocess.STARTUPINFO attribute)</a></dt>
     <dt><a href="library/subprocess.html#subprocess.STARTUPINFO.hStdOutput">hStdOutput (subprocess.STARTUPINFO attribute)</a></dt>
@@ -362,7 +363,7 @@
   </dl></dd>
     <dt><a href="library/htmllib.html#module-htmllib">htmllib (module)</a></dt>
     <dt><a href="library/htmlparser.html#HTMLParser.HTMLParseError">HTMLParseError</a>, <a href="library/htmllib.html#htmllib.HTMLParseError">[1]</a></dt>
-    <dt><a href="library/htmllib.html#htmllib.HTMLParser">HTMLParser (class in htmllib)</a>, <a href="library/formatter.html#index-0">[1]</a></dt>
+    <dt><a href="library/formatter.html#index-0">HTMLParser (class in htmllib)</a>, <a href="library/htmllib.html#htmllib.HTMLParser">[1]</a></dt>
     <dd><dl>
       <dt><a href="library/htmlparser.html#HTMLParser.HTMLParser">(class in HTMLParser)</a></dt>
       <dt><a href="library/htmlparser.html#module-HTMLParser">(module)</a></dt>
@@ -427,6 +428,9 @@
     <dt><a href="library/basehttpserver.html#BaseHTTPServer.HTTPServer">HTTPServer (class in BaseHTTPServer)</a></dt>
     <dt><a href="library/urllib2.html#urllib2.HTTPSHandler">HTTPSHandler (class in urllib2)</a></dt>
     <dt><a href="ios/console.html#console.hud_alert">hud_alert() (in module console)</a></dt>
+    <dd><dl>
+      <dt><a href="ios/dialogs.html#dialogs.hud_alert">(in module dialogs)</a></dt>
+  </dl></dd>
     <dt><a href="library/htmllib.html#index-0">hypertext</a></dt>
     <dt><a href="library/math.html#math.hypot">hypot() (in module math)</a></dt>
 </dl></td>
@@ -438,12 +442,12 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    &copy; <a href="copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Dec 19, 2015.
     <a href="bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

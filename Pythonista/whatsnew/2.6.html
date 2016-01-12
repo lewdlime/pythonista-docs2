@@ -31,7 +31,7 @@
     <link rel="next" title="What’s New in Python 2.5" href="2.5.html" />
     <link rel="prev" title="What’s New in Python 2.7" href="2.7.html" />
     <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -40,11 +40,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -2708,21 +2708,21 @@ has been promoted to the standard library.</p>
 <div class="section" id="ctypes-enhancements">
 <h3>ctypes Enhancements<a class="headerlink" href="#ctypes-enhancements" title="Permalink to this headline">¶</a></h3>
 <p>Thomas Heller continued to maintain and enhance the
-<tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt> module.</p>
-<p><tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt> now supports a <tt class="xref py py-class docutils literal"><span class="pre">c_bool</span></tt> datatype
+<a class="reference internal" href="../library/ctypes.html#module-ctypes" title="ctypes: A foreign function library for Python."><tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt></a> module.</p>
+<p><a class="reference internal" href="../library/ctypes.html#module-ctypes" title="ctypes: A foreign function library for Python."><tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt></a> now supports a <tt class="xref py py-class docutils literal"><span class="pre">c_bool</span></tt> datatype
 that represents the C99 <tt class="docutils literal"><span class="pre">bool</span></tt> type.  (Contributed by David Remahl;
 <a class="reference external" href="http://bugs.python.org/issue1649190">issue 1649190</a>.)</p>
-<p>The <tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt> string, buffer and array types have improved
+<p>The <a class="reference internal" href="../library/ctypes.html#module-ctypes" title="ctypes: A foreign function library for Python."><tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt></a> string, buffer and array types have improved
 support for extended slicing syntax,
 where various combinations of <tt class="docutils literal"><span class="pre">(start,</span> <span class="pre">stop,</span> <span class="pre">step)</span></tt> are supplied.
 (Implemented by Thomas Wouters.)</p>
-<p>All <tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt> data types now support
+<p>All <a class="reference internal" href="../library/ctypes.html#module-ctypes" title="ctypes: A foreign function library for Python."><tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt></a> data types now support
 <tt class="xref py py-meth docutils literal"><span class="pre">from_buffer()</span></tt> and <tt class="xref py py-meth docutils literal"><span class="pre">from_buffer_copy()</span></tt>
 methods that create a ctypes instance based on a
 provided buffer object.  <tt class="xref py py-meth docutils literal"><span class="pre">from_buffer_copy()</span></tt> copies
 the contents of the object,
 while <tt class="xref py py-meth docutils literal"><span class="pre">from_buffer()</span></tt> will share the same memory area.</p>
-<p>A new calling convention tells <tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt> to clear the <tt class="docutils literal"><span class="pre">errno</span></tt> or
+<p>A new calling convention tells <a class="reference internal" href="../library/ctypes.html#module-ctypes" title="ctypes: A foreign function library for Python."><tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt></a> to clear the <tt class="docutils literal"><span class="pre">errno</span></tt> or
 Win32 LastError variables at the outset of each wrapped call.
 (Implemented by Thomas Heller; <a class="reference external" href="http://bugs.python.org/issue1798">issue 1798</a>.)</p>
 <p>You can now retrieve the Unix <tt class="docutils literal"><span class="pre">errno</span></tt> variable after a function
@@ -3154,12 +3154,12 @@ Antoine Pitrou, Brian Warner.</p>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Dec 02, 2015.
     <a href="../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

@@ -28,7 +28,7 @@
     <link rel="copyright" title="Copyright" href="copyright.html" />
     <link rel="top" title="Pythonista Documentation" href="index.html" />
     <link rel="shortcut icon" type="image/png" href="_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -37,11 +37,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -176,6 +176,8 @@
     <dd><dl>
       <dt><a href="ios/Image.html#Image.Image.save">(Image.Image method)</a>, <a href="ios/Image.html#Image.Image.save">[1]</a></dt>
       <dt><a href="ios/contacts.html#contacts.save">(in module contacts)</a></dt>
+      <dt><a href="ios/reminders.html#reminders.Calendar.save">(reminders.Calendar method)</a></dt>
+      <dt><a href="ios/reminders.html#reminders.Reminder.save">(reminders.Reminder method)</a></dt>
   </dl></dd>
     <dt><a href="library/htmllib.html#htmllib.HTMLParser.save_bgn">save_bgn() (htmllib.HTMLParser method)</a></dt>
     <dt><a href="library/htmllib.html#htmllib.HTMLParser.save_end">save_end() (htmllib.HTMLParser method)</a></dt>
@@ -190,22 +192,27 @@
     <dt><a href="ios/ui.html#ui.Image.scale">scale (ui.Image attribute)</a></dt>
     <dt><a href="ios/canvas.html#canvas.scale">scale() (in module canvas)</a></dt>
     <dd><dl>
-      <dt><a href="ios/scene.html#scene.scale">(in module scene)</a></dt>
+      <dt><a href="ios/scene_drawing.html#scene_drawing.scale">(in module scene_drawing)</a></dt>
       <dt><a href="ios/ui.html#ui.Transform.scale">(ui.Transform class method)</a></dt>
   </dl></dd>
-    <dt><a href="ios/scene.html#scene.Layer.scale_x">scale_x (scene.Layer attribute)</a></dt>
-    <dt><a href="ios/scene.html#scene.Layer.scale_y">scale_y (scene.Layer attribute)</a></dt>
+    <dt><a href="ios/scene.html#scene.Action.scale_by">scale_by() (scene.Action class method)</a></dt>
+    <dt><a href="ios/scene.html#scene.Action.scale_to">scale_to() (scene.Action class method)</a></dt>
+    <dt><a href="ios/scene.html#scene.Action.scale_x_to">scale_x_to() (scene.Action class method)</a></dt>
+    <dt><a href="ios/scene.html#scene.Action.scale_y_to">scale_y_to() (scene.Action class method)</a></dt>
     <dt><a href="library/decimal.html#decimal.Context.scaleb">scaleb() (decimal.Context method)</a></dt>
     <dd><dl>
       <dt><a href="library/decimal.html#decimal.Decimal.scaleb">(decimal.Decimal method)</a></dt>
   </dl></dd>
     <dt><a href="ios/ui.html#ui.WebView.scales_page_to_fit">scales_page_to_fit (ui.WebView attribute)</a></dt>
+    <dt><a href="ios/cb.html#cb.scan_for_peripherals">scan_for_peripherals() (in module cb)</a></dt>
     <dt><a href="library/re.html#index-0">scanf()</a></dt>
     <dt><a href="ios/scene.html#scene.Scene">Scene (class in scene)</a></dt>
     <dt><a href="ios/scene.html#module-scene">scene (module)</a></dt>
     <dd><dl>
+      <dt><a href="ios/scene.html#scene.Node.scene">(scene.Node attribute)</a></dt>
       <dt><a href="ios/scene.html#scene.SceneView.scene">(scene.SceneView attribute)</a></dt>
   </dl></dd>
+    <dt><a href="ios/scene_drawing.html#module-scene_drawing">scene_drawing (module)</a></dt>
     <dt><a href="ios/scene.html#scene.SceneView">SceneView (class in scene)</a></dt>
     <dt><a href="library/sched.html#module-sched">sched (module)</a></dt>
     <dt><a href="ios/notification.html#notification.schedule">schedule() (in module notification)</a></dt>
@@ -234,6 +241,7 @@
       <dt><a href="ios/dropbox.html#dropbox.client.DropboxClient.search">(dropbox.client.DropboxClient method)</a></dt>
       <dt><a href="library/imaplib.html#imaplib.IMAP4.search">(imaplib.IMAP4 method)</a></dt>
       <dt><a href="library/re.html#re.search">(in module re)</a></dt>
+      <dt><a href="ios/twitter.html#twitter.search">(in module twitter)</a></dt>
       <dt><a href="library/re.html#re.RegexObject.search">(re.RegexObject method)</a></dt>
   </dl></dd>
     <dt><a href="library/imp.html#imp.SEARCH_ERROR">SEARCH_ERROR (in module imp)</a></dt>
@@ -278,6 +286,7 @@
     <dt><a href="library/io.html#io.IOBase.seekable">seekable() (io.IOBase method)</a></dt>
     <dt><a href="ios/ui.html#ui.SegmentedControl">SegmentedControl (class in ui)</a></dt>
     <dt><a href="ios/ui.html#ui.SegmentedControl.segments">segments (ui.SegmentedControl attribute)</a></dt>
+    <dt><a href="ios/objc_util.html#objc_util.sel">sel() (in module objc_util)</a></dt>
     <dt><a href="library/select.html#module-select">select (module)</a></dt>
     <dt><a href="ios/beautifulsoup_ref.html#bs4.Tag.select">select() (bs4.Tag method)</a></dt>
     <dd><dl>
@@ -335,6 +344,7 @@
       <dt><a href="library/stdtypes.html#index-22">types, operations on</a>, <a href="library/stdtypes.html#index-30">[1]</a></dt>
   </dl></dd>
     <dt><a href="library/collections.html#collections.Sequence">Sequence (class in collections)</a></dt>
+    <dt><a href="ios/scene.html#scene.Action.sequence">sequence() (scene.Action class method)</a></dt>
     <dt><a href="library/parser.html#parser.sequence2st">sequence2st() (in module parser)</a></dt>
     <dt><a href="library/operator.html#operator.sequenceIncludes">sequenceIncludes() (in module operator)</a></dt>
     <dt><a href="library/difflib.html#difflib.SequenceMatcher">SequenceMatcher (class in difflib)</a>, <a href="library/difflib.html#difflib.SequenceMatcher">[1]</a></dt>
@@ -359,6 +369,8 @@
   </dl></dd>
     <dt><a href="ios/paramiko.html#paramiko.ServerInterface">ServerInterface (class in paramiko)</a></dt>
     <dt><a href="library/xmlrpclib.html#xmlrpclib.ServerProxy">ServerProxy (class in xmlrpclib)</a></dt>
+    <dt><a href="ios/cb.html#cb.Service">Service (class in cb)</a></dt>
+    <dt><a href="ios/cb.html#cb.Peripheral.services">services (cb.Peripheral attribute)</a></dt>
     <dt><a href="ios/requests.html#requests.Session">Session (class in requests)</a></dt>
     <dt><a href="ios/requests.html#requests.session">session() (in module requests)</a></dt>
     <dt>set</dt>
@@ -396,12 +408,14 @@
     <dt><a href="library/cookielib.html#cookielib.DefaultCookiePolicy.set_blocked_domains">set_blocked_domains() (cookielib.DefaultCookiePolicy method)</a></dt>
     <dt><a href="library/email.message.html#email.message.Message.set_boundary">set_boundary() (email.message.Message method)</a></dt>
     <dt><a href="library/bdb.html#bdb.Bdb.set_break">set_break() (bdb.Bdb method)</a></dt>
+    <dt><a href="ios/cb.html#cb.set_central_delegate">set_central_delegate() (in module cb)</a></dt>
     <dt><a href="library/email.message.html#email.message.Message.set_charset">set_charset() (email.message.Message method)</a></dt>
     <dt><a href="ios/console.html#console.set_color">set_color() (in module console)</a></dt>
     <dd><dl>
       <dt><a href="ios/ui.html#ui.set_color">(in module ui)</a></dt>
   </dl></dd>
     <dt><a href="library/bdb.html#bdb.Bdb.set_continue">set_continue() (bdb.Bdb method)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.set_conversion_mode">set_conversion_mode() (in module ctypes)</a></dt>
     <dt><a href="ios/bottle/api.html#bottle.BaseResponse.set_cookie">set_cookie() (bottle.BaseResponse method)</a></dt>
     <dd><dl>
       <dt><a href="library/cookielib.html#cookielib.CookieJar.set_cookie">(cookielib.CookieJar method)</a></dt>
@@ -423,6 +437,7 @@
       <dt><a href="library/optparse.html#optparse.OptionParser.set_defaults">(optparse.OptionParser method)</a></dt>
   </dl></dd>
     <dt><a href="ios/ui.html#ui.TableView.set_editing">set_editing() (ui.TableView method)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.set_errno">set_errno() (in module ctypes)</a></dt>
     <dt><a href="ios/canvas.html#canvas.set_fill_color">set_fill_color() (in module canvas)</a></dt>
     <dt><a href="library/mailbox.html#mailbox.MaildirMessage.set_flags">set_flags() (mailbox.MaildirMessage method)</a></dt>
     <dd><dl>
@@ -435,18 +450,20 @@
       <dt><a href="library/mailbox.html#mailbox.MMDFMessage.set_from">(mailbox.MMDFMessage method)</a></dt>
   </dl></dd>
     <dt><a href="ios/bottle/api.html#bottle.BaseResponse.set_header">set_header() (bottle.BaseResponse method)</a></dt>
+    <dt><a href="ios/sound.html#sound.set_honors_silent_switch">set_honors_silent_switch() (in module sound)</a></dt>
     <dt><a href="ios/console.html#console.set_idle_timer_disabled">set_idle_timer_disabled() (in module console)</a></dt>
     <dt><a href="ios/clipboard.html#clipboard.set_image">set_image() (in module clipboard)</a></dt>
     <dt><a href="library/mailbox.html#mailbox.MaildirMessage.set_info">set_info() (mailbox.MaildirMessage method)</a></dt>
     <dt><a href="library/mailbox.html#mailbox.BabylMessage.set_labels">set_labels() (mailbox.BabylMessage method)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.set_last_error">set_last_error() (in module ctypes)</a></dt>
     <dt><a href="ios/ui.html#ui.Path.set_line_dash">set_line_dash() (ui.Path method)</a></dt>
     <dt><a href="ios/canvas.html#canvas.set_line_width">set_line_width() (in module canvas)</a></dt>
     <dt><a href="library/dis.html#opcode-SET_LINENO">SET_LINENO (opcode)</a></dt>
     <dt><a href="library/2to3.html#2to3fixer-set_literal">set_literal (2to3 fixer)</a></dt>
-    <dt><a href="ios/keychain.html#keychain.set_master_password">set_master_password() (in module keychain)</a></dt>
     <dt><a href="ios/ui.html#ui.View.set_needs_display">set_needs_display() (ui.View method)</a></dt>
     <dt><a href="library/bdb.html#bdb.Bdb.set_next">set_next() (bdb.Bdb method)</a></dt>
     <dt><a href="library/cookielib.html#cookielib.Cookie.set_nonstandard_attr">set_nonstandard_attr() (cookielib.Cookie method)</a></dt>
+    <dt><a href="ios/cb.html#cb.Peripheral.set_notify_value">set_notify_value() (cb.Peripheral method)</a></dt>
     <dt><a href="library/cookielib.html#cookielib.CookiePolicy.set_ok">set_ok() (cookielib.CookiePolicy method)</a></dt>
     <dt><a href="library/telnetlib.html#telnetlib.Telnet.set_option_negotiation_callback">set_option_negotiation_callback() (telnetlib.Telnet method)</a></dt>
     <dt><a href="library/gettext.html#gettext.NullTranslations.set_output_charset">set_output_charset() (gettext.NullTranslations method)</a></dt>
@@ -498,11 +515,16 @@
   </dl></dd>
     <dt><a href="library/httplib.html#httplib.HTTPConnection.set_tunnel">set_tunnel() (httplib.HTTPConnection method)</a></dt>
     <dt><a href="library/email.message.html#email.message.Message.set_type">set_type() (email.message.Message method)</a></dt>
+    <dt><a href="ios/scene.html#scene.Action.set_uniform">set_uniform() (scene.Action class method)</a></dt>
+    <dd><dl>
+      <dt><a href="ios/scene.html#scene.Shader.set_uniform">(scene.Shader method)</a></dt>
+  </dl></dd>
     <dt><a href="library/doctest.html#doctest.set_unittest_reportflags">set_unittest_reportflags() (in module doctest)</a></dt>
     <dt><a href="library/email.message.html#email.message.Message.set_unixfrom">set_unixfrom() (email.message.Message method)</a></dt>
     <dt><a href="library/bdb.html#bdb.Bdb.set_until">set_until() (bdb.Bdb method)</a></dt>
     <dt><a href="library/robotparser.html#robotparser.RobotFileParser.set_url">set_url() (robotparser.RobotFileParser method)</a></dt>
     <dt><a href="library/optparse.html#optparse.OptionParser.set_usage">set_usage() (optparse.OptionParser method)</a></dt>
+    <dt><a href="ios/cb.html#cb.set_verbose">set_verbose() (in module cb)</a></dt>
     <dt><a href="library/mailbox.html#mailbox.BabylMessage.set_visible">set_visible() (mailbox.BabylMessage method)</a></dt>
     <dt><a href="ios/sound.html#sound.set_volume">set_volume() (in module sound)</a></dt>
     <dt><a href="library/signal.html#signal.set_wakeup_fd">set_wakeup_fd() (in module signal)</a></dt>
@@ -664,8 +686,18 @@
       <dt><a href="library/htmllib.html#index-1">(in module sgmllib)</a></dt>
   </dl></dd>
     <dt><a href="library/sha.html#module-sha">sha (module)</a></dt>
+    <dt><a href="ios/scene.html#scene.Shader">Shader (class in scene)</a></dt>
+    <dt><a href="ios/scene.html#scene.EffectNode.shader">shader (scene.EffectNode attribute)</a></dt>
+    <dd><dl>
+      <dt><a href="ios/scene.html#scene.SpriteNode.shader">(scene.SpriteNode attribute)</a></dt>
+  </dl></dd>
+    <dt><a href="ios/scene.html#scene.ShapeNode.shadow">shadow (scene.ShapeNode attribute)</a></dt>
     <dt><a href="library/stdtypes.html#memoryview.shape">shape (memoryview attribute)</a></dt>
+    <dt><a href="ios/scene.html#scene.ShapeNode">ShapeNode (class in scene)</a></dt>
     <dt><a href="ios/dropbox.html#dropbox.client.DropboxClient.share">share() (dropbox.client.DropboxClient method)</a></dt>
+    <dt><a href="ios/dialogs.html#dialogs.share_image">share_image() (in module dialogs)</a></dt>
+    <dt><a href="ios/dialogs.html#dialogs.share_text">share_text() (in module dialogs)</a></dt>
+    <dt><a href="ios/dialogs.html#dialogs.share_url">share_url() (in module dialogs)</a></dt>
     <dt><a href="ios/ImageEnhance.html#ImageEnhance.Sharpness">Sharpness (class in ImageEnhance)</a></dt>
     <dt><a href="library/shelve.html#shelve.Shelf">Shelf (class in shelve)</a></dt>
     <dt>shelve</dt>
@@ -677,6 +709,8 @@
     <dd><dl>
       <dt><a href="library/decimal.html#decimal.Decimal.shift">(decimal.Decimal method)</a></dt>
   </dl></dd>
+</dl></td>
+  <td style="width: 33%" valign="top"><dl>
     <dt><a href="library/wsgiref.html#wsgiref.util.shift_path_info">shift_path_info() (in module wsgiref.util)</a></dt>
     <dt>shifting</dt>
     <dd><dl>
@@ -688,7 +722,6 @@
       <dt><a href="library/shlex.html#module-shlex">(module)</a></dt>
   </dl></dd>
     <dt><a href="library/unittest.html#unittest.TestCase.shortDescription">shortDescription() (unittest.TestCase method)</a></dt>
-    <dt><a href="ios/scene.html#scene.Scene.should_rotate">should_rotate() (scene.Scene method)</a></dt>
     <dt><a href="library/logging.handlers.html#logging.handlers.BufferingHandler.shouldFlush">shouldFlush() (logging.handlers.BufferingHandler method)</a></dt>
     <dd><dl>
       <dt><a href="library/logging.handlers.html#logging.handlers.MemoryHandler.shouldFlush">(logging.handlers.MemoryHandler method)</a></dt>
@@ -699,9 +732,8 @@
       <dt><a href="ios/ui.html#ui.Image.show">(ui.Image method)</a></dt>
   </dl></dd>
     <dt><a href="ios/console.html#console.show_activity">show_activity() (in module console)</a></dt>
-</dl></td>
-  <td style="width: 33%" valign="top"><dl>
     <dt><a href="ios/console.html#console.show_image">show_image() (in module console)</a></dt>
+    <dt><a href="ios/scene.html#scene.SceneView.shows_fps">shows_fps (scene.SceneView attribute)</a></dt>
     <dt><a href="ios/ui.html#ui.ScrollView.shows_horizontal_scroll_indicator">shows_horizontal_scroll_indicator (ui.ScrollView attribute)</a></dt>
     <dt><a href="ios/ui.html#ui.ScrollView.shows_vertical_scroll_indicator">shows_vertical_scroll_indicator (ui.ScrollView attribute)</a></dt>
     <dt><a href="library/code.html#code.InteractiveInterpreter.showsyntaxerror">showsyntaxerror() (code.InteractiveInterpreter method)</a></dt>
@@ -759,17 +791,18 @@
     <dt><a href="ios/scene.html#scene.Size">Size (class in scene)</a></dt>
     <dt><a href="ios/Image.html#Image.Image.size">size (Image.Image attribute)</a></dt>
     <dd><dl>
-      <dt><a href="ios/scene.html#scene.Scene.size">(scene.Scene attribute)</a></dt>
+      <dt><a href="ios/scene.html#scene.Rect.size">(scene.Rect attribute)</a></dt>
+      <dt><a href="ios/scene.html#scene.Scene.size">(scene.Scene attribute)</a>, <a href="ios/scene.html#scene.Scene.size">[1]</a></dt>
+      <dt><a href="ios/scene.html#scene.SpriteNode.size">(scene.SpriteNode attribute)</a></dt>
+      <dt><a href="ios/scene.html#scene.Texture.size">(scene.Texture attribute)</a></dt>
       <dt><a href="library/struct.html#struct.Struct.size">(struct.Struct attribute)</a></dt>
       <dt><a href="library/tarfile.html#tarfile.TarInfo.size">(tarfile.TarInfo attribute)</a></dt>
       <dt><a href="ios/ui.html#ui.Image.size">(ui.Image attribute)</a></dt>
   </dl></dd>
     <dt><a href="library/ftplib.html#ftplib.FTP.size">size() (ftplib.FTP method)</a></dt>
-    <dd><dl>
-      <dt><a href="ios/scene.html#scene.Rect.size">(scene.Rect method)</a></dt>
-  </dl></dd>
     <dt><a href="ios/ui.html#ui.View.size_to_fit">size_to_fit() (ui.View method)</a></dt>
     <dt><a href="library/collections.html#collections.Sized">Sized (class in collections)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.sizeof">sizeof() (in module ctypes)</a></dt>
     <dt><a href="library/doctest.html#doctest.SKIP">SKIP (in module doctest)</a></dt>
     <dt><a href="library/chunk.html#chunk.Chunk.skip">skip() (chunk.Chunk method)</a></dt>
     <dd><dl>
@@ -888,6 +921,7 @@
     <dt><a href="glossary.html#term-special-method">special method</a></dt>
     <dt><a href="library/pyexpat.html#xml.parsers.expat.xmlparser.specified_attributes">specified_attributes (xml.parsers.expat.xmlparser attribute)</a></dt>
     <dt><a href="ios/speech.html#module-speech">speech (module)</a></dt>
+    <dt><a href="ios/scene.html#scene.Node.speed">speed (scene.Node attribute)</a></dt>
     <dt><a href="ios/ui.html#ui.TextField.spellchecking_type">spellchecking_type (ui.TextField attribute)</a></dt>
     <dd><dl>
       <dt><a href="ios/ui.html#ui.TextView.spellchecking_type">(ui.TextView attribute)</a></dt>
@@ -910,6 +944,7 @@
     <dt><a href="library/os.path.html#os.path.splitunc">splitunc() (in module os.path)</a></dt>
     <dt><a href="library/tempfile.html#tempfile.SpooledTemporaryFile">SpooledTemporaryFile() (in module tempfile)</a></dt>
     <dt><a href="library/stdtypes.html#index-25">sprintf-style formatting</a></dt>
+    <dt><a href="ios/scene.html#scene.SpriteNode">SpriteNode (class in scene)</a></dt>
     <dt><a href="library/sqlite3.html#module-sqlite3">sqlite3 (module)</a></dt>
     <dt><a href="library/sqlite3.html#sqlite3.sqlite_version">sqlite_version (in module sqlite3)</a></dt>
     <dt><a href="library/sqlite3.html#sqlite3.sqlite_version_info">sqlite_version_info (in module sqlite3)</a></dt>
@@ -1010,6 +1045,7 @@
       <dt><a href="library/poplib.html#poplib.POP3.stat">(poplib.POP3 method)</a></dt>
   </dl></dd>
     <dt><a href="library/os.html#os.stat_float_times">stat_float_times() (in module os)</a></dt>
+    <dt><a href="ios/cb.html#cb.Peripheral.state">state (cb.Peripheral attribute)</a></dt>
     <dt><a href="glossary.html#term-statement">statement</a></dt>
     <dd><dl>
       <dt><a href="reference/compound_stmts.html#index-21">*</a>, <a href="tutorial/controlflow.html#index-2">[1]</a></dt>
@@ -1086,6 +1122,8 @@
     <dt><a href="ios/speech.html#speech.stop">stop() (in module speech)</a></dt>
     <dd><dl>
       <dt><a href="ios/scene.html#scene.Scene.stop">(scene.Scene method)</a></dt>
+      <dt><a href="ios/sound.html#sound.MIDIPlayer.stop">(sound.MIDIPlayer method)</a></dt>
+      <dt><a href="ios/sound.html#sound.Player.stop">(sound.Player method)</a></dt>
       <dt><a href="ios/ui.html#ui.ActivityIndicator.stop">(ui.ActivityIndicator method)</a></dt>
       <dt><a href="ios/ui.html#ui.WebView.stop">(ui.WebView method)</a></dt>
       <dt><a href="library/unittest.html#unittest.TestResult.stop">(unittest.TestResult method)</a></dt>
@@ -1093,6 +1131,7 @@
     <dt><a href="library/dis.html#opcode-STOP_CODE">STOP_CODE (opcode)</a></dt>
     <dt><a href="ios/sound.html#sound.stop_effect">stop_effect() (in module sound)</a></dt>
     <dt><a href="library/bdb.html#bdb.Bdb.stop_here">stop_here() (bdb.Bdb method)</a></dt>
+    <dt><a href="ios/cb.html#cb.stop_scan">stop_scan() (in module cb)</a></dt>
     <dt><a href="ios/location.html#location.stop_updates">stop_updates() (in module location)</a></dt>
     <dd><dl>
       <dt><a href="ios/motion.html#motion.stop_updates">(in module motion)</a></dt>
@@ -1175,6 +1214,7 @@
       <dt><a href="library/re.html#re.MatchObject.string">(re.MatchObject attribute)</a></dt>
   </dl></dd>
     <dt><a href="reference/lexical_analysis.html#index-12">string literal</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.string_at">string_at() (in module ctypes)</a></dt>
     <dt><a href="library/io.html#io.StringIO">StringIO (class in io)</a></dt>
     <dd><dl>
       <dt><a href="library/stringio.html#StringIO.StringIO">(class in StringIO)</a></dt>
@@ -1191,13 +1231,12 @@
       <dt><a href="library/stdtypes.html#str.strip">(str method)</a></dt>
   </dl></dd>
     <dt><a href="library/profile.html#pstats.Stats.strip_dirs">strip_dirs() (pstats.Stats method)</a></dt>
-    <dt><a href="ios/scene.html#scene.Layer.stroke">stroke (scene.Layer attribute)</a></dt>
-    <dt><a href="ios/scene.html#scene.stroke">stroke() (in module scene)</a></dt>
+    <dt><a href="ios/scene_drawing.html#scene_drawing.stroke">stroke() (in module scene_drawing)</a></dt>
     <dd><dl>
       <dt><a href="ios/ui.html#ui.Path.stroke">(ui.Path method)</a></dt>
   </dl></dd>
-    <dt><a href="ios/scene.html#scene.Layer.stroke_weight">stroke_weight (scene.Layer attribute)</a></dt>
-    <dt><a href="ios/scene.html#scene.stroke_weight">stroke_weight() (in module scene)</a></dt>
+    <dt><a href="ios/scene.html#scene.ShapeNode.stroke_color">stroke_color (scene.ShapeNode attribute)</a></dt>
+    <dt><a href="ios/scene_drawing.html#scene_drawing.stroke_weight">stroke_weight() (in module scene_drawing)</a></dt>
     <dt><a href="library/datetime.html#datetime.datetime.strptime">strptime() (datetime.datetime class method)</a></dt>
     <dd><dl>
       <dt><a href="library/time.html#time.strptime">(in module time)</a></dt>
@@ -1210,6 +1249,7 @@
     <dt><a href="library/struct.html#module-struct">struct (module)</a></dt>
     <dt><a href="glossary.html#term-struct-sequence">struct sequence</a></dt>
     <dt><a href="library/time.html#time.struct_time">struct_time (class in time)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.Structure">Structure (class in ctypes)</a></dt>
     <dt>structures</dt>
     <dd><dl>
       <dt><a href="library/struct.html#index-0">C</a></dt>
@@ -1232,7 +1272,6 @@
   </dl></dd>
     <dt><a href="library/filecmp.html#filecmp.dircmp.subdirs">subdirs (filecmp.dircmp attribute)</a></dt>
     <dt><a href="library/xml.etree.elementtree.html#xml.etree.ElementTree.SubElement">SubElement() (in module xml.etree.ElementTree)</a></dt>
-    <dt><a href="ios/scene.html#scene.Layer.sublayers">sublayers (scene.Layer attribute)</a></dt>
     <dt><a href="library/re.html#re.subn">subn() (in module re)</a></dt>
     <dd><dl>
       <dt><a href="library/re.html#re.RegexObject.subn">(re.RegexObject method)</a></dt>
@@ -1273,7 +1312,6 @@
     <dt><a href="library/sunau.html#module-sunau">sunau (module)</a></dt>
     <dt><a href="library/pyclbr.html#pyclbr.Class.super">super (pyclbr.Class attribute)</a></dt>
     <dt><a href="library/functions.html#super">super() (built-in function)</a></dt>
-    <dt><a href="ios/scene.html#scene.Layer.superlayer">superlayer (scene.Layer attribute)</a></dt>
     <dt><a href="ios/ui.html#ui.View.superview">superview (ui.View attribute)</a></dt>
     <dt><a href="library/os.path.html#os.path.supports_unicode_filenames">supports_unicode_filenames (in module os.path)</a></dt>
     <dt>suppression</dt>
@@ -1347,12 +1385,12 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    &copy; <a href="copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Dec 19, 2015.
     <a href="bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

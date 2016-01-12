@@ -31,7 +31,7 @@
     <link rel="next" title="What’s New in Python 2.6" href="2.6.html" />
     <link rel="prev" title="What’s New in Python" href="index.html" />
     <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -40,11 +40,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -1114,7 +1114,7 @@ John J. Lee; <a class="reference external" href="http://bugs.python.org/issue392
 correctly copy bound instance methods.  (Implemented by
 Robert Collins; <a class="reference external" href="http://bugs.python.org/issue1515">issue 1515</a>.)</p>
 </li>
-<li><p class="first">The <tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt> module now always converts <tt class="xref docutils literal"><span class="pre">None</span></tt> to a C NULL
+<li><p class="first">The <a class="reference internal" href="../library/ctypes.html#module-ctypes" title="ctypes: A foreign function library for Python."><tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt></a> module now always converts <tt class="xref docutils literal"><span class="pre">None</span></tt> to a C NULL
 pointer for arguments declared as pointers.  (Changed by Thomas
 Heller; <a class="reference external" href="http://bugs.python.org/issue4606">issue 4606</a>.)  The underlying <a class="reference external" href="http://sourceware.org/libffi/">libffi library</a> has been updated to version
 3.0.9, containing various fixes for different platforms.  (Updated
@@ -2068,7 +2068,7 @@ being raised when an interpreter shuts down.
 of a type, Python will no longer let you try to delete or set a
 <tt class="xref py py-const docutils literal"><span class="pre">T_STRING_INPLACE</span></tt> attribute.</p>
 </li>
-<li><p class="first">Global symbols defined by the <tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt> module are now prefixed
+<li><p class="first">Global symbols defined by the <a class="reference internal" href="../library/ctypes.html#module-ctypes" title="ctypes: A foreign function library for Python."><tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt></a> module are now prefixed
 with <tt class="docutils literal"><span class="pre">Py</span></tt>, or with <tt class="docutils literal"><span class="pre">_ctypes</span></tt>.  (Implemented by Thomas
 Heller; <a class="reference external" href="http://bugs.python.org/issue3102">issue 3102</a>.)</p>
 </li>
@@ -2355,12 +2355,12 @@ Hugh Secker-Walker.</p>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Dec 02, 2015.
     <a href="../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

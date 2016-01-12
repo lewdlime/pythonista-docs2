@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.random.RandomState.random_integers" href="numpy.random.RandomState.random_integers.html" />
     <link rel="prev" title="numpy.random.RandomState.randint" href="numpy.random.RandomState.randint.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -126,7 +126,7 @@
 <p>If positive, int_like or int-convertible arguments are provided,
 <a class="reference internal" href="numpy.random.randn.html#numpy.random.randn" title="numpy.random.randn"><tt class="xref py py-obj docutils literal"><span class="pre">randn</span></tt></a> generates an array of shape <tt class="docutils literal"><span class="pre">(d0,</span> <span class="pre">d1,</span> <span class="pre">...,</span> <span class="pre">dn)</span></tt>, filled
 with random floats sampled from a univariate &#8220;normal&#8221; (Gaussian)
-distribution of mean 0 and variance 1 (if any of the <img class="math" src="../../_images/math/ae410da349d05c4fb338df88cd9a205e562e4701.png" alt="d_i" style="vertical-align: -2px"/> are
+distribution of mean 0 and variance 1 (if any of the <span class="math">d_i</span> are
 floats, they are first converted to integers by truncation). A single
 float randomly sampled from the distribution is returned if no
 argument is provided.</p>
@@ -161,7 +161,7 @@ no parameters were supplied.</p>
 </dl>
 </div>
 <p class="rubric">Notes</p>
-<p>For random samples from <img class="math" src="../../_images/math/93af1f49bf6bbf05f549f49609becdb5f7039538.png" alt="N(\mu, \sigma^2)" style="vertical-align: -4px"/>, use:</p>
+<p>For random samples from <span class="math">N(\mu, \sigma^2)</span>, use:</p>
 <p><tt class="docutils literal"><span class="pre">sigma</span> <span class="pre">*</span> <span class="pre">np.random.randn(...)</span> <span class="pre">+</span> <span class="pre">mu</span></tt></p>
 <p class="rubric">Examples</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">()</span>
@@ -189,7 +189,7 @@ no parameters were supplied.</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

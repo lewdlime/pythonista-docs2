@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.ndarray" href="generated/numpy.ndarray.html" />
     <link rel="prev" title="Array objects" href="arrays.html" />
     <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -205,19 +205,19 @@ the bytes are interpreted is defined by the <a class="reference internal" href="
 different schemes for arranging the items of an <em>N</em>-dimensional array
 in a 1-dimensional block. Numpy is flexible, and <a class="reference internal" href="generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><tt class="xref py py-class docutils literal"><span class="pre">ndarray</span></tt></a>
 objects can accommodate any <em>strided indexing scheme</em>. In a strided
-scheme, the N-dimensional index <img class="math" src="../_images/math/55e2912fdc1638596e19ae6361f2d2db30450efc.png" alt="(n_0, n_1, ..., n_{N-1})" style="vertical-align: -4px"/>
+scheme, the N-dimensional index <span class="math">(n_0, n_1, ..., n_{N-1})</span>
 corresponds to the offset (in bytes):</p>
 <div class="math">
-<p><img src="../_images/math/d4e314ddaa82a5ae9f4e10ad31de17f47d40128a.png" alt="n_{\mathrm{offset}} = \sum_{k=0}^{N-1} s_k n_k"/></p>
+<p><span class="math">n_{\mathrm{offset}} = \sum_{k=0}^{N-1} s_k n_k</span></p>
 </div><p>from the beginning of the memory block associated with the
-array. Here, <img class="math" src="../_images/math/d5ab8e6081db79a4afcf29b7616b48025de0e80c.png" alt="s_k" style="vertical-align: -2px"/> are integers which specify the <a class="reference internal" href="generated/numpy.ndarray.strides.html#numpy.ndarray.strides" title="numpy.ndarray.strides"><tt class="xref py py-obj docutils literal"><span class="pre">strides</span></tt></a> of the array. The <a class="reference internal" href="../glossary.html#term-column-major"><em class="xref std std-term">column-major</em></a> order (used,
+array. Here, <span class="math">s_k</span> are integers which specify the <a class="reference internal" href="generated/numpy.ndarray.strides.html#numpy.ndarray.strides" title="numpy.ndarray.strides"><tt class="xref py py-obj docutils literal"><span class="pre">strides</span></tt></a> of the array. The <a class="reference internal" href="../glossary.html#term-column-major"><em class="xref std std-term">column-major</em></a> order (used,
 for example, in the Fortran language and in <em>Matlab</em>) and
 <a class="reference internal" href="../glossary.html#term-row-major"><em class="xref std std-term">row-major</em></a> order (used in C) schemes are just specific kinds of
 strided scheme, and correspond to memory that can be <em>addressed</em> by the strides:</p>
 <div class="math">
-<p><img src="../_images/math/46358d504324b83aa8533931eb6286eb8b65563e.png" alt="s_k^{\mathrm{column}} = \prod_{j=0}^{k-1} d_j ,
-\quad  s_k^{\mathrm{row}} = \prod_{j=k+1}^{N-1} d_j ."/></p>
-</div><p id="index-2">where <img class="math" src="../_images/math/c375e8b96fc69dad77ee104906be2a9df776ad66.png" alt="d_j" style="vertical-align: -4px"/> <em class="xref py py-obj">= self.itemsize * self.shape[j]</em>.</p>
+<p><span class="math">s_k^{\mathrm{column}} = \prod_{j=0}^{k-1} d_j ,
+\quad  s_k^{\mathrm{row}} = \prod_{j=k+1}^{N-1} d_j .</span></p>
+</div><p id="index-2">where <span class="math">d_j</span> <em class="xref py py-obj">= self.itemsize * self.shape[j]</em>.</p>
 <p>Both the C and Fortran orders are <em class="xref std std-term">contiguous</em>, <em>i.e.,</em>
 <em class="xref std std-term">single-segment</em>, memory layouts, in which every part of the
 memory block can be accessed by some combination of the indices.</p>
@@ -228,8 +228,8 @@ different. This can happen in two cases:</p>
 <div><ol class="arabic simple">
 <li>If <tt class="docutils literal"><span class="pre">self.shape[k]</span> <span class="pre">==</span> <span class="pre">1</span></tt> then for any legal index <tt class="docutils literal"><span class="pre">index[k]</span> <span class="pre">==</span> <span class="pre">0</span></tt>.
 This means that in the formula for the offset
-<img class="math" src="../_images/math/9fed4bdf69e096e1239bd758fe79e8076f28d793.png" alt="n_k = 0" style="vertical-align: -2px"/> and thus <img class="math" src="../_images/math/36e9c492db6f4ad8e065f978a3d4a33a3c6df086.png" alt="s_k n_k = 0" style="vertical-align: -2px"/> and the value of
-<img class="math" src="../_images/math/d5ab8e6081db79a4afcf29b7616b48025de0e80c.png" alt="s_k" style="vertical-align: -2px"/> <em class="xref py py-obj">= self.strides[k]</em> is arbitrary.</li>
+<span class="math">n_k = 0</span> and thus <span class="math">s_k n_k = 0</span> and the value of
+<span class="math">s_k</span> <em class="xref py py-obj">= self.strides[k]</em> is arbitrary.</li>
 <li>If an array has no elements (<tt class="docutils literal"><span class="pre">self.size</span> <span class="pre">==</span> <span class="pre">0</span></tt>) there is no legal index
 and the strides are never used. Any array with no elements may be
 considered C-style and Fortran-style contiguous.</li>
@@ -843,10 +843,10 @@ for arrays can be modified using <tt class="xref py py-func docutils literal"><s
 <td>x.__idiv__(y) &lt;==&gt; x/=y</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/numpy.ndarray.__itruediv__.html#numpy.ndarray.__itruediv__" title="numpy.ndarray.__itruediv__"><tt class="xref py py-obj docutils literal"><span class="pre">ndarray.__itruediv__</span></tt></a></td>
-<td>x.__itruediv__(y) &lt;==&gt; x/y</td>
+<td>x.__itruediv__(y) &lt;==&gt; x/=y</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/numpy.ndarray.__ifloordiv__.html#numpy.ndarray.__ifloordiv__" title="numpy.ndarray.__ifloordiv__"><tt class="xref py py-obj docutils literal"><span class="pre">ndarray.__ifloordiv__</span></tt></a></td>
-<td>x.__ifloordiv__(y) &lt;==&gt; x//y</td>
+<td>x.__ifloordiv__(y) &lt;==&gt; x//=y</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/numpy.ndarray.__imod__.html#numpy.ndarray.__imod__" title="numpy.ndarray.__imod__"><tt class="xref py py-obj docutils literal"><span class="pre">ndarray.__imod__</span></tt></a></td>
 <td>x.__imod__(y) &lt;==&gt; x%=y</td>
@@ -1008,7 +1008,7 @@ and return the appropriate scalar.</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

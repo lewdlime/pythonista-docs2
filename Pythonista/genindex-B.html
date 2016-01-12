@@ -28,7 +28,7 @@
     <link rel="copyright" title="Copyright" href="copyright.html" />
     <link rel="top" title="Pythonista Documentation" href="index.html" />
     <link rel="shortcut icon" type="image/png" href="_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -37,11 +37,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -118,7 +118,6 @@
 
 <table style="width: 100%" class="indextable"><tr>
   <td style="width: 33%" valign="top"><dl>
-    <dt><a href="ios/scene.html#scene.Color.b">b (scene.Color attribute)</a></dt>
     <dt><a href="library/base64.html#base64.b16decode">b16decode() (in module base64)</a></dt>
     <dt><a href="library/base64.html#base64.b16encode">b16encode() (in module base64)</a></dt>
     <dt><a href="library/binascii.html#binascii.b2a_base64">b2a_base64() (in module binascii)</a></dt>
@@ -134,9 +133,11 @@
     <dt><a href="library/mailbox.html#mailbox.BabylMailbox">BabylMailbox (class in mailbox)</a></dt>
     <dt><a href="library/mailbox.html#mailbox.BabylMessage">BabylMessage (class in mailbox)</a></dt>
     <dt><a href="reference/datamodel.html#index-77">back-quotes</a>, <a href="reference/expressions.html#index-19">[1]</a></dt>
-    <dt><a href="ios/scene.html#scene.Layer.background">background (scene.Layer attribute)</a></dt>
-    <dt><a href="ios/scene.html#scene.background">background() (in module scene)</a></dt>
-    <dt><a href="ios/ui.html#ui.View.background_color">background_color (ui.View attribute)</a></dt>
+    <dt><a href="ios/scene_drawing.html#scene_drawing.background">background() (in module scene_drawing)</a></dt>
+    <dt><a href="ios/scene.html#scene.Scene.background_color">background_color (scene.Scene attribute)</a></dt>
+    <dd><dl>
+      <dt><a href="ios/ui.html#ui.View.background_color">(ui.View attribute)</a></dt>
+  </dl></dd>
     <dt><a href="ios/ui.html#ui.Button.background_image">background_image (ui.Button attribute)</a></dt>
     <dt><a href="library/token.html#token.BACKQUOTE">BACKQUOTE (in module token)</a></dt>
     <dt><a href="reference/lexical_analysis.html#index-5">backslash character</a></dt>
@@ -180,6 +181,7 @@
     <dt><a href="library/bastion.html#module-Bastion">Bastion (module)</a></dt>
     <dt><a href="library/bastion.html#Bastion.Bastion">Bastion() (in module Bastion)</a></dt>
     <dt><a href="library/bastion.html#Bastion.BastionClass">BastionClass (class in Bastion)</a></dt>
+    <dt><a href="ios/scene.html#scene.Node.bbox">bbox (scene.Node attribute)</a></dt>
     <dt>bdb</dt>
     <dd><dl>
       <dt><a href="library/pdb.html#index-1">module</a></dt>
@@ -195,6 +197,7 @@
     <dt><a href="library/timeit.html#index-0">Benchmarking</a></dt>
     <dt><a href="library/random.html#random.betavariate">betavariate() (in module random)</a></dt>
     <dt><a href="library/unicodedata.html#unicodedata.bidirectional">bidirectional() (in module unicodedata)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.BigEndianStructure">BigEndianStructure (class in ctypes)</a></dt>
     <dt><a href="library/functions.html#bin">bin() (built-in function)</a></dt>
     <dt>binary</dt>
     <dd><dl>
@@ -261,6 +264,7 @@
     <dd><dl>
       <dt><a href="ios/ImageChops.html#ImageChops.blend">(in module ImageChops)</a></dt>
   </dl></dd>
+    <dt><a href="ios/scene.html#scene.BLEND_ADD">BLEND_ADD (in module scene)</a></dt>
     <dt><a href="ios/canvas.html#canvas.BLEND_CLEAR">BLEND_CLEAR (in module canvas)</a></dt>
     <dd><dl>
       <dt><a href="ios/ui.html#ui.BLEND_CLEAR">(in module ui)</a></dt>
@@ -321,13 +325,19 @@
     <dd><dl>
       <dt><a href="ios/ui.html#ui.BLEND_LUMINOSITY">(in module ui)</a></dt>
   </dl></dd>
-    <dt><a href="ios/scene.html#scene.blend_mode">blend_mode() (in module scene)</a></dt>
+    <dt><a href="ios/scene.html#scene.EffectNode.blend_mode">blend_mode (scene.EffectNode attribute)</a></dt>
+    <dd><dl>
+      <dt><a href="ios/scene.html#scene.SpriteNode.blend_mode">(scene.SpriteNode attribute)</a></dt>
+  </dl></dd>
+    <dt><a href="ios/scene_drawing.html#scene_drawing.blend_mode">blend_mode() (in module scene_drawing)</a></dt>
     <dt><a href="ios/canvas.html#canvas.BLEND_MULTIPLY">BLEND_MULTIPLY (in module canvas)</a></dt>
     <dd><dl>
+      <dt><a href="ios/scene.html#scene.BLEND_MULTIPLY">(in module scene)</a></dt>
       <dt><a href="ios/ui.html#ui.BLEND_MULTIPLY">(in module ui)</a></dt>
   </dl></dd>
     <dt><a href="ios/canvas.html#canvas.BLEND_NORMAL">BLEND_NORMAL (in module canvas)</a></dt>
     <dd><dl>
+      <dt><a href="ios/scene.html#scene.BLEND_NORMAL">(in module scene)</a></dt>
       <dt><a href="ios/ui.html#ui.BLEND_NORMAL">(in module ui)</a></dt>
   </dl></dd>
     <dt><a href="ios/canvas.html#canvas.BLEND_OVERLAY">BLEND_OVERLAY (in module canvas)</a></dt>
@@ -413,7 +423,6 @@
     <dt><a href="ios/bottle/api.html#bottle.Bottle">Bottle (class in bottle)</a></dt>
     <dt><a href="ios/bottle/plugins/index.html#module-bottle">bottle (module)</a>, <a href="ios/bottle/api.html#module-bottle">[1]</a>, <a href="ios/bottle/faq.html#module-bottle">[2]</a>, <a href="ios/bottle/index.html#module-bottle">[3]</a>, <a href="ios/bottle/recipes.html#module-bottle">[4]</a>, <a href="ios/bottle/plugindev.html#module-bottle">[5]</a></dt>
     <dt><a href="ios/bottle/api.html#bottle.BottleException">BottleException</a></dt>
-    <dt><a href="ios/scene.html#scene.Rect.bottom">bottom() (scene.Rect method)</a></dt>
     <dt><a href="ios/ui.html#ui.ScrollView.bounces">bounces (ui.ScrollView attribute)</a></dt>
     <dt><a href="library/email.errors.html#email.errors.BoundaryError">BoundaryError</a></dt>
     <dt><a href="library/threading.html#threading.BoundedSemaphore">BoundedSemaphore() (in module threading)</a></dt>
@@ -490,7 +499,7 @@
       <dt><a href="reference/simple_stmts.html#index-55">compile</a>, <a href="library/types.html#index-1">[1]</a>, <a href="library/parser.html#index-2">[2]</a>, <a href="library/stdtypes.html#index-39">[3]</a></dt>
       <dt><a href="reference/datamodel.html#index-94">complex</a>, <a href="library/stdtypes.html#index-15">[1]</a></dt>
       <dt><a href="reference/datamodel.html#index-90">divmod</a>, <a href="reference/datamodel.html#index-91">[1]</a></dt>
-      <dt><a href="reference/toplevel_components.html#index-6">eval</a>, <a href="library/string.html#index-7">[1]</a>, <a href="reference/simple_stmts.html#index-55">[2]</a>, <a href="reference/simple_stmts.html#index-58">[3]</a>, <a href="library/parser.html#index-1">[4]</a>, <a href="library/stdtypes.html#index-40">[5]</a>, <a href="library/pprint.html#index-0">[6]</a>, <a href="library/pprint.html#index-1">[7]</a></dt>
+      <dt><a href="reference/toplevel_components.html#index-6">eval</a>, <a href="reference/simple_stmts.html#index-55">[1]</a>, <a href="reference/simple_stmts.html#index-58">[2]</a>, <a href="library/string.html#index-7">[3]</a>, <a href="library/parser.html#index-1">[4]</a>, <a href="library/stdtypes.html#index-40">[5]</a>, <a href="library/pprint.html#index-0">[6]</a>, <a href="library/pprint.html#index-1">[7]</a></dt>
       <dt><a href="library/user.html#index-2">execfile</a>, <a href="reference/simple_stmts.html#index-55">[1]</a></dt>
       <dt><a href="library/stdtypes.html#index-33">file</a></dt>
       <dt><a href="reference/datamodel.html#index-94">float</a>, <a href="library/string.html#index-5">[1]</a>, <a href="library/stdtypes.html#index-15">[2]</a></dt>
@@ -533,6 +542,7 @@
     <dt><a href="library/types.html#types.BuiltinMethodType">BuiltinMethodType (in module types)</a></dt>
     <dt><a href="ios/ui.html#ui.Button">Button (class in ui)</a></dt>
     <dt><a href="ios/ui.html#ui.ButtonItem">ButtonItem (class in ui)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.byref">byref() (in module ctypes)</a></dt>
     <dt><a href="reference/datamodel.html#index-21">byte</a></dt>
     <dt>byte-code</dt>
     <dd><dl>
@@ -562,12 +572,12 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    &copy; <a href="copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Dec 19, 2015.
     <a href="bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.random.RandomState.exponential" href="numpy.random.RandomState.exponential.html" />
     <link rel="prev" title="numpy.random.RandomState.choice" href="numpy.random.RandomState.choice.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -152,11 +152,11 @@ dimension k).</p>
 </table>
 <p class="rubric">Notes</p>
 <div class="math">
-<p><img src="../../_images/math/c5d4f91a81ba0aabee97b44d2fe76959bedcd12e.png" alt="X \approx \prod_{i=1}^{k}{x^{\alpha_i-1}_i}"/></p>
+<p><span class="math">X \approx \prod_{i=1}^{k}{x^{\alpha_i-1}_i}</span></p>
 </div><p>Uses the following property for computation: for each dimension,
 draw a random sample y_i from a standard gamma generator of shape
 <em class="xref py py-obj">alpha_i</em>, then
-<img class="math" src="../../_images/math/43509cf81e2686a12a6296cb15db9f9220c409c1.png" alt="X = \frac{1}{\sum_{i=1}^k{y_i}} (y_1, \ldots, y_n)" style="vertical-align: -12px"/> is
+<span class="math">X = \frac{1}{\sum_{i=1}^k{y_i}} (y_1, \ldots, y_n)</span> is
 Dirichlet distributed.</p>
 <p class="rubric">References</p>
 <table class="docutils citation" frame="void" id="r128" rules="none">
@@ -204,7 +204,7 @@ pieces.</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

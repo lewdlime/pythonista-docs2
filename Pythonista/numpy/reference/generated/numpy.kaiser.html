@@ -27,7 +27,7 @@
     <link rel="next" title="Packaging (numpy.distutils)" href="../distutils.html" />
     <link rel="prev" title="numpy.hanning" href="numpy.hanning.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -154,12 +154,12 @@ one appears only if the number of samples is odd).</p>
 <p class="rubric">Notes</p>
 <p>The Kaiser window is defined as</p>
 <div class="math">
-<p><img src="../../_images/math/dbd1a15a739805bd305514e6f63fbee081ca29bd.png" alt="w(n) = I_0\left( \beta \sqrt{1-\frac{4n^2}{(M-1)^2}}
-\right)/I_0(\beta)"/></p>
+<p><span class="math">w(n) = I_0\left( \beta \sqrt{1-\frac{4n^2}{(M-1)^2}}
+\right)/I_0(\beta)</span></p>
 </div><p>with</p>
 <div class="math">
-<p><img src="../../_images/math/679bc177e1e9a9e01781bb860c956dc85d798b15.png" alt="\quad -\frac{M-1}{2} \leq n \leq \frac{M-1}{2},"/></p>
-</div><p>where <img class="math" src="../../_images/math/2595e12ec58446f99869c7c3ba70ea3be707d26a.png" alt="I_0" style="vertical-align: -2px"/> is the modified zeroth-order Bessel function.</p>
+<p><span class="math">\quad -\frac{M-1}{2} \leq n \leq \frac{M-1}{2},</span></p>
+</div><p>where <span class="math">I_0</span> is the modified zeroth-order Bessel function.</p>
 <p>The Kaiser was named for Jim Kaiser, who discovered a simple approximation
 to the DPSS window based on Bessel functions.
 The Kaiser window is a very good approximation to the Digital Prolate
@@ -282,7 +282,7 @@ University of Alberta Press, 1975, pp. 177-178.</td></tr>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

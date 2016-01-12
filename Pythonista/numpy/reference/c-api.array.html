@@ -27,7 +27,7 @@
     <link rel="next" title="Array Iterator API" href="c-api.iterator.html" />
     <link rel="prev" title="Data Type API" href="c-api.dtype.html" />
     <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -185,13 +185,13 @@ of the array.</p>
 <dl class="function">
 <dt id="c.PyArray_DIM">
 npy_intp <tt class="descname">PyArray_DIM</tt><big>(</big><a class="reference internal" href="c-api.types-and-structures.html#c.PyArrayObject" title="PyArrayObject">PyArrayObject</a>*<em>&nbsp;arr</em>, int<em>&nbsp;n</em><big>)</big><a class="headerlink" href="#c.PyArray_DIM" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the shape in the <em>n</em> <img class="math" src="../_images/math/c7201dfb8acbb9adb5fc06d19acb1604d16472f5.png" alt="^{\textrm{th}}" style="vertical-align: 6px"/> dimension.</p>
+<dd><p>Return the shape in the <em>n</em> <span class="math">^{\textrm{th}}</span> dimension.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="c.PyArray_STRIDE">
 npy_intp <tt class="descname">PyArray_STRIDE</tt><big>(</big><a class="reference internal" href="c-api.types-and-structures.html#c.PyArrayObject" title="PyArrayObject">PyArrayObject</a>*<em>&nbsp;arr</em>, int<em>&nbsp;n</em><big>)</big><a class="headerlink" href="#c.PyArray_STRIDE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the stride in the <em>n</em> <img class="math" src="../_images/math/c7201dfb8acbb9adb5fc06d19acb1604d16472f5.png" alt="^{\textrm{th}}" style="vertical-align: 6px"/> dimension.</p>
+<dd><p>Return the stride in the <em>n</em> <span class="math">^{\textrm{th}}</span> dimension.</p>
 </dd></dl>
 
 <dl class="function">
@@ -2196,10 +2196,10 @@ PyObject* <tt class="descname">PyArray_Transpose</tt><big>(</big><a class="refer
 axes of the ndarray object <em>self</em> according to the data structure
 <em>permute</em> and return the result. If <em>permute</em> is <tt class="docutils literal"><span class="pre">NULL</span></tt>, then
 the resulting array has its axes reversed. For example if <em>self</em>
-has shape <img class="math" src="../_images/math/0162b807852e8b7e3e771ef196f4827496a5a16a.png" alt="10\times20\times30" style="vertical-align: -1px"/>, and <em>permute</em> <tt class="docutils literal"><span class="pre">.ptr</span></tt> is
-(0,2,1) the shape of the result is <img class="math" src="../_images/math/208c05105f46b94766ebfea27a8b027de4e9b515.png" alt="10\times30\times20." style="vertical-align: -1px"/> If
+has shape <span class="math">10\times20\times30</span>, and <em>permute</em> <tt class="docutils literal"><span class="pre">.ptr</span></tt> is
+(0,2,1) the shape of the result is <span class="math">10\times30\times20.</span> If
 <em>permute</em> is <tt class="docutils literal"><span class="pre">NULL</span></tt>, the shape of the result is
-<img class="math" src="../_images/math/44092c8309912b014df997830ba76675b2ef7332.png" alt="30\times20\times10." style="vertical-align: -1px"/></p>
+<span class="math">30\times20\times10.</span></p>
 </dd></dl>
 
 <dl class="function">
@@ -2401,7 +2401,7 @@ PyObject* <tt class="descname">PyArray_Nonzero</tt><big>(</big><a class="referen
 arrays that select elements of <em>self</em> that are nonzero. If (nd=
 <a class="reference internal" href="#c.PyArray_NDIM" title="PyArray_NDIM"><tt class="xref c c-func docutils literal"><span class="pre">PyArray_NDIM</span></tt></a> ( <tt class="docutils literal"><span class="pre">self</span></tt> ))==1, then a single index array is
 returned. The index arrays have data type <a class="reference internal" href="c-api.dtype.html#c.NPY_INTP" title="NPY_INTP"><tt class="xref c c-data docutils literal"><span class="pre">NPY_INTP</span></tt></a>. If a
-tuple is returned (nd <img class="math" src="../_images/math/c3b8b3b6c1acc9da5c8e6e79430e60de668b064e.png" alt="\neq" style="vertical-align: -4px"/> 1), then its length is nd.</p>
+tuple is returned (nd <span class="math">\neq</span> 1), then its length is nd.</p>
 </dd></dl>
 
 <dl class="function">
@@ -2507,7 +2507,7 @@ complex data type, then return <em>self</em> with an reference.</p>
 PyObject* <tt class="descname">PyArray_Round</tt><big>(</big><a class="reference internal" href="c-api.types-and-structures.html#c.PyArrayObject" title="PyArrayObject">PyArrayObject</a>*<em>&nbsp;self</em>, int<em>&nbsp;decimals</em>, <a class="reference internal" href="c-api.types-and-structures.html#c.PyArrayObject" title="PyArrayObject">PyArrayObject</a>*<em>&nbsp;out</em><big>)</big><a class="headerlink" href="#c.PyArray_Round" title="Permalink to this definition">¶</a></dt>
 <dd><p>Equivalent to <tt class="xref py py-meth docutils literal"><span class="pre">ndarray.round</span></tt> (<em>self</em>, <em>decimals</em>, <em>out</em>). Returns
 the array with elements rounded to the nearest decimal place. The
-decimal place is defined as the <img class="math" src="../_images/math/2793e58732c8a479713fc0b5fc913cb6b1c08b2b.png" alt="10^{-\textrm{decimals}}" style="vertical-align: -1px"/>
+decimal place is defined as the <span class="math">10^{-\textrm{decimals}}</span>
 digit so that negative <em>decimals</em> cause rounding to the nearest 10&#8217;s, 100&#8217;s, etc. If out is <tt class="docutils literal"><span class="pre">NULL</span></tt>, then the output array is created, otherwise the output is placed in <em>out</em> which must be the correct size and type.</p>
 </dd></dl>
 
@@ -2985,21 +2985,21 @@ next (broadcasted) element.</p>
 <dl class="function">
 <dt id="c.PyArray_MultiIter_DATA">
 void *<tt class="descname">PyArray_MultiIter_DATA</tt><big>(</big>PyObject*<em>&nbsp;multi</em>, int<em>&nbsp;i</em><big>)</big><a class="headerlink" href="#c.PyArray_MultiIter_DATA" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the data-pointer of the <em>i</em> <img class="math" src="../_images/math/c7201dfb8acbb9adb5fc06d19acb1604d16472f5.png" alt="^{\textrm{th}}" style="vertical-align: 6px"/> iterator
+<dd><p>Return the data-pointer of the <em>i</em> <span class="math">^{\textrm{th}}</span> iterator
 in a multi-iterator object.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="c.PyArray_MultiIter_NEXTi">
 void <tt class="descname">PyArray_MultiIter_NEXTi</tt><big>(</big>PyObject*<em>&nbsp;multi</em>, int<em>&nbsp;i</em><big>)</big><a class="headerlink" href="#c.PyArray_MultiIter_NEXTi" title="Permalink to this definition">¶</a></dt>
-<dd><p>Advance the pointer of only the <em>i</em> <img class="math" src="../_images/math/c7201dfb8acbb9adb5fc06d19acb1604d16472f5.png" alt="^{\textrm{th}}" style="vertical-align: 6px"/> iterator.</p>
+<dd><p>Advance the pointer of only the <em>i</em> <span class="math">^{\textrm{th}}</span> iterator.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="c.PyArray_MultiIter_GOTO">
 void <tt class="descname">PyArray_MultiIter_GOTO</tt><big>(</big>PyObject*<em>&nbsp;multi</em>, npy_intp*<em>&nbsp;destination</em><big>)</big><a class="headerlink" href="#c.PyArray_MultiIter_GOTO" title="Permalink to this definition">¶</a></dt>
 <dd><p>Advance each iterator in a multi-iterator object, <em>multi</em>, to the
-given <img class="math" src="../_images/math/10f77f12438cb385098c4d2344aaa427d0a462a8.png" alt="N" style="vertical-align: 0px"/> -dimensional <em>destination</em> where <img class="math" src="../_images/math/10f77f12438cb385098c4d2344aaa427d0a462a8.png" alt="N" style="vertical-align: 0px"/> is the
+given <span class="math">N</span> -dimensional <em>destination</em> where <span class="math">N</span> is the
 number of dimensions in the broadcasted array.</p>
 </dd></dl>
 
@@ -4214,7 +4214,7 @@ For example, float64 -&gt; float32 is permitted with this rule.</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

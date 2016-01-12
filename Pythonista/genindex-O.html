@@ -28,7 +28,7 @@
     <link rel="copyright" title="Copyright" href="copyright.html" />
     <link rel="top" title="Pythonista Documentation" href="index.html" />
     <link rel="shortcut icon" type="image/png" href="_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -37,11 +37,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -145,6 +145,10 @@
     <dt><a href="library/os.html#os.O_TEXT">O_TEXT (in module os)</a></dt>
     <dt><a href="library/os.html#os.O_TRUNC">O_TRUNC (in module os)</a></dt>
     <dt><a href="library/os.html#os.O_WRONLY">O_WRONLY (in module os)</a></dt>
+    <dt><a href="ios/objc_util.html#module-objc_util">objc_util (module)</a></dt>
+    <dt><a href="ios/objc_util.html#objc_util.ObjCBlock">ObjCBlock (class in objc_util)</a></dt>
+    <dt><a href="ios/objc_util.html#objc_util.ObjCClass">ObjCClass (class in objc_util)</a></dt>
+    <dt><a href="ios/objc_util.html#objc_util.ObjCInstance">ObjCInstance (class in objc_util)</a></dt>
     <dt><a href="reference/datamodel.html#index-0">object</a>, <a href="glossary.html#term-object">[1]</a></dt>
     <dd><dl>
       <dt><a href="reference/datamodel.html#index-13">Boolean</a>, <a href="library/stdtypes.html#index-13">[1]</a></dt>
@@ -232,6 +236,8 @@
     <dt><a href="library/rexec.html#rexec.RExec.ok_path">ok_path (rexec.RExec attribute)</a></dt>
     <dt><a href="library/rexec.html#rexec.RExec.ok_posix_names">ok_posix_names (rexec.RExec attribute)</a></dt>
     <dt><a href="library/rexec.html#rexec.RExec.ok_sys_names">ok_sys_names (rexec.RExec attribute)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.OleDLL">OleDLL (class in ctypes)</a></dt>
+    <dt><a href="ios/objc_util.html#objc_util.on_main_thread">on_main_thread() (in module objc_util)</a></dt>
     <dt><a href="ios/ui.html#ui.View.on_screen">on_screen (ui.View attribute)</a></dt>
     <dt><a href="library/cmd.html#cmd.Cmd.onecmd">onecmd() (cmd.Cmd method)</a></dt>
     <dt><a href="library/token.html#token.OP">OP (in module token)</a></dt>
@@ -264,11 +270,11 @@
       <dt><a href="library/urllib2.html#urllib2.OpenerDirector.open">(urllib2.OpenerDirector method)</a></dt>
       <dt><a href="library/zipfile.html#zipfile.ZipFile.open">(zipfile.ZipFile method)</a></dt>
   </dl></dd>
+</dl></td>
+  <td style="width: 33%" valign="top"><dl>
     <dt><a href="ios/editor.html#editor.open_file">open_file() (in module editor)</a></dt>
     <dt><a href="ios/console.html#console.open_in">open_in() (in module console)</a></dt>
     <dt><a href="library/urllib.html#urllib.URLopener.open_unknown">open_unknown() (urllib.URLopener method)</a></dt>
-</dl></td>
-  <td style="width: 33%" valign="top"><dl>
     <dt><a href="library/dircache.html#dircache.opendir">opendir() (in module dircache)</a></dt>
     <dt><a href="library/urllib2.html#urllib2.OpenerDirector">OpenerDirector (class in urllib2)</a></dt>
     <dt><a href="library/mhlib.html#mhlib.MH.openfolder">openfolder() (mhlib.MH method)</a></dt>
@@ -382,7 +388,7 @@
     <dt><a href="library/pyexpat.html#xml.parsers.expat.xmlparser.ordered_attributes">ordered_attributes (xml.parsers.expat.xmlparser attribute)</a></dt>
     <dt><a href="library/collections.html#collections.OrderedDict">OrderedDict (class in collections)</a></dt>
     <dt><a href="ios/contacts.html#contacts.Person.organization">organization (contacts.Person attribute)</a></dt>
-    <dt><a href="ios/scene.html#scene.Rect.origin">origin() (scene.Rect method)</a></dt>
+    <dt><a href="ios/scene.html#scene.Rect.origin">origin (scene.Rect attribute)</a></dt>
     <dt><a href="library/wsgiref.html#wsgiref.handlers.BaseHandler.origin_server">origin_server (wsgiref.handlers.BaseHandler attribute)</a></dt>
     <dt>os</dt>
     <dd><dl>
@@ -430,12 +436,12 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    &copy; <a href="copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Dec 19, 2015.
     <a href="bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

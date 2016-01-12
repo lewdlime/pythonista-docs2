@@ -31,7 +31,7 @@
     <link rel="next" title="6. Input and Output" href="inputoutput.html" />
     <link rel="prev" title="4. Data Structures" href="datastructures.html" />
     <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -40,11 +40,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -534,7 +534,7 @@ code:</p>
 </pre></div>
 </div>
 <p>This would mean that <tt class="docutils literal"><span class="pre">from</span> <span class="pre">sound.effects</span> <span class="pre">import</span> <span class="pre">*</span></tt> would import the three
-named submodules of the <a class="reference internal" href="../ios/sound.html#module-sound" title="sound: Simple sound creation"><tt class="xref py py-mod docutils literal"><span class="pre">sound</span></tt></a> package.</p>
+named submodules of the <a class="reference internal" href="../ios/sound.html#module-sound" title="sound: Sound effects and music playback"><tt class="xref py py-mod docutils literal"><span class="pre">sound</span></tt></a> package.</p>
 <p>If <tt class="docutils literal"><span class="pre">__all__</span></tt> is not defined, the statement <tt class="docutils literal"><span class="pre">from</span> <span class="pre">sound.effects</span> <span class="pre">import</span> <span class="pre">*</span></tt>
 does <em>not</em> import all submodules from the package <tt class="xref py py-mod docutils literal"><span class="pre">sound.effects</span></tt> into the
 current namespace; it only ensures that the package <tt class="xref py py-mod docutils literal"><span class="pre">sound.effects</span></tt> has
@@ -570,7 +570,7 @@ containing package before looking in the standard module search path. Thus, the
 <span class="pre">echofilter</span></tt>.  If the imported module is not found in the current package (the
 package of which the current module is a submodule), the <a class="reference internal" href="../reference/simple_stmts.html#import"><tt class="xref std std-keyword docutils literal"><span class="pre">import</span></tt></a>
 statement looks for a top-level module with the given name.</p>
-<p>When packages are structured into subpackages (as with the <a class="reference internal" href="../ios/sound.html#module-sound" title="sound: Simple sound creation"><tt class="xref py py-mod docutils literal"><span class="pre">sound</span></tt></a> package
+<p>When packages are structured into subpackages (as with the <a class="reference internal" href="../ios/sound.html#module-sound" title="sound: Sound effects and music playback"><tt class="xref py py-mod docutils literal"><span class="pre">sound</span></tt></a> package
 in the example), you can use absolute imports to refer to submodules of siblings
 packages.  For example, if the module <tt class="xref py py-mod docutils literal"><span class="pre">sound.filters.vocoder</span></tt> needs to use
 the <tt class="xref py py-mod docutils literal"><span class="pre">echo</span></tt> module in the <tt class="xref py py-mod docutils literal"><span class="pre">sound.effects</span></tt> package, it can use <tt class="docutils literal"><span class="pre">from</span>
@@ -618,12 +618,12 @@ global symbol table.</td></tr>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Dec 02, 2015.
     <a href="../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

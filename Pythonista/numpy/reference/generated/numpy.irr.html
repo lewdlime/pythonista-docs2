@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.mirr" href="numpy.mirr.html" />
     <link rel="prev" title="numpy.ipmt" href="numpy.ipmt.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -154,14 +154,14 @@ using np.irr in the Examples section below).  Suppose one invests
 one&#8217;s 100 unit investment yields 173 units; however, due to the
 combination of compounding and the periodic withdrawals, the
 &#8220;average&#8221; rate of return is neither simply 0.73/4 nor (1.73)^0.25-1.
-Rather, it is the solution (for <img class="math" src="../../_images/math/93185e65576cafdf1d84242e01b880fef7a7a4d6.png" alt="r" style="vertical-align: 0px"/>) of the equation:</p>
+Rather, it is the solution (for <span class="math">r</span>) of the equation:</p>
 <div class="math">
-<p><img src="../../_images/math/afc908bfae697d204e08175b8bd0631c579c417e.png" alt="-100 + \frac{39}{1+r} + \frac{59}{(1+r)^2}
-+ \frac{55}{(1+r)^3} + \frac{20}{(1+r)^4} = 0"/></p>
-</div><p>In general, for <em class="xref py py-obj">values</em> <img class="math" src="../../_images/math/bd8507d40515f1544246d62e9e7d5a66f8b5f819.png" alt="= [v_0, v_1, ... v_M]" style="vertical-align: -4px"/>,
+<p><span class="math">-100 + \frac{39}{1+r} + \frac{59}{(1+r)^2}
++ \frac{55}{(1+r)^3} + \frac{20}{(1+r)^4} = 0</span></p>
+</div><p>In general, for <em class="xref py py-obj">values</em> <span class="math">= [v_0, v_1, ... v_M]</span>,
 irr is the solution of the equation: <a class="reference internal" href="#g32" id="id1">[G32]</a></p>
 <div class="math">
-<p><img src="../../_images/math/f50184ad483c78daaaee139682e9adb6098ff908.png" alt="\sum_{t=0}^M{\frac{v_t}{(1+irr)^{t}}} = 0"/></p>
+<p><span class="math">\sum_{t=0}^M{\frac{v_t}{(1+irr)^{t}}} = 0</span></p>
 </div><p class="rubric">References</p>
 <table class="docutils citation" frame="void" id="g32" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
@@ -191,7 +191,7 @@ Addison-Wesley, 2003, pg. 348.</td></tr>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

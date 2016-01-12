@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.random.zipf" href="numpy.random.zipf.html" />
     <link rel="prev" title="numpy.random.wald" href="numpy.random.wald.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -125,10 +125,10 @@
 <p>Draw samples from a 1-parameter Weibull distribution with the given
 shape parameter <em class="xref py py-obj">a</em>.</p>
 <div class="math">
-<p><img src="../../_images/math/f155de8f6966032f4d527071a470e8719de09868.png" alt="X = (-ln(U))^{1/a}"/></p>
+<p><span class="math">X = (-ln(U))^{1/a}</span></p>
 </div><p>Here, U is drawn from the uniform distribution over (0,1].</p>
 <p>The more common 2-parameter Weibull, including a scale parameter
-<img class="math" src="../../_images/math/e77607a19744406310c093481c802d45bc53f674.png" alt="\lambda" style="vertical-align: 0px"/> is just <img class="math" src="../../_images/math/5e4b84ea77a6121fafcbd1b2c65645cdf237d193.png" alt="X = \lambda(-ln(U))^{1/a}" style="vertical-align: -4px"/>.</p>
+<span class="math">\lambda</span> is just <span class="math">X = \lambda(-ln(U))^{1/a}</span>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -157,11 +157,11 @@ Generalized Extreme Value (GEV) distributions used in modeling extreme
 value problems.  This class includes the Gumbel and Frechet distributions.</p>
 <p>The probability density for the Weibull distribution is</p>
 <div class="math">
-<p><img src="../../_images/math/80d50cc603c4f383fa1477e99e49b6526bf1ad9b.png" alt="p(x) = \frac{a}
-{\lambda}(\frac{x}{\lambda})^{a-1}e^{-(x/\lambda)^a},"/></p>
-</div><p>where <img class="math" src="../../_images/math/d54327e6a802a38385738bc7c146cadefa43d3f3.png" alt="a" style="vertical-align: 0px"/> is the shape and <img class="math" src="../../_images/math/e77607a19744406310c093481c802d45bc53f674.png" alt="\lambda" style="vertical-align: 0px"/> the scale.</p>
+<p><span class="math">p(x) = \frac{a}
+{\lambda}(\frac{x}{\lambda})^{a-1}e^{-(x/\lambda)^a},</span></p>
+</div><p>where <span class="math">a</span> is the shape and <span class="math">\lambda</span> the scale.</p>
 <p>The function has its peak (the mode) at
-<img class="math" src="../../_images/math/9c40d8f4d851598074686c7f6db5eb6e8f3b10d2.png" alt="\lambda(\frac{a-1}{a})^{1/a}" style="vertical-align: -5px"/>.</p>
+<span class="math">\lambda(\frac{a-1}{a})^{1/a}</span>.</p>
 <p>When <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">1</span></tt>, the Weibull distribution reduces to the exponential
 distribution.</p>
 <p class="rubric">References</p>
@@ -228,7 +228,7 @@ the probability density function:</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

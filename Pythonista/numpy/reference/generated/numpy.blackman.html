@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.hamming" href="numpy.hamming.html" />
     <link rel="prev" title="numpy.bartlett" href="numpy.bartlett.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -153,7 +153,7 @@ appears only if the number of samples is odd).</p>
 <p class="rubric">Notes</p>
 <p>The Blackman window is defined as</p>
 <div class="math">
-<p><img src="../../_images/math/8f1fda8b758f62bab8920b303c33c2021ffaab1e.png" alt="w(n) = 0.42 - 0.5 \cos(2\pi n/M) + 0.08 \cos(4\pi n/M)"/></p>
+<p><span class="math">w(n) = 0.42 - 0.5 \cos(2\pi n/M) + 0.08 \cos(4\pi n/M)</span></p>
 </div><p>Most references to the Blackman window come from the signal processing
 literature, where it is used as one of many windowing functions for
 smoothing values.  It is also known as an apodization (which means
@@ -223,7 +223,7 @@ Upper Saddle River, NJ: Prentice-Hall, 1999, pp. 468-471.</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

@@ -29,60 +29,8 @@
     <link rel="next" title="cm (colormap)" href="cm_api.html" />
     <link rel="prev" title="matplotlib.type1font" href="type1font.html" />
     <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
-    <style>
-    @media only screen and (max-device-width : 320px) {
-        .pythonista-ipad-only {
-            display: none;
-        }
-    }
-    @media only screen and (min-device-width : 321px) {
-        .pythonista-iphone-only {
-            display: none;
-        }
-    }
-    p, li {
-        -webkit-hyphens: auto;
-    }
-    .pythonista-code-header {
-        background-color: #f2f2f2;
-        border-style: solid;
-        border-width: 1px 1px 0 1px;
-        border-color: #cdcdcd;
-        margin-bottom: -16px;
-        padding: 5px;
-        border-radius: 6px 6px 0 0;
-    }
-    .pythonista-button {
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fdfdfd), color-stop(49%,#e2e2e2), color-stop(50%,#cecece), color-stop(100%,#dfdfdf));
-        border: 1px solid #959595;
-        box-shadow: rgba(255, 255, 255, 0.75) 0 1px 0;
-        text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0;
-        margin-right: 10px;
-        
-        font-family: Helvetica;
-        font-weight: bold;
-        font-size: 14px;  
-        padding: 5px;
-        border-radius: 4px;
-        display: inline-block;
-        color: #333;
-        
-        cursor: default;
-        
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        -webkit-user-select: none;
-    }
-    .pythonista-button:active {
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cacaca), color-stop(49%,#c9c9c9), color-stop(50%,#bebebe), color-stop(100%,#c1c1c1));
-        
-    }
-    
-    pre {
-        background-color: #fafafa;
-        border: 1px solid #cdcdcd;
-    }
-    </style>
+    <link rel="stylesheet" href="../_static/pythonista.css" type="text/css" />
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -91,11 +39,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -416,7 +364,7 @@ ignored by default.</p>
 
 <dl class="attribute">
 <dt id="matplotlib.cbook.Scheduler.idlelock">
-<tt class="descname">idlelock</tt><em class="property"> = &lt;thread.lock object at 0x10550d530&gt;</em><a class="headerlink" href="#matplotlib.cbook.Scheduler.idlelock" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">idlelock</tt><em class="property"> = &lt;thread.lock object at 0x109072c10&gt;</em><a class="headerlink" href="#matplotlib.cbook.Scheduler.idlelock" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -714,7 +662,7 @@ is True require an exact case match.</p>
 
 <dl class="function">
 <dt id="matplotlib.cbook.flatten">
-<tt class="descclassname">matplotlib.cbook.</tt><tt class="descname">flatten</tt><big>(</big><em>seq</em>, <em>scalarp=&lt;function is_scalar_or_string at 0x105b12758&gt;</em><big>)</big><a class="headerlink" href="#matplotlib.cbook.flatten" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">matplotlib.cbook.</tt><tt class="descname">flatten</tt><big>(</big><em>seq</em>, <em>scalarp=&lt;function is_scalar_or_string at 0x109c95a28&gt;</em><big>)</big><a class="headerlink" href="#matplotlib.cbook.flatten" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a generator of flattened nested containers</p>
 <p>For example:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">matplotlib.cbook</span> <span class="kn">import</span> <span class="n">flatten</span>
@@ -864,7 +812,7 @@ empty, return <em>False</em>.</p>
 
 <dl class="function">
 <dt id="matplotlib.cbook.print_cycles">
-<tt class="descclassname">matplotlib.cbook.</tt><tt class="descname">print_cycles</tt><big>(</big><em>objects</em>, <em>outstream=&lt;open file '&lt;stdout&gt;'</em>, <em>mode 'w' at 0x104bc5150&gt;</em>, <em>show_progress=False</em><big>)</big><a class="headerlink" href="#matplotlib.cbook.print_cycles" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">matplotlib.cbook.</tt><tt class="descname">print_cycles</tt><big>(</big><em>objects</em>, <em>outstream=&lt;open file '&lt;stdout&gt;'</em>, <em>mode 'w' at 0x108581150&gt;</em>, <em>show_progress=False</em><big>)</big><a class="headerlink" href="#matplotlib.cbook.print_cycles" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
 <dt><em>objects</em></dt>
 <dd>A list of objects to find cycles in.  It is often useful to
@@ -1100,7 +1048,7 @@ DeprecationWarning.</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.random.logseries" href="numpy.random.logseries.html" />
     <link rel="prev" title="numpy.random.logistic" href="numpy.random.logistic.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -166,9 +166,9 @@ if <em class="xref py py-obj">size</em> is None a float is returned.</p>
 distributed.  The probability density function for the log-normal
 distribution is:</p>
 <div class="math">
-<p><img src="../../_images/math/7e23a5c8039fd704053127ab284e8d44bc8ac0f9.png" alt="p(x) = \frac{1}{\sigma x \sqrt{2\pi}}
-e^{(-\frac{(ln(x)-\mu)^2}{2\sigma^2})}"/></p>
-</div><p>where <img class="math" src="../../_images/math/fb6d665bbe0c01fc1af5c5f5fa7df40dc71331d7.png" alt="\mu" style="vertical-align: -3px"/> is the mean and <img class="math" src="../../_images/math/bb6e1902efeb0b3704c6191ddce1f02707ab7d4b.png" alt="\sigma" style="vertical-align: 0px"/> is the standard
+<p><span class="math">p(x) = \frac{1}{\sigma x \sqrt{2\pi}}
+e^{(-\frac{(ln(x)-\mu)^2}{2\sigma^2})}</span></p>
+</div><p>where <span class="math">\mu</span> is the mean and <span class="math">\sigma</span> is the standard
 deviation of the normally distributed logarithm of the variable.
 A log-normal distribution results if a random variable is the <em>product</em>
 of a large number of independent, identically-distributed variables in
@@ -244,7 +244,7 @@ distribution can be fit well by a log-normal probability density function.</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

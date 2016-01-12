@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.polynomial.hermite.hermvander3d" href="numpy.polynomial.hermite.hermvander3d.html" />
     <link rel="prev" title="numpy.polynomial.hermite.hermvander" href="numpy.polynomial.hermite.hermvander.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -127,7 +127,7 @@
 <p>Returns the pseudo-Vandermonde matrix of degrees <em class="xref py py-obj">deg</em> and sample
 points <em class="xref py py-obj">(x, y)</em>. The pseudo-Vandermonde matrix is defined by</p>
 <div class="math">
-<p><img src="../../_images/math/82c9f0e379754cdc10866a6f2cd453b7624c1056.png" alt="V[..., deg[1]*i + j] = H_i(x) * H_j(y),"/></p>
+<p><span class="math">V[..., deg[1]*i + j] = H_i(x) * H_j(y),</span></p>
 </div><p>where <em class="xref py py-obj">0 &lt;= i &lt;= deg[0]</em> and <em class="xref py py-obj">0 &lt;= j &lt;= deg[1]</em>. The leading indices of
 <em class="xref py py-obj">V</em> index the points <em class="xref py py-obj">(x, y)</em> and the last index encodes the degrees of
 the Hermite polynomials.</p>
@@ -135,7 +135,7 @@ the Hermite polynomials.</p>
 correspond to the elements of a 2-D coefficient array <em class="xref py py-obj">c</em> of shape
 (xdeg + 1, ydeg + 1) in the order</p>
 <div class="math">
-<p><img src="../../_images/math/10d612c391028b5769f9fffa2bf839b094fcd7bc.png" alt="c_{00}, c_{01}, c_{02} ... , c_{10}, c_{11}, c_{12} ..."/></p>
+<p><span class="math">c_{00}, c_{01}, c_{02} ... , c_{10}, c_{11}, c_{12} ...</span></p>
 </div><p>and <tt class="docutils literal"><span class="pre">np.dot(V,</span> <span class="pre">c.flat)</span></tt> and <tt class="docutils literal"><span class="pre">hermval2d(x,</span> <span class="pre">y,</span> <span class="pre">c)</span></tt> will be the same
 up to roundoff. This equivalence is useful both for least squares
 fitting and for the evaluation of a large number of 2-D Hermite
@@ -160,7 +160,7 @@ arrays.</p>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>vander2d</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>The shape of the returned matrix is <tt class="docutils literal"><span class="pre">x.shape</span> <span class="pre">+</span> <span class="pre">(order,)</span></tt>, where
-<img class="math" src="../../_images/math/22cd9e547f8f77b32df1fcd92c6562d212d4491f.png" alt="order = (deg[0]+1)*(deg([1]+1)" style="vertical-align: -4px"/>.  The dtype will be the same
+<span class="math">order = (deg[0]+1)*(deg([1]+1)</span>.  The dtype will be the same
 as the converted <em class="xref py py-obj">x</em> and <em class="xref py py-obj">y</em>.</p>
 </div></blockquote>
 </td>
@@ -187,7 +187,7 @@ as the converted <em class="xref py py-obj">x</em> and <em class="xref py py-obj
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

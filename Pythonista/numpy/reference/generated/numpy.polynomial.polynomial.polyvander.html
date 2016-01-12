@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.polynomial.polynomial.polyvander2d" href="numpy.polynomial.polynomial.polyvander2d.html" />
     <link rel="prev" title="numpy.polynomial.polynomial.polyfit" href="numpy.polynomial.polynomial.polyfit.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -127,7 +127,7 @@
 <p>Returns the Vandermonde matrix of degree <em class="xref py py-obj">deg</em> and sample points
 <em class="xref py py-obj">x</em>. The Vandermonde matrix is defined by</p>
 <div class="math">
-<p><img src="../../_images/math/28e864b2645803a0e21b2fff9d13ff8b5252b9c9.png" alt="V[..., i] = x^i,"/></p>
+<p><span class="math">V[..., i] = x^i,</span></p>
 </div><p>where <em class="xref py py-obj">0 &lt;= i &lt;= deg</em>. The leading indices of <em class="xref py py-obj">V</em> index the elements of
 <em class="xref py py-obj">x</em> and the last index is the power of <em class="xref py py-obj">x</em>.</p>
 <p>If <em class="xref py py-obj">c</em> is a 1-D array of coefficients of length <em class="xref py py-obj">n + 1</em> and <em class="xref py py-obj">V</em> is the
@@ -180,7 +180,7 @@ The dtype will be the same as the converted <em class="xref py py-obj">x</em>.</
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

@@ -28,7 +28,7 @@
     <link rel="copyright" title="Copyright" href="copyright.html" />
     <link rel="top" title="Pythonista Documentation" href="index.html" />
     <link rel="shortcut icon" type="image/png" href="_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -37,11 +37,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -132,6 +132,7 @@
     <dt><a href="ios/bottle/plugindev.html#bottle.Plugin.name">name (bottle.Plugin attribute)</a></dt>
     <dd><dl>
       <dt><a href="ios/bottle/api.html#bottle.Route.name">(bottle.Route attribute)</a></dt>
+      <dt><a href="ios/cb.html#cb.Peripheral.name">(cb.Peripheral attribute)</a></dt>
       <dt><a href="ios/contacts.html#contacts.Group.name">(contacts.Group attribute)</a></dt>
       <dt><a href="library/cookielib.html#cookielib.Cookie.name">(cookielib.Cookie attribute)</a></dt>
       <dt><a href="library/doctest.html#doctest.DocTest.name">(doctest.DocTest attribute)</a></dt>
@@ -277,17 +278,20 @@
     <dt><a href="library/nntplib.html#module-nntplib">nntplib (module)</a></dt>
     <dt><a href="library/nntplib.html#nntplib.NNTPPermanentError">NNTPPermanentError</a></dt>
     <dt><a href="library/nntplib.html#nntplib.NNTPProtocolError">NNTPProtocolError</a></dt>
-</dl></td>
-  <td style="width: 33%" valign="top"><dl>
     <dt><a href="library/nntplib.html#nntplib.NNTPReplyError">NNTPReplyError</a></dt>
     <dt><a href="library/nntplib.html#nntplib.NNTPTemporaryError">NNTPTemporaryError</a></dt>
-    <dt><a href="ios/scene.html#scene.no_fill">no_fill() (in module scene)</a></dt>
+    <dt><a href="ios/scene_drawing.html#scene_drawing.no_fill">no_fill() (in module scene_drawing)</a></dt>
     <dt><a href="library/urllib.html#index-4">no_proxy</a>, <a href="library/urllib.html#index-6">[1]</a></dt>
-    <dt><a href="ios/scene.html#scene.no_stroke">no_stroke() (in module scene)</a></dt>
-    <dt><a href="ios/scene.html#scene.no_tint">no_tint() (in module scene)</a></dt>
+    <dt><a href="ios/scene_drawing.html#scene_drawing.no_stroke">no_stroke() (in module scene_drawing)</a></dt>
+    <dt><a href="ios/scene_drawing.html#scene_drawing.no_tint">no_tint() (in module scene_drawing)</a></dt>
     <dt><a href="library/xml.dom.html#xml.dom.NoDataAllowedErr">NoDataAllowedErr</a></dt>
     <dt><a href="library/compiler.html#compiler.ast.Node">Node (class in compiler.ast)</a></dt>
+    <dd><dl>
+      <dt><a href="ios/scene.html#scene.Node">(class in scene)</a></dt>
+  </dl></dd>
     <dt><a href="library/platform.html#platform.node">node() (in module platform)</a></dt>
+</dl></td>
+  <td style="width: 33%" valign="top"><dl>
     <dt><a href="library/xml.dom.html#xml.dom.Node.nodeName">nodeName (xml.dom.Node attribute)</a></dt>
     <dt><a href="library/ast.html#ast.NodeTransformer">NodeTransformer (class in ast)</a></dt>
     <dt><a href="library/xml.dom.html#xml.dom.Node.nodeType">nodeType (xml.dom.Node attribute)</a></dt>
@@ -345,11 +349,13 @@
     <dt><a href="ios/contacts.html#contacts.Person.note">note (contacts.Person attribute)</a></dt>
     <dt><a href="library/mailbox.html#mailbox.NotEmptyError">NotEmptyError</a></dt>
     <dt><a href="library/token.html#token.NOTEQUAL">NOTEQUAL (in module token)</a></dt>
+    <dt><a href="ios/reminders.html#reminders.Reminder.notes">notes (reminders.Reminder attribute)</a></dt>
     <dt><a href="library/xml.dom.html#xml.dom.NotFoundErr">NotFoundErr</a></dt>
     <dt><a href="ios/notification.html#module-notification">notification (module)</a></dt>
     <dt><a href="library/threading.html#threading.Condition.notify">notify() (threading.Condition method)</a></dt>
     <dt><a href="library/threading.html#threading.Condition.notify_all">notify_all() (threading.Condition method)</a></dt>
     <dt><a href="library/threading.html#threading.Condition.notifyAll">notifyAll() (threading.Condition method)</a></dt>
+    <dt><a href="ios/cb.html#cb.Characteristic.notifying">notifying (cb.Characteristic attribute)</a></dt>
     <dt>NotImplemented</dt>
     <dd><dl>
       <dt><a href="reference/datamodel.html#index-7">object</a></dt>
@@ -360,8 +366,24 @@
     <dt><a href="library/pyexpat.html#xml.parsers.expat.xmlparser.NotStandaloneHandler">NotStandaloneHandler() (xml.parsers.expat.xmlparser method)</a></dt>
     <dt><a href="library/xml.dom.html#xml.dom.NotSupportedErr">NotSupportedErr</a></dt>
     <dt><a href="library/datetime.html#datetime.datetime.now">now() (datetime.datetime class method)</a></dt>
+    <dt><a href="ios/objc_util.html#objc_util.ns">ns() (in module objc_util)</a></dt>
+    <dt><a href="ios/objc_util.html#objc_util.NSArray">NSArray (class in objc_util)</a></dt>
+    <dt><a href="ios/objc_util.html#objc_util.NSData">NSData (class in objc_util)</a></dt>
+    <dt><a href="ios/objc_util.html#objc_util.NSDictionary">NSDictionary (class in objc_util)</a></dt>
+    <dt><a href="ios/objc_util.html#objc_util.NSEnumerator">NSEnumerator (class in objc_util)</a></dt>
     <dt><a href="library/signal.html#signal.NSIG">NSIG (in module signal)</a></dt>
     <dt><a href="library/heapq.html#heapq.nsmallest">nsmallest() (in module heapq)</a></dt>
+    <dt><a href="ios/objc_util.html#objc_util.NSMutableArray">NSMutableArray (class in objc_util)</a></dt>
+    <dt><a href="ios/objc_util.html#objc_util.NSMutableData">NSMutableData (class in objc_util)</a></dt>
+    <dt><a href="ios/objc_util.html#objc_util.NSMutableDictionary">NSMutableDictionary (class in objc_util)</a></dt>
+    <dt><a href="ios/objc_util.html#objc_util.NSMutableSet">NSMutableSet (class in objc_util)</a></dt>
+    <dt><a href="ios/objc_util.html#objc_util.NSMutableString">NSMutableString (class in objc_util)</a></dt>
+    <dt><a href="ios/objc_util.html#objc_util.NSNumber">NSNumber (class in objc_util)</a></dt>
+    <dt><a href="ios/objc_util.html#objc_util.NSRange">NSRange (class in objc_util)</a></dt>
+    <dt><a href="ios/objc_util.html#objc_util.NSSet">NSSet (class in objc_util)</a></dt>
+    <dt><a href="ios/objc_util.html#objc_util.NSString">NSString (class in objc_util)</a></dt>
+    <dt><a href="ios/objc_util.html#objc_util.NSURL">NSURL (class in objc_util)</a></dt>
+    <dt><a href="ios/objc_util.html#objc_util.nsurl">nsurl() (in module objc_util)</a></dt>
     <dt><a href="library/token.html#token.NT_OFFSET">NT_OFFSET (in module token)</a></dt>
     <dt><a href="library/logging.handlers.html#logging.handlers.NTEventLogHandler">NTEventLogHandler (class in logging.handlers)</a></dt>
     <dt><a href="library/socket.html#socket.ntohl">ntohl() (in module socket)</a></dt>
@@ -391,6 +413,7 @@
     <dd><dl>
       <dt><a href="ios/ui.html#ui.ListDataSource.number_of_lines">(ui.ListDataSource attribute)</a></dt>
   </dl></dd>
+    <dt><a href="ios/sound.html#sound.Player.number_of_loops">number_of_loops (sound.Player attribute)</a></dt>
     <dt><a href="library/numbers.html#module-numbers">numbers (module)</a></dt>
     <dt><a href="library/numbers.html#numbers.Rational.numerator">numerator (numbers.Rational attribute)</a></dt>
     <dt>numeric</dt>
@@ -413,12 +436,12 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    &copy; <a href="copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Dec 19, 2015.
     <a href="bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

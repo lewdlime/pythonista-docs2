@@ -28,7 +28,7 @@
     <link rel="copyright" title="Copyright" href="copyright.html" />
     <link rel="top" title="Pythonista Documentation" href="index.html" />
     <link rel="shortcut icon" type="image/png" href="_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -37,11 +37,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -137,6 +137,7 @@
     <dt><a href="library/tarfile.html#tarfile.TarInfo.uid">uid (tarfile.TarInfo attribute)</a></dt>
     <dt><a href="library/imaplib.html#imaplib.IMAP4.uid">uid() (imaplib.IMAP4 method)</a></dt>
     <dt><a href="library/poplib.html#poplib.POP3.uidl">uidl() (poplib.POP3 method)</a></dt>
+    <dt><a href="ios/objc_util.html#objc_util.UIEdgeInsets">UIEdgeInsets (class in objc_util)</a></dt>
     <dt><a href="library/os.html#os.umask">umask() (in module os)</a></dt>
     <dt><a href="library/tarfile.html#tarfile.TarInfo.uname">uname (tarfile.TarInfo attribute)</a></dt>
     <dt><a href="library/os.html#os.uname">uname() (in module os)</a></dt>
@@ -209,7 +210,11 @@
     <dd><dl>
       <dt><a href="library/imputil.html#imputil.ImportManager.uninstall">(imputil.ImportManager method)</a></dt>
   </dl></dd>
-    <dt><a href="library/stdtypes.html#set.union">union() (set method)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.Union">Union (class in ctypes)</a></dt>
+    <dt><a href="ios/scene.html#scene.Rect.union">union() (scene.Rect method)</a></dt>
+    <dd><dl>
+      <dt><a href="library/stdtypes.html#set.union">(set method)</a></dt>
+  </dl></dd>
     <dt><a href="library/unittest.html#module-unittest">unittest (module)</a></dt>
     <dt>unittest command line option</dt>
     <dd><dl>
@@ -261,7 +266,7 @@
       <dt><a href="library/os.html#os.unlink">(in module os)</a></dt>
       <dt><a href="library/xml.dom.minidom.html#xml.dom.minidom.Node.unlink">(xml.dom.minidom.Node method)</a></dt>
   </dl></dd>
-    <dt><a href="ios/scene.html#scene.unload_image">unload_image() (in module scene)</a></dt>
+    <dt><a href="ios/scene_drawing.html#scene_drawing.unload_image">unload_image() (in module scene_drawing)</a></dt>
     <dt><a href="library/mailbox.html#mailbox.Babyl.unlock">unlock() (mailbox.Babyl method)</a></dt>
     <dd><dl>
       <dt><a href="library/mailbox.html#mailbox.MH.unlock">(mailbox.MH method)</a></dt>
@@ -328,8 +333,7 @@
       <dt><a href="library/mailbox.html#mailbox.Mailbox.update">(mailbox.Mailbox method)</a></dt>
       <dt><a href="library/mailbox.html#mailbox.Maildir.update">(mailbox.Maildir method)</a></dt>
       <dt><a href="library/md5.html#md5.md5.update">(md5.md5 method)</a></dt>
-      <dt><a href="ios/scene.html#scene.Animation.update">(scene.Animation method)</a></dt>
-      <dt><a href="ios/scene.html#scene.Layer.update">(scene.Layer method)</a></dt>
+      <dt><a href="ios/scene.html#scene.Scene.update">(scene.Scene method)</a></dt>
       <dt><a href="library/stdtypes.html#set.update">(set method)</a></dt>
       <dt><a href="library/sha.html#sha.sha.update">(sha.sha method)</a></dt>
       <dt><a href="library/trace.html#trace.CoverageResults.update">(trace.CoverageResults method)</a></dt>
@@ -391,6 +395,7 @@
     <dt><a href="library/urlparse.html#urlparse.urlunsplit">urlunsplit() (in module urlparse)</a></dt>
     <dt><a href="library/uuid.html#uuid.UUID.urn">urn (uuid.UUID attribute)</a></dt>
     <dt><a href="library/cmd.html#cmd.Cmd.use_rawinput">use_rawinput (cmd.Cmd attribute)</a></dt>
+    <dt><a href="ios/scene_drawing.html#scene_drawing.use_shader">use_shader() (in module scene_drawing)</a></dt>
     <dt><a href="library/pyexpat.html#xml.parsers.expat.xmlparser.UseForeignDTD">UseForeignDTD() (xml.parsers.expat.xmlparser method)</a></dt>
     <dt>user</dt>
     <dd><dl>
@@ -450,6 +455,11 @@
       <dt><a href="library/binascii.html#index-0">module</a></dt>
   </dl></dd>
     <dt><a href="library/uu.html#module-uu">uu (module)</a></dt>
+    <dt><a href="ios/cb.html#cb.Characteristic.uuid">uuid (cb.Characteristic attribute)</a></dt>
+    <dd><dl>
+      <dt><a href="ios/cb.html#cb.Peripheral.uuid">(cb.Peripheral attribute)</a></dt>
+      <dt><a href="ios/cb.html#cb.Service.uuid">(cb.Service attribute)</a></dt>
+  </dl></dd>
     <dt><a href="library/uuid.html#uuid.UUID">UUID (class in uuid)</a></dt>
     <dt><a href="library/uuid.html#module-uuid">uuid (module)</a></dt>
     <dt><a href="library/uuid.html#index-2">uuid1</a></dt>
@@ -469,12 +479,12 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    &copy; <a href="copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Dec 19, 2015.
     <a href="bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

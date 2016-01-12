@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.blackman" href="numpy.blackman.html" />
     <link rel="prev" title="numpy.kaiser" href="numpy.kaiser.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -154,9 +154,9 @@ the first and last samples equal to zero.</p>
 <p class="rubric">Notes</p>
 <p>The Bartlett window is defined as</p>
 <div class="math">
-<p><img src="../../_images/math/96c776a93fb59bb1d209e56851970258942c7b09.png" alt="w(n) = \frac{2}{M-1} \left(
+<p><span class="math">w(n) = \frac{2}{M-1} \left(
 \frac{M-1}{2} - \left|n - \frac{M-1}{2}\right|
-\right)"/></p>
+\right)</span></p>
 </div><p>Most references to the Bartlett window come from the signal
 processing literature, where it is used as one of many windowing
 functions for smoothing values.  Note that convolution with this
@@ -258,7 +258,7 @@ Processing&#8221;, Prentice-Hall, 1999, pp. 468-471.</td></tr>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

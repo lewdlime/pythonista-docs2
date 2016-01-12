@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.random.power" href="numpy.random.power.html" />
     <link rel="prev" title="numpy.random.pareto" href="numpy.random.pareto.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -144,10 +144,10 @@ distribution for large N.</p>
 <p class="rubric">Notes</p>
 <p>The Poisson distribution</p>
 <div class="math">
-<p><img src="../../_images/math/ce283e2289893317d6b437812aef57739bdedef2.png" alt="f(k; \lambda)=\frac{\lambda^k e^{-\lambda}}{k!}"/></p>
-</div><p>For events with an expected separation <img class="math" src="../../_images/math/e77607a19744406310c093481c802d45bc53f674.png" alt="\lambda" style="vertical-align: 0px"/> the Poisson
-distribution <img class="math" src="../../_images/math/ac6bc89219971cdae7996125804a02abc36a2438.png" alt="f(k; \lambda)" style="vertical-align: -4px"/> describes the probability of
-<img class="math" src="../../_images/math/c8ff6dc362a9a07153582909d5a26898fae59569.png" alt="k" style="vertical-align: 0px"/> events occurring within the observed interval <img class="math" src="../../_images/math/e77607a19744406310c093481c802d45bc53f674.png" alt="\lambda" style="vertical-align: 0px"/>.</p>
+<p><span class="math">f(k; \lambda)=\frac{\lambda^k e^{-\lambda}}{k!}</span></p>
+</div><p>For events with an expected separation <span class="math">\lambda</span> the Poisson
+distribution <span class="math">f(k; \lambda)</span> describes the probability of
+<span class="math">k</span> events occurring within the observed interval <span class="math">\lambda</span>.</p>
 <p>Because the output is limited to the range of the C long type, a
 ValueError is raised when <em class="xref py py-obj">lam</em> is within 10 sigma of the maximum
 representable value.</p>
@@ -197,7 +197,7 @@ Web Resource. <a class="reference external" href="http://mathworld.wolfram.com/P
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

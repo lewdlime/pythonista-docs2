@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.random.logistic" href="numpy.random.logistic.html" />
     <link rel="prev" title="numpy.random.hypergeometric" href="numpy.random.hypergeometric.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -133,11 +133,11 @@ random variables.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>loc</strong> : float</p>
 <blockquote>
-<div><p>The position, <img class="math" src="../../_images/math/fb6d665bbe0c01fc1af5c5f5fa7df40dc71331d7.png" alt="\mu" style="vertical-align: -3px"/>, of the distribution peak.</p>
+<div><p>The position, <span class="math">\mu</span>, of the distribution peak.</p>
 </div></blockquote>
 <p><strong>scale</strong> : float</p>
 <blockquote class="last">
-<div><p><img class="math" src="../../_images/math/e77607a19744406310c093481c802d45bc53f674.png" alt="\lambda" style="vertical-align: 0px"/>, the exponential decay.</p>
+<div><p><span class="math">\lambda</span>, the exponential decay.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -146,8 +146,8 @@ random variables.</p>
 <p class="rubric">Notes</p>
 <p>It has the probability density function</p>
 <div class="math">
-<p><img src="../../_images/math/25e4a799fdd3746e28643cd360e873f8a1d4528a.png" alt="f(x; \mu, \lambda) = \frac{1}{2\lambda}
-\exp\left(-\frac{|x - \mu|}{\lambda}\right)."/></p>
+<p><span class="math">f(x; \mu, \lambda) = \frac{1}{2\lambda}
+\exp\left(-\frac{|x - \mu|}{\lambda}\right).</span></p>
 </div><p>The first law of Laplace, from 1774, states that the frequency of an error
 can be expressed as an exponential function of the absolute magnitude of
 the error, which leads to the Laplace distribution. For many problems in
@@ -225,7 +225,7 @@ the probability density function:</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

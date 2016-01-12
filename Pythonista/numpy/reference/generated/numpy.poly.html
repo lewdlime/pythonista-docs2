@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.roots" href="numpy.roots.html" />
     <link rel="prev" title="numpy.polyval" href="numpy.polyval.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -176,10 +176,10 @@ coefficient. <a class="reference internal" href="#r54" id="id1">[R54]</a> In the
 the first one in the returned array - is always taken as one. (If
 for some reason you have one other point, the only automatic way
 presently to leverage that information is to use <tt class="docutils literal"><span class="pre">polyfit</span></tt>.)</p>
-<p>The characteristic polynomial, <img class="math" src="../../_images/math/1fb989e4d2e3a56149f88a4bd3768931192affa7.png" alt="p_a(t)" style="vertical-align: -4px"/>, of an <em class="xref py py-obj">n</em>-by-<em class="xref py py-obj">n</em>
+<p>The characteristic polynomial, <span class="math">p_a(t)</span>, of an <em class="xref py py-obj">n</em>-by-<em class="xref py py-obj">n</em>
 matrix <strong>A</strong> is given by</p>
 <blockquote>
-<div><img class="math" src="../../_images/math/d30ddeec506e21052a8f2613a0219240077e08af.png" alt="p_a(t) = \mathrm{det}(t\, \mathbf{I} - \mathbf{A})" style="vertical-align: -4px"/>,</div></blockquote>
+<div><span class="math">p_a(t) = \mathrm{det}(t\, \mathbf{I} - \mathbf{A})</span>,</div></blockquote>
 <p>where <strong>I</strong> is the <em class="xref py py-obj">n</em>-by-<em class="xref py py-obj">n</em> identity matrix. <a class="reference internal" href="#r55" id="id2">[R55]</a></p>
 <p class="rubric">References</p>
 <table class="docutils citation" frame="void" id="r54" rules="none">
@@ -239,7 +239,7 @@ Academic Press, pg. 182, 1980.</td></tr>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.polynomial.polynomial.polyfit" href="numpy.polynomial.polynomial.polyfit.html" />
     <link rel="prev" title="numpy.polynomial.polynomial.polyroots" href="numpy.polynomial.polynomial.polyroots.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -126,7 +126,7 @@
 <dd><p>Generate a monic polynomial with given roots.</p>
 <p>Return the coefficients of the polynomial</p>
 <div class="math">
-<p><img src="../../_images/math/1b4bb50f17092669c07993573d0d8704970123d2.png" alt="p(x) = (x - r_0) * (x - r_1) * ... * (x - r_n),"/></p>
+<p><span class="math">p(x) = (x - r_0) * (x - r_1) * ... * (x - r_n),</span></p>
 </div><p>where the <em class="xref py py-obj">r_n</em> are the roots specified in <em class="xref py py-obj">roots</em>.  If a zero has
 multiplicity n, then it must appear in <em class="xref py py-obj">roots</em> n times. For instance,
 if 2 is a root of multiplicity three and 3 is a root of multiplicity 2,
@@ -134,7 +134,7 @@ then <em class="xref py py-obj">roots</em> looks something like [2, 2, 2, 3, 3].
 in any order.</p>
 <p>If the returned coefficients are <em class="xref py py-obj">c</em>, then</p>
 <div class="math">
-<p><img src="../../_images/math/2af46e808b5bf07b795f9fd4a04cdde1104472c4.png" alt="p(x) = c_0 + c_1 * x + ... +  x^n"/></p>
+<p><span class="math">p(x) = c_0 + c_1 * x + ... +  x^n</span></p>
 </div><p>The coefficient of the last term is 1 for monic polynomials in this
 form.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -165,9 +165,9 @@ Examples below).</p>
 <p>The coefficients are determined by multiplying together linear factors
 of the form <em class="xref py py-obj">(x - r_i)</em>, i.e.</p>
 <div class="math">
-<p><img src="../../_images/math/a534a20441b7c41be0db61c7064adfe7370ac272.png" alt="p(x) = (x - r_0) (x - r_1) ... (x - r_n)"/></p>
+<p><span class="math">p(x) = (x - r_0) (x - r_1) ... (x - r_n)</span></p>
 </div><p>where <tt class="docutils literal"><span class="pre">n</span> <span class="pre">==</span> <span class="pre">len(roots)</span> <span class="pre">-</span> <span class="pre">1</span></tt>; note that this implies that <em class="xref py py-obj">1</em> is always
-returned for <img class="math" src="../../_images/math/ef5ce46d904acb35f7f005b9ce1756aeeba145cb.png" alt="a_n" style="vertical-align: -2px"/>.</p>
+returned for <span class="math">a_n</span>.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy.polynomial</span> <span class="kn">as</span> <span class="nn">P</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">P</span><span class="o">.</span><span class="n">polyfromroots</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="c"># x(x - 1)(x + 1) = x^3 - x</span>
@@ -192,7 +192,7 @@ returned for <img class="math" src="../../_images/math/ef5ce46d904acb35f7f005b9c
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

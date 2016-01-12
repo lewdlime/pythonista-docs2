@@ -29,7 +29,7 @@
     <link rel="top" title="Pythonista Documentation" href="index.html" />
 
     <link rel="shortcut icon" type="image/png" href="_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -38,11 +38,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -191,6 +191,11 @@
      <tr>
        <td></td>
        <td>
+       <a href="ios/appex.html#module-appex"><tt class="xref">appex</tt></a></td><td>
+       <em>Using the Pythonista Sharing Extension</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
        <a href="library/argparse.html#module-argparse"><tt class="xref">argparse</tt></a></td><td>
        <em>Command-line option and argument parsing library.</em></td></tr>
      <tr>
@@ -261,7 +266,7 @@ representations.</em></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="ios/bottle/recipes.html#module-bottle"><tt class="xref">bottle</tt></a></td><td>
+       <a href="ios/bottle/index.html#module-bottle"><tt class="xref">bottle</tt></a></td><td>
        <em></em></td></tr>
      <tr>
        <td></td>
@@ -287,6 +292,11 @@ program.</em></td></tr>
        <td>
        <a href="ios/canvas.html#module-canvas"><tt class="xref">canvas</tt></a></td><td>
        <em>Provides drawing functions on iOS</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ios/cb.html#module-cb"><tt class="xref">cb</tt></a></td><td>
+       <em></em></td></tr>
      <tr>
        <td></td>
        <td>
@@ -383,7 +393,7 @@ scripts.</em></td></tr>
        <td></td>
        <td>
        <a href="ios/console.html#module-console"><tt class="xref">console</tt></a></td><td>
-       <em>Console output on iOS</em></td></tr>
+       <em>Utilities for Console Output and Various System Services</em></td></tr>
      <tr>
        <td></td>
        <td>
@@ -439,6 +449,11 @@ scripts.</em></td></tr>
        <td>
        <a href="library/csv.html#module-csv"><tt class="xref">csv</tt></a></td><td>
        <em>Write and read tabular data to and from delimited files.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="library/ctypes.html#module-ctypes"><tt class="xref">ctypes</tt></a></td><td>
+       <em>A foreign function library for Python.</em></td></tr>
      <tr class="pcap"><td></td><td>&nbsp;</td><td></td></tr>
      <tr class="cap" id="cap-d"><td></td><td>
        <strong>d</strong></td><td></td></tr>
@@ -452,6 +467,11 @@ scripts.</em></td></tr>
        <td>
        <a href="library/decimal.html#module-decimal"><tt class="xref">decimal</tt></a></td><td>
        <em>Implementation of the General Decimal Arithmetic  Specification.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ios/dialogs.html#module-dialogs"><tt class="xref">dialogs</tt></a></td><td>
+       <em></em></td></tr>
      <tr>
        <td></td>
        <td>
@@ -1025,6 +1045,11 @@ constraints).</em></td></tr>
      <tr>
        <td></td>
        <td>
+       <a href="ios/objc_util.html#module-objc_util"><tt class="xref">objc_util</tt></a></td><td>
+       <em>Utility module for &#34;bridging&#34; a limited set of Objective-APIs to Python</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
        <a href="library/operator.html#module-operator"><tt class="xref">operator</tt></a></td><td>
        <em>Functions corresponding to the standard operators.</em></td></tr>
      <tr>
@@ -1163,6 +1188,11 @@ opcodes, as well as some useful functions.</em></td></tr>
      <tr>
        <td></td>
        <td>
+       <a href="ios/qrcode.html#module-qrcode"><tt class="xref">qrcode</tt></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
        <a href="library/queue.html#module-Queue"><tt class="xref">Queue</tt></a></td><td>
        <em>A synchronized queue class.</em></td></tr>
      <tr>
@@ -1183,6 +1213,11 @@ opcodes, as well as some useful functions.</em></td></tr>
        <td>
        <a href="library/re.html#module-re"><tt class="xref">re</tt></a></td><td>
        <em>Regular expression operations.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ios/reminders.html#module-reminders"><tt class="xref">reminders</tt></a></td><td>
+       <em></em></td></tr>
      <tr>
        <td></td>
        <td>
@@ -1226,7 +1261,12 @@ fetchability of other URLs.</em></td></tr>
        <td></td>
        <td>
        <a href="ios/scene.html#module-scene"><tt class="xref">scene</tt></a></td><td>
-       <em>Provides 2D graphics and animation on iOS</em></td></tr>
+       <em>2D graphics and animation on iOS</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ios/scene_drawing.html#module-scene_drawing"><tt class="xref">scene_drawing</tt></a></td><td>
+       <em>Drawing Functions for the scene module</em></td></tr>
      <tr>
        <td></td>
        <td>
@@ -1311,7 +1351,7 @@ fetchability of other URLs.</em></td></tr>
        <td></td>
        <td>
        <a href="ios/sound.html#module-sound"><tt class="xref">sound</tt></a></td><td>
-       <em>Simple sound creation</em></td></tr>
+       <em>Sound effects and music playback</em></td></tr>
      <tr>
        <td></td>
        <td>
@@ -1467,6 +1507,11 @@ directory tree.</em></td></tr>
        <td>
        <a href="library/traceback.html#module-traceback"><tt class="xref">traceback</tt></a></td><td>
        <em>Print or retrieve a stack traceback.</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ios/twitter.html#module-twitter"><tt class="xref">twitter</tt></a></td><td>
+       <em></em></td></tr>
      <tr>
        <td></td>
        <td>
@@ -1690,12 +1735,12 @@ gzip.</em></td></tr>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    &copy; <a href="copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Dec 19, 2015.
     <a href="bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

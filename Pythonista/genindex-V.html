@@ -28,7 +28,7 @@
     <link rel="copyright" title="Copyright" href="copyright.html" />
     <link rel="top" title="Pythonista Documentation" href="index.html" />
     <link rel="shortcut icon" type="image/png" href="_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -37,11 +37,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -124,10 +124,11 @@
       <dt><a href="reference/compound_stmts.html#index-20">default parameter</a></dt>
       <dt><a href="library/stdtypes.html#index-2">truth</a></dt>
   </dl></dd>
-    <dt><a href="library/cookie.html#Cookie.Morsel.value">value (Cookie.Morsel attribute)</a></dt>
+    <dt><a href="ios/cb.html#cb.Characteristic.value">value (cb.Characteristic attribute)</a></dt>
     <dd><dl>
+      <dt><a href="library/cookie.html#Cookie.Morsel.value">(Cookie.Morsel attribute)</a></dt>
       <dt><a href="library/cookielib.html#cookielib.Cookie.value">(cookielib.Cookie attribute)</a></dt>
-      <dt><a href="ios/scene.html#scene.Animation.value">(scene.Animation attribute)</a></dt>
+      <dt><a href="library/ctypes.html#ctypes._SimpleCData.value">(ctypes._SimpleCData attribute)</a></dt>
       <dt><a href="ios/ui.html#ui.Slider.value">(ui.Slider attribute)</a></dt>
       <dt><a href="ios/ui.html#ui.Switch.value">(ui.Switch attribute)</a></dt>
       <dt><a href="library/xml.dom.html#xml.dom.Attr.value">(xml.dom.Attr attribute)</a></dt>
@@ -160,15 +161,15 @@
     <dt><a href="library/token.html#token.VBAR">VBAR (in module token)</a></dt>
     <dt><a href="library/token.html#token.VBAREQUAL">VBAREQUAL (in module token)</a></dt>
     <dt><a href="ios/contacts.html#contacts.Person.vcard">vcard (contacts.Person attribute)</a></dt>
-    <dt><a href="ios/scene.html#scene.Vector3">Vector3 (class in scene)</a></dt>
+    <dt><a href="ios/scene.html#scene.Vector2">Vector2 (class in scene)</a></dt>
     <dt><a href="library/re.html#re.VERBOSE">VERBOSE (in module re)</a></dt>
     <dt><a href="library/tabnanny.html#tabnanny.verbose">verbose (in module tabnanny)</a></dt>
     <dd><dl>
       <dt><a href="library/test.html#test.test_support.verbose">(in module test.test_support)</a></dt>
   </dl></dd>
+    <dt><a href="ios/requests.html#requests.Session.verify">verify (requests.Session attribute)</a></dt>
 </dl></td>
   <td style="width: 33%" valign="top"><dl>
-    <dt><a href="ios/requests.html#requests.Session.verify">verify (requests.Session attribute)</a></dt>
     <dt><a href="ios/Image.html#Image.Image.verify">verify() (Image.Image method)</a></dt>
     <dd><dl>
       <dt><a href="library/smtplib.html#smtplib.SMTP.verify">(smtplib.SMTP method)</a></dt>
@@ -192,6 +193,7 @@
     <dt><a href="library/string.html#string.Formatter.vformat">vformat() (string.Formatter method)</a></dt>
     <dt><a href="glossary.html#term-view">view</a></dt>
     <dt><a href="ios/ui.html#ui.View">View (class in ui)</a></dt>
+    <dt><a href="ios/scene.html#scene.Scene.view">view (scene.Scene attribute)</a></dt>
     <dt><a href="ios/bottle/api.html#bottle.view">view() (in module bottle)</a></dt>
     <dt><a href="library/stdtypes.html#dict.viewitems">viewitems() (dict method)</a></dt>
     <dt><a href="library/stdtypes.html#dict.viewkeys">viewkeys() (dict method)</a></dt>
@@ -211,12 +213,12 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    &copy; <a href="copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Dec 19, 2015.
     <a href="bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

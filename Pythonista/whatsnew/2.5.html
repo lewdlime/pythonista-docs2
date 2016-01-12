@@ -31,7 +31,7 @@
     <link rel="next" title="What’s New in Python 2.4" href="2.4.html" />
     <link rel="prev" title="What’s New in Python 2.6" href="2.6.html" />
     <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -40,11 +40,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -140,7 +140,7 @@ release schedule.</p>
 improvements. The library enhancements will be more important to Python&#8217;s user
 community, I think, because several widely-useful packages were added.  New
 modules include ElementTree for XML processing (<tt class="xref py py-mod docutils literal"><span class="pre">xml.etree</span></tt>),
-the SQLite database module (<tt class="xref py py-mod docutils literal"><span class="pre">sqlite</span></tt>), and the <tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt>
+the SQLite database module (<tt class="xref py py-mod docutils literal"><span class="pre">sqlite</span></tt>), and the <a class="reference internal" href="../library/ctypes.html#module-ctypes" title="ctypes: A foreign function library for Python."><tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt></a>
 module for calling C functions.</p>
 <p>The language changes are of middling significance.  Some pleasant new features
 were added, but most of them aren&#8217;t features that you&#8217;ll use every day.
@@ -1566,11 +1566,11 @@ and returns a new  <tt class="xref py py-class docutils literal"><span class="pr
 </ul>
 <div class="section" id="the-ctypes-package">
 <span id="module-ctypes"></span><h3>The ctypes package<a class="headerlink" href="#the-ctypes-package" title="Permalink to this headline">¶</a></h3>
-<p>The <tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt> package, written by Thomas Heller, has been added  to the
-standard library.  <tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt> lets you call arbitrary functions  in shared
+<p>The <a class="reference internal" href="../library/ctypes.html#module-ctypes" title="ctypes: A foreign function library for Python."><tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt></a> package, written by Thomas Heller, has been added  to the
+standard library.  <a class="reference internal" href="../library/ctypes.html#module-ctypes" title="ctypes: A foreign function library for Python."><tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt></a> lets you call arbitrary functions  in shared
 libraries or DLLs.  Long-time users may remember the <tt class="xref py py-mod docutils literal"><span class="pre">dl</span></tt> module, which
 provides functions for loading shared libraries and calling functions in them.
-The <tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt> package is much fancier.</p>
+The <a class="reference internal" href="../library/ctypes.html#module-ctypes" title="ctypes: A foreign function library for Python."><tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt></a> package is much fancier.</p>
 <p>To load a shared library or DLL, you must create an instance of the
 <tt class="xref py py-class docutils literal"><span class="pre">CDLL</span></tt> class and provide the name or path of the shared library or DLL.
 Once that&#8217;s done, you can call arbitrary functions by accessing them as
@@ -1607,7 +1607,7 @@ attribute of the function object to  change this:</p>
 <span class="go">2.71828</span>
 </pre></div>
 </div>
-<p><tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt> also provides a wrapper for Python&#8217;s C API  as the
+<p><a class="reference internal" href="../library/ctypes.html#module-ctypes" title="ctypes: A foreign function library for Python."><tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt></a> also provides a wrapper for Python&#8217;s C API  as the
 <tt class="docutils literal"><span class="pre">ctypes.pythonapi</span></tt> object.  This object does <em>not</em>  release the global
 interpreter lock before calling a function, because the lock must be held when
 calling into the interpreter&#8217;s code.   There&#8217;s a <tt class="xref py py-class docutils literal"><span class="pre">py_object()</span></tt> type
@@ -1622,18 +1622,18 @@ constructor that will create a  <tt class="xref c c-type docutils literal"><span
 </div>
 <p>Don&#8217;t forget to use <tt class="xref py py-class docutils literal"><span class="pre">py_object()</span></tt>; if it&#8217;s omitted you end  up with a
 segmentation fault.</p>
-<p><tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt> has been around for a while, but people still write  and
+<p><a class="reference internal" href="../library/ctypes.html#module-ctypes" title="ctypes: A foreign function library for Python."><tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt></a> has been around for a while, but people still write  and
 distribution hand-coded extension modules because you can&#8217;t rely on
-<tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt> being present. Perhaps developers will begin to write  Python
-wrappers atop a library accessed through <tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt> instead of extension
-modules, now that <tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt> is included with core Python.</p>
+<a class="reference internal" href="../library/ctypes.html#module-ctypes" title="ctypes: A foreign function library for Python."><tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt></a> being present. Perhaps developers will begin to write  Python
+wrappers atop a library accessed through <a class="reference internal" href="../library/ctypes.html#module-ctypes" title="ctypes: A foreign function library for Python."><tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt></a> instead of extension
+modules, now that <a class="reference internal" href="../library/ctypes.html#module-ctypes" title="ctypes: A foreign function library for Python."><tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt></a> is included with core Python.</p>
 <div class="admonition-see-also admonition seealso">
 <p class="first admonition-title">See also</p>
 <dl class="docutils">
 <dt><a class="reference external" href="http://starship.python.net/crew/theller/ctypes/">http://starship.python.net/crew/theller/ctypes/</a></dt>
 <dd>The ctypes web page, with a tutorial, reference, and FAQ.</dd>
 </dl>
-<p class="last">The documentation  for the <tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt> module.</p>
+<p class="last">The documentation  for the <a class="reference internal" href="../library/ctypes.html#module-ctypes" title="ctypes: A foreign function library for Python."><tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt></a> module.</p>
 </div>
 </div>
 <div class="section" id="the-elementtree-package">
@@ -2125,12 +2125,12 @@ Rovner, Scott Weikart, Barry Warsaw, Thomas Wouters.</p>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Dec 02, 2015.
     <a href="../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

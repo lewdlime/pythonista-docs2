@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.polynomial.polynomial.polyval2d" href="numpy.polynomial.polynomial.polyval2d.html" />
     <link rel="prev" title="numpy.polynomial.polynomial.Polynomial.truncate" href="numpy.polynomial.polynomial.Polynomial.truncate.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -126,7 +126,7 @@
 <dd><p>Evaluate a polynomial at points x.</p>
 <p>If <em class="xref py py-obj">c</em> is of length <em class="xref py py-obj">n + 1</em>, this function returns the value</p>
 <div class="math">
-<p><img src="../../_images/math/fb9b3a18a47e4ad4c9e895dcdfb13bb953ee272b.png" alt="p(x) = c_0 + c_1 * x + ... + c_n * x^n"/></p>
+<p><span class="math">p(x) = c_0 + c_1 * x + ... + c_n * x^n</span></p>
 </div><p>The parameter <em class="xref py py-obj">x</em> is converted to an array only if it is a tuple or a
 list, otherwise it is treated as a scalar. In either case, either <em class="xref py py-obj">x</em>
 or its elements must support multiplication and addition both with
@@ -222,7 +222,7 @@ when <em class="xref py py-obj">c</em> is multidimensional. The default value is
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.linalg.tensorinv" href="numpy.linalg.tensorinv.html" />
     <link rel="prev" title="numpy.linalg.inv" href="numpy.linalg.inv.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -158,16 +158,16 @@ is <em class="xref py py-obj">B</em>.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The pseudo-inverse of a matrix A, denoted <img class="math" src="../../_images/math/c36fb0deb8a7c7db4c8b8ff4dfad03e40150c756.png" alt="A^+" style="vertical-align: 0px"/>, is
+<p>The pseudo-inverse of a matrix A, denoted <span class="math">A^+</span>, is
 defined as: &#8220;the matrix that &#8216;solves&#8217; [the least-squares problem]
-<img class="math" src="../../_images/math/836bea12aabbc1e64e6f47057cca0e30e76968ec.png" alt="Ax = b" style="vertical-align: 0px"/>,&#8221; i.e., if <img class="math" src="../../_images/math/2ef405fabb35c56f6831fc0d7da77b44f39dd52d.png" alt="\bar{x}" style="vertical-align: 0px"/> is said solution, then
-<img class="math" src="../../_images/math/c36fb0deb8a7c7db4c8b8ff4dfad03e40150c756.png" alt="A^+" style="vertical-align: 0px"/> is that matrix such that <img class="math" src="../../_images/math/8a927953157641e1a0e422de6ed62c3dd142c3ab.png" alt="\bar{x} = A^+b" style="vertical-align: 0px"/>.</p>
-<p>It can be shown that if <img class="math" src="../../_images/math/e985856f5a67699b320fd6c1920efc5512a40bd7.png" alt="Q_1 \Sigma Q_2^T = A" style="vertical-align: -4px"/> is the singular
+<span class="math">Ax = b</span>,&#8221; i.e., if <span class="math">\bar{x}</span> is said solution, then
+<span class="math">A^+</span> is that matrix such that <span class="math">\bar{x} = A^+b</span>.</p>
+<p>It can be shown that if <span class="math">Q_1 \Sigma Q_2^T = A</span> is the singular
 value decomposition of A, then
-<img class="math" src="../../_images/math/ba61f05aa6c753e0816b3cbff7063f9a6728d4a7.png" alt="A^+ = Q_2 \Sigma^+ Q_1^T" style="vertical-align: -5px"/>, where <img class="math" src="../../_images/math/c41c0833b6729dc530ec01afec55a667221a56ff.png" alt="Q_{1,2}" style="vertical-align: -4px"/> are
-orthogonal matrices, <img class="math" src="../../_images/math/d96c898e14704738c2a866adff83537ba4a6b1f4.png" alt="\Sigma" style="vertical-align: 0px"/> is a diagonal matrix consisting
+<span class="math">A^+ = Q_2 \Sigma^+ Q_1^T</span>, where <span class="math">Q_{1,2}</span> are
+orthogonal matrices, <span class="math">\Sigma</span> is a diagonal matrix consisting
 of A&#8217;s so-called singular values, (followed, typically, by
-zeros), and then <img class="math" src="../../_images/math/47e8dd462a4e8572401586ac4e8cdbd2766ac8d1.png" alt="\Sigma^+" style="vertical-align: 0px"/> is simply the diagonal matrix
+zeros), and then <span class="math">\Sigma^+</span> is simply the diagonal matrix
 consisting of the reciprocals of A&#8217;s singular values
 (again, followed by zeros). <a class="reference internal" href="#r40" id="id1">[R40]</a></p>
 <p class="rubric">References</p>
@@ -204,7 +204,7 @@ FL, Academic Press, Inc., 1980, pp. 139-142.</td></tr>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

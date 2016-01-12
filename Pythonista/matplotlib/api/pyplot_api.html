@@ -29,60 +29,8 @@
     <link rel="next" title="sankey" href="sankey_api.html" />
     <link rel="prev" title="path" href="path_api.html" />
     <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
-    <style>
-    @media only screen and (max-device-width : 320px) {
-        .pythonista-ipad-only {
-            display: none;
-        }
-    }
-    @media only screen and (min-device-width : 321px) {
-        .pythonista-iphone-only {
-            display: none;
-        }
-    }
-    p, li {
-        -webkit-hyphens: auto;
-    }
-    .pythonista-code-header {
-        background-color: #f2f2f2;
-        border-style: solid;
-        border-width: 1px 1px 0 1px;
-        border-color: #cdcdcd;
-        margin-bottom: -16px;
-        padding: 5px;
-        border-radius: 6px 6px 0 0;
-    }
-    .pythonista-button {
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fdfdfd), color-stop(49%,#e2e2e2), color-stop(50%,#cecece), color-stop(100%,#dfdfdf));
-        border: 1px solid #959595;
-        box-shadow: rgba(255, 255, 255, 0.75) 0 1px 0;
-        text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0;
-        margin-right: 10px;
-        
-        font-family: Helvetica;
-        font-weight: bold;
-        font-size: 14px;  
-        padding: 5px;
-        border-radius: 4px;
-        display: inline-block;
-        color: #333;
-        
-        cursor: default;
-        
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        -webkit-user-select: none;
-    }
-    .pythonista-button:active {
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cacaca), color-stop(49%,#c9c9c9), color-stop(50%,#bebebe), color-stop(100%,#c1c1c1));
-        
-    }
-    
-    pre {
-        background-color: #fafafa;
-        border: 1px solid #cdcdcd;
-    }
-    </style>
+    <link rel="stylesheet" href="../_static/pythonista.css" type="text/css" />
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -91,11 +39,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -2640,7 +2588,7 @@ use, for example:</p>
 
 <dl class="function">
 <dt id="matplotlib.pyplot.cohere">
-<tt class="descclassname">matplotlib.pyplot.</tt><tt class="descname">cohere</tt><big>(</big><em>x</em>, <em>y</em>, <em>NFFT=256</em>, <em>Fs=2</em>, <em>Fc=0</em>, <em>detrend=&lt;function detrend_none at 0x10bf30938&gt;</em>, <em>window=&lt;function window_hanning at 0x10bf0ea28&gt;</em>, <em>noverlap=0</em>, <em>pad_to=None</em>, <em>sides='default'</em>, <em>scale_by_freq=None</em>, <em>hold=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#matplotlib.pyplot.cohere" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">matplotlib.pyplot.</tt><tt class="descname">cohere</tt><big>(</big><em>x</em>, <em>y</em>, <em>NFFT=256</em>, <em>Fs=2</em>, <em>Fc=0</em>, <em>detrend=&lt;function detrend_none at 0x10a77d5f0&gt;</em>, <em>window=&lt;function window_hanning at 0x10a7646e0&gt;</em>, <em>noverlap=0</em>, <em>pad_to=None</em>, <em>sides='default'</em>, <em>scale_by_freq=None</em>, <em>hold=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#matplotlib.pyplot.cohere" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot the coherence between <em>x</em> and <em>y</em>.</p>
 <p>Call signature:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">cohere</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">NFFT</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">Fs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">Fc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">detrend</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">detrend_none</span><span class="p">,</span>
@@ -3625,7 +3573,7 @@ See help(colormaps) for more information</p>
 
 <dl class="function">
 <dt id="matplotlib.pyplot.csd">
-<tt class="descclassname">matplotlib.pyplot.</tt><tt class="descname">csd</tt><big>(</big><em>x</em>, <em>y</em>, <em>NFFT=256</em>, <em>Fs=2</em>, <em>Fc=0</em>, <em>detrend=&lt;function detrend_none at 0x10bf30938&gt;</em>, <em>window=&lt;function window_hanning at 0x10bf0ea28&gt;</em>, <em>noverlap=0</em>, <em>pad_to=None</em>, <em>sides='default'</em>, <em>scale_by_freq=None</em>, <em>hold=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#matplotlib.pyplot.csd" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">matplotlib.pyplot.</tt><tt class="descname">csd</tt><big>(</big><em>x</em>, <em>y</em>, <em>NFFT=256</em>, <em>Fs=2</em>, <em>Fc=0</em>, <em>detrend=&lt;function detrend_none at 0x10a77d5f0&gt;</em>, <em>window=&lt;function window_hanning at 0x10a7646e0&gt;</em>, <em>noverlap=0</em>, <em>pad_to=None</em>, <em>sides='default'</em>, <em>scale_by_freq=None</em>, <em>hold=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#matplotlib.pyplot.csd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot cross-spectral density.</p>
 <p>Call signature:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">csd</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">NFFT</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">Fs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">Fc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">detrend</span><span class="o">=</span><span class="n">mlab</span><span class="o">.</span><span class="n">detrend_none</span><span class="p">,</span>
@@ -5397,7 +5345,7 @@ set of gridlines are drawn.</p>
 
 <dl class="function">
 <dt id="matplotlib.pyplot.hexbin">
-<tt class="descclassname">matplotlib.pyplot.</tt><tt class="descname">hexbin</tt><big>(</big><em>x</em>, <em>y</em>, <em>C=None</em>, <em>gridsize=100</em>, <em>bins=None</em>, <em>xscale='linear'</em>, <em>yscale='linear'</em>, <em>extent=None</em>, <em>cmap=None</em>, <em>norm=None</em>, <em>vmin=None</em>, <em>vmax=None</em>, <em>alpha=None</em>, <em>linewidths=None</em>, <em>edgecolors='none'</em>, <em>reduce_C_function=&lt;function mean at 0x10afef5f0&gt;</em>, <em>mincnt=None</em>, <em>marginals=False</em>, <em>hold=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#matplotlib.pyplot.hexbin" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">matplotlib.pyplot.</tt><tt class="descname">hexbin</tt><big>(</big><em>x</em>, <em>y</em>, <em>C=None</em>, <em>gridsize=100</em>, <em>bins=None</em>, <em>xscale='linear'</em>, <em>yscale='linear'</em>, <em>extent=None</em>, <em>cmap=None</em>, <em>norm=None</em>, <em>vmin=None</em>, <em>vmax=None</em>, <em>alpha=None</em>, <em>linewidths=None</em>, <em>edgecolors='none'</em>, <em>reduce_C_function=&lt;function mean at 0x1096690c8&gt;</em>, <em>mincnt=None</em>, <em>marginals=False</em>, <em>hold=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#matplotlib.pyplot.hexbin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make a hexagonal binning plot.</p>
 <p>Call signature:</p>
 <div class="highlight-python"><div class="highlight"><pre>hexbin(x, y, C = None, gridsize = 100, bins = None,
@@ -7801,7 +7749,7 @@ See help(colormaps) for more information</p>
 
 <dl class="function">
 <dt id="matplotlib.pyplot.psd">
-<tt class="descclassname">matplotlib.pyplot.</tt><tt class="descname">psd</tt><big>(</big><em>x</em>, <em>NFFT=256</em>, <em>Fs=2</em>, <em>Fc=0</em>, <em>detrend=&lt;function detrend_none at 0x10bf30938&gt;</em>, <em>window=&lt;function window_hanning at 0x10bf0ea28&gt;</em>, <em>noverlap=0</em>, <em>pad_to=None</em>, <em>sides='default'</em>, <em>scale_by_freq=None</em>, <em>hold=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#matplotlib.pyplot.psd" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">matplotlib.pyplot.</tt><tt class="descname">psd</tt><big>(</big><em>x</em>, <em>NFFT=256</em>, <em>Fs=2</em>, <em>Fc=0</em>, <em>detrend=&lt;function detrend_none at 0x10a77d5f0&gt;</em>, <em>window=&lt;function window_hanning at 0x10a7646e0&gt;</em>, <em>noverlap=0</em>, <em>pad_to=None</em>, <em>sides='default'</em>, <em>scale_by_freq=None</em>, <em>hold=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#matplotlib.pyplot.psd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot the power spectral density.</p>
 <p>Call signature:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">psd</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">NFFT</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">Fs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">Fc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">detrend</span><span class="o">=</span><span class="n">mlab</span><span class="o">.</span><span class="n">detrend_none</span><span class="p">,</span>
@@ -9063,7 +9011,7 @@ described above.</p>
 
 <dl class="function">
 <dt id="matplotlib.pyplot.specgram">
-<tt class="descclassname">matplotlib.pyplot.</tt><tt class="descname">specgram</tt><big>(</big><em>x</em>, <em>NFFT=256</em>, <em>Fs=2</em>, <em>Fc=0</em>, <em>detrend=&lt;function detrend_none at 0x10bf30938&gt;</em>, <em>window=&lt;function window_hanning at 0x10bf0ea28&gt;</em>, <em>noverlap=128</em>, <em>cmap=None</em>, <em>xextent=None</em>, <em>pad_to=None</em>, <em>sides='default'</em>, <em>scale_by_freq=None</em>, <em>hold=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#matplotlib.pyplot.specgram" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">matplotlib.pyplot.</tt><tt class="descname">specgram</tt><big>(</big><em>x</em>, <em>NFFT=256</em>, <em>Fs=2</em>, <em>Fc=0</em>, <em>detrend=&lt;function detrend_none at 0x10a77d5f0&gt;</em>, <em>window=&lt;function window_hanning at 0x10a7646e0&gt;</em>, <em>noverlap=128</em>, <em>cmap=None</em>, <em>xextent=None</em>, <em>pad_to=None</em>, <em>sides='default'</em>, <em>scale_by_freq=None</em>, <em>hold=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#matplotlib.pyplot.specgram" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot a spectrogram.</p>
 <p>Call signature:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">specgram</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">NFFT</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">Fs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">Fc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">detrend</span><span class="o">=</span><span class="n">mlab</span><span class="o">.</span><span class="n">detrend_none</span><span class="p">,</span>
@@ -9197,7 +9145,7 @@ See help(colormaps) for more information</p>
 </div>
 <p><tt class="docutils literal"><span class="pre">spy(Z)</span></tt> plots the sparsity pattern of the 2-D array <em>Z</em>.</p>
 <p>If <em>precision</em> is 0, any non-zero value will be plotted;
-else, values of <img src="../_images/mathmpl/math-102fd18c41.png" style="position: relative; bottom: -7px"/> will be plotted.</p>
+else, values of <img src="../_images/mathmpl/math-102fd18c41.png" style="position: relative; bottom: -8px"/> will be plotted.</p>
 <p>For <tt class="xref py py-class docutils literal"><span class="pre">scipy.sparse.spmatrix</span></tt> instances, there is a
 special case: if <em>precision</em> is &#8216;present&#8217;, any value present in
 the array will be plotted, even if it is identically zero.</p>
@@ -10593,7 +10541,7 @@ See help(colormaps) for more information</p>
 
 <dl class="function">
 <dt id="matplotlib.pyplot.xcorr">
-<tt class="descclassname">matplotlib.pyplot.</tt><tt class="descname">xcorr</tt><big>(</big><em>x</em>, <em>y</em>, <em>normed=True</em>, <em>detrend=&lt;function detrend_none at 0x10bf30938&gt;</em>, <em>usevlines=True</em>, <em>maxlags=10</em>, <em>hold=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#matplotlib.pyplot.xcorr" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">matplotlib.pyplot.</tt><tt class="descname">xcorr</tt><big>(</big><em>x</em>, <em>y</em>, <em>normed=True</em>, <em>detrend=&lt;function detrend_none at 0x10a77d5f0&gt;</em>, <em>usevlines=True</em>, <em>maxlags=10</em>, <em>hold=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#matplotlib.pyplot.xcorr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot the cross correlation between <em>x</em> and <em>y</em>.</p>
 <p>Call signature:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">xcorr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">detrend</span><span class="o">=</span><span class="n">mlab</span><span class="o">.</span><span class="n">detrend_none</span><span class="p">,</span>
@@ -10946,7 +10894,7 @@ properties. For example, to rotate long labels:</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

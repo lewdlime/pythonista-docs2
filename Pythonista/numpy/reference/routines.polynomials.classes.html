@@ -27,7 +27,7 @@
     <link rel="next" title="Polynomial Module (numpy.polynomial.polynomial)" href="routines.polynomials.polynomial.html" />
     <link rel="prev" title="Polynomial Package" href="routines.polynomials.package.html" />
     <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -157,18 +157,18 @@
 basis functions multiplied by coefficients. For instance, a power series
 looks like</p>
 <div class="math">
-<p><img src="../_images/math/dedebc497a90d67c63b4e9e12355180a29a24412.png" alt="p(x) = 1 + 2x + 3x^2"/></p>
-</div><p>and has coefficients <img class="math" src="../_images/math/72fd1fb9acb012efda310c76f34f50bd3cf0307d.png" alt="[1, 2, 3]" style="vertical-align: -4px"/>. The Chebyshev series with the
+<p><span class="math">p(x) = 1 + 2x + 3x^2</span></p>
+</div><p>and has coefficients <span class="math">[1, 2, 3]</span>. The Chebyshev series with the
 same coefficients looks like</p>
 <div class="math">
-<p><img src="../_images/math/428fb1d74f9399a642115aa11d8ad0c853df2b98.png" alt="p(x) = 1 T_0(x) + 2 T_1(x) + 3 T_2(x)"/></p>
+<p><span class="math">p(x) = 1 T_0(x) + 2 T_1(x) + 3 T_2(x)</span></p>
 </div><p>and more generally</p>
 <div class="math">
-<p><img src="../_images/math/b5f1a274501e678e222092e002f8754e947ce40d.png" alt="p(x) = \sum_{i=0}^n c_i T_i(x)"/></p>
-</div><p>where in this case the <img class="math" src="../_images/math/114bd703acc57874f4251ee5452c3d0ad8003eb6.png" alt="T_n" style="vertical-align: -2px"/> are the Chebyshev functions of
-degree <img class="math" src="../_images/math/b1f5ca5a538abe6036ed478902bb5a03ef05f0c2.png" alt="n" style="vertical-align: 0px"/>, but could just as easily be the basis functions of
+<p><span class="math">p(x) = \sum_{i=0}^n c_i T_i(x)</span></p>
+</div><p>where in this case the <span class="math">T_n</span> are the Chebyshev functions of
+degree <span class="math">n</span>, but could just as easily be the basis functions of
 any of the other classes. The convention for all the classes is that
-the coefficient <img class="math" src="../_images/math/e44617b3f45318515dc9b8be2551567c5de3f021.png" alt="c[i]" style="vertical-align: -4px"/> goes with the basis function of degree i.</p>
+the coefficient <span class="math">c[i]</span> goes with the basis function of degree i.</p>
 <p>All of the classes have the same methods, and especially they implement the
 Python numeric operators +, -, *, //, %, divmod, **, ==,
 and !=. The last two can be a bit problematic due to floating point
@@ -309,7 +309,7 @@ and window casting:</p>
 </pre></div>
 </div>
 <p>Which gives the polynomial <em class="xref py py-obj">p</em> in Chebyshev form. This works because
-<img class="math" src="../_images/math/1daa9ed65f94b79075ac6a9f7fb89ebee646c021.png" alt="T_1(x) = x" style="vertical-align: -4px"/> and substituting <img class="math" src="../_images/math/a6345e315fb341b8e67520f432c92fd4fdf86262.png" alt="x" style="vertical-align: 0px"/> for <img class="math" src="../_images/math/a6345e315fb341b8e67520f432c92fd4fdf86262.png" alt="x" style="vertical-align: 0px"/> doesn&#8217;t change
+<span class="math">T_1(x) = x</span> and substituting <span class="math">x</span> for <span class="math">x</span> doesn&#8217;t change
 the original polynomial. However, all the multiplications and divisions
 will be done using Chebyshev series, hence the type of the result.</p>
 </div>
@@ -466,7 +466,7 @@ illustrated below for a fit to a noisy sine curve.</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

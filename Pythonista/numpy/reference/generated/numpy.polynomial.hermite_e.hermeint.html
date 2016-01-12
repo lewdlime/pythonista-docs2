@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.polynomial.hermite_e.hermeadd" href="numpy.polynomial.hermite_e.hermeadd.html" />
     <link rel="prev" title="numpy.polynomial.hermite_e.hermeder" href="numpy.polynomial.hermite_e.hermeder.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -197,9 +197,9 @@ before the integration constant is added. (Default: 1)</p>
 <p class="rubric">Notes</p>
 <p>Note that the result of each integration is <em>multiplied</em> by <em class="xref py py-obj">scl</em>.
 Why is this important to note?  Say one is making a linear change of
-variable <img class="math" src="../../_images/math/0fd237ce10d293b0e64ed3fb4b45e59ad541a794.png" alt="u = ax + b" style="vertical-align: -1px"/> in an integral relative to <em class="xref py py-obj">x</em>.  Then
+variable <span class="math">u = ax + b</span> in an integral relative to <em class="xref py py-obj">x</em>.  Then
 .. math::<em class="xref py py-obj">dx = du/a</em>, so one will need to set <em class="xref py py-obj">scl</em> equal to
-<img class="math" src="../../_images/math/991aa4b1f8dc7e87dc834a2b161a376e1b0d1e7e.png" alt="1/a" style="vertical-align: -4px"/> - perhaps not what one would have first thought.</p>
+<span class="math">1/a</span> - perhaps not what one would have first thought.</p>
 <p>Also note that, in general, the result of integrating a C-series needs
 to be &#8220;reprojected&#8221; onto the C-series basis set.  Thus, typically,
 the result of this function is &#8220;unintuitive,&#8221; albeit correct; see
@@ -233,7 +233,7 @@ Examples section below.</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

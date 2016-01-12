@@ -31,7 +31,7 @@
     <link rel="next" title="20.2. cgi — Common Gateway Interface support" href="cgi.html" />
     <link rel="prev" title="20. Internet Protocols and Support" href="internet.html" />
     <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -40,11 +40,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -156,7 +156,10 @@ automatically stops the script.</p>
 <dl class="function">
 <dt id="webbrowser.can_open">
 <tt class="descclassname">webbrowser.</tt><tt class="descname">can_open</tt><big>(</big><em>url</em><big>)</big><a class="headerlink" href="#webbrowser.can_open" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return whether the given URL can be opened in the browser or any other installed app. This is primarily useful for checking if a particular third-party app is installed on the device.</p>
+<dd><div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This function is deprecated and should not be used. For backwards-compatibility reasons, it will return <cite>True</cite> for any well-formed URL, regardless of whether an app is installed that can handle it. This change was necessary because of privacy-related changes in iOS 9.</p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -174,12 +177,12 @@ automatically stops the script.</p>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Dec 02, 2015.
     <a href="../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

@@ -28,7 +28,7 @@
     <link rel="copyright" title="Copyright" href="../copyright.html" />
     <link rel="top" title="Pythonista Documentation" href="../index.html" />
     <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -37,11 +37,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -2233,6 +2233,12 @@
 <dd><p>Return the size of the main screen as a <tt class="docutils literal"><span class="pre">(width,</span> <span class="pre">height)</span></tt> tuple (in points).</p>
 </dd></dl>
 
+<dl class="function">
+<dt id="ui.parse_color">
+<tt class="descclassname">ui.</tt><tt class="descname">parse_color</tt><big>(</big><em>color</em><big>)</big><a class="headerlink" href="#ui.parse_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a color from various formats to a (r, g, b, a) tuple. Most commonly, <cite>color</cite> will be a hex string (e.g. &#8216;#ff0000&#8217;) or a CSS color name (e.g. &#8216;red&#8217;).</p>
+</dd></dl>
+
 </div>
 <div class="section" id="drawing-functions">
 <h3>Drawing Functions<a class="headerlink" href="#drawing-functions" title="Permalink to this headline">¶</a></h3>
@@ -2831,12 +2837,12 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Dec 02, 2015.
     <a href="../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

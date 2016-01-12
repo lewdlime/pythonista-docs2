@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.histogramdd" href="numpy.histogramdd.html" />
     <link rel="prev" title="numpy.histogram" href="numpy.histogram.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -202,8 +202,8 @@ histogrammed along the second dimension.</p>
 <p>When <em class="xref py py-obj">normed</em> is True, then the returned histogram is the sample density,
 defined such that:</p>
 <div class="math">
-<p><img src="../../_images/math/1f1d947fb955541dfc36a4c826d5f69f414e4ae9.png" alt="\sum_{i=0}^{nx-1} \sum_{j=0}^{ny-1} H_{i,j} \Delta x_i \Delta y_j = 1"/></p>
-</div><p>where <em class="xref py py-obj">H</em> is the histogram array and <img class="math" src="../../_images/math/8dee28c1a3714da74cd5b777f670ae1efc2f9cda.png" alt="\Delta x_i \Delta y_i" style="vertical-align: -3px"/>
+<p><span class="math">\sum_{i=0}^{nx-1} \sum_{j=0}^{ny-1} H_{i,j} \Delta x_i \Delta y_j = 1</span></p>
+</div><p>where <em class="xref py py-obj">H</em> is the histogram array and <span class="math">\Delta x_i \Delta y_i</span>
 the area of bin <tt class="docutils literal"><span class="pre">{i,j}</span></tt>.</p>
 <p>Please note that the histogram does not follow the Cartesian convention
 where <em class="xref py py-obj">x</em> values are on the abcissa and <em class="xref py py-obj">y</em> values on the ordinate axis.
@@ -298,7 +298,7 @@ edges:</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

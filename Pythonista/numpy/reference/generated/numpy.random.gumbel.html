@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.random.hypergeometric" href="numpy.random.hypergeometric.html" />
     <link rel="prev" title="numpy.random.geometric" href="numpy.random.geometric.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -169,9 +169,9 @@ special case of the Extreme Value Type I distribution for maximums from
 distributions with &#8220;exponential-like&#8221; tails.</p>
 <p>The probability density for the Gumbel distribution is</p>
 <div class="math">
-<p><img src="../../_images/math/fac0e54edf43615d84b2ccfcbd67579ff369733f.png" alt="p(x) = \frac{e^{-(x - \mu)/ \beta}}{\beta} e^{ -e^{-(x - \mu)/
-\beta}},"/></p>
-</div><p>where <img class="math" src="../../_images/math/fb6d665bbe0c01fc1af5c5f5fa7df40dc71331d7.png" alt="\mu" style="vertical-align: -3px"/> is the mode, a location parameter, and <img class="math" src="../../_images/math/af66ae03768d95d441cd1f37a0692f006344742c.png" alt="\beta" style="vertical-align: -3px"/> is
+<p><span class="math">p(x) = \frac{e^{-(x - \mu)/ \beta}}{\beta} e^{ -e^{-(x - \mu)/
+\beta}},</span></p>
+</div><p>where <span class="math">\mu</span> is the mode, a location parameter, and <span class="math">\beta</span> is
 the scale parameter.</p>
 <p>The Gumbel (named for German mathematician Emil Julius Gumbel) was used
 very early in the hydrology literature, for modeling the occurrence of
@@ -184,8 +184,8 @@ of extreme events.</p>
 <p>It is one of a class of extreme value distributions, the Generalized
 Extreme Value (GEV) distributions, which also includes the Weibull and
 Frechet.</p>
-<p>The function has a mean of <img class="math" src="../../_images/math/efdc9203e8b3592a49d9b1f51abb4e66d91185c0.png" alt="\mu + 0.57721\beta" style="vertical-align: -3px"/> and a variance of
-<img class="math" src="../../_images/math/516f140f378b591b0bfffabb1ae75aef1a4e52ac.png" alt="\frac{\pi^2}{6}\beta^2" style="vertical-align: -5px"/>.</p>
+<p>The function has a mean of <span class="math">\mu + 0.57721\beta</span> and a variance of
+<span class="math">\frac{\pi^2}{6}\beta^2</span>.</p>
 <p class="rubric">References</p>
 <p>Gumbel, E. J., <em>Statistics of Extremes</em>, New York: Columbia University
 Press, 1958.</p>
@@ -251,7 +251,7 @@ and compare to a Gaussian:</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

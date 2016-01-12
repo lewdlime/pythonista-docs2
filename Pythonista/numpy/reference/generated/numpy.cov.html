@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.histogram" href="numpy.histogram.html" />
     <link rel="prev" title="numpy.correlate" href="numpy.correlate.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -123,10 +123,10 @@
 <tt class="descclassname">numpy.</tt><tt class="descname">cov</tt><big>(</big><em>m</em>, <em>y=None</em>, <em>rowvar=1</em>, <em>bias=0</em>, <em>ddof=None</em><big>)</big><a class="reference external" href="http://github.com/numpy/numpy/blob/v1.8.0/numpy/lib/function_base.py#L1648"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.cov" title="Permalink to this definition">¶</a></dt>
 <dd><p>Estimate a covariance matrix, given data.</p>
 <p>Covariance indicates the level to which two variables vary together.
-If we examine N-dimensional samples, <img class="math" src="../../_images/math/8d14fb48024fc0aaeed58a8b7e012bf142402c41.png" alt="X = [x_1, x_2, ... x_N]^T" style="vertical-align: -4px"/>,
-then the covariance matrix element <img class="math" src="../../_images/math/7cd8b54c3097c3343ae058f6be2e7e8888f8cff8.png" alt="C_{ij}" style="vertical-align: -4px"/> is the covariance of
-<img class="math" src="../../_images/math/8f36430327e350fd5583002c178ca1949d485b21.png" alt="x_i" style="vertical-align: -2px"/> and <img class="math" src="../../_images/math/fd3512e9f7dec13e6defb1a51b94a1e31a8eca67.png" alt="x_j" style="vertical-align: -4px"/>. The element <img class="math" src="../../_images/math/114c5f45409813eddd95cb59fe4d7e618f417d23.png" alt="C_{ii}" style="vertical-align: -2px"/> is the variance
-of <img class="math" src="../../_images/math/8f36430327e350fd5583002c178ca1949d485b21.png" alt="x_i" style="vertical-align: -2px"/>.</p>
+If we examine N-dimensional samples, <span class="math">X = [x_1, x_2, ... x_N]^T</span>,
+then the covariance matrix element <span class="math">C_{ij}</span> is the covariance of
+<span class="math">x_i</span> and <span class="math">x_j</span>. The element <span class="math">C_{ii}</span> is the variance
+of <span class="math">x_i</span>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -183,7 +183,7 @@ the number of observations; this overrides the value implied by
 </dl>
 </div>
 <p class="rubric">Examples</p>
-<p>Consider two variables, <img class="math" src="../../_images/math/5e127c8b3220e24da5a3dc9bfcb5d64ca53cb594.png" alt="x_0" style="vertical-align: -2px"/> and <img class="math" src="../../_images/math/9655d43328526b2b7a337dba3e45750ed2a448e6.png" alt="x_1" style="vertical-align: -3px"/>, which
+<p>Consider two variables, <span class="math">x_0</span> and <span class="math">x_1</span>, which
 correlate perfectly, but in opposite directions:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
@@ -191,15 +191,15 @@ correlate perfectly, but in opposite directions:</p>
 <span class="go">       [2, 1, 0]])</span>
 </pre></div>
 </div>
-<p>Note how <img class="math" src="../../_images/math/5e127c8b3220e24da5a3dc9bfcb5d64ca53cb594.png" alt="x_0" style="vertical-align: -2px"/> increases while <img class="math" src="../../_images/math/9655d43328526b2b7a337dba3e45750ed2a448e6.png" alt="x_1" style="vertical-align: -3px"/> decreases. The covariance
+<p>Note how <span class="math">x_0</span> increases while <span class="math">x_1</span> decreases. The covariance
 matrix shows this clearly:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="go">array([[ 1., -1.],</span>
 <span class="go">       [-1.,  1.]])</span>
 </pre></div>
 </div>
-<p>Note that element <img class="math" src="../../_images/math/00c3354e39e0ddafa0166158dc0d48f016b514d5.png" alt="C_{0,1}" style="vertical-align: -4px"/>, which shows the correlation between
-<img class="math" src="../../_images/math/5e127c8b3220e24da5a3dc9bfcb5d64ca53cb594.png" alt="x_0" style="vertical-align: -2px"/> and <img class="math" src="../../_images/math/9655d43328526b2b7a337dba3e45750ed2a448e6.png" alt="x_1" style="vertical-align: -3px"/>, is negative.</p>
+<p>Note that element <span class="math">C_{0,1}</span>, which shows the correlation between
+<span class="math">x_0</span> and <span class="math">x_1</span>, is negative.</p>
 <p>Further, note how <em class="xref py py-obj">x</em> and <em class="xref py py-obj">y</em> are combined:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">2.1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>  <span class="mf">4.3</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span>  <span class="mf">1.1</span><span class="p">,</span>  <span class="mf">0.12</span><span class="p">]</span>
@@ -229,7 +229,7 @@ matrix shows this clearly:</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

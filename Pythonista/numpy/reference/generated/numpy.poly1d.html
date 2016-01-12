@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.poly1d.coeffs" href="numpy.poly1d.coeffs.html" />
     <link rel="prev" title="numpy.RankWarning" href="numpy.RankWarning.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -136,8 +136,8 @@ form in code (see Examples).</p>
 the value of the second parameter is True, the polynomial&#8217;s
 roots (values where the polynomial evaluates to 0).  For example,
 <tt class="docutils literal"><span class="pre">poly1d([1,</span> <span class="pre">2,</span> <span class="pre">3])</span></tt> returns an object that represents
-<img class="math" src="../../_images/math/d05f298257f5083394777a2e7f94d1c29117a893.png" alt="x^2 + 2x + 3" style="vertical-align: -1px"/>, whereas <tt class="docutils literal"><span class="pre">poly1d([1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">True)</span></tt> returns
-one that represents <img class="math" src="../../_images/math/ad47d4d26a8cfe688df179057f5d78452296ad5b.png" alt="(x-1)(x-2)(x-3) = x^3 - 6x^2 + 11x -6" style="vertical-align: -4px"/>.</p>
+<span class="math">x^2 + 2x + 3</span>, whereas <tt class="docutils literal"><span class="pre">poly1d([1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">True)</span></tt> returns
+one that represents <span class="math">(x-1)(x-2)(x-3) = x^3 - 6x^2 + 11x -6</span>.</p>
 </div></blockquote>
 <p><strong>r</strong> : bool, optional</p>
 <blockquote>
@@ -154,14 +154,14 @@ is False.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<p>Construct the polynomial <img class="math" src="../../_images/math/d05f298257f5083394777a2e7f94d1c29117a893.png" alt="x^2 + 2x + 3" style="vertical-align: -1px"/>:</p>
+<p>Construct the polynomial <span class="math">x^2 + 2x + 3</span>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
 <span class="go">   2</span>
 <span class="go">1 x + 2 x + 3</span>
 </pre></div>
 </div>
-<p>Evaluate the polynomial at <img class="math" src="../../_images/math/5c8d50eedb78f47fa1c946e1a91bd06238f06ea1.png" alt="x = 0.5" style="vertical-align: 0px"/>:</p>
+<p>Evaluate the polynomial at <span class="math">x = 0.5</span>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="go">4.25</span>
 </pre></div>
@@ -276,7 +276,7 @@ using the <a class="reference internal" href="numpy.poly1d.variable.html#numpy.p
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

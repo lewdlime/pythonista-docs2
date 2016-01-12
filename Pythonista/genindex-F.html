@@ -28,7 +28,7 @@
     <link rel="copyright" title="Copyright" href="copyright.html" />
     <link rel="top" title="Pythonista Documentation" href="index.html" />
     <link rel="shortcut icon" type="image/png" href="_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -37,11 +37,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -143,6 +143,8 @@
     <dt><a href="reference/datamodel.html#index-66">f_trace (frame attribute)</a></dt>
     <dt><a href="library/math.html#math.fabs">fabs() (in module math)</a></dt>
     <dt><a href="library/math.html#math.factorial">factorial() (in module math)</a></dt>
+    <dt><a href="ios/scene.html#scene.Action.fade_by">fade_by() (scene.Action class method)</a></dt>
+    <dt><a href="ios/scene.html#scene.Action.fade_to">fade_to() (scene.Action class method)</a></dt>
     <dt><a href="library/unittest.html#unittest.TestCase.fail">fail() (unittest.TestCase method)</a></dt>
     <dt><a href="library/unittest.html#unittest.TestResult.failfast">failfast (unittest.TestResult attribute)</a></dt>
     <dt><a href="library/unittest.html#unittest.TestCase.failureException">failureException (unittest.TestCase attribute)</a></dt>
@@ -287,12 +289,13 @@
       <dt><a href="library/types.html#types.FileType">(in module types)</a></dt>
   </dl></dd>
     <dt><a href="library/wsgiref.html#wsgiref.util.FileWrapper">FileWrapper (class in wsgiref.util)</a></dt>
-    <dt><a href="ios/scene.html#scene.fill">fill() (in module scene)</a></dt>
+    <dt><a href="ios/scene_drawing.html#scene_drawing.fill">fill() (in module scene_drawing)</a></dt>
     <dd><dl>
       <dt><a href="library/textwrap.html#textwrap.fill">(in module textwrap)</a></dt>
       <dt><a href="library/textwrap.html#textwrap.TextWrapper.fill">(textwrap.TextWrapper method)</a></dt>
       <dt><a href="ios/ui.html#ui.Path.fill">(ui.Path method)</a></dt>
   </dl></dd>
+    <dt><a href="ios/scene.html#scene.ShapeNode.fill_color">fill_color (scene.ShapeNode attribute)</a></dt>
     <dt><a href="ios/canvas.html#canvas.fill_ellipse">fill_ellipse() (in module canvas)</a></dt>
     <dt><a href="ios/canvas.html#canvas.fill_path">fill_path() (in module canvas)</a></dt>
     <dt><a href="ios/canvas.html#canvas.fill_pixel">fill_pixel() (in module canvas)</a></dt>
@@ -311,6 +314,9 @@
       <dt><a href="library/logging.html#logging.Handler.filter">(logging.Handler method)</a></dt>
       <dt><a href="library/logging.html#logging.Logger.filter">(logging.Logger method)</a></dt>
   </dl></dd>
+    <dt><a href="ios/scene.html#scene.FILTERING_LINEAR">FILTERING_LINEAR (in module scene)</a></dt>
+    <dt><a href="ios/scene.html#scene.Texture.filtering_mode">filtering_mode (scene.Texture attribute)</a></dt>
+    <dt><a href="ios/scene.html#scene.FILTERING_NEAREST">FILTERING_NEAREST (in module scene)</a></dt>
     <dt><a href="library/warnings.html#warnings.filterwarnings">filterwarnings() (in module warnings)</a></dt>
     <dt>finally</dt>
     <dd><dl>
@@ -330,6 +336,7 @@
     <dt><a href="ios/beautifulsoup_ref.html#bs4.PageElement.find_all_next">find_all_next() (bs4.PageElement method)</a></dt>
     <dt><a href="ios/beautifulsoup_ref.html#bs4.PageElement.find_all_previous">find_all_previous() (bs4.PageElement method)</a></dt>
     <dt><a href="library/pickle.html#index-4">find_global() (pickle protocol)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.util.find_library">find_library() (in module ctypes.util)</a></dt>
     <dt><a href="library/pkgutil.html#pkgutil.find_loader">find_loader() (in module pkgutil)</a></dt>
     <dt><a href="library/difflib.html#difflib.SequenceMatcher.find_longest_match">find_longest_match() (difflib.SequenceMatcher method)</a></dt>
     <dt>find_module</dt>
@@ -341,6 +348,7 @@
       <dt><a href="library/imp.html#imp.find_module">(in module imp)</a></dt>
       <dt><a href="library/zipimport.html#zipimport.zipimporter.find_module">(zipimport.zipimporter method)</a></dt>
   </dl></dd>
+    <dt><a href="library/ctypes.html#ctypes.util.find_msvcrt">find_msvcrt() (in module ctypes.util)</a></dt>
     <dt><a href="ios/beautifulsoup_ref.html#bs4.PageElement.find_next">find_next() (bs4.PageElement method)</a></dt>
     <dt><a href="ios/beautifulsoup_ref.html#bs4.PageElement.find_next_sibling">find_next_sibling() (bs4.PageElement method)</a></dt>
     <dt><a href="ios/beautifulsoup_ref.html#bs4.PageElement.find_next_siblings">find_next_siblings() (bs4.PageElement method)</a></dt>
@@ -380,10 +388,10 @@
     <dt><a href="ios/beautifulsoup_ref.html#bs4.PageElement.findParent">findParent() (bs4.PageElement method)</a></dt>
     <dt><a href="ios/beautifulsoup_ref.html#bs4.PageElement.findParents">findParents() (bs4.PageElement method)</a></dt>
     <dt><a href="ios/beautifulsoup_ref.html#bs4.PageElement.findPrevious">findPrevious() (bs4.PageElement method)</a></dt>
-    <dt><a href="ios/beautifulsoup_ref.html#bs4.PageElement.findPreviousSibling">findPreviousSibling() (bs4.PageElement method)</a></dt>
-    <dt><a href="ios/beautifulsoup_ref.html#bs4.PageElement.findPreviousSiblings">findPreviousSiblings() (bs4.PageElement method)</a></dt>
 </dl></td>
   <td style="width: 33%" valign="top"><dl>
+    <dt><a href="ios/beautifulsoup_ref.html#bs4.PageElement.findPreviousSibling">findPreviousSibling() (bs4.PageElement method)</a></dt>
+    <dt><a href="ios/beautifulsoup_ref.html#bs4.PageElement.findPreviousSiblings">findPreviousSiblings() (bs4.PageElement method)</a></dt>
     <dt><a href="library/xml.etree.elementtree.html#xml.etree.ElementTree.Element.findtext">findtext() (xml.etree.ElementTree.Element method)</a></dt>
     <dd><dl>
       <dt><a href="library/xml.etree.elementtree.html#xml.etree.ElementTree.ElementTree.findtext">(xml.etree.ElementTree.ElementTree method)</a></dt>
@@ -393,7 +401,6 @@
       <dt><a href="library/socketserver.html#SocketServer.RequestHandler.finish">(SocketServer.RequestHandler method)</a></dt>
   </dl></dd>
     <dt><a href="library/socketserver.html#SocketServer.BaseServer.finish_request">finish_request() (SocketServer.BaseServer method)</a></dt>
-    <dt><a href="ios/scene.html#scene.Animation.finished">finished (scene.Animation attribute)</a></dt>
     <dt><a href="library/asynchat.html#asynchat.fifo.first">first() (asynchat.fifo method)</a></dt>
     <dt><a href="ios/contacts.html#contacts.Person.first_name">first_name (contacts.Person attribute)</a></dt>
     <dt><a href="ios/contacts.html#contacts.Person.first_name_phonetic">first_name_phonetic (contacts.Person attribute)</a></dt>
@@ -464,8 +471,9 @@
     <dt><a href="library/fnmatch.html#fnmatch.fnmatch">fnmatch() (in module fnmatch)</a></dt>
     <dt><a href="library/fnmatch.html#fnmatch.fnmatchcase">fnmatchcase() (in module fnmatch)</a></dt>
     <dt><a href="library/mhlib.html#mhlib.Folder">Folder (class in mhlib)</a></dt>
-    <dt><a href="ios/ui.html#ui.Button.font">font (ui.Button attribute)</a></dt>
+    <dt><a href="ios/scene.html#scene.LabelNode.font">font (scene.LabelNode attribute)</a></dt>
     <dd><dl>
+      <dt><a href="ios/ui.html#ui.Button.font">(ui.Button attribute)</a></dt>
       <dt><a href="ios/ui.html#ui.Label.font">(ui.Label attribute)</a></dt>
       <dt><a href="ios/ui.html#ui.ListDataSource.font">(ui.ListDataSource attribute)</a></dt>
       <dt><a href="ios/ui.html#ui.TextField.font">(ui.TextField attribute)</a></dt>
@@ -483,6 +491,7 @@
     <dd><dl>
       <dt><a href="reference/compound_stmts.html#index-22">lambda</a>, <a href="reference/expressions.html#index-75">[1]</a></dt>
   </dl></dd>
+    <dt><a href="ios/dialogs.html#dialogs.form_dialog">form_dialog() (in module dialogs)</a></dt>
     <dt>format</dt>
     <dd><dl>
       <dt><a href="library/functions.html#index-3">str</a></dt>
@@ -520,6 +529,7 @@
     <dt><a href="library/inspect.html#inspect.formatargvalues">formatargvalues() (in module inspect)</a></dt>
     <dt><a href="library/email.util.html#email.utils.formatdate">formatdate() (in module email.utils)</a></dt>
     <dt><a href="library/mailbox.html#mailbox.FormatError">FormatError</a></dt>
+    <dt><a href="library/ctypes.html#ctypes.FormatError">FormatError() (in module ctypes)</a></dt>
     <dt><a href="library/logging.html#logging.Formatter.formatException">formatException() (logging.Formatter method)</a></dt>
     <dt><a href="library/calendar.html#calendar.HTMLCalendar.formatmonth">formatmonth() (calendar.HTMLCalendar method)</a></dt>
     <dd><dl>
@@ -558,10 +568,11 @@
       <dt><a href="reference/executionmodel.html#index-4">execution</a>, <a href="reference/compound_stmts.html#index-23">[1]</a></dt>
       <dt><a href="reference/datamodel.html#index-64">object</a></dt>
   </dl></dd>
-    <dt><a href="ios/scene.html#scene.Layer.frame">frame (scene.Layer attribute)</a></dt>
+    <dt><a href="ios/scene.html#scene.Node.frame">frame (scene.Node attribute)</a></dt>
     <dd><dl>
       <dt><a href="ios/ui.html#ui.View.frame">(ui.View attribute)</a></dt>
   </dl></dd>
+    <dt><a href="ios/scene.html#scene.SceneView.frame_interval">frame_interval (scene.SceneView attribute)</a></dt>
     <dt><a href="library/types.html#types.FrameType">FrameType (in module types)</a></dt>
     <dt>free</dt>
     <dd><dl>
@@ -573,6 +584,9 @@
       <dt><a href="reference/simple_stmts.html#index-38">keyword</a></dt>
       <dt><a href="reference/executionmodel.html#index-9">statement</a></dt>
   </dl></dd>
+    <dt><a href="library/ctypes.html#ctypes._CData.from_address">from_address() (ctypes._CData method)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes._CData.from_buffer">from_buffer() (ctypes._CData method)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes._CData.from_buffer_copy">from_buffer_copy() (ctypes._CData method)</a></dt>
     <dt><a href="ios/ui.html#ui.Image.from_data">from_data() (ui.Image class method)</a></dt>
     <dt><a href="library/fractions.html#fractions.Fraction.from_decimal">from_decimal() (fractions.Fraction method)</a></dt>
     <dt><a href="library/decimal.html#decimal.Decimal.from_float">from_float() (decimal.Decimal method)</a></dt>
@@ -580,8 +594,8 @@
       <dt><a href="library/fractions.html#fractions.Fraction.from_float">(fractions.Fraction method)</a></dt>
   </dl></dd>
     <dt><a href="library/itertools.html#itertools.chain.from_iterable">from_iterable() (itertools.chain class method)</a></dt>
+    <dt><a href="library/ctypes.html#ctypes._CData.from_param">from_param() (ctypes._CData method)</a></dt>
     <dt><a href="library/email.charset.html#email.charset.Charset.from_splittable">from_splittable() (email.charset.Charset method)</a></dt>
-    <dt><a href="ios/scene.html#scene.Animation.from_value">from_value (scene.Animation attribute)</a></dt>
     <dt><a href="library/tarfile.html#tarfile.TarInfo.frombuf">frombuf() (tarfile.TarInfo method)</a></dt>
     <dt><a href="ios/Image.html#Image.frombuffer">frombuffer() (in module Image)</a></dt>
     <dt><a href="library/popen2.html#popen2.Popen3.fromchild">fromchild (popen2.Popen3 attribute)</a></dt>
@@ -685,12 +699,12 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    &copy; <a href="copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Dec 19, 2015.
     <a href="bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

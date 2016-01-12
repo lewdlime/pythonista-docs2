@@ -28,7 +28,7 @@
     <link rel="copyright" title="Copyright" href="../copyright.html" />
     <link rel="top" title="Pythonista Documentation" href="../index.html" />
     <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -37,11 +37,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -120,7 +120,7 @@
 <li>Touch and hold the &#8220;undo&#8221; button on the extended keyboard for a redo option.</li>
 <li>Touch and hold the &#8220;Run&#8221; button to run a script with command-line arguments. The argumentes will be available to your script in <a class="reference internal" href="../library/sys.html#sys.argv" title="sys.argv"><tt class="xref py py-attr docutils literal"><span class="pre">sys.argv</span></tt></a>.</li>
 <li>Tap with two fingers in the editor to select an entire line.</li>
-<li>While editing, you can use the + button to insert resources, such as images, sounds, colors and fonts. These resources are meant to be used with the <a class="reference internal" href="scene.html#module-scene" title="scene: Provides 2D graphics and animation on iOS"><tt class="xref py py-mod docutils literal"><span class="pre">scene</span></tt></a>, <a class="reference internal" href="sound.html#module-sound" title="sound: Simple sound creation"><tt class="xref py py-mod docutils literal"><span class="pre">sound</span></tt></a>, and <a class="reference internal" href="canvas.html#module-canvas" title="canvas: Provides drawing functions on iOS"><tt class="xref py py-mod docutils literal"><span class="pre">canvas</span></tt></a> modules. The font names can also be useful for the <a class="reference internal" href="console.html#module-console" title="console: Console output on iOS"><tt class="xref py py-mod docutils literal"><span class="pre">console</span></tt></a> module. Colors will be inserted as comma-separated RGB values (in the range 0.0 - 1.0). For converting colors to other color models, you can use the <a class="reference internal" href="../library/colorsys.html#module-colorsys" title="colorsys: Conversion functions between RGB and other color systems."><tt class="xref py py-mod docutils literal"><span class="pre">colorsys</span></tt></a> module. Note: On the iPhone, use &#8220;Insert...&#8221; from the Copy/Paste menu instead.</li>
+<li>While editing, you can use the + button to insert resources, such as images, sounds, colors and fonts. These resources are meant to be used with the <a class="reference internal" href="scene.html#module-scene" title="scene: 2D graphics and animation on iOS"><tt class="xref py py-mod docutils literal"><span class="pre">scene</span></tt></a>, <a class="reference internal" href="sound.html#module-sound" title="sound: Sound effects and music playback"><tt class="xref py py-mod docutils literal"><span class="pre">sound</span></tt></a>, and <a class="reference internal" href="canvas.html#module-canvas" title="canvas: Provides drawing functions on iOS"><tt class="xref py py-mod docutils literal"><span class="pre">canvas</span></tt></a> modules. The font names can also be useful for the <a class="reference internal" href="console.html#module-console" title="console: Utilities for Console Output and Various System Services"><tt class="xref py py-mod docutils literal"><span class="pre">console</span></tt></a> module. Colors will be inserted as comma-separated RGB values (in the range 0.0 - 1.0). For converting colors to other color models, you can use the <a class="reference internal" href="../library/colorsys.html#module-colorsys" title="colorsys: Conversion functions between RGB and other color systems."><tt class="xref py py-mod docutils literal"><span class="pre">colorsys</span></tt></a> module. Note: On the iPhone, use &#8220;Insert...&#8221; from the Copy/Paste menu instead.</li>
 </ul>
 </div>
 
@@ -130,12 +130,12 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Dec 02, 2015.
     <a href="../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

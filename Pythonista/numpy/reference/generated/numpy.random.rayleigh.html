@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.random.standard_cauchy" href="numpy.random.standard_cauchy.html" />
     <link rel="prev" title="numpy.random.power" href="numpy.random.power.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -122,7 +122,7 @@
 <dt id="numpy.random.rayleigh">
 <tt class="descclassname">numpy.random.</tt><tt class="descname">rayleigh</tt><big>(</big><em>scale=1.0</em>, <em>size=None</em><big>)</big><a class="headerlink" href="#numpy.random.rayleigh" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw samples from a Rayleigh distribution.</p>
-<p>The <img class="math" src="../../_images/math/278069d6afb88839c678d44d3d464b17ff39fd7b.png" alt="\chi" style="vertical-align: -3px"/> and Weibull distributions are generalizations of the
+<p>The <span class="math">\chi</span> and Weibull distributions are generalizations of the
 Rayleigh.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -144,7 +144,7 @@ value is returned.</p>
 <p class="rubric">Notes</p>
 <p>The probability density function for the Rayleigh distribution is</p>
 <div class="math">
-<p><img src="../../_images/math/1c179e259da5763ce4e5dd125cd5f80e1361eb2c.png" alt="P(x;scale) = \frac{x}{scale^2}e^{\frac{-x^2}{2 \cdotp scale^2}}"/></p>
+<p><span class="math">P(x;scale) = \frac{x}{scale^2}e^{\frac{-x^2}{2 \cdotp scale^2}}</span></p>
 </div><p>The Rayleigh distribution arises if the wind speed and wind direction are
 both gaussian variables, then the vector wind velocity forms a Rayleigh
 distribution. The Rayleigh distribution is used to model the expected
@@ -197,7 +197,7 @@ meters?</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

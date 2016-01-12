@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.polynomial.legendre.legval3d" href="numpy.polynomial.legendre.legval3d.html" />
     <link rel="prev" title="numpy.polynomial.legendre.legval" href="numpy.polynomial.legendre.legval.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -126,7 +126,7 @@
 <dd><p>Evaluate a 2-D Legendre series at points (x, y).</p>
 <p>This function returns the values:</p>
 <div class="math">
-<p><img src="../../_images/math/e8daa39af39b6c85f49ddd870efc40db5ba008c9.png" alt="p(x,y) = \sum_{i,j} c_{i,j} * L_i(x) * L_j(y)"/></p>
+<p><span class="math">p(x,y) = \sum_{i,j} c_{i,j} * L_i(x) * L_j(y)</span></p>
 </div><p>The parameters <em class="xref py py-obj">x</em> and <em class="xref py py-obj">y</em> are converted to arrays only if they are
 tuples or a lists, otherwise they are treated as a scalars and they
 must have the same shape after conversion. In either case, either <em class="xref py py-obj">x</em>
@@ -183,7 +183,7 @@ from pairs of corresponding values from <em class="xref py py-obj">x</em> and <e
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

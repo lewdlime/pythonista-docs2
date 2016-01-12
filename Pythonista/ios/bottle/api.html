@@ -28,7 +28,7 @@
     <link rel="copyright" title="Copyright" href="../../copyright.html" />
     <link rel="top" title="Pythonista Documentation" href="../../index.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -37,11 +37,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -1365,7 +1365,7 @@ to build the HTTP response at the end of the request/response cycle.</p>
 </div>
 <div class="section" id="templates">
 <h2>Templates<a class="headerlink" href="#templates" title="Permalink to this headline">¶</a></h2>
-<p>All template engines supported by <a class="reference internal" href="recipes.html#module-bottle" title="bottle"><tt class="xref py py-mod docutils literal"><span class="pre">bottle</span></tt></a> implement the <a class="reference internal" href="#bottle.BaseTemplate" title="bottle.BaseTemplate"><tt class="xref py py-class docutils literal"><span class="pre">BaseTemplate</span></tt></a> API. This way it is possible to switch and mix template engines without changing the application code at all.</p>
+<p>All template engines supported by <a class="reference internal" href="index.html#module-bottle" title="bottle"><tt class="xref py py-mod docutils literal"><span class="pre">bottle</span></tt></a> implement the <a class="reference internal" href="#bottle.BaseTemplate" title="bottle.BaseTemplate"><tt class="xref py py-class docutils literal"><span class="pre">BaseTemplate</span></tt></a> API. This way it is possible to switch and mix template engines without changing the application code at all.</p>
 <dl class="class">
 <dt id="bottle.BaseTemplate">
 <em class="property">class </em><tt class="descclassname">bottle.</tt><tt class="descname">BaseTemplate</tt><big>(</big><em>source=None</em>, <em>name=None</em>, <em>lookup=</em><span class="optional">[</span><span class="optional">]</span>, <em>encoding='utf8'</em>, <em>**settings</em><big>)</big><a class="headerlink" href="#bottle.BaseTemplate" title="Permalink to this definition">¶</a></dt>
@@ -1493,12 +1493,12 @@ or directly (as keyword arguments).</p>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="../../copyright.html">Copyright</a> 1990-2014, Python Software Foundation.
+    &copy; <a href="../../copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Dec 19, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

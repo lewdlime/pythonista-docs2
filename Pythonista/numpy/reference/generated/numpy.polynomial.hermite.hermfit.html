@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.polynomial.hermite.hermvander" href="numpy.polynomial.hermite.hermvander.html" />
     <link rel="prev" title="numpy.polynomial.hermite.hermfromroots" href="numpy.polynomial.hermite.hermfromroots.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -131,7 +131,7 @@ fits are done, one for each column of <em class="xref py py-obj">y</em>, and the
 coefficients are stored in the corresponding columns of a 2-D return.
 The fitted polynomial(s) are in the form</p>
 <div class="math">
-<p><img src="../../_images/math/24506c9b416b179c3c89a9cd8b546ff3b96fe176.png" alt="p(x) = c_0 + c_1 * H_1(x) + ... + c_n * H_n(x),"/></p>
+<p><span class="math">p(x) = c_0 + c_1 * H_1(x) + ... + c_n * H_n(x),</span></p>
 </div><p>where <em class="xref py py-obj">n</em> is <em class="xref py py-obj">deg</em>.</p>
 <p>Since numpy version 1.7.0, hermfit also supports NA. If any of the
 elements of <em class="xref py py-obj">x</em>, <em class="xref py py-obj">y</em>, or <em class="xref py py-obj">w</em> are NA, then the corresponding rows of the
@@ -225,11 +225,11 @@ warnings can be turned off by</p>
 <p>The solution is the coefficients of the Hermite series <em class="xref py py-obj">p</em> that
 minimizes the sum of the weighted squared errors</p>
 <div class="math">
-<p><img src="../../_images/math/94c23c4f5ee5cb6a93ccd6ac8be500e000d2bbd8.png" alt="E = \sum_j w_j^2 * |y_j - p(x_j)|^2,"/></p>
-</div><p>where the <img class="math" src="../../_images/math/4eb155e91e0cd74d0e76874e46314e8c6ae17d8b.png" alt="w_j" style="vertical-align: -4px"/> are the weights. This problem is solved by
+<p><span class="math">E = \sum_j w_j^2 * |y_j - p(x_j)|^2,</span></p>
+</div><p>where the <span class="math">w_j</span> are the weights. This problem is solved by
 setting up the (typically) overdetermined matrix equation</p>
 <div class="math">
-<p><img src="../../_images/math/3af394137c1b2e9ae087e6eab40504be17bd63ce.png" alt="V(x) * c = w * y,"/></p>
+<p><span class="math">V(x) * c = w * y,</span></p>
 </div><p>where <em class="xref py py-obj">V</em> is the weighted pseudo Vandermonde matrix of <em class="xref py py-obj">x</em>, <em class="xref py py-obj">c</em> are the
 coefficients to be solved for, <em class="xref py py-obj">w</em> are the weights, <em class="xref py py-obj">y</em> are the
 observed values.  This equation is then solved using the singular value
@@ -277,7 +277,7 @@ available as <a class="reference internal" href="numpy.polynomial.hermite.hermwe
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

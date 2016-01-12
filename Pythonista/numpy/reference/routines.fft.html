@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.fft.fft" href="generated/numpy.fft.fft.html" />
     <link rel="prev" title="numpy.geterrobj" href="generated/numpy.geterrobj.html" />
     <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -241,12 +241,12 @@ domain</em>.</p>
 exponent, normalization, etc.  In this implementation, the DFT is defined
 as</p>
 <div class="math">
-<p><img src="../_images/math/15b77327597f739f3da24c17c641ce8419bb9a4e.png" alt="A_k =  \sum_{m=0}^{n-1} a_m \exp\left\{-2\pi i{mk \over n}\right\}
-\qquad k = 0,\ldots,n-1."/></p>
+<p><span class="math">A_k =  \sum_{m=0}^{n-1} a_m \exp\left\{-2\pi i{mk \over n}\right\}
+\qquad k = 0,\ldots,n-1.</span></p>
 </div><p>The DFT is in general defined for complex inputs and outputs, and a
-single-frequency component at linear frequency <img class="math" src="../_images/math/820575a3248a951f90af909f7c19f0c30d7679d6.png" alt="f" style="vertical-align: -3px"/> is
+single-frequency component at linear frequency <span class="math">f</span> is
 represented by a complex exponential
-<img class="math" src="../_images/math/03d4e8caffdd759ce30626c7d0c6cd5c88059f29.png" alt="a_m = \exp\{2\pi i\,f m\Delta t\}" style="vertical-align: -4px"/>, where <img class="math" src="../_images/math/ea7e70d8392beb70ffea7680e3c5cec18e5c9bf0.png" alt="\Delta t" style="vertical-align: 0px"/>
+<span class="math">a_m = \exp\{2\pi i\,f m\Delta t\}</span>, where <span class="math">\Delta t</span>
 is the sampling interval.</p>
 <p>The values in the result follow so-called &#8220;standard&#8221; order: If <tt class="docutils literal"><span class="pre">A</span> <span class="pre">=</span>
 <span class="pre">fft(a,</span> <span class="pre">n)</span></tt>, then <tt class="docutils literal"><span class="pre">A[0]</span></tt> contains the zero-frequency term (the mean of
@@ -267,16 +267,16 @@ is its amplitude spectrum and <tt class="docutils literal"><span class="pre">np.
 The phase spectrum is obtained by <tt class="docutils literal"><span class="pre">np.angle(A)</span></tt>.</p>
 <p>The inverse DFT is defined as</p>
 <div class="math">
-<p><img src="../_images/math/a79117703ed2daf9b2f39a44c1b4e69805d74a41.png" alt="a_m = \frac{1}{n}\sum_{k=0}^{n-1}A_k\exp\left\{2\pi i{mk\over n}\right\}
-\qquad m = 0,\ldots,n-1."/></p>
+<p><span class="math">a_m = \frac{1}{n}\sum_{k=0}^{n-1}A_k\exp\left\{2\pi i{mk\over n}\right\}
+\qquad m = 0,\ldots,n-1.</span></p>
 </div><p>It differs from the forward transform by the sign of the exponential
-argument and the normalization by <img class="math" src="../_images/math/20adedda64097d8328ed617bf7fba5d2ece0797c.png" alt="1/n" style="vertical-align: -4px"/>.</p>
+argument and the normalization by <span class="math">1/n</span>.</p>
 </div>
 <div class="section" id="real-and-hermitian-transforms">
 <h2>Real and Hermitian transforms<a class="headerlink" href="#real-and-hermitian-transforms" title="Permalink to this headline">¶</a></h2>
 <p>When the input is purely real, its transform is Hermitian, i.e., the
-component at frequency <img class="math" src="../_images/math/e1c2036b297181c0e13bfe6ba86a1c33c37a77a5.png" alt="f_k" style="vertical-align: -3px"/> is the complex conjugate of the
-component at frequency <img class="math" src="../_images/math/2bd1ad86f3e5722728a00c972e436567397697f1.png" alt="-f_k" style="vertical-align: -3px"/>, which means that for real
+component at frequency <span class="math">f_k</span> is the complex conjugate of the
+component at frequency <span class="math">-f_k</span>, which means that for real
 inputs there is no information in the negative frequency components that
 is not already available from the positive frequency components.
 The family of <a class="reference internal" href="generated/numpy.fft.rfft.html#numpy.fft.rfft" title="numpy.fft.rfft"><tt class="xref py py-obj docutils literal"><span class="pre">rfft</span></tt></a> functions is
@@ -299,9 +299,9 @@ multiplication in the frequency domain.</p>
 <h2>Higher dimensions<a class="headerlink" href="#higher-dimensions" title="Permalink to this headline">¶</a></h2>
 <p>In two dimensions, the DFT is defined as</p>
 <div class="math">
-<p><img src="../_images/math/ab9ad2046bf25e4314d8b9c776ce53ba867dbd88.png" alt="A_{kl} =  \sum_{m=0}^{M-1} \sum_{n=0}^{N-1}
+<p><span class="math">A_{kl} =  \sum_{m=0}^{M-1} \sum_{n=0}^{N-1}
 a_{mn}\exp\left\{-2\pi i \left({mk\over M}+{nl\over N}\right)\right\}
-\qquad k = 0, \ldots, M-1;\quad l = 0, \ldots, N-1,"/></p>
+\qquad k = 0, \ldots, M-1;\quad l = 0, \ldots, N-1,</span></p>
 </div><p>which extends in the obvious way to higher dimensions, and the inverses
 in higher dimensions also extend in the same way.</p>
 </div>
@@ -341,7 +341,7 @@ machine calculation of complex Fourier series,&#8221; <em>Math. Comput.</em>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.

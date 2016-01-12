@@ -27,7 +27,7 @@
     <link rel="next" title="numpy.linalg.qr" href="numpy.linalg.qr.html" />
     <link rel="prev" title="numpy.kron" href="numpy.kron.html" />
     <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
-    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0,user-scalable=no;">
     
     <script type="text/javascript">
         var getTextForSample = function(i) {
@@ -36,11 +36,11 @@
         }
         
         var copySample = function (i) {
-            window.location.href = 'pythonista-copy://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
         }
         
         var openSample = function (i) {
-            window.location.href = 'pythonista-open://' + encodeURI(getTextForSample(i));
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
         }
         
         //Source: http://ejohn.org/blog/partial-functions-in-javascript/
@@ -159,14 +159,14 @@ positive-definite.</p>
 details.</p>
 <p>The Cholesky decomposition is often used as a fast way of solving</p>
 <div class="math">
-<p><img src="../../_images/math/1238636295ae01e7d9660b43909be02f5250f593.png" alt="A \mathbf{x} = \mathbf{b}"/></p>
+<p><span class="math">A \mathbf{x} = \mathbf{b}</span></p>
 </div><p>(when <em class="xref py py-obj">A</em> is both Hermitian/symmetric and positive-definite).</p>
-<p>First, we solve for <img class="math" src="../../_images/math/5281327b77217c7529bc5c19e3fb3e8ed4dba989.png" alt="\mathbf{y}" style="vertical-align: -3px"/> in</p>
+<p>First, we solve for <span class="math">\mathbf{y}</span> in</p>
 <div class="math">
-<p><img src="../../_images/math/667adf08b7d956c97ccf367027e76661c41c82ea.png" alt="L \mathbf{y} = \mathbf{b},"/></p>
-</div><p>and then for <img class="math" src="../../_images/math/f1701cdfd2f0a2c28f96ea4b10a33cfb272b4b55.png" alt="\mathbf{x}" style="vertical-align: -1px"/> in</p>
+<p><span class="math">L \mathbf{y} = \mathbf{b},</span></p>
+</div><p>and then for <span class="math">\mathbf{x}</span> in</p>
 <div class="math">
-<p><img src="../../_images/math/f29aa39b2ce5079c58c8dcc8bd1091902797e11a.png" alt="L.H \mathbf{x} = \mathbf{y}."/></p>
+<p><span class="math">L.H \mathbf{x} = \mathbf{y}.</span></p>
 </div><p class="rubric">Examples</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2j</span><span class="p">],[</span><span class="mi">2j</span><span class="p">,</span><span class="mi">5</span><span class="p">]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">A</span>
@@ -204,7 +204,7 @@ details.</p>
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 12, 2014.
+    Last updated on Oct 10, 2015.
     <a href="../../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.
