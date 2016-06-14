@@ -131,6 +131,16 @@
 <p>You can see that calling Objective-C APIs from Python doesn&#8217;t require significantly more code than you would need if you were writing native Objective-C code.</p>
 <p>Behind the scenes, <a class="reference internal" href="#module-objc_util" title="objc_util: Utility module for &quot;bridging&quot; a limited set of Objective-APIs to Python"><tt class="xref py py-mod docutils literal"><span class="pre">objc_util</span></tt></a> generates appropriate calls to <tt class="docutils literal"><span class="pre">objc_msgSend()</span></tt> etc. for translating the Python calls to Objective-C messages. Common Python types (e.g. strings in the example above, but also lists and dicts) are converted to their equivalent Foundation types automatically (<tt class="docutils literal"><span class="pre">NSString</span></tt>, <tt class="docutils literal"><span class="pre">NSMutableArray</span></tt>, <tt class="docutils literal"><span class="pre">NSMutableDictionary</span></tt> etc.) when calling a method.</p>
 <p>The conversion from an Objective-C selector to a Python method name is pretty straight-forward. You basically just have to replace colons (&#8216;:&#8217;) with underscores (&#8216;_&#8217;). For example, the selector <tt class="docutils literal"><span class="pre">doFoo:withBar:</span></tt> becomes the method <tt class="docutils literal"><span class="pre">doFoo_withBar_</span></tt> (note the trailing underscore!).</p>
+<p>In most cases, you can also use a slightly more &#8220;pythonic&#8221; syntax that uses keyword arguments as part of the ObjC selector name, e.g.:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># From: UIColor *color = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0]</span>
+<span class="c"># ...to:</span>
+<span class="n">UIColor</span> <span class="o">=</span> <span class="n">ObjCClass</span><span class="p">(</span><span class="s">&#39;UIColor&#39;</span><span class="p">)</span>
+<span class="n">color</span> <span class="o">=</span> <span class="n">UIColor</span><span class="o">.</span><span class="n">colorWithRed</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">green</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">blue</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="c"># or even:</span>
+<span class="n">color</span> <span class="o">=</span> <span class="n">UIColor</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">red</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">green</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">blue</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This (more natural) syntax should work in most common cases, but there may be situations in which a given combination of method name and keyword arguments cannot be translated unambiguously to an ObjC method call. In these cases, simply use the call variant described above (replace colons with underscores, and don&#8217;t use keyword arguments).</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">As with <a class="reference internal" href="../library/ctypes.html#module-ctypes" title="ctypes: A foreign function library for Python."><tt class="xref py py-mod docutils literal"><span class="pre">ctypes</span></tt></a>, there are lots of ways to crash Python using this module. When you call Objective-C methods, you have to be very careful to provide the correct parameter types.</p>
@@ -148,8 +158,8 @@
 
 <span class="c"># `screen` is now an ObjCInstance that wraps an Objective-C object, and forwards messages to it.</span>
 
-<span class="c"># The following call is equivalent to `[screen setBrightness:0.6]` (note the trailing underscore in the method name)</span>
-<span class="n">screen</span><span class="o">.</span><span class="n">setBrightness_</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="c"># The following call is equivalent to `[screen setBrightness:0.6]`:</span>
+<span class="n">screen</span><span class="o">.</span><span class="n">setBrightness</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -159,14 +169,14 @@
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">objc_util</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">MPMusicPlayerController</span> <span class="o">=</span> <span class="n">ObjCClass</span><span class="p">(</span><span class="s">&#39;MPMusicPlayerController&#39;</span><span class="p">)</span>
-<span class="n">ipod_player</span> <span class="o">=</span> <span class="n">MPMusicPlayerController</span><span class="o">.</span><span class="n">iPodMusicPlayer</span><span class="p">()</span>
-<span class="n">now_playing</span> <span class="o">=</span> <span class="n">ipod_player</span><span class="o">.</span><span class="n">nowPlayingItem</span><span class="p">()</span>
+<span class="n">player</span> <span class="o">=</span> <span class="n">MPMusicPlayerController</span><span class="o">.</span><span class="n">systemMusicPlayer</span><span class="p">()</span>
+<span class="n">now_playing</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">nowPlayingItem</span><span class="p">()</span>
 <span class="k">if</span> <span class="n">now_playing</span><span class="p">:</span>
     <span class="n">artist</span> <span class="o">=</span> <span class="n">now_playing</span><span class="o">.</span><span class="n">valueForProperty_</span><span class="p">(</span><span class="s">&#39;artist&#39;</span><span class="p">)</span>
     <span class="n">title</span> <span class="o">=</span> <span class="n">now_playing</span><span class="o">.</span><span class="n">valueForProperty_</span><span class="p">(</span><span class="s">&#39;title&#39;</span><span class="p">)</span>
-    <span class="k">print</span> <span class="s">&#39;Now playing: </span><span class="si">%s</span><span class="s"> -- </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;Now playing: </span><span class="si">%s</span><span class="s"> -- </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">title</span><span class="p">))</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="k">print</span> <span class="s">&#39;No music playing&#39;</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;No music playing&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="section" id="creating-new-objective-c-classes">
@@ -186,11 +196,11 @@
 <p>Here is an example of creating a simple class that acts as the delegate for an <tt class="docutils literal"><span class="pre">MFMailComposeViewController</span></tt> (which is used to show the standard iOS Mail sheet). A delegate is required to use this class because it is otherwise impossible to get rid of the Mail sheet (the delegate is notified when the sheet has finished, and it&#8217;s responsible for dismissing it).:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="c"># - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error</span>
 <span class="k">def</span> <span class="nf">mailComposeController_didFinishWithResult_error_</span><span class="p">(</span><span class="n">_self</span><span class="p">,</span> <span class="n">_cmd</span><span class="p">,</span> <span class="n">controller</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">error</span><span class="p">):</span>
-    <span class="k">print</span> <span class="s">&#39;Mail composer finished&#39;</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;Mail composer finished&#39;</span><span class="p">)</span>
     <span class="c"># Wrap the controller parameter in an `ObjCInstance`, so we can send messages:</span>
     <span class="n">mail_vc</span> <span class="o">=</span> <span class="n">ObjCInstance</span><span class="p">(</span><span class="n">controller</span><span class="p">)</span>
     <span class="c"># Set delegate to nil, and release its memory:</span>
-    <span class="n">mail_vc</span><span class="o">.</span><span class="n">setDelegate_</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
+    <span class="n">mail_vc</span><span class="o">.</span><span class="n">setMailComposeDelegate_</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
     <span class="n">ObjCInstance</span><span class="p">(</span><span class="n">_self</span><span class="p">)</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
     <span class="c"># Dismiss the sheet:</span>
     <span class="n">mail_vc</span><span class="o">.</span><span class="n">dismissViewControllerAnimated_completion_</span><span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
@@ -205,7 +215,7 @@
     <span class="n">mail_composer</span> <span class="o">=</span> <span class="n">MFMailComposeViewController</span><span class="o">.</span><span class="n">alloc</span><span class="p">()</span><span class="o">.</span><span class="n">init</span><span class="p">()</span><span class="o">.</span><span class="n">autorelease</span><span class="p">()</span>
     <span class="c"># Use our new delegate class:</span>
     <span class="n">delegate</span> <span class="o">=</span> <span class="n">MyMailComposeDelegate</span><span class="o">.</span><span class="n">alloc</span><span class="p">()</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-    <span class="n">mail_composer</span><span class="o">.</span><span class="n">setDelegate_</span><span class="p">(</span><span class="n">delegate</span><span class="p">)</span>
+    <span class="n">mail_composer</span><span class="o">.</span><span class="n">setMailComposeDelegate_</span><span class="p">(</span><span class="n">delegate</span><span class="p">)</span>
     <span class="c"># Present the mail sheet:</span>
     <span class="n">root_vc</span> <span class="o">=</span> <span class="n">UIApplication</span><span class="o">.</span><span class="n">sharedApplication</span><span class="p">()</span><span class="o">.</span><span class="n">keyWindow</span><span class="p">()</span><span class="o">.</span><span class="n">rootViewController</span><span class="p">()</span>
     <span class="n">root_vc</span><span class="o">.</span><span class="n">presentViewController_animated_completion_</span><span class="p">(</span><span class="n">mail_composer</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
@@ -252,7 +262,7 @@
 <p>Example of a block with arguments (used to sort an NSMutableArray with a custom comparison function):</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">objc_util</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="n">cheeses</span> <span class="o">=</span> <span class="n">ns</span><span class="p">([</span><span class="s">&#39;Camembert&#39;</span><span class="p">,</span> <span class="s">&#39;Feta&#39;</span><span class="p">,</span> <span class="s">&#39;Gorgonzola&#39;</span><span class="p">])</span>
-<span class="k">print</span> <span class="n">cheeses</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cheeses</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">compare</span><span class="p">(</span><span class="n">_cmd</span><span class="p">,</span> <span class="n">obj1_ptr</span><span class="p">,</span> <span class="n">obj2_ptr</span><span class="p">):</span>
     <span class="n">obj1</span> <span class="o">=</span> <span class="n">ObjCInstance</span><span class="p">(</span><span class="n">obj1_ptr</span><span class="p">)</span>
@@ -264,7 +274,7 @@
 <span class="n">compare_block</span> <span class="o">=</span> <span class="n">ObjCBlock</span><span class="p">(</span><span class="n">compare</span><span class="p">,</span> <span class="n">restype</span><span class="o">=</span><span class="n">NSInteger</span><span class="p">,</span> <span class="n">argtypes</span><span class="o">=</span><span class="p">[</span><span class="n">c_void_p</span><span class="p">,</span> <span class="n">c_void_p</span><span class="p">,</span> <span class="n">c_void_p</span><span class="p">])</span>
 
 <span class="n">sorted_cheeses</span> <span class="o">=</span> <span class="n">cheeses</span><span class="o">.</span><span class="n">sortedArrayUsingComparator_</span><span class="p">(</span><span class="n">compare_block</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">sorted_cheeses</span>
+<span class="k">print</span><span class="p">(</span><span class="n">sorted_cheeses</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -309,6 +319,18 @@
 <tt class="descclassname">objc_util.</tt><tt class="descname">nsurl</tt><big>(</big><em>url_or_path</em><big>)</big><a class="headerlink" href="#objc_util.nsurl" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a Python string to an <tt class="docutils literal"><span class="pre">NSURL</span></tt> object (wrapped in an <a class="reference internal" href="#objc_util.ObjCInstance" title="objc_util.ObjCInstance"><tt class="xref py py-class docutils literal"><span class="pre">ObjCInstance</span></tt></a>).</p>
 <p>If the string contains a colon (&#8216;:&#8217;), it is treated as a full URL and converted to an <tt class="docutils literal"><span class="pre">NSURL</span></tt> using <tt class="docutils literal"><span class="pre">+URLWithString:</span></tt>. Otherwise, a file URL is constructed using <tt class="docutils literal"><span class="pre">+fileURLWithPath:</span></tt>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="objc_util.nsdata_to_bytes">
+<tt class="descclassname">objc_util.</tt><tt class="descname">nsdata_to_bytes</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#objc_util.nsdata_to_bytes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert an <tt class="docutils literal"><span class="pre">NSData</span></tt> object (wrapped in an <a class="reference internal" href="#objc_util.ObjCInstance" title="objc_util.ObjCInstance"><tt class="xref py py-class docutils literal"><span class="pre">ObjCInstance</span></tt></a>) to a Python byte string.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="objc_util.uiimage_to_png">
+<tt class="descclassname">objc_util.</tt><tt class="descname">uiimage_to_png</tt><big>(</big><em>img</em><big>)</big><a class="headerlink" href="#objc_util.uiimage_to_png" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a <tt class="docutils literal"><span class="pre">UIImage</span></tt> object (wrapped in an <a class="reference internal" href="#objc_util.ObjCInstance" title="objc_util.ObjCInstance"><tt class="xref py py-class docutils literal"><span class="pre">ObjCInstance</span></tt></a>) to a Python byte string that contains PNG data.</p>
 </dd></dl>
 
 <dl class="function">
@@ -449,12 +471,12 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2016, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Dec 02, 2015.
+    Last updated on Jun 08, 2016.
     <a href="../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

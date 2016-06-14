@@ -117,8 +117,6 @@
 <span id="editor-functions-for-scripting-pythonista-s-text-editor"></span><h1><a class="reference internal" href="#module-editor" title="editor: Scripting Pythonista's text editor"><tt class="xref py py-mod docutils literal"><span class="pre">editor</span></tt></a> &#8212; Functions for scripting Pythonista&#8217;s text editor<a class="headerlink" href="#module-editor" title="Permalink to this headline">¶</a></h1>
 <p>The <a class="reference internal" href="#module-editor" title="editor: Scripting Pythonista's text editor"><tt class="xref py py-mod docutils literal"><span class="pre">editor</span></tt></a> module provides access to the script you&#8217;re currently editing.
 You can get and set the selected range and replace text in a given range.</p>
-<p>Additionally, the <a class="reference internal" href="#editor.reload_files" title="editor.reload_files"><tt class="xref py py-func docutils literal"><span class="pre">reload_files()</span></tt></a> function allows you to reload the list of scripts
-in the library (which can be useful if your script writes out .py files for some reason).</p>
 <p>Please note: Invalid input values for the selection and text manipulation functions
 (e.g. ranges that are out of bounds) are silently ignored as of now. This may
 change in a future release.</p>
@@ -227,13 +225,6 @@ affected.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="editor.reload_files">
-<tt class="descclassname">editor.</tt><tt class="descname">reload_files</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.reload_files" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reload the list of files in Pythonista&#8217;s library. This can be useful if you write out new Python files
-that you want to open in the editor. Note that the library only shows files with a .py extension.</p>
-</dd></dl>
-
-<dl class="function">
 <dt id="editor.make_new_file">
 <tt class="descclassname">editor.</tt><tt class="descname">make_new_file</tt><big>(</big><span class="optional">[</span><em>name</em>, <em>content</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#editor.make_new_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new file and open it in the editor.</p>
@@ -246,12 +237,42 @@ an empty file is created.</p>
 
 <dl class="function">
 <dt id="editor.open_file">
-<tt class="descclassname">editor.</tt><tt class="descname">open_file</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#editor.open_file" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">editor.</tt><tt class="descname">open_file</tt><big>(</big><em>name</em>, <em>new_tab=False</em><big>)</big><a class="headerlink" href="#editor.open_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Open the file with the given name in the editor.</p>
-<p><cite>name</cite> is just a file name of a script in the library, <cite>not</cite> an
-absolute path.</p>
+<p>Name can be a path filename relative to the script library&#8217;s root directory or an absolute path.</p>
 <p>The .py extension can be omitted. The file that is currently open
 in the editor will automatically be saved.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.apply_ui_theme">
+<tt class="descclassname">editor.</tt><tt class="descname">apply_ui_theme</tt><big>(</big><em>ui_view</em>, <em>theme_name=None</em><big>)</big><a class="headerlink" href="#editor.apply_ui_theme" title="Permalink to this definition">¶</a></dt>
+<dd><p>Style a <a class="reference internal" href="ui.html#ui.View" title="ui.View"><tt class="xref py py-class docutils literal"><span class="pre">ui.View</span></tt></a> (and its descendents) with the given UI theme.</p>
+<p>If <cite>theme_name</cite> is <cite>None</cite> (the default), the currently selected theme is used. Otherwise, it should be the name of a theme as shown in the settings.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.present_themed">
+<tt class="descclassname">editor.</tt><tt class="descname">present_themed</tt><big>(</big><em>ui_view</em>, <em>theme_name=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#editor.present_themed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Style a <a class="reference internal" href="ui.html#ui.View" title="ui.View"><tt class="xref py py-class docutils literal"><span class="pre">ui.View</span></tt></a> (and its descendents) with the given UI theme (using <a class="reference internal" href="#editor.apply_ui_theme" title="editor.apply_ui_theme"><tt class="xref py py-func docutils literal"><span class="pre">apply_ui_theme()</span></tt></a>), and present the view.</p>
+<p>Keyword arguments are passed on to <a class="reference internal" href="ui.html#ui.View.present" title="ui.View.present"><tt class="xref py py-meth docutils literal"><span class="pre">ui.View.present()</span></tt></a>, except for <cite>title_bar_color</cite> and <cite>title_color</cite>, which are set automatically, based on the theme.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.annotate_line">
+<tt class="descclassname">editor.</tt><tt class="descname">annotate_line</tt><big>(</big><em>lineno</em>, <em>text=''</em>, <em>style='warning'</em>, <em>expanded=True</em>, <em>filename=None</em>, <em>scroll=False</em><big>)</big><a class="headerlink" href="#editor.annotate_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Annotate a line of code in the editor with a label.</p>
+<p><cite>lineno</cite> should be the 1-based line number in the file.</p>
+<p><cite>style</cite> can be <cite>&#8216;success&#8217;</cite>, <cite>&#8216;warning&#8217;</cite> or <cite>&#8216;error&#8217;</cite>.</p>
+<p>If <cite>expanded</cite> is <cite>False</cite>, only an icon is shown; tapping on the icon shows the text of the annotation. Otherwise, the text is shown immediately.</p>
+<p>If <cite>filename</cite> is <cite>None</cite>, the line is annotated in the file that is currently open in the editor.</p>
+<p>Invalid file names and line numbers are silently ignored.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.clear_annotations">
+<tt class="descclassname">editor.</tt><tt class="descname">clear_annotations</tt><big>(</big><em>filename=None</em><big>)</big><a class="headerlink" href="#editor.clear_annotations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove all annotations that were added via <a class="reference internal" href="#editor.annotate_line" title="editor.annotate_line"><tt class="xref py py-func docutils literal"><span class="pre">annotate_line()</span></tt></a>.</p>
 </dd></dl>
 
 </div>
@@ -262,12 +283,12 @@ in the editor will automatically be saved.</p>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2016, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Dec 02, 2015.
+    Last updated on Jun 04, 2016.
     <a href="../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

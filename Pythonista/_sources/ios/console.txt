@@ -112,4 +112,8 @@ There are also several functions for presenting simple modal dialogs, and to acc
 .. function:: set_idle_timer_disabled(flag)
 
     Disable or enable the idle timer (which puts the device to sleep after a certain period of inactivity).
+
+.. function:: is_in_background()
+
+    Return `True` if the app is currently running in the background, `False` otherwise.
     

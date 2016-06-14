@@ -4,6 +4,177 @@ What's New in Pythonista
 
 This page contains detailed information about changes in new versions of the Pythonista app.
 
+Version 3.0
+===========
+
+Highlights
+----------
+
+* Support for both Python 3.5 and 2.7
+
+* Integrated debugger with support for breakpoints and visual stack frame inspection
+
+* Split-screen support on iPad Air 2 and later
+
+* Today widget for running scripts in Notification Center
+
+* Integrated doctest support
+
+* Integrated PEP-8 style checker
+
+* Improved code completion with fuzzy matching and user-defined snippets
+
+* Completely revamped :mod:`photos` module, including editable metadata, album creation, content editing, and more
+
+Python 3 Suppport
+-----------------
+
+* Pythonista now supports Python 3.5, in addition to 2.7. You can select the default interpreter in the settings. It's also possible to override the default interpreter for individual scripts, using a "shebang" like ``#! python3`` or ``#! python2`` as the first line of a script. Alternatively, you can tap and hold the run button to test a script in the non-default Python version. To help you with migrating your scripts to Python 3, you can use the "Python 2 to 3" tool in the "wrench" menu. 
+
+* To learn more about the differences between Python 2.7 and 3.x, I recommend the following article (external link): `The key differences between Python 2.7.x and Python 3.x with examples <http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html>`_.
+
+* If you also have Pythonista 2 installed, you can access your existing files through the special "Pythonista 2" folder in the script library. It is possible to move files from Pythonista 2 to Pythonista 3, but not vice-versa. You can disable the Pythonista 2 folder entirely from the settings.
+
+* The interactive console uses the default interpreter version, but you can switch to the other interpreter by tapping the ``[2.7]`` or ``[3.5]`` button (depending on the current setting).
+
+General
+-------
+
+* The URL scheme for launching Pythonista has changed to ``pythonista3://...`` to avoid undefined behavior in case you have both versions installed on the same device.
+
+* On iPad Air 2 or later (including iPad Pro and iPad mini 4), Pythonista now fully supports the system-wide split-screen feature, so you can run another app next to Pythonista. Unfortunately, this also means that the ``orientations`` argument for :meth:`ui.View.present` no longer works on devices that support split-screen, i.e. you can't lock the orientation of a view to portrait or landscape. If auto-rotation isn't disabled via Control Center, the app *always* auto-rotates. It is currently not possible to change this due to iOS limitations.
+
+* The new Pythonista Today Widget allows you to run Python scripts in Notification Center. You can select the script that should be run in the settings. Please note that the widget script has to be very efficient in terms of memory use because the amount of RAM that widgets get on iOS (before they are terminated) is *very* limited. The widget only supports Python 3, and only a limited subset of Pythonista's modules is available. In particular, the :mod:`scene` module and anything to do with dialogs/alerts are unavailable. The :mod:`ui` module is available in general (and essential for making widgets), but some UI classes cannot be used because they are too resource-heavy (e.g. :class:`ui.WebView`). A widget's UI should ideally consist of buttons, labels, and image views only. For showing a UI in the widget, the :mod:`appex` module has a new :func:`appex.set_widget_view` function. For very simple needs, you can also print text in the widget (but advanced console output features, e.g. :func:`console.set_color` etc. are not available).
+
+* Script shortcuts can now be added to the home screen from the *editor actions* ("wrench") menu. This basically works by setting up a website that redirects to a pythonista3:// URL, so the actual shortcut is added from Safari. The *Convert to PDF* action has moved into the *Share* menu.
+
+* Improved support for :mod:`doctest` tests -- a new file template allows you to create a doctest file in Markdown format. There's more information about this in the template itself. Doctest results are shown as annotations directly in the editor.
+
+* You can now add your own templates to the "New File" menu. Simply add files to the *Templates* folder (in the *Modules & Templates* group).
+
+* The view options for the script library (thumbnails, sort order) are now accesible directly in the library view ("..." button).
+
+* Script shortcuts of the sharing extension can now be edited in the main app's settings as well.
+
+* Added a *Sound Effects* setting to disable keyboard clicks etc.
+
+* Various "special" folders (standard library, site-packages) are now grouped under "Modules & Templates" in the script library. Note that this doesn't change the location of these folders on disk, so the site-packages and Templates folders still appear directly under "Documents" in the "Move Files" dialog.
+
+* There are now separate site-packages folders for the two interpreter versions. `site-packages-2` is only used by Python 2.7, `site-packages-3` only by 3.5. The old `site-packages` folder still exists as a fallback for both interpreters.
+
+Debugger
+--------
+
+* Pythonista now includes a real debugger with support for breakpoints and visual stackframe inspection. This also replaces the traceback navigator, and enables more advanced "post-mortem" debugging when an exception occurs.
+
+* To start breakpoint debugging, you have to add at least one breakpoint to your script (from the copy/paste menu). If a script contains breakpoints, tapping the run button will automatically offer a "Debug" option. The debugger is also shown in "post-mortem" mode when an unhandled exceptions occurs.
+
+* The debugger UI appears as an overlay "window" on top of everything else, so that it's possible to use it e.g. while a full-screen UI is presented. You can drag the debugger around on the screen if it gets in the way.
+
+* To get more information about variables and stack frames, you can expand the debugger UI. The *Variables* tab shows you all local and global variables in the selected stack frame, and you can expand objects (using the triangle buttons) to show their attributes (or members, in case of sequences or dicts), which makes it possible to inspect nested data structures. Tapping on a variable name shows a string representation, similar to ``repr(var)``. For certain types of objects, a preview image is shown instead -- this currently works for :class:`PIL.Image`, :class:`ui.Image`, :class:`ui.View`, and :class:`ui.Path`, and it's indicated by an "eye" icon in the list.
+
+Editor
+------
+
+* You can now define *snippets* in the settings to insert frequently-used pieces of (boilerplate) code more quickly. When you set an abbreviation for a snippet, it shows up in the code completion suggestions. You can also select from a list of snippets in the editor using the copy/paste menu (with an empty selection) or the Cmd+D keyboard shortcut. Note: Snippets are only supported in Python files.
+
+* The *Convert Tabs* action is now undoable, and the confirmation dialog has a new option to open the indentation settings.
+
+* Code completions can now be suggested based on fuzzy matching, e.g. typing "rage" also suggests "range()" (fuzzy-matched completions are always shown after precise matches).
+
+* When using an external (Bluetooth) keyboard, code completions can now be selected with the up/down arrow keys.
+
+* A new Cmd+L (or Ctrl+6) keyboard shortcut shows the current file's outline (while editing) -- The up/down arrow keys and return can be used to navigate to a different function without touching the screen.
+
+* New Cmd+Shift+B shortcut for adding/removing breakpoints.
+
+* When text is selected, pressing the tab key will now indent the selected line(s) instead of replacing the selected text with a tab. Shift-tab can be used to unindent on an external keyboard. On the on-screen keyboard, you can tap and hold the tab key for an unindent option. Indentation options are no longer shown in the copy/paste menu by default, but you can re-enable them in the settings (under "Keyboard & Typing").
+
+* The color picker (in the UI editor and asset picker) now allows entering arbitrary hex values by tapping on the color swatch.
+
+* Integrated PEP8 style checker: You can check a script by tapping and holding the ▷ (run) button. Various options for customizing the rules are available in the settings. Issues are highlighted directly in the editor.
+
+* Integrated `pyflakes` static analyzer: Similar to the PEP8 style checker, you can invoke this by tapping and holding the ▷ (run) button. The analyzer can find unused imports, undefined variables, and similar issues, which are also highlighted directly in the editor.
+
+* When running a script with arguments (by tapping and holding the run button), the arguments are now saved for each script individually. When the current script has any saved arguments, they are also used for running the script normally (i.e. by just tapping the run button). The icon of the run button changes slightly to indicate whether there are arguments for the current script.
+
+* Line numbers can optionally be shown on iPhone as well (line numbers were previously iPad-only).
+
+* On iPhone, the "show tabs" button is now at the bottom of the screen (or above the keyboard), so that the *editor actions* ("wrench") menu is more easily accessible in the main toolbar.
+
+* The search bar in the editor now uses the same extra keyboard row as the editor itself.
+
+* New "Line Length Warning" option (under *Indentation & Coding Style*). When enabled, the end of long lines is highlighted. The maximum line length can be customized (79 by default).
+
+Console
+-------
+
+* Improved console prompt: The text input area now expands automatically for multi-line statements (e.g. function definitions, loops). The code completion behavior is also more consistent between the editor and console now (e.g. the tab key inserts the first suggestion).
+
+* Showing images in the console has been improved substantially. A single tap on an image now opens it in a zoomable full-screen view. The sizing of image containers also matches the aspect ratio of the shown images more closely, especially when the console is in the more compact "docked" mode.
+
+Modules
+-------
+
+:mod:`photos`
+^^^^^^^^^^^^^
+
+* The :mod:`photos` module has been completely revamped, and allows far more advanced access to the iOS photo library, including editable metadata, album creation, and content editing. Please see the :mod:`photos` module docs for details.
+
+:mod:`editor`
+^^^^^^^^^^^^^
+
+* :func:`editor.open_file` now accepts both relative and absolute paths (relative paths are always resolved against ~/Documents though, not the current working directory).
+
+* New :func:`editor.annotate_line` function to annotate lines of code in the editor, similar to the integrated style checker and static analyzer.
+
+* New :func:`editor.apply_ui_theme` and :func:`editor.present_themed` functions for styling a :class:`ui.View` with a theme.
+
+
+:mod:`ui`
+^^^^^^^^^
+
+* Views that are presented in 'panel' style can be closed programmatically now (the :meth:`ui.View.close` method was previously ignored for this presentation style).
+
+* The :class:`ui.TableView` initializer supports keyword arguments now (same as other :class:`ui.View` subclasses)
+
+* :class:`ui.WebView` can now load non-https pages in the app extension.
+
+* :class:`ui.WebView.load_url` now treats absolute file paths like file URLs (so you don't have to construct a ``file://`` URL for loading local files).
+
+* :func:`copy.copy` now works correctly for geometry types (:class:`ui.Point`, :class:`ui.Size`, :class:`ui.Rect`).
+
+:mod:`scene`
+^^^^^^^^^^^^
+
+* Added support for MFi game controllers (see the module docs for details).
+
+* ``anchor_point`` can now be passed as a keyword argument to the :class:`SpriteNode` initializer.
+
+* :class:`scene.Texture` has a new :meth:`scene.Texture.subtexture` method that can be used for sprite sheets etc.
+
+* :class:`LabelNode` rendering quality is improved.
+
+* Initializing :class:`scene.ShapeNode` with ``path=None`` no longer throws an exception.
+
+* Initializing :class:`scene.SpriteNode` with ``texture=None`` no longer throws an exception.
+
+* :func:`copy.copy` now works correctly for geometry types (:class:`scene.Point`, :class:`scene.Size`, :class:`scene.Rect`).
+
+Misc
+----
+
+* The behavior of :func:`sys.exit` has changed: Registered :mod:`atexit` handlers are called, but nothing else happens (previous versions printed the exit code to the console). If you *really* want to exit the app, use :func:`os._exit`.
+
+* The editor no longer strips trailing blank lines when saving.
+
+* The console has (limited) support for the ``\b`` and ``\r`` control characters now. The most common use case would be simple progress displays that overwrite the last line that was printed. Note that (unlike in a real terminal) these control characters only have an effect within a single string. Printing should also be a bit faster, and a couple of issues with :func:`console.set_color` and :func:`console.write_link` are fixed.
+
+* When a script is running in the background for longer than iOS allows (about 3-4 minutes), the app should usually be suspended now (previously, it was killed immediately).
+
+* It's now possible to open folders in the library using the URL scheme. The syntax is the same as for opening files (pythonista3://some/path?action=open).
+
+
 Version 2.0
 ===========
 

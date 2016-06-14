@@ -133,6 +133,8 @@
 </li>
 <li><p class="first"><a class="reference internal" href="#integration-with-the-ui-module">Integration with the ui Module</a></p>
 </li>
+<li><p class="first"><a class="reference internal" href="#game-controllers">Game Controllers</a></p>
+</li>
 <li><dl class="first docutils">
 <dt><a class="reference internal" href="#node-classes">Node Classes</a></dt>
 <dd><ul class="first last simple">
@@ -328,6 +330,12 @@
 <p>You can also use this approach to add traditional UI elements (e.g. text fields) to your game. For this purpose, you don&#8217;t have to create a <a class="reference internal" href="#scene.SceneView" title="scene.SceneView"><tt class="xref py py-class docutils literal"><span class="pre">SceneView</span></tt></a> &#8211; you can simply use the view that was created automatically, using your <a class="reference internal" href="#scene.Scene" title="scene.Scene"><tt class="xref py py-class docutils literal"><span class="pre">Scene</span></tt></a>&#8216;s <tt class="xref py py-attr docutils literal"><span class="pre">view</span></tt> attribute (this will only work if a scene is already being presented of course).</p>
 <p>The <a class="reference internal" href="ui.html#module-ui" title="ui: Native GUI for iOS"><tt class="xref py py-mod docutils literal"><span class="pre">ui</span></tt></a> module can also be useful for rendering vector images (shapes, text etc.) that you want to use as textures. A <a class="reference internal" href="#scene.Texture" title="scene.Texture"><tt class="xref py py-class docutils literal"><span class="pre">Texture</span></tt></a> can be initialized from a <a class="reference internal" href="ui.html#ui.Image" title="ui.Image"><tt class="xref py py-class docutils literal"><span class="pre">ui.Image</span></tt></a> for this purpose, typically one that you create using an <a class="reference internal" href="ui.html#ui.ImageContext" title="ui.ImageContext"><tt class="xref py py-class docutils literal"><span class="pre">ui.ImageContext</span></tt></a>. The <a class="reference internal" href="#scene.ShapeNode" title="scene.ShapeNode"><tt class="xref py py-class docutils literal"><span class="pre">ShapeNode</span></tt></a> and <a class="reference internal" href="#scene.LabelNode" title="scene.LabelNode"><tt class="xref py py-class docutils literal"><span class="pre">LabelNode</span></tt></a> classes use this approach to render their content.</p>
 </div>
+<div class="section" id="game-controllers">
+<h2>Game Controllers<a class="headerlink" href="#game-controllers" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="#module-scene" title="scene: 2D graphics and animation on iOS"><tt class="xref py py-mod docutils literal"><span class="pre">scene</span></tt></a> module has support for controlling games using MFi game controllers, like the <a class="reference external" href="https://steelseries.com/gaming-controllers/nimbus">Nimbus SteelSeries</a> gamepad.</p>
+<p>Supporting hardware controller input in your game is quite simple &#8211; you basically just have to override the <a class="reference internal" href="#scene.Scene.controller_changed" title="scene.Scene.controller_changed"><tt class="xref py py-meth docutils literal"><span class="pre">Scene.controller_changed()</span></tt></a> method in your <a class="reference internal" href="#scene.Scene" title="scene.Scene"><tt class="xref py py-class docutils literal"><span class="pre">Scene</span></tt></a> subclass to respond to controller events (e.g. a button being pressed/released). The method gets two parameters: A <tt class="docutils literal"><span class="pre">key</span></tt>, which is a string that represents the element of the controller that changed (for example <tt class="docutils literal"><span class="pre">'button_a'</span></tt>), and the current value of the controller element. The type of the value depends on the type of controller element &#8211; for basic buttons, it&#8217;s a boolean, for pressure-sensitive triggers a floating-point value between 0.0 and 1.0, and for dpads and thumbsticks, it&#8217;s a <a class="reference internal" href="#scene.Point" title="scene.Point"><tt class="xref py py-class docutils literal"><span class="pre">Point</span></tt></a> object (with x and y values in the range -1.0 to +1.0).</p>
+<p>In some cases, it can be more convenient to query the current state of the controller(s) in the <a class="reference internal" href="#scene.Scene.update" title="scene.Scene.update"><tt class="xref py py-meth docutils literal"><span class="pre">Scene.update()</span></tt></a> method or elsewhere. To do this, you can use the module-level <a class="reference internal" href="#scene.get_controllers" title="scene.get_controllers"><tt class="xref py py-func docutils literal"><span class="pre">get_controllers()</span></tt></a> function. This will return a list of dictionaries that represent the current state of all buttons, the dpad, thumbsticks, etc. for every controller that is currently connected.</p>
+</div>
 <div class="section" id="node-classes">
 <h2>Node Classes<a class="headerlink" href="#node-classes" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="scene">
@@ -422,6 +430,13 @@ your scene. The <a class="reference internal" href="#scene.Scene.size" title="sc
 <dt id="scene.Scene.dismiss_modal_scene">
 <tt class="descclassname">Scene.</tt><tt class="descname">dismiss_modal_scene</tt><big>(</big><big>)</big><a class="headerlink" href="#scene.Scene.dismiss_modal_scene" title="Permalink to this definition">¶</a></dt>
 <dd><p>Close a scene that is being presented modally using <a class="reference internal" href="#scene.Scene.present_modal_scene" title="scene.Scene.present_modal_scene"><tt class="xref py py-meth docutils literal"><span class="pre">Scene.present_modal_scene()</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Scene.controller_changed">
+<tt class="descclassname">Scene.</tt><tt class="descname">controller_changed</tt><big>(</big><em>key</em>, <em>value</em><big>)</big><a class="headerlink" href="#scene.Scene.controller_changed" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method gets called automatically when the state of any connected game controller changes, for example, when a button is pressed/released, or when the direction of one of the thumbsticks or the dpad changes.</p>
+<p>The <tt class="docutils literal"><span class="pre">key</span></tt> parameter is a string that specifies the element of the controller that changed (for example <tt class="docutils literal"><span class="pre">'button_a'</span></tt>, <tt class="docutils literal"><span class="pre">'dpad'</span></tt>, <tt class="docutils literal"><span class="pre">'thumbstick_left'</span></tt>...), <tt class="docutils literal"><span class="pre">value</span></tt> contains the current value of that element. The type of <tt class="docutils literal"><span class="pre">value</span></tt> varies with the type of controller element. For directional input elements (dpads, thumbsticks), the value is a <a class="reference internal" href="#scene.Point" title="scene.Point"><tt class="xref py py-class docutils literal"><span class="pre">Point</span></tt></a> object. For others, it&#8217;s either a float (when the element is pressure-sensitive) or a boolean.</p>
 </dd></dl>
 
 <div class="section" id="scene-attributes">
@@ -653,7 +668,7 @@ your scene. The <a class="reference internal" href="#scene.Scene.size" title="sc
 <dt id="scene.SpriteNode">
 <em class="property">class </em><tt class="descclassname">scene.</tt><tt class="descname">SpriteNode</tt><big>(</big><span class="optional">[</span><em>texture</em>, <em>position=(0</em>, <em>0)</em>, <em>z_position=0.0</em>, <em>scale=1.0</em>, <em>x_scale=1.0</em>, <em>y_scale=1.0</em>, <em>alpha=1.0</em>, <em>speed=1.0</em>, <em>parent=None</em>, <em>size=None</em>, <em>color='white'</em>, <em>blend_mode=0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#scene.SpriteNode" title="Permalink to this definition">¶</a></dt>
 <dd><p>A <a class="reference internal" href="#scene.SpriteNode" title="scene.SpriteNode"><tt class="xref py py-class docutils literal"><span class="pre">SpriteNode</span></tt></a> is a node that draws a textured image, a colored square, or a textured image blended with a color. You can also provide a custom shader to create your own rendering effects.</p>
-<p>When initializing a <a class="reference internal" href="#scene.SpriteNode" title="scene.SpriteNode"><tt class="xref py py-class docutils literal"><span class="pre">SpriteNode</span></tt></a>, you can provide the texture as either a <a class="reference internal" href="#scene.Texture" title="scene.Texture"><tt class="xref py py-class docutils literal"><span class="pre">Texture</span></tt></a> object, a <a class="reference internal" href="ui.html#ui.Image" title="ui.Image"><tt class="xref py py-class docutils literal"><span class="pre">ui.Image</span></tt></a>, or the name of a built-in image (a string).</p>
+<p>When initializing a <a class="reference internal" href="#scene.SpriteNode" title="scene.SpriteNode"><tt class="xref py py-class docutils literal"><span class="pre">SpriteNode</span></tt></a>, you can provide the texture as either a <a class="reference internal" href="#scene.Texture" title="scene.Texture"><tt class="xref py py-class docutils literal"><span class="pre">Texture</span></tt></a> object, or the name of a built-in image or image file (a string).</p>
 </dd></dl>
 
 <div class="section" id="spritenode-attributes">
@@ -869,7 +884,8 @@ your scene. The <a class="reference internal" href="#scene.Scene.size" title="sc
 <li><tt class="docutils literal"><span class="pre">uniform</span> <span class="pre">vec2</span> <span class="pre">u_sprite_size</span></tt> &#8211; The size of the sprite (in points)</li>
 <li><tt class="docutils literal"><span class="pre">uniform</span> <span class="pre">float</span> <span class="pre">u_scale</span></tt> &#8211; The scale factor of the screen (typically 2.0 for retina screens) &#8211; this can be used to convert <tt class="docutils literal"><span class="pre">u_sprite_size</span></tt> to actual screen pixels.</li>
 <li><tt class="docutils literal"><span class="pre">uniform</span> <span class="pre">sampler2D</span> <span class="pre">u_texture</span></tt> &#8211; The texture of the sprite (for an <a class="reference internal" href="#scene.EffectNode" title="scene.EffectNode"><tt class="xref py py-class docutils literal"><span class="pre">EffectNode</span></tt></a>, this texture contains the rendering of its children)</li>
-<li><tt class="docutils literal"><span class="pre">uniform</span> <span class="pre">vec4</span> <span class="pre">u_color</span></tt> &#8211; The premultiplied color of the sprite (corresponding to the <a class="reference internal" href="#scene.SpriteNode.color" title="scene.SpriteNode.color"><tt class="xref py py-attr docutils literal"><span class="pre">SpriteNode.color</span></tt></a> attribute)</li>
+<li><tt class="docutils literal"><span class="pre">uniform</span> <span class="pre">vec4</span> <span class="pre">u_tint_color</span></tt> &#8211; The premultiplied color of the sprite (corresponding to the <a class="reference internal" href="#scene.SpriteNode.color" title="scene.SpriteNode.color"><tt class="xref py py-attr docutils literal"><span class="pre">SpriteNode.color</span></tt></a> attribute)</li>
+<li><tt class="docutils literal"><span class="pre">uniform</span> <span class="pre">vec4</span> <span class="pre">u_fill_color</span></tt> &#8211; If the sprite has no texture, this is used instead of <tt class="docutils literal"><span class="pre">u_tint_color</span></tt>.</li>
 <li><tt class="docutils literal"><span class="pre">varying</span> <span class="pre">vec2</span> <span class="pre">v_tex_coord</span></tt> &#8211; The current texture (UV) coordinates</li>
 </ul>
 </dd></dl>
@@ -1083,6 +1099,14 @@ your scene. The <a class="reference internal" href="#scene.Scene.size" title="sc
 <dt id="scene.Texture">
 <em class="property">class </em><tt class="descclassname">scene.</tt><tt class="descname">Texture</tt><big>(</big><em>image</em><big>)</big><a class="headerlink" href="#scene.Texture" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="#scene.Texture" title="scene.Texture"><tt class="xref py py-class docutils literal"><span class="pre">Texture</span></tt></a> objects are used by <a class="reference internal" href="#scene.SpriteNode" title="scene.SpriteNode"><tt class="xref py py-class docutils literal"><span class="pre">SpriteNode</span></tt></a> objects to render their content. A texture is an image that has been loaded into the GPU&#8217;s memory. Textures can be initialized using either the name of a built-in image (a string), or a <a class="reference internal" href="ui.html#ui.Image" title="ui.Image"><tt class="xref py py-class docutils literal"><span class="pre">ui.Image</span></tt></a> object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scene.Texture.subtexture">
+<tt class="descclassname">Texture.</tt><tt class="descname">subtexture</tt><big>(</big><em>rect</em><big>)</big><a class="headerlink" href="#scene.Texture.subtexture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new texture from a rectangular area in an existing texture. The returned texture object shares the same texture data as the original texture object, meaning that only one copy of the texture data is kept in memory.</p>
+<p>The <cite>rect</cite> parameter describes the portion of the texture in unit coordinates, e.g. <tt class="docutils literal"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></tt> would create a texture from the bottom-left quadrant of the original texture.</p>
+<p>This method can be used for sprite sheets / texture atlasses.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -1322,6 +1346,12 @@ to <cite>PORTRAIT</cite> or <cite>LANDSCAPE</cite> to force a specific orientati
 Set the <cite>frame_interval</cite> parameter to 2 for 30fps, 3 for 20, etc.</p>
 </dd></dl>
 
+<dl class="function">
+<dt id="scene.get_controllers">
+<tt class="descclassname">scene.</tt><tt class="descname">get_controllers</tt><big>(</big><big>)</big><a class="headerlink" href="#scene.get_controllers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the current state of all connected MFi game controllers as a list of dicts (see also <a class="reference internal" href="#game-controllers">Game Controllers</a>).</p>
+</dd></dl>
+
 </div>
 <div class="section" id="constants">
 <h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
@@ -1493,12 +1523,12 @@ Set the <cite>frame_interval</cite> parameter to 2 for 30fps, 3 for 20, etc.</p>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2016, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Dec 02, 2015.
+    Last updated on Jun 01, 2016.
     <a href="../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

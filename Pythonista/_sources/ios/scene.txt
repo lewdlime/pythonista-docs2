@@ -16,6 +16,7 @@ The :mod:`scene` module provides an easy way to create hardware-accelerated 2D g
     * `Colors`_
 * `Classic Render Loop`_
 * `Integration with the ui Module`_
+* `Game Controllers`_
 * `Node Classes`_
     * `Scene`_
     * `Node`_
@@ -213,6 +214,15 @@ You can also use this approach to add traditional UI elements (e.g. text fields)
 
 The :mod:`ui` module can also be useful for rendering vector images (shapes, text etc.) that you want to use as textures. A :class:`Texture` can be initialized from a :class:`ui.Image` for this purpose, typically one that you create using an :class:`ui.ImageContext`. The :class:`ShapeNode` and :class:`LabelNode` classes use this approach to render their content.
 
+Game Controllers
+----------------
+
+The :mod:`scene` module has support for controlling games using MFi game controllers, like the `Nimbus SteelSeries <https://steelseries.com/gaming-controllers/nimbus>`_ gamepad.
+
+Supporting hardware controller input in your game is quite simple -- you basically just have to override the :meth:`Scene.controller_changed` method in your :class:`Scene` subclass to respond to controller events (e.g. a button being pressed/released). The method gets two parameters: A ``key``, which is a string that represents the element of the controller that changed (for example ``'button_a'``), and the current value of the controller element. The type of the value depends on the type of controller element -- for basic buttons, it's a boolean, for pressure-sensitive triggers a floating-point value between 0.0 and 1.0, and for dpads and thumbsticks, it's a :class:`Point` object (with x and y values in the range -1.0 to +1.0).
+
+In some cases, it can be more convenient to query the current state of the controller(s) in the :meth:`Scene.update` method or elsewhere. To do this, you can use the module-level :func:`get_controllers` function. This will return a list of dictionaries that represent the current state of all buttons, the dpad, thumbsticks, etc. for every controller that is currently connected.
+
 Node Classes
 ------------
 
@@ -293,6 +303,12 @@ Scene
 .. method:: Scene.dismiss_modal_scene()
 
     Close a scene that is being presented modally using :meth:`Scene.present_modal_scene`.
+
+.. method:: Scene.controller_changed(key, value)
+
+    This method gets called automatically when the state of any connected game controller changes, for example, when a button is pressed/released, or when the direction of one of the thumbsticks or the dpad changes.
+    
+    The ``key`` parameter is a string that specifies the element of the controller that changed (for example ``'button_a'``, ``'dpad'``, ``'thumbstick_left'``...), ``value`` contains the current value of that element. The type of ``value`` varies with the type of controller element. For directional input elements (dpads, thumbsticks), the value is a :class:`Point` object. For others, it's either a float (when the element is pressure-sensitive) or a boolean.
 
 Scene Attributes
 ''''''''''''''''
@@ -476,7 +492,7 @@ SpriteNode
 
     A :class:`SpriteNode` is a node that draws a textured image, a colored square, or a textured image blended with a color. You can also provide a custom shader to create your own rendering effects.
     
-    When initializing a :class:`SpriteNode`, you can provide the texture as either a :class:`Texture` object, a :class:`ui.Image`, or the name of a built-in image (a string).
+    When initializing a :class:`SpriteNode`, you can provide the texture as either a :class:`Texture` object, or the name of a built-in image or image file (a string).
 
 SpriteNode Attributes
 '''''''''''''''''''''
@@ -658,7 +674,8 @@ Shader
     * ``uniform vec2 u_sprite_size`` -- The size of the sprite (in points)
     * ``uniform float u_scale`` -- The scale factor of the screen (typically 2.0 for retina screens) -- this can be used to convert ``u_sprite_size`` to actual screen pixels.
     * ``uniform sampler2D u_texture`` -- The texture of the sprite (for an :class:`EffectNode`, this texture contains the rendering of its children)
-    * ``uniform vec4 u_color`` -- The premultiplied color of the sprite (corresponding to the :attr:`SpriteNode.color` attribute)
+    * ``uniform vec4 u_tint_color`` -- The premultiplied color of the sprite (corresponding to the :attr:`SpriteNode.color` attribute)
+    * ``uniform vec4 u_fill_color`` -- If the sprite has no texture, this is used instead of ``u_tint_color``.
     * ``varying vec2 v_tex_coord`` -- The current texture (UV) coordinates
 
 Even though these uniforms and varyings are set automatically, you have to declare them in your shader if you want to use them.
@@ -848,6 +865,14 @@ Texture
 
     :class:`Texture` objects are used by :class:`SpriteNode` objects to render their content. A texture is an image that has been loaded into the GPU's memory. Textures can be initialized using either the name of a built-in image (a string), or a :class:`ui.Image` object.
 
+.. method:: Texture.subtexture(rect)
+
+    Create a new texture from a rectangular area in an existing texture. The returned texture object shares the same texture data as the original texture object, meaning that only one copy of the texture data is kept in memory.
+    
+    The `rect` parameter describes the portion of the texture in unit coordinates, e.g. ``(0, 0, 0.5, 0.5)`` would create a texture from the bottom-left quadrant of the original texture.
+    
+    This method can be used for sprite sheets / texture atlasses.
+
 .. attribute:: Texture.filtering_mode
 
     The filtering mode that is used for scaling the texture. Can be one of the constants listed under `Texture Filtering Modes`_ (:data:`FILTERING_LINEAR` by default).
@@ -1028,6 +1053,10 @@ Functions
    
     By default, the scene's :meth:`update` method is called 60 times per second.
     Set the `frame_interval` parameter to 2 for 30fps, 3 for 20, etc.
+    
+.. function:: get_controllers()
+
+    Return the current state of all connected MFi game controllers as a list of dicts (see also `Game Controllers`_).
 
 Constants
 ---------

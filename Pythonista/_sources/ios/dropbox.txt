@@ -1,30 +1,21 @@
-Dropbox
-=======
+Dropbox for Python
+==================
 
 .. module:: dropbox
 
-.. toctree::
-    :maxdepth: 1
+Pythonista includes version 6.4.0 of the Dropbox Python SDK for integrating with the Dropbox API v2. Documentation is available on `Read the Docs
+<http://dropbox-sdk-python.readthedocs.org/>`_.
 
-DropboxClient
--------------
-.. automodule:: dropbox.client
-.. autoclass:: DropboxClient
-    :members:
+Creating an Application
+-----------------------
 
+You need to create an Dropbox Application to make API requests.
 
-DropboxSession
---------------
-.. automodule:: dropbox.session
-.. autoclass:: DropboxSession
-    :members:
+- Go to https://dropbox.com/developers/apps.
 
-REST Client
------------
-.. automodule:: dropbox.rest
-.. autoclass:: RESTClient
-    :members:
-.. autoclass:: ErrorResponse
-    :members:
-.. autoclass:: RESTSocketError
-    :members:
+Obtaining an Access Token
+-------------------------
+
+All requests need to be made with an OAuth 2 access token. To get started, once
+you've created an app, you can go to the app's console and generate an access
+token for your own Dropbox account.

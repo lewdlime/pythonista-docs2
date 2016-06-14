@@ -1235,13 +1235,13 @@ WebView Attributes
     Delegate methods::
 
         class MyWebViewDelegate (object):
-            def webview_should_start_load(webview, url, nav_type):
+            def webview_should_start_load(self, webview, url, nav_type):
                 return True
-            def webview_did_start_load(webview):
+            def webview_did_start_load(self, webview):
                 pass
-            def webview_did_finish_load(webview):
+            def webview_did_finish_load(self, webview):
                 pass
-            def webview_did_fail_load(webview, error_code, error_msg):
+            def webview_did_fail_load(self, webview, error_code, error_msg):
                 pass
         
 
@@ -1739,6 +1739,10 @@ Utility Functions
 .. function:: get_screen_size()
 
     Return the size of the main screen as a ``(width, height)`` tuple (in points).
+
+.. function:: get_window_size()
+
+    Return the size of the app's main window. While this is usually the same as :func:`get_screen_size`, this function returns a different size when the app is running in split-screen mode on an iPad.
     
 .. function:: parse_color(color)
 

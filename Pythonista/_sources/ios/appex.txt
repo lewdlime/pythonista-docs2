@@ -74,11 +74,3 @@ Functions in the :mod:`appex` module:
 .. function:: get_vcards()
 
     Return the first VCard record in the share sheet's input. The record is represented as a string. If there are no Vcards in the input, the return value is `None`.
-    
-``watch`` submodule
--------------------
-
-.. function:: watch.set_input_suggestions(suggestions)
-
-    Call this before ``raw_input`` in a script that is started from the Apple Watch to set the list of suggestions that is shown in the text input dialog. `suggestions` should be a sequence of strings (note: If you pass a single string, it is interpreted as a sequence of characters, so you'll get a separate suggestion for each letter).
-    

@@ -136,6 +136,11 @@ Functions
 
    Return a localized version of a label that is used in a multi-value property.
 
+.. function:: is_authorized()
+
+    Returns `True` if access to the address book is currently allowed, `False` otherwise (e.g. if the permission dialog hasn't been shown yet or if access is denied due to parental controls).
+    
+
 Group Objects
 ^^^^^^^^^^^^^^^^
 

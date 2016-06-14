@@ -1,18 +1,19 @@
 language: python
 python:
-  - "2.7"
-install: "pip install -r requirements.txt"
+- '2.7'
+install: pip install -r requirements.txt
 script:
-  - "mkdir _build"
-  - "doc2dash -fv --name Pythonista -d _build -i icon.png --index-page index.html Pythonista"
-  - "cp icon@2x.png _build/Pythonista.docset"
-  - "cd _build && tar --exclude='.DS_Store' -cvzf Pythonista.tgz Pythonista.docset"
+- mkdir _build
+- doc2dash -fv --name 'Pythonista2' -d _build -i icon.png -j -I index.html Pythonista2
+- cp icon@2x.png _build/Pythonista2.docset
+- cd _build && tar --exclude='.DS_Store' -cvzf Pythonista2.tgz Pythonista2.docset
 deploy:
   provider: releases
-  api_key: "374a4951feda32b612f4519733c58b0ab7b95780"
+  api_key:
+    secure: YWsYW4c6aozvp98nhmSsQU2Ld5B04ViEu8qncBN/DIlhmnkXTk+Zfq9oAwjISBzwq5XAAmeF5Fv6KxPALEv2Awk4IvZALgWImMfahKLzaFOvyt/PucAzlaaKNzjP/KtLwDxa6voOAccFEY0s1xaocgxej0uvlp4XxUPfKbKCi20/TEe9EDOGPVryJsj839Zzx7+h1RyDiue6ImTQbyzZEFvI/OMIq/0gOQe15JNa72Q32JiD/XRQQzI+PfkLPJTmszU7paJbm7holl19gYnAAGZj98e5higLtHCoUWQwBS3HDtQxucTTexPtF6DJDEEEpuLzB+wGzvjFMl5N6fphFotSzK0oUOs3VddTUwcS2f8HD2W2m8HKDNKj65R+Ln15WK77hdzWN0ck5ImVMneO33XIwxGuHUPhlSDPSXnj14NbLLlbk93v0Zll+LZ4/rUUbgQbSLHYD9tr2dwbgqt5rfbYIfYfsolLlq8qCC5FMIfJQ1gXVuJN079q0H+HNWBb1INgPB/ovbgY2n214KBbaPnRzTFZ4VN97XDiTBl2JALhptoh8eKncgaHOBqVqMu6VW+Ya9WtQxR1mIJdZfi6eLZXRGmt+BfuLYJ6wpf4mlQC3SgAgHT9rxNdvsgkZ84I50fhMGn87amloNejZW3KziZvARIeajnVaqmAWER+eZs=
   file:
-    - "_build/Pythonista.docset"
-    - "_build/Pythonista.tgz"
+  - _build/Pythonista2.docset
+  - _build/Pythonista2.tgz
   skip_cleanup: true
   on:
     tags: true

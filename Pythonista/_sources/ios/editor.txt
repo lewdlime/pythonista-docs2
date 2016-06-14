@@ -10,9 +10,6 @@
 The :mod:`editor` module provides access to the script you're currently editing.
 You can get and set the selected range and replace text in a given range.
 
-Additionally, the :func:`reload_files` function allows you to reload the list of scripts
-in the library (which can be useful if your script writes out .py files for some reason).
-
 Please note: Invalid input values for the selection and text manipulation functions
 (e.g. ranges that are out of bounds) are silently ignored as of now. This may
 change in a future release.
@@ -126,12 +123,6 @@ The following functions are provided by the :mod:`editor` module:
    affected.
 
 
-.. function:: reload_files()
-   
-   Reload the list of files in Pythonista's library. This can be useful if you write out new Python files
-   that you want to open in the editor. Note that the library only shows files with a .py extension.
-   
-   
 .. function:: make_new_file([name, content])
 
    Create a new file and open it in the editor.
@@ -144,14 +135,42 @@ The following functions are provided by the :mod:`editor` module:
    The current file is automatically saved before opening the new one.
    
 
-.. function:: open_file(name)
+.. function:: open_file(name, new_tab=False)
 
    Open the file with the given name in the editor.
    
-   `name` is just a file name of a script in the library, `not` an 
-   absolute path.
+   Name can be a path filename relative to the script library's root directory or an absolute path.
    
    The .py extension can be omitted. The file that is currently open 
    in the editor will automatically be saved.
+
+.. function:: apply_ui_theme(ui_view, theme_name=None)
+
+    Style a :class:`ui.View` (and its descendents) with the given UI theme.
+    
+    If `theme_name` is `None` (the default), the currently selected theme is used. Otherwise, it should be the name of a theme as shown in the settings.
+
+.. function:: present_themed(ui_view, theme_name=None, **kwargs)
    
+   Style a :class:`ui.View` (and its descendents) with the given UI theme (using :func:`apply_ui_theme`), and present the view.
    
+   Keyword arguments are passed on to :meth:`ui.View.present`, except for `title_bar_color` and `title_color`, which are set automatically, based on the theme.
+
+.. function:: annotate_line(lineno, text='', style='warning', expanded=True, filename=None, scroll=False)
+
+    Annotate a line of code in the editor with a label.
+    
+    `lineno` should be the 1-based line number in the file.
+    
+    `style` can be `'success'`, `'warning'` or `'error'`.
+    
+    If `expanded` is `False`, only an icon is shown; tapping on the icon shows the text of the annotation. Otherwise, the text is shown immediately.
+    
+    If `filename` is `None`, the line is annotated in the file that is currently open in the editor.
+    
+    Invalid file names and line numbers are silently ignored.
+
+.. function:: clear_annotations(filename=None)
+
+    Remove all annotations that were added via :func:`annotate_line`.
+    

@@ -199,6 +199,7 @@
       <dt><a href="library/stdtypes.html#file.read">(file method)</a></dt>
       <dt><a href="library/httplib.html#httplib.HTTPResponse.read">(httplib.HTTPResponse method)</a></dt>
       <dt><a href="library/imaplib.html#imaplib.IMAP4.read">(imaplib.IMAP4 method)</a></dt>
+      <dt><a href="library/mmap.html#mmap.read">(in module mmap)</a></dt>
       <dt><a href="library/os.html#os.read">(in module os)</a></dt>
       <dt><a href="library/io.html#io.BufferedIOBase.read">(io.BufferedIOBase method)</a></dt>
       <dt><a href="library/io.html#io.BufferedReader.read">(io.BufferedReader method)</a></dt>
@@ -216,6 +217,7 @@
       <dt><a href="library/io.html#io.BytesIO.read1">(io.BytesIO method)</a></dt>
   </dl></dd>
     <dt><a href="library/telnetlib.html#telnetlib.Telnet.read_all">read_all() (telnetlib.Telnet method)</a></dt>
+    <dt><a href="library/mmap.html#mmap.read_byte">read_byte() (in module mmap)</a></dt>
     <dt><a href="ios/cb.html#cb.Peripheral.read_characteristic_value">read_characteristic_value() (cb.Peripheral method)</a></dt>
     <dt><a href="library/telnetlib.html#telnetlib.Telnet.read_eager">read_eager() (telnetlib.Telnet method)</a></dt>
     <dt><a href="library/telnetlib.html#telnetlib.Telnet.read_lazy">read_lazy() (telnetlib.Telnet method)</a></dt>
@@ -252,6 +254,7 @@
       <dt><a href="library/codecs.html#codecs.StreamReader.readline">(codecs.StreamReader method)</a></dt>
       <dt><a href="reference/toplevel_components.html#index-8">(file method)</a>, <a href="library/stdtypes.html#file.readline">[1]</a></dt>
       <dt><a href="library/imaplib.html#imaplib.IMAP4.readline">(imaplib.IMAP4 method)</a></dt>
+      <dt><a href="library/mmap.html#mmap.readline">(in module mmap)</a></dt>
       <dt><a href="library/io.html#io.IOBase.readline">(io.IOBase method)</a></dt>
       <dt><a href="library/io.html#io.TextIOBase.readline">(io.TextIOBase method)</a></dt>
       <dt><a href="library/multifile.html#multifile.MultiFile.readline">(multifile.MultiFile method)</a></dt>
@@ -383,7 +386,6 @@
       <dt><a href="ios/ui.html#ui.WebView.reload">(ui.WebView method)</a></dt>
   </dl></dd>
     <dt><a href="ios/ui.html#ui.TableView.reload_data">reload_data() (ui.TableView method)</a></dt>
-    <dt><a href="ios/editor.html#editor.reload_files">reload_files() (in module editor)</a></dt>
     <dt><a href="library/os.path.html#os.path.relpath">relpath() (in module os.path)</a></dt>
     <dt><a href="library/decimal.html#decimal.Context.remainder">remainder() (decimal.Context method)</a></dt>
     <dt><a href="library/decimal.html#decimal.Context.remainder_near">remainder_near() (decimal.Context method)</a></dt>
@@ -457,6 +459,8 @@
     <dt><a href="ios/ui.html#ui.RENDERING_MODE_AUTOMATIC">RENDERING_MODE_AUTOMATIC (in module ui)</a></dt>
     <dt><a href="ios/ui.html#ui.RENDERING_MODE_ORIGINAL">RENDERING_MODE_ORIGINAL (in module ui)</a></dt>
     <dt><a href="ios/ui.html#ui.RENDERING_MODE_TEMPLATE">RENDERING_MODE_TEMPLATE (in module ui)</a></dt>
+</dl></td>
+  <td style="width: 33%" valign="top"><dl>
     <dt><a href="library/itertools.html#itertools.repeat">repeat() (in module itertools)</a></dt>
     <dd><dl>
       <dt><a href="library/operator.html#operator.repeat">(in module operator)</a></dt>
@@ -468,8 +472,6 @@
     <dd><dl>
       <dt><a href="library/stdtypes.html#index-22">operation</a></dt>
   </dl></dd>
-</dl></td>
-  <td style="width: 33%" valign="top"><dl>
     <dt><a href="ios/bottle/api.html#bottle.MultiDict.replace">replace() (bottle.MultiDict method)</a></dt>
     <dd><dl>
       <dt><a href="library/datetime.html#datetime.date.replace">(datetime.date method)</a></dt>
@@ -524,10 +526,8 @@
       <dt><a href="ios/bottle/api.html#bottle.Request">(in module bottle)</a></dt>
   </dl></dd>
     <dt><a href="ios/bottle/api.html#bottle.request">request (in module bottle)</a>, <a href="ios/bottle/api.html#bottle.request">[1]</a></dt>
-    <dt><a href="ios/dropbox.html#dropbox.client.DropboxClient.request">request() (dropbox.client.DropboxClient method)</a></dt>
+    <dt><a href="library/httplib.html#httplib.HTTPConnection.request">request() (httplib.HTTPConnection method)</a></dt>
     <dd><dl>
-      <dt><a href="ios/dropbox.html#dropbox.rest.RESTClient.request">(dropbox.rest.RESTClient class method)</a></dt>
-      <dt><a href="library/httplib.html#httplib.HTTPConnection.request">(httplib.HTTPConnection method)</a></dt>
       <dt><a href="ios/requests.html#requests.request">(in module requests)</a></dt>
       <dt><a href="ios/twitter.html#twitter.request">(in module twitter)</a></dt>
       <dt><a href="ios/requests.html#requests.Session.request">(requests.Session method)</a></dt>
@@ -570,6 +570,7 @@
     <dt><a href="ios/Image.html#Image.Image.resize">resize() (Image.Image method)</a>, <a href="ios/Image.html#Image.Image.resize">[1]</a></dt>
     <dd><dl>
       <dt><a href="library/ctypes.html#ctypes.resize">(in module ctypes)</a></dt>
+      <dt><a href="library/mmap.html#mmap.resize">(in module mmap)</a></dt>
   </dl></dd>
     <dt><a href="library/datetime.html#datetime.date.resolution">resolution (datetime.date attribute)</a></dt>
     <dd><dl>
@@ -593,17 +594,12 @@
     <dd><dl>
       <dt><a href="library/httplib.html#httplib.responses">(in module httplib)</a></dt>
   </dl></dd>
-    <dt><a href="ios/dropbox.html#dropbox.rest.RESTClient">RESTClient (class in dropbox.rest)</a></dt>
-    <dt><a href="ios/dropbox.html#dropbox.client.DropboxClient.restore">restore() (dropbox.client.DropboxClient method)</a></dt>
-    <dd><dl>
-      <dt><a href="library/difflib.html#difflib.restore">(in module difflib)</a></dt>
-  </dl></dd>
+    <dt><a href="library/difflib.html#difflib.restore">restore() (in module difflib)</a></dt>
     <dt><a href="ios/canvas.html#canvas.restore_gstate">restore_gstate() (in module canvas)</a></dt>
     <dt>restricted</dt>
     <dd><dl>
       <dt><a href="reference/executionmodel.html#index-10">execution</a></dt>
   </dl></dd>
-    <dt><a href="ios/dropbox.html#dropbox.rest.RESTSocketError">RESTSocketError (class in dropbox.rest)</a></dt>
     <dt><a href="library/ctypes.html#ctypes._FuncPtr.restype">restype (ctypes._FuncPtr attribute)</a></dt>
     <dt><a href="library/trace.html#trace.Trace.results">results() (trace.Trace method)</a></dt>
     <dt><a href="ios/scene.html#scene.Scene.resume">resume() (scene.Scene method)</a></dt>
@@ -637,8 +633,8 @@
     <dt><a href="library/cookielib.html#cookielib.FileCookieJar.revert">revert() (cookielib.FileCookieJar method)</a></dt>
     <dd><dl>
       <dt><a href="ios/contacts.html#contacts.revert">(in module contacts)</a></dt>
+      <dt><a href="ios/photos.html#photos.Asset.revert">(photos.Asset method)</a></dt>
   </dl></dd>
-    <dt><a href="ios/dropbox.html#dropbox.client.DropboxClient.revisions">revisions() (dropbox.client.DropboxClient method)</a></dt>
     <dt><a href="library/aifc.html#aifc.aifc.rewind">rewind() (aifc.aifc method)</a></dt>
     <dd><dl>
       <dt><a href="library/sunau.html#sunau.AU_read.rewind">(sunau.AU_read method)</a></dt>
@@ -667,14 +663,14 @@
       <dt><a href="library/smtplib.html#index-2">RFC 1869</a>, <a href="library/smtplib.html#index-4">[1]</a></dt>
       <dt><a href="library/email.html#index-9">RFC 1894</a></dt>
       <dt><a href="whatsnew/2.6.html#index-22">RFC 2033</a></dt>
-      <dt><a href="library/email.header.html#index-4">RFC 2045</a>, <a href="library/email.html#index-3">[1]</a>, <a href="library/multifile.html#index-0">[2]</a>, <a href="library/email.message.html#index-3">[3]</a>, <a href="library/email.message.html#index-4">[4]</a>, <a href="library/email.message.html#index-5">[5]</a>, <a href="library/email.message.html#index-8">[6]</a></dt>
+      <dt><a href="library/email.header.html#index-4">RFC 2045</a>, <a href="library/multifile.html#index-0">[1]</a>, <a href="library/email.message.html#index-3">[2]</a>, <a href="library/email.message.html#index-4">[3]</a>, <a href="library/email.message.html#index-5">[4]</a>, <a href="library/email.message.html#index-8">[5]</a>, <a href="library/email.html#index-3">[6]</a></dt>
       <dt><a href="library/email.header.html#index-5">RFC 2046</a>, <a href="library/email.html#index-4">[1]</a></dt>
       <dt><a href="library/email.header.html#index-6">RFC 2047</a>, <a href="library/email.header.html#index-8">[1]</a>, <a href="library/email.header.html#index-11">[2]</a>, <a href="library/email.header.html#index-13">[3]</a>, <a href="library/email.html#index-5">[4]</a></dt>
       <dt><a href="library/imaplib.html#index-1">RFC 2060</a>, <a href="library/imaplib.html#index-3">[1]</a></dt>
       <dt><a href="library/cookie.html#index-1">RFC 2068</a></dt>
       <dt><a href="library/hmac.html#index-0">RFC 2104</a>, <a href="whatsnew/2.2.html#index-17">[1]</a></dt>
       <dt><a href="library/cookie.html#index-0">RFC 2109</a>, <a href="library/cookie.html#index-2">[1]</a>, <a href="library/cookie.html#index-3">[2]</a>, <a href="library/cookie.html#index-4">[3]</a>, <a href="library/cookie.html#index-5">[4]</a>, <a href="library/cookielib.html#index-1">[5]</a>, <a href="library/cookielib.html#index-2">[6]</a></dt>
-      <dt><a href="library/email.header.html#index-7">RFC 2231</a>, <a href="library/email.util.html#index-4">[1]</a>, <a href="library/email.util.html#index-5">[2]</a>, <a href="library/email.util.html#index-6">[3]</a>, <a href="library/email.util.html#index-7">[4]</a>, <a href="library/email.util.html#index-8">[5]</a>, <a href="library/email.html#index-6">[6]</a>, <a href="library/email.html#index-8">[7]</a>, <a href="library/email.message.html#index-2">[8]</a>, <a href="library/email.message.html#index-6">[9]</a>, <a href="library/email.message.html#index-7">[10]</a>, <a href="library/email.message.html#index-9">[11]</a></dt>
+      <dt><a href="library/email.header.html#index-7">RFC 2231</a>, <a href="library/email.util.html#index-4">[1]</a>, <a href="library/email.util.html#index-5">[2]</a>, <a href="library/email.util.html#index-6">[3]</a>, <a href="library/email.util.html#index-7">[4]</a>, <a href="library/email.util.html#index-8">[5]</a>, <a href="library/email.message.html#index-2">[6]</a>, <a href="library/email.message.html#index-6">[7]</a>, <a href="library/email.message.html#index-7">[8]</a>, <a href="library/email.message.html#index-9">[9]</a>, <a href="library/email.html#index-6">[10]</a>, <a href="library/email.html#index-8">[11]</a></dt>
       <dt><a href="whatsnew/2.2.html#index-19">RFC 2342</a></dt>
       <dt><a href="library/urlparse.html#index-6">RFC 2368</a></dt>
       <dt><a href="library/urlparse.html#index-2">RFC 2396</a>, <a href="library/urlparse.html#index-5">[1]</a></dt>
@@ -684,7 +680,7 @@
       <dt><a href="library/httplib.html#index-4">RFC 2774</a></dt>
       <dt><a href="library/httplib.html#index-3">RFC 2817</a></dt>
       <dt><a href="library/email.html#index-1">RFC 2821</a></dt>
-      <dt><a href="library/rfc822.html#index-0">RFC 2822</a>, <a href="library/rfc822.html#index-1">[1]</a>, <a href="library/rfc822.html#index-2">[2]</a>, <a href="library/rfc822.html#index-4">[3]</a>, <a href="library/rfc822.html#index-5">[4]</a>, <a href="library/rfc822.html#index-6">[5]</a>, <a href="library/rfc822.html#index-7">[6]</a>, <a href="library/rfc822.html#index-8">[7]</a>, <a href="library/rfc822.html#index-10">[8]</a>, <a href="library/rfc822.html#index-12">[9]</a>, <a href="library/email.header.html#index-0">[10]</a>, <a href="library/email.header.html#index-2">[11]</a>, <a href="library/email.header.html#index-3">[12]</a>, <a href="library/email.header.html#index-9">[13]</a>, <a href="library/email.header.html#index-10">[14]</a>, <a href="library/email.header.html#index-12">[15]</a>, <a href="library/time.html#index-9">[16]</a>, <a href="library/time.html#index-18">[17]</a>, <a href="library/email.generator.html#index-0">[18]</a>, <a href="library/email.generator.html#index-1">[19]</a>, <a href="library/email.util.html#index-0">[20]</a>, <a href="library/email.util.html#index-1">[21]</a>, <a href="library/email.util.html#index-2">[22]</a>, <a href="library/email.util.html#index-3">[23]</a>, <a href="library/email.util.html#index-9">[24]</a>, <a href="library/email.html#index-0">[25]</a>, <a href="library/email.html#index-2">[26]</a>, <a href="library/email.message.html#index-0">[27]</a>, <a href="library/email.message.html#index-1">[28]</a>, <a href="library/smtpd.html#index-0">[29]</a>, <a href="library/email.parser.html#index-0">[30]</a>, <a href="library/email.errors.html#index-0">[31]</a>, <a href="library/email.errors.html#index-1">[32]</a>, <a href="library/email.errors.html#index-2">[33]</a>, <a href="library/email.errors.html#index-3">[34]</a>, <a href="whatsnew/2.2.html#index-20">[35]</a>, <a href="library/mailbox.html#index-0">[36]</a></dt>
+      <dt><a href="library/rfc822.html#index-0">RFC 2822</a>, <a href="library/rfc822.html#index-1">[1]</a>, <a href="library/rfc822.html#index-2">[2]</a>, <a href="library/rfc822.html#index-4">[3]</a>, <a href="library/rfc822.html#index-5">[4]</a>, <a href="library/rfc822.html#index-6">[5]</a>, <a href="library/rfc822.html#index-7">[6]</a>, <a href="library/rfc822.html#index-8">[7]</a>, <a href="library/rfc822.html#index-10">[8]</a>, <a href="library/rfc822.html#index-12">[9]</a>, <a href="library/email.header.html#index-0">[10]</a>, <a href="library/email.header.html#index-2">[11]</a>, <a href="library/email.header.html#index-3">[12]</a>, <a href="library/email.header.html#index-9">[13]</a>, <a href="library/email.header.html#index-10">[14]</a>, <a href="library/email.header.html#index-12">[15]</a>, <a href="library/time.html#index-9">[16]</a>, <a href="library/time.html#index-18">[17]</a>, <a href="library/email.generator.html#index-0">[18]</a>, <a href="library/email.generator.html#index-1">[19]</a>, <a href="library/email.util.html#index-0">[20]</a>, <a href="library/email.util.html#index-1">[21]</a>, <a href="library/email.util.html#index-2">[22]</a>, <a href="library/email.util.html#index-3">[23]</a>, <a href="library/email.util.html#index-9">[24]</a>, <a href="library/email.message.html#index-0">[25]</a>, <a href="library/email.message.html#index-1">[26]</a>, <a href="library/smtpd.html#index-0">[27]</a>, <a href="library/email.html#index-0">[28]</a>, <a href="library/email.html#index-2">[29]</a>, <a href="library/email.parser.html#index-0">[30]</a>, <a href="library/email.errors.html#index-0">[31]</a>, <a href="library/email.errors.html#index-1">[32]</a>, <a href="library/email.errors.html#index-2">[33]</a>, <a href="library/email.errors.html#index-3">[34]</a>, <a href="whatsnew/2.2.html#index-20">[35]</a>, <a href="library/mailbox.html#index-0">[36]</a></dt>
       <dt><a href="library/cookielib.html#index-4">RFC 2964</a></dt>
       <dt><a href="library/urllib2.html#index-0">RFC 2965</a>, <a href="library/urllib2.html#index-2">[1]</a>, <a href="library/cookielib.html#index-0">[2]</a>, <a href="library/cookielib.html#index-3">[3]</a></dt>
       <dt><a href="whatsnew/2.6.html#index-23">RFC 3207</a></dt>
@@ -716,8 +712,9 @@
     <dt><a href="library/rfc822.html#module-rfc822">rfc822 (module)</a></dt>
     <dt><a href="library/uuid.html#uuid.RFC_4122">RFC_4122 (in module uuid)</a></dt>
     <dt><a href="library/basehttpserver.html#BaseHTTPServer.BaseHTTPRequestHandler.rfile">rfile (BaseHTTPServer.BaseHTTPRequestHandler attribute)</a></dt>
-    <dt><a href="library/string.html#string.rfind">rfind() (in module string)</a></dt>
+    <dt><a href="library/mmap.html#mmap.rfind">rfind() (in module mmap)</a></dt>
     <dd><dl>
+      <dt><a href="library/string.html#string.rfind">(in module string)</a></dt>
       <dt><a href="library/stdtypes.html#str.rfind">(str method)</a></dt>
   </dl></dd>
     <dt><a href="library/colorsys.html#colorsys.rgb_to_hls">rgb_to_hls() (in module colorsys)</a></dt>
@@ -850,12 +847,12 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
+    &copy; <a href="copyright.html">Copyright</a> 1990-2016, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Dec 19, 2015.
+    Last updated on Jun 11, 2016.
     <a href="bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

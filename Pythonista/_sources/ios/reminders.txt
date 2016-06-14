@@ -204,6 +204,10 @@ Reminder Attributes
 
     Whether the reminder has been completed (checked off) yet (boolean).
 
+.. attribute:: Reminder.completion_date
+
+    The date when the reminder was completed (checked off) or `None` if it hasn't been completed yet.
+
 .. attribute:: Reminder.due_date
 
     The due date of the reminder.
