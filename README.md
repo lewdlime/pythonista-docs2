@@ -1,4 +1,4 @@
-Pythonista Dash Docset [![Build Status](https://travis-ci.org/leesavide/pythonista-docs.svg?branch=master)](https://travis-ci.org/leesavide/pythonista-docs)
+Pythonista Dash Docset [![Build Status](https://travis-ci.org/leesavide/pythonista-docs2.svg?branch=master)](https://travis-ci.org/leesavide/pythonista-docs2)
 =======================
 
 **IMPORTANT:** This documentation is going to be deprecated, seeing as Pythonista 3 included _both_ Python 2 & Python 3 documentation. Because of this, doc2dash would most likely either fail to produce any docset at all, or would succeed, but include 'duplicate' entries that are actually both sets of documentation being mixed together. As a docset that's intended for full-text indexing & being able to search quickly for methods and attributes, this wouldn't be beneficial. Plus, the size of the docset would probably be well over a gigabyte, and that's a bit *too* large. I am considering instead a scaled down docset that is strictly about Pythonista's modules alone, and nothing more. Editorial's docset is still considered active, however, and will remain online & recieving updates as they are submitted.
